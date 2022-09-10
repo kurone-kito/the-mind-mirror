@@ -1,0 +1,5 @@
+{
+  "cSpell.ignorePaths": [".git/objects", ".vscode", "CODE_OF_CONDUCT.*"],
+  "cSpell.words": ["kito", "kurone"],
+  "editor.formatOnSave": true
+}

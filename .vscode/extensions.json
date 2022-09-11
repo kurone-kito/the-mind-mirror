@@ -1,3 +1,6 @@
 {
-  "recommendations": ["streetsidesoftware.code-spell-checker"]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }

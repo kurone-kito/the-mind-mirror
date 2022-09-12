@@ -1,5 +1,14 @@
 {
-  "cSpell.ignorePaths": [".git/objects", ".vscode", "CODE_OF_CONDUCT.*"],
+  "cSpell.ignorePaths": [
+    ".git/objects",
+    ".vscode",
+    "*.anim",
+    "*.meta",
+    "CODE_OF_CONDUCT.*",
+    "Assets/SerializedUdonPrograms",
+    "ProjectSettings/*",
+    "Packages/*"
+  ],
   "cSpell.words": ["kito", "kurone"],
   "editor.formatOnSave": true
 }

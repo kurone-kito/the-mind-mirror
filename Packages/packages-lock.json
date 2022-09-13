@@ -169,6 +169,12 @@
         "com.unity.nuget.newtonsoft-json": "2.0.2"
       }
     },
+    "com.vrchat.udonsharp": {
+      "version": "file:com.vrchat.udonsharp",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.vrchat.worlds": {
       "version": "file:com.vrchat.worlds",
       "depth": 0,

@@ -13,3 +13,6 @@ root = true
 
 [*.md]
   trim_trailing_whitespace = false
+
+[Assets/UdonSharp/UtilityScripts/*.cs]
+  dotnet_diagnostic.IDE0051.severity = none

@@ -233,6 +233,10 @@ $RECYCLE.BIN/
 ### THE PROJECT SPECIFIES #################################################
 
 ### Unity ###
+# UdonSharp
+[Aa]ssets/SerializedUdonPrograms/*
+[Aa]ssets/UdonSharp/PrefabBuild*
+
 # VRChat
 /Packages/*/
 /Packages/!com.vrchat.core.*/

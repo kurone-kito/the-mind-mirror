@@ -5,10 +5,11 @@
     "*.anim",
     "*.meta",
     "CODE_OF_CONDUCT.*",
-    "Assets/SerializedUdonPrograms",
+    "Assets/SerializedUdonPrograms/*",
+    "Assets/UdonSharp/*",
     "ProjectSettings/*",
     "Packages/*"
   ],
-  "cSpell.words": ["kito", "kurone"],
+  "cSpell.words": ["kito", "kurone", "udon"],
   "editor.formatOnSave": true
 }

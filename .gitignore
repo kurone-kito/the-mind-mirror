@@ -237,6 +237,9 @@ $RECYCLE.BIN/
 [Aa]ssets/SerializedUdonPrograms/*
 [Aa]ssets/UdonSharp/PrefabBuild*
 
+# TextMesh Pro
+Glyph Report.*
+
 # VRChat
 /Packages/*/
 /Packages/!com.vrchat.core.*/

@@ -1097,5 +1097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MirrorSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 5414673199613674307, guid: 45130b2895047a841bf1c2a73f3476d3,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5414673199613674307, guid: 45130b2895047a841bf1c2a73f3476d3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45130b2895047a841bf1c2a73f3476d3, type: 3}

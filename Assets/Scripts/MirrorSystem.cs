@@ -2,6 +2,7 @@
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC.SDKBase;
 
 /// <summary>鏡のオンオフを管理するクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -28,5 +29,67 @@ public class MirrorSystem : UdonSharpBehaviour
             return;
         }
         body.SetActive(toggle != null && toggle.isOn);
+    }
+
+    /// <summary>
+    /// 鏡の有効範囲に進入した際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="player">進入したプレイヤーの情報。</param>
+    public override void OnPlayerTriggerEnter(VRCPlayerApi player)
+    {
+        if (player == Networking.LocalPlayer)
+        {
+            EnableToggle();
+        }
+        base.OnPlayerTriggerEnter(player);
+    }
+
+    /// <summary>
+    /// 鏡の有効範囲から退出した際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="player">退出したプレイヤーの情報。</param>
+    public override void OnPlayerTriggerExit(VRCPlayerApi player)
+    {
+        if (player == Networking.LocalPlayer)
+        {
+            DisableToggle();
+        }
+        base.OnPlayerTriggerExit(player);
+    }
+
+    /// <summary>
+    /// プレイヤーがリスポーンした際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="player">リスポーンしたプレイヤーの情報。</param>
+    public override void OnPlayerRespawn(VRCPlayerApi player)
+    {
+        if (player == Networking.LocalPlayer)
+        {
+            DisableToggle();
+        }
+        base.OnPlayerRespawn(player);
+    }
+
+    /// <summary>トグル スイッチを非活性化します。</summary>
+    private void DisableToggle()
+    {
+        if (toggle == null)
+        {
+            Debug.LogWarning("トグル スイッチへのリンクが設定されていません。");
+            return;
+        }
+        toggle.isOn = false;
+        toggle.interactable = false;
+    }
+
+    /// <summary>トグル スイッチを活性化します。</summary>
+    private void EnableToggle()
+    {
+        if (toggle == null)
+        {
+            Debug.LogWarning("トグル スイッチへのリンクが設定されていません。");
+            return;
+        }
+        toggle.interactable = true;
     }
 }

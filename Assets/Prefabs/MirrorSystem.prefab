@@ -434,7 +434,7 @@ MonoBehaviour:
           m_StringArgument: OnToggle
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1467712333423973086
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +492,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1193367233990667441}
+  body: {fileID: 3853607318105980833}
+  toggle: {fileID: 1467712333081341520}
 --- !u!114 &1193367233990667441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3853607318105750229
 Transform:
   m_ObjectHideFlags: 0

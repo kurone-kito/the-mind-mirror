@@ -92,4 +92,14 @@ public class MirrorSystem : UdonSharpBehaviour
         }
         toggle.interactable = true;
     }
+
+#pragma warning disable IDE0051
+    /// <summary>
+    /// 紐づくオブジェクトの初期化が完了した際に呼び出される、コールバック。
+    /// </summary>
+    private void Start()
+    {
+        body.SetActive(toggle != null && toggle.isOn);
+    }
+#pragma warning restore IDE0051
 }

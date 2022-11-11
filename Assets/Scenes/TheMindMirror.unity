@@ -197,7 +197,8 @@ MonoBehaviour:
   DynamicPrefabs: []
   DynamicMaterials:
   - {fileID: 2100000, guid: c815f7613a04b724089c206857e57c6a, type: 2}
-  - {fileID: 2100000, guid: 9414e644b0d9d4c4cb1d863093f0284c, type: 2}
+  - {fileID: 2100000, guid: 95b03e5d8059f27409d095c0d4661ca2, type: 2}
+  - {fileID: 2100000, guid: defcea2fea0351248859a55968ab74a2, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
@@ -298,7 +299,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22446
+  m_Name: pb_Mesh47142
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -561,6 +562,7 @@ GameObject:
   - component: {fileID: 893305033}
   - component: {fileID: 893305032}
   - component: {fileID: 893305031}
+  - component: {fileID: 893305037}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -883,6 +885,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &893305037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893305030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.00105, y: 1, z: 10.004759}
+  m_Center: {x: 5.000525, y: -0.49, z: -5.0023794}
 --- !u!224 &1598774568 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5946442519055094268, guid: 9976e5671784d5f48924210f5ac01c24,
@@ -1179,21 +1194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 893305036}
     m_Modifications:
-    - target: {fileID: 5946442518505780112, guid: 9976e5671784d5f48924210f5ac01c24,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5946442518505780112, guid: 9976e5671784d5f48924210f5ac01c24,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5946442518505780112, guid: 9976e5671784d5f48924210f5ac01c24,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5946442519055094259, guid: 9976e5671784d5f48924210f5ac01c24,
         type: 3}
       propertyPath: m_Name

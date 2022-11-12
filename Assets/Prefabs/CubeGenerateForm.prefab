@@ -287,6 +287,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 651296107}
+  source: {fileID: 1367280639841505830, guid: 25b9b6882f345db4a96783ff4124f39d, type: 3}
+  offset: {x: 0, y: -0.7, z: 0.2}
 --- !u!114 &651296109
 MonoBehaviour:
   m_ObjectHideFlags: 0

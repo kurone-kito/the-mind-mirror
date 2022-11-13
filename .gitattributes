@@ -1,0 +1,4 @@
+/Assets/TextMesh[[:space:]]Pro/** linguist-vendored
+/Assets/UdonSharp/** linguist-vendored
+/Packages/** linguist-vendored
+/ProjectSettings/** linguist-vendored

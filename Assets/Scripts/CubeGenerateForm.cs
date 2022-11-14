@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class CubeGenerateForm : UdonSharpBehaviour
 {
+    /// <summary>
+    /// 鏡オブジェクトの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string ERR_NO_CUBE =
+        "マインドキューブのオブジェクトが設定されていません。";
+
 #pragma warning disable IDE0044
     /// <summary>生成するマインドキューブ本体。</summary>
     [SerializeField]
@@ -23,9 +29,10 @@ public class CubeGenerateForm : UdonSharpBehaviour
     {
         if (source == null)
         {
-            Debug.LogWarning("マインドキューブのオブジェクトが設定されていません。");
+            Debug.LogWarning(ERR_NO_CUBE);
             return;
         }
-        GameObject _ = Instantiate(source, transform.position + offset, transform.rotation);
+        GameObject _ = Instantiate(
+            source, transform.position + offset, transform.rotation);
     }
 }

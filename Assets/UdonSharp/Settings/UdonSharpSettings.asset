@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UdonSharpSettings
   m_EditorClassIdentifier: 
   autoCompileOnModify: 1
-  waitForFocus: 0
+  waitForFocus: 1
   disableUploadCompile: 0
   newScriptTemplateOverride: {fileID: 0}
   scanningDirectoryBlacklist: []

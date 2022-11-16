@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6304033527528516624}
   - component: {fileID: 8372214042452600312}
   - component: {fileID: 8884596869656642386}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 5178387092549310902}
   - component: {fileID: 5178387092549310857}
   - component: {fileID: 5178387092549310856}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: IntroductionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

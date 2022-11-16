@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: MindCubeVariables Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d7934557635c2694d98729cd072b5a7d,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 31b70beead5634145b33b4f771f8ef46,
     type: 2}
   udonAssembly: 
   assemblyError: 

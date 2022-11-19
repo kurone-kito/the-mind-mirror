@@ -3,6 +3,7 @@ using System;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+using VRC.SDKBase;
 
 /// <summary>レンダラーのインデックス一覧。</summary>
 internal enum RendererIndex
@@ -146,6 +147,18 @@ public class MindCubeVariables : SyncBase
             {
                 nameLabel.text = CubeName;
             }
+        }
+    }
+
+    /// <summary>
+    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
+    /// </summary>
+    /// <param name="player">プレイヤー情報。</param>
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        if (Networking.LocalPlayer == player)
+        {
+            Notify();
         }
     }
 

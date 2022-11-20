@@ -6057,7 +6057,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: OnCancel
+          m_StringArgument: PutoutMindCube
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6386628024178961694
@@ -13245,7 +13245,7 @@ GameObject:
   - component: {fileID: 8821846711658714776}
   - component: {fileID: 5393028557066290524}
   m_Layer: 0
-  m_Name: MindWriterBody
+  m_Name: MindStackBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

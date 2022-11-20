@@ -1,8 +1,7 @@
-﻿
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 
-/// <summary>マインドキューブ ライター本体オブジェクト。</summary>
+/// <summary>マインドキューブ スタック本体オブジェクト。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class MindWriterBody : UdonSharpBehaviour
 {
@@ -13,9 +12,11 @@ public class MindWriterBody : UdonSharpBehaviour
         "コア オブジェクトへのリンクが設定されていません。";
 
 #pragma warning disable IDE0044
-    /// <summary>マインドキューブ ライター。</summary>
+    /// <summary>
+    /// マインドキューブをスタックできるコア オブジェクト。
+    /// </summary>
     [SerializeField]
-    private MindWriter root;
+    private MindStack root;
 #pragma warning restore IDE0044
 
     /// <summary>

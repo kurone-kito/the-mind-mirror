@@ -1,34 +1,32 @@
-﻿
-using System;
+﻿using System;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDK3.Components;
 using VRC.SDKBase;
 
 /// <summary>生年月日ドロップダウンのインデックス。</summary>
 internal enum BirthIndex
 {
     /// <summary>生まれた年の上 2 桁。</summary>
-    YearHi = 0,
+    YearHi,
     /// <summary>生まれた年の 3 桁目。</summary>
-    YearLo1 = 1,
+    YearLo1,
     /// <summary>生まれた年の下 1 桁。</summary>
-    YearLo2 = 2,
+    YearLo2,
     /// <summary>生まれた月。</summary>
-    Month = 3,
+    Month,
     /// <summary>生まれた日の上桁。</summary>
-    DayHi = 4,
+    DayHi,
     /// <summary>生まれた日の下桁。</summary>
-    DayLo = 5,
+    DayLo,
     /// <summary>配列長。</summary>
     /// <remarks>この値は、インデックスとしては無効です。</remarks>
-    LENGTH = 6,
+    MAX_VALUE,
 }
 
 /// <summary>マインドキューブに情報を書き出すクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class MindWriter : UdonSharpBehaviour
+public class MindWriter : MindStack
 {
     /// <summary>
     /// 生年月日入力コントロールの接続不備における、エラーメッセージ。
@@ -39,14 +37,6 @@ public class MindWriter : UdonSharpBehaviour
     /// <summary>決定ボタンの接続不備における、エラーメッセージ。</summary>
     private const string ERR_NO_DECIDE =
         "決定ボタンへのリンクが設定されていません。";
-
-    /// <summary>排出先の接続不備における、エラーメッセージ。</summary>
-    private const string ERR_NO_DESTINATION =
-        "排出先へのリンクが設定されていません。";
-
-    /// <summary>フォームの接続不備における、エラーメッセージ。</summary>
-    private const string ERR_NO_FORM =
-        "フォームへのリンクが設定されていません。";
 
     /// <summary>生年月日の範囲外不備における、エラーメッセージ。</summary>
     private const string WARN_BIRTH_OUT_OF_RANGE =
@@ -72,14 +62,6 @@ public class MindWriter : UdonSharpBehaviour
     [SerializeField]
     private Button decideButton;
 
-    /// <summary>排出口。</summary>
-    [SerializeField]
-    private Transform destination;
-
-    /// <summary>フォーム。</summary>
-    [SerializeField]
-    private GameObject form;
-
     /// <summary>名前入力フィールド。</summary>
     [SerializeField]
     private InputField nameInput;
@@ -87,20 +69,6 @@ public class MindWriter : UdonSharpBehaviour
 
     /// <summary>生年月日。</summary>
     private DateTime birth;
-
-    /// <summary>マインドキューブ。</summary>
-    private MindCube mindcube;
-
-    /// <summary>マインドキューブを取得または設定します。</summary>
-    public MindCube MindCube
-    {
-        get => mindcube;
-        set
-        {
-            mindcube = value;
-            UpdateRender();
-        }
-    }
 
     /// <summary>プレイヤーの表示名を取得します。</summary>
     private string PlayerName
@@ -110,14 +78,6 @@ public class MindWriter : UdonSharpBehaviour
             VRCPlayerApi player = Networking.LocalPlayer;
             return player == null ? string.Empty : player.displayName;
         }
-    }
-
-    /// <summary>
-    /// フォーム入力をキャンセルする際に呼び出す、コールバック。
-    /// </summary>
-    public void OnCancel()
-    {
-        PutoutMindCube();
     }
 
     /// <summary>
@@ -170,7 +130,7 @@ public class MindWriter : UdonSharpBehaviour
     {
         if (
             birthInput == null ||
-            birthInput.Length < (int)BirthIndex.LENGTH
+            birthInput.Length < (int)BirthIndex.MAX_VALUE
         )
         {
             Debug.LogWarning(ERR_NO_BIRTH);
@@ -187,39 +147,13 @@ public class MindWriter : UdonSharpBehaviour
         return $"{year:0000}-{month:00}-{day:00}";
     }
 
-    /// <summary>マインドキューブを排出します。</summary>
-    private void PutoutMindCube()
-    {
-        if (MindCube == null)
-        {
-            return;
-        }
-        if (destination == null)
-        {
-            Debug.LogWarning(ERR_NO_DESTINATION);
-            return;
-        }
-        MindCube.gameObject.SetActive(true);
-        VRCObjectSync objSync = MindCube.GetComponent<VRCObjectSync>();
-        if (objSync == null)
-        {
-            MindCube.transform.position = destination.position;
-            MindCube.transform.rotation = destination.rotation;
-        }
-        else
-        {
-            objSync.TeleportTo(destination);
-        }
-        MindCube = null;
-    }
-
     /// <summary>生年月日コントロールの選択状態をリセットします。</summary>
     private void ResetBirth()
     {
         birth = INITIAL_DATE;
         if (
             birthInput != null &&
-            birthInput.Length == (int)BirthIndex.LENGTH
+            birthInput.Length == (int)BirthIndex.MAX_VALUE
         )
         {
             if (birthInput[(int)BirthIndex.YearHi] != null)
@@ -256,24 +190,14 @@ public class MindWriter : UdonSharpBehaviour
     }
 
     /// <summary>描画状態を更新します。</summary>
-    private void UpdateRender()
+    protected override void OnUpdateMindCube()
     {
-        if (form == null)
-        {
-            Debug.LogWarning(ERR_NO_FORM);
-            return;
-        }
         ResetBirth();
-        form.SetActive(MindCube != null);
-        if (MindCube == null)
-        {
-            return;
-        }
-        MindCube.gameObject.SetActive(false);
-        if (nameInput != null)
+        if (!(MindCube == null || nameInput == null))
         {
             nameInput.text = PlayerName;
         }
+        base.OnUpdateMindCube();
     }
 
     /// <summary>マインドキューブに入力内容を書き込みます。</summary>
@@ -298,17 +222,7 @@ public class MindWriter : UdonSharpBehaviour
     /// <param name="player">プレイヤー情報。</param>
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        if (!(localPlayer == null || localPlayer == player))
-        {
-            return;
-        }
-#pragma warning disable IDE0031
-        if (form != null)
-        {
-            form.SetActive(MindCube != null);
-        }
-#pragma warning restore IDE0031
+        base.OnPlayerJoined(player);
         ResetBirth();
     }
 }

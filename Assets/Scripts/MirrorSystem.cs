@@ -8,6 +8,16 @@ using VRC.SDKBase;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class MirrorSystem : UdonSharpBehaviour
 {
+    /// <summary>
+    /// 鏡オブジェクトの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string ERR_NO_MIRROR = "鏡のオブジェクトが設定されていません。";
+
+    /// <summary>
+    /// トグル スイッチ オブジェクトの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string ERR_NO_TOGGLE = "トグル スイッチへのリンクが設定されていません。";
+
 #pragma warning disable IDE0044
     /// <summary>鏡本体オブジェクト。</summary>
     [SerializeField]
@@ -25,7 +35,7 @@ public class MirrorSystem : UdonSharpBehaviour
     {
         if (body == null)
         {
-            Debug.LogWarning("鏡のオブジェクトが設定されていません。");
+            Debug.LogWarning(ERR_NO_MIRROR);
             return;
         }
         body.SetActive(toggle != null && toggle.isOn);
@@ -75,7 +85,7 @@ public class MirrorSystem : UdonSharpBehaviour
     {
         if (toggle == null)
         {
-            Debug.LogWarning("トグル スイッチへのリンクが設定されていません。");
+            Debug.LogWarning(ERR_NO_TOGGLE);
             return;
         }
         toggle.isOn = false;
@@ -87,19 +97,21 @@ public class MirrorSystem : UdonSharpBehaviour
     {
         if (toggle == null)
         {
-            Debug.LogWarning("トグル スイッチへのリンクが設定されていません。");
+            Debug.LogWarning(ERR_NO_TOGGLE);
             return;
         }
         toggle.interactable = true;
     }
 
-#pragma warning disable IDE0051
     /// <summary>
-    /// 紐づくオブジェクトの初期化が完了した際に呼び出される、コールバック。
+    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
     /// </summary>
-    private void Start()
+    /// <param name="player">プレイヤー情報。</param>
+    public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        body.SetActive(toggle != null && toggle.isOn);
+        if (Networking.LocalPlayer == player)
+        {
+            body.SetActive(toggle != null && toggle.isOn);
+        }
     }
-#pragma warning restore IDE0051
 }

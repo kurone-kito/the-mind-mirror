@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>マインドキューブ スタック本体オブジェクト。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class MindWriterBody : UdonSharpBehaviour
+public sealed class MindWriterBody : UdonSharpBehaviour
 {
     /// <summary>
     /// コア オブジェクトの接続不備における、エラーメッセージ。

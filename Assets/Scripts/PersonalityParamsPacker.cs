@@ -67,7 +67,7 @@ internal enum BitShifts
 /// </list>
 /// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class PersonalityParamsPacker : UdonSharpBehaviour
+public sealed class PersonalityParamsPacker : UdonSharpBehaviour
 {
     /// <summary>各性格パラメーターのビット幅。</summary>
     /// <remarks>4 ビット、つまり 0 ～ 15 の値を扱えます。</remarks>

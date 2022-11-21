@@ -26,7 +26,7 @@ internal enum BirthIndex
 
 /// <summary>マインドキューブに情報を書き出すクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class MindWriter : MindStack
+public sealed class MindWriter : MindStack
 {
     /// <summary>
     /// 生年月日入力コントロールの接続不備における、エラーメッセージ。

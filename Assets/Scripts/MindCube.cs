@@ -8,7 +8,7 @@ using UnityEngine;
 /// の同期阻害を避けるために、明示的に同期設定を行っています。
 /// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Continuous)]
-public class MindCube : UdonSharpBehaviour
+public sealed class MindCube : UdonSharpBehaviour
 {
     /// <summary>
     /// 変数管理クラスの接続不備における、エラーメッセージ。

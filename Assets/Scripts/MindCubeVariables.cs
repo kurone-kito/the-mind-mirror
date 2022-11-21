@@ -30,7 +30,7 @@ internal enum RendererIndex
 
 /// <summary>マインドキューブのプール。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-public class MindCubeVariables : SyncBase
+public sealed class MindCubeVariables : SyncBase
 {
     /// <summary>
     /// 名前ラベルの接続不備における、エラーメッセージ。

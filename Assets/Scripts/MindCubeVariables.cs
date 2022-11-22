@@ -9,26 +9,31 @@ using VRC.SDKBase;
 internal enum RendererIndex
 {
     /// <summary>大まかな性格指向。</summary>
-    Vector = 0,
+    Vector,
     /// <summary>内面的な素質。</summary>
-    InnerA = 1,
+    InnerA,
     /// <summary>内面的な素質。</summary>
-    InnerB = 2,
+    InnerB,
     /// <summary>外面的な素質。</summary>
-    Outer = 3,
+    Outer,
     /// <summary>緊急時・集中時の素質。</summary>
-    WorkStyle = 4,
+    WorkStyle,
     /// <summary>サイクル。</summary>
-    Cycle = 5,
+    Cycle,
     /// <summary>ライフベース。</summary>
-    LifeBase = 6,
+    LifeBase,
     /// <summary>ポテンシャル A。</summary>
-    PotentialA = 7,
+    PotentialA,
     /// <summary>ポテンシャル B。</summary>
-    PotentialB = 8,
+    PotentialB,
 }
 
-/// <summary>マインドキューブのプール。</summary>
+/// <summary>マインドキューブにおける、同期的変数の管理クラス。</summary>
+/// <remarks>
+/// ルート オブジェクトは VRCObjectSync が繋がっていることから連続的な同期
+/// が必要で、通信のパフォーマンス低下対策のために子オブジェクトに分割し、
+/// 必然的にビヘイビアクラスもこのように分離しています。
+/// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public sealed class MindCubeVariables : SyncBase
 {
@@ -55,13 +60,36 @@ public sealed class MindCubeVariables : SyncBase
 
     /// <summary>パラメーター。</summary>
     [NonSerialized, UdonSynced, FieldChangeCallback(nameof(Parameter))]
-    public uint parameter = 0u;
+    public uint parameter = uint.MaxValue;
 
 #pragma warning disable IDE0044
     /// <summary>オブジェクトのレンダラー一覧。</summary>
     [SerializeField]
     private Renderer[] renderers;
 #pragma warning restore IDE0044
+    /// <summary>補助的な素質の変化を取得します。</summary>
+    public byte Cycle { get; private set; }
+
+    /// <summary>内面的な素質を取得します。</summary>
+    public byte Inner { get; private set; }
+
+    /// <summary>根底となる人生観を取得します。</summary>
+    public byte LifeBase { get; private set; }
+
+    /// <summary>外面的な素質を取得します。</summary>
+    public byte Outer { get; private set; }
+
+    /// <summary>行動を起こす際の潜在能力 A を取得します。</summary>
+    public byte PotentialA { get; private set; }
+
+    /// <summary>行動を起こす際の潜在能力 B を取得します。</summary>
+    public byte PotentialB { get; private set; }
+
+    /// <summary>大まかな素質タイプを取得します。</summary>
+    public byte Genius { get; private set; }
+
+    /// <summary>緊急時・集中時の素質を取得します。</summary>
+    public byte WorkStyle { get; private set; }
 
     /// <summary>キューブに刻む名前を取得、または設定します。</summary>
     public string CubeName
@@ -81,48 +109,47 @@ public sealed class MindCubeVariables : SyncBase
         set
         {
             parameter = value;
+            DestractParameter();
             UpdateColor();
         }
     }
 
+    private void DestractParameter()
+    {
+        Cycle = PersonalityParamsPacker.UnPackCycle(parameter);
+        Inner = PersonalityParamsPacker.UnPackInner(parameter);
+        LifeBase = PersonalityParamsPacker.UnPackLifeBase(parameter);
+        Outer = PersonalityParamsPacker.UnPackOuter(parameter);
+        PotentialA = PersonalityParamsPacker.UnPackPotentialA(parameter);
+        PotentialB = PersonalityParamsPacker.UnPackPotentialB(parameter);
+        WorkStyle = PersonalityParamsPacker.UnPackWorkStyle(parameter);
+        byte[][] dm = MasterData.DetailsMap();
+        Genius = dm[Inner % dm.Length][(int)TypeDetailIndex.Genius];
+    }
+
     /// <summary>色のレンダリング状態を更新します。</summary>
-    public void UpdateColor()
+    private void UpdateColor()
     {
         if (renderers == null)
         {
             Debug.LogWarning(ERR_NO_RENDERER);
             return;
         }
-        byte inner = PersonalityParamsPacker.UnPackInner(Parameter);
-        UpdateColor(
-            RendererIndex.Vector,
-            (byte)UnityEngine.Random.Range(0, 0xF));
-        UpdateColor(RendererIndex.InnerA, inner);
-        UpdateColor(RendererIndex.InnerB, inner);
-        UpdateColor(
-            RendererIndex.Outer,
-            PersonalityParamsPacker.UnPackOuter(Parameter));
-        UpdateColor(
-            RendererIndex.WorkStyle,
-            PersonalityParamsPacker.UnPackWorkStyle(Parameter));
-        UpdateColor(
-            RendererIndex.Cycle,
-            PersonalityParamsPacker.UnPackCycle(Parameter));
-        UpdateColor(
-            RendererIndex.LifeBase,
-            PersonalityParamsPacker.UnPackLifeBase(Parameter));
-        UpdateColor(
-            RendererIndex.PotentialA,
-            PersonalityParamsPacker.UnPackPotentialA(Parameter));
-        UpdateColor(
-            RendererIndex.PotentialB,
-            PersonalityParamsPacker.UnPackPotentialB(Parameter));
+        UpdateColor(RendererIndex.Vector, Genius / 3f);
+        UpdateColor(RendererIndex.InnerA, Inner / 12f);
+        UpdateColor(RendererIndex.InnerB, Inner / 12f);
+        UpdateColor(RendererIndex.Outer, Outer / 12f);
+        UpdateColor(RendererIndex.WorkStyle, WorkStyle / 12f);
+        UpdateColor(RendererIndex.Cycle, Cycle / 10f);
+        UpdateColor(RendererIndex.LifeBase, LifeBase / 10f);
+        UpdateColor(RendererIndex.PotentialA, PotentialA / 10f);
+        UpdateColor(RendererIndex.PotentialB, PotentialB / 10f);
     }
 
     /// <summary>色のレンダリング状態を更新します。</summary>
     /// <param name="index">レンダラーのインデックス。</param>
-    /// <param name="value">0～16 で表現する、色相値。</param>
-    private void UpdateColor(RendererIndex index, byte value)
+    /// <param name="value">0～1 で表現する、色相値。</param>
+    private void UpdateColor(RendererIndex index, float value)
     {
         if (renderers[(int)index] == null)
         {
@@ -130,7 +157,7 @@ public sealed class MindCubeVariables : SyncBase
             return;
         }
         renderers[(int)index].material.color =
-            Color.HSVToRGB(value % 16 / 16f, 1f, 1f);
+            Color.HSVToRGB(Mathf.Clamp01(value), 1f, 1f);
     }
 
     /// <summary>名前のレンダリング状態を更新します。</summary>
@@ -166,6 +193,7 @@ public sealed class MindCubeVariables : SyncBase
     protected override void Notify()
     {
         UpdateName();
+        DestractParameter();
         UpdateColor();
     }
 }

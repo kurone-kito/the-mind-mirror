@@ -80,6 +80,12 @@ public class MindStack : UdonSharpBehaviour
             return;
         }
         cube.gameObject.SetActive(true);
+        Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
+        if (rigidbody != null)
+        {
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+        }
         VRCObjectSync objSync = cube.GetComponent<VRCObjectSync>();
         if (objSync == null)
         {
@@ -88,6 +94,7 @@ public class MindStack : UdonSharpBehaviour
         }
         else
         {
+            objSync.FlagDiscontinuity();
             objSync.TeleportTo(destination);
         }
         MindCube = null;

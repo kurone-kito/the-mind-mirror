@@ -210,9 +210,7 @@ public sealed class MindWriter : MindStack
         MindCube.Variables.ChangeOwner();
         MindCube.Variables.CubeName =
             nameInput == null ? PlayerName : nameInput.text.Trim();
-        // TODO: Dantalion メソッドを実装し、そちらに移行する。
-        MindCube.Variables.Parameter =
-            (uint)(Math.Abs(birth.ToBinary()) & uint.MaxValue);
+        MindCube.Variables.Parameter = Dantalion.GetPersonality(birth);
         MindCube.Variables.Sync();
     }
 

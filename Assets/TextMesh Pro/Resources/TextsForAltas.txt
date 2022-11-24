@@ -1,4 +1,17 @@
+0123456789
+
 Local Mirror
+Brain: Left, Right
+Communication: Fix, Flex
+Genius:
+Lifebase: Application, Association, Development, Expression, Finance, Investment, Organization, Quest, SelfMind, SelfReliance
+Management: Care, Hope
+Motivation: Competition, OwnMind, Power, Safety, SkillUp, Status
+Position: Adjust, Brain, Direct, Quick
+Potential: C, E, F, I, N, io
+Response: Action, Mind
+Vector: Authority, Economically, Humanely
+Inner, Outer, WorkStyle, Cycle, Lifebase, Potential
 
 ---
 
@@ -27,6 +40,19 @@ Repository: github:kurone-kito/the-mind-mirror
 
 ---
 
+『マインドビューア(暫定版)』
+
+マインドキューブを挿入してください。この装置で、貴方の性格の情報を簡易表示できます。
+
+※ この表示は、現在のバージョンではローカルです。
+また表示値の解説も、今後のアップデートで追加予定です。
+
+Kito さんの性格パターン
+
+返却
+
+---
+
 マインドライター
 
 マインドキューブに転写する、魂の情報を入力してください。
@@ -50,6 +76,7 @@ Repository: github:kurone-kito/the-mind-mirror
 ◆ 2022.11.23 v0.5.0 Pre-ALPHA
 性格診断エンジン『Dantalion』を搭載しました！生年月日を入力すると、四柱推命に基づいた性格診断が行えます！
 ライターで書き込んだ後のマインドキューブをよく見ましょう。色が同じ人は、性格もきっと似ているはずです！
+マインドキューブの情報を見るための簡易ビューアを追加しました。解説については、後日追加予定です。
 マインドライターにマインドキューブを剛速球で投げつけると、排出時にマインドキューブが暴走して手の付けようがなくなる不具合を修正しました。でももう少し優しく扱ってね！
 
 ◆ 2022.11.20 v0.4.0 Pre-ALPHA

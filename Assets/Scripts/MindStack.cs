@@ -60,7 +60,7 @@ public class MindStack : UdonSharpBehaviour
 #pragma warning disable IDE0031
         if (MindCube != null)
         {
-            MindCube.gameObject.SetActive(false);
+            MindCube.NotifyActive(false);
         }
 #pragma warning restore IDE0031
     }
@@ -79,7 +79,7 @@ public class MindStack : UdonSharpBehaviour
             Debug.LogWarning(ERR_NO_DESTINATION);
             return;
         }
-        cube.gameObject.SetActive(true);
+        cube.NotifyActive(true);
         Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
         if (rigidbody != null)
         {

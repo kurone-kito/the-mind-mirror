@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2750, y: 960}
+  m_SizeDelta: {x: 2200, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8372214042452600312
 CanvasRenderer:
@@ -64,8 +64,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THE MIND MIRROR: \u8CB4\u65B9\u306E\u6027\u683C\u3092\u6620\u3059\u93E1\r\n\r\n\u8CB4\u65B9\u306E\u5F8C\u308D\u306B\u7A4D\u307E\u308C\u3066\u3044\u308B\u30DE\u30A4\u30F3\u30C9\u30AD\u30E5\u30FC\u30D6\u3092\u624B\u306B\u53D6\u308A\u3001\u30E9\u30A4\u30BF\u30FC\u3067\u8CB4\u65B9\u306E\u60C5\u5831\u3092\u66F8\u304D\u8FBC\u3093\u3067\u304F\u3060\u3055\u3044\u3002\u73FE\u6642\u70B9\u3067\u306F\u305D\u308C\u3092\u898B\u636E\u3048\u3066\u3001\u81EA\u5206\u81EA\u8EAB\u3068\u5411\u304D\u5408\u3046\u3053\u3068\u304F\u3089\u3044\u3057\u304B\u3067\u304D\u307E\u305B\u3093\u304C\u3001\u3053\u3053\u306B\u3042\u308B\u5373\u7269\u7684\u306A\u93E1\u3067\u306F\u306A\u3044\u3001\u30DE\u30A4\u30F3\u30C9\u30AD\u30E5\u30FC\u30D6\u3092\u4F7F\u3063\u305F\u8CB4\u65B9\u306E\u6027\u683C\u3092\u6620\u3059\u93E1\u3092\u8FD1\u65E5\u4E2D\u306B\u3054\u7528\u610F\u3044\u305F\u3057\u307E\u3059\u3002\r\n\r\nTwitter:
-    kurone_kito / VRChat: kurone-kito\r\nRepository: github:kurone-kito/the-mind-mirror\r\n"
+  m_text: "THE MIND MIRROR: \u8CB4\u65B9\u306E\u6027\u683C\u3092\u6620\u3059\u93E1\r\n\r\n\u8CB4\u65B9\u306E\u5F8C\u308D\u306B\u7A4D\u307E\u308C\u3066\u3044\u308B\u30DE\u30A4\u30F3\u30C9\u30AD\u30E5\u30FC\u30D6\u3092\u624B\u306B\u53D6\u308A\u3001\u30E9\u30A4\u30BF\u30FC\u3067\u8CB4\u65B9\u306E\u60C5\u5831\u3092\u66F8\u304D\u8FBC\u3093\u3067\u304F\u3060\u3055\u3044\u3002\u73FE\u6642\u70B9\u3067\u306F\u7D50\u679C\u3092\u898B\u6BD4\u3079\u3066\u3001\u4F3C\u3066\u3044\u308B\u6027\u683C\u306E\u4EBA\u3092\u63A2\u3059\u3053\u3068\u304F\u3089\u3044\u3057\u304B\u3067\u304D\u307E\u305B\u3093\u304C\u3001\u3053\u3053\u306B\u3042\u308B\u5373\u7269\u7684\u306A\u93E1\u3067\u306F\u306A\u3044\u3001\u30DE\u30A4\u30F3\u30C9\u30AD\u30E5\u30FC\u30D6\u3092\u4F7F\u3063\u305F\u8CB4\u65B9\u306E\u6027\u683C\u3092\u6620\u3059\u93E1\u3092\u8FD1\u65E5\u4E2D\u306B\u3054\u7528\u610F\u3044\u305F\u3057\u307E\u3059\u3002\r\n\r\nTwitter:
+    kurone_kito / VRChat: kurone-kito\r\nRepository: github:kurone-kito/the-mind-mirror\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f7cab8c21178bc489bdcb82de24bd0a, type: 2}
   m_sharedMaterial: {fileID: -7182816725125710391, guid: 1f7cab8c21178bc489bdcb82de24bd0a,
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 94
-  m_fontSizeBase: 94
+  m_fontSize: 81
+  m_fontSizeBase: 81
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -161,18 +161,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5178387092549310858}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0035, y: 0.0035, z: 0.0035}
   m_Children:
   - {fileID: 6304033527528516624}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.1000061, y: 1.75}
-  m_SizeDelta: {x: 2750, y: 960}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2200, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5178387092549310902
 Canvas:

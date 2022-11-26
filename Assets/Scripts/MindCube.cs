@@ -1,5 +1,6 @@
 ﻿using UdonSharp;
 using UnityEngine;
+using VRC.Udon.Common.Interfaces;
 
 /// <summary>マインドキューブのプール。</summary>
 /// <remarks>
@@ -8,7 +9,7 @@ using UnityEngine;
 /// の同期阻害を避けるために、明示的に同期設定を行っています。
 /// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Continuous)]
-public class MindCube : UdonSharpBehaviour
+public sealed class MindCube : UdonSharpBehaviour
 {
     /// <summary>
     /// 変数管理クラスの接続不備における、エラーメッセージ。
@@ -33,5 +34,26 @@ public class MindCube : UdonSharpBehaviour
             }
             return variables;
         }
+    }
+
+    /// <summary>アクティブ化します。</summary>
+    public void Active()
+    {
+        gameObject.SetActive(true);
+    }
+
+    /// <summary>非アクティブ化します。</summary>
+    public void DeActive()
+    {
+        gameObject.SetActive(false);
+    }
+
+    /// <summary>全ユーザーにアクティブ状態を送信します。</summary>
+    /// <param name="active">アクティブ化するかどうか。</param>
+    public void NotifyActive(bool active)
+    {
+        string command = active ? nameof(Active) : nameof(DeActive);
+        SendCustomNetworkEvent(NetworkEventTarget.All, command);
+        SendCustomEventDelayedFrames(command, 1);
     }
 }

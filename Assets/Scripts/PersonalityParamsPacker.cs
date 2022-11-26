@@ -1,7 +1,7 @@
 using UdonSharp;
 
 /// <summary>性格情報のビットシフト定数。</summary>
-internal enum BitShifts
+internal enum BitShifts : int
 {
     /// <summary>内面的な素質。</summary>
     Inner = 0,
@@ -9,13 +9,13 @@ internal enum BitShifts
     Outer = 4,
     /// <summary>緊急時・集中時の素質。</summary>
     WorkStyle = 8,
-    /// <summary>サイクル。</summary>
+    /// <summary>補助的な素質の変化。</summary>
     Cycle = 12,
-    /// <summary>ライフベース。</summary>
+    /// <summary>根底となる人生観。</summary>
     LifeBase = 16,
-    /// <summary>ポテンシャル A。</summary>
+    /// <summary>行動を起こす際の、潜在能力 A。</summary>
     PotentialA = 20,
-    /// <summary>ポテンシャル B。</summary>
+    /// <summary>行動を起こす際の、潜在能力 B。</summary>
     PotentialB = 24,
 }
 
@@ -45,29 +45,29 @@ internal enum BitShifts
 /// <term>8</term>
 /// </item>
 /// <item>
-/// <term>サイクル</term>
+/// <term>補助的な素質の変化</term>
 /// <term>4</term>
 /// <term>12</term>
 /// </item>
 /// <item>
-/// <term>ライフベース</term>
+/// <term>根底となる人生観</term>
 /// <term>4</term>
 /// <term>16</term>
 /// </item>
 /// <item>
-/// <term>ポテンシャル A</term>
+/// <term>行動を起こす際の、潜在能力 A</term>
 /// <term>4</term>
 /// <term>20</term>
 /// </item>
 /// <item>
-/// <term>ポテンシャル B</term>
+/// <term>行動を起こす際の、潜在能力 B</term>
 /// <term>4</term>
 /// <term>24</term>
 /// </item>
 /// </list>
 /// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class PersonalityParamsPacker : UdonSharpBehaviour
+public sealed class PersonalityParamsPacker : UdonSharpBehaviour
 {
     /// <summary>各性格パラメーターのビット幅。</summary>
     /// <remarks>4 ビット、つまり 0 ～ 15 の値を扱えます。</remarks>
@@ -130,7 +130,7 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
         return UnPack(body, WorkStyleMask, BitShifts.WorkStyle);
     }
 
-    /// <summary>サイクルをバイナリに設定します。</summary>
+    /// <summary>補助的な素質の変化をバイナリに設定します。</summary>
     /// <param name="body">バイナリ本体。</param>
     /// <param name="value">0 ～ 15 の値。</param>
     /// <returns>設定されたバイナリ本体。</returns>
@@ -140,16 +140,16 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
         return Pack(CycleMask, BitShifts.Cycle, body, value);
     }
 
-    /// <summary>バイナリからサイクルを取得します。</summary>
+    /// <summary>バイナリから補助的な素質の変化を取得します。</summary>
     /// <param name="body">バイナリ本体。</param>
-    /// <returns>サイクル。</returns>
+    /// <returns>補助的な素質の変化。</returns>
     public static byte UnPackCycle(uint body)
     {
         uint CycleMask = CreateMask(BitShifts.Cycle);
         return UnPack(body, CycleMask, BitShifts.Cycle);
     }
 
-    /// <summary>ライフベースをバイナリに設定します。</summary>
+    /// <summary>根底となる人生観をバイナリに設定します。</summary>
     /// <param name="body">バイナリ本体。</param>
     /// <param name="value">0 ～ 15 の値。</param>
     /// <returns>設定されたバイナリ本体。</returns>
@@ -159,16 +159,18 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
         return Pack(LifeBaseMask, BitShifts.LifeBase, body, value);
     }
 
-    /// <summary>バイナリからライフベースを取得します。</summary>
+    /// <summary>バイナリから根底となる人生観を取得します。</summary>
     /// <param name="body">バイナリ本体。</param>
-    /// <returns>ライフベース。</returns>
+    /// <returns>根底となる人生観。</returns>
     public static byte UnPackLifeBase(uint body)
     {
         uint LifeBaseMask = CreateMask(BitShifts.LifeBase);
         return UnPack(body, LifeBaseMask, BitShifts.LifeBase);
     }
 
-    /// <summary>ポテンシャル A をバイナリに設定します。</summary>
+    /// <summary>
+    /// 行動を起こす際の、潜在能力 A をバイナリに設定します。
+    /// </summary>
     /// <param name="body">バイナリ本体。</param>
     /// <param name="value">0 ～ 15 の値。</param>
     /// <returns>設定されたバイナリ本体。</returns>
@@ -178,16 +180,20 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
         return Pack(PotentialAMask, BitShifts.PotentialA, body, value);
     }
 
-    /// <summary>バイナリからポテンシャル A を取得します。</summary>
+    /// <summary>
+    /// バイナリから行動を起こす際の、潜在能力 A を取得します。
+    /// </summary>
     /// <param name="body">バイナリ本体。</param>
-    /// <returns>ポテンシャル A。</returns>
+    /// <returns>行動を起こす際の、潜在能力 A。</returns>
     public static byte UnPackPotentialA(uint body)
     {
         uint PotentialAMask = CreateMask(BitShifts.PotentialA);
         return UnPack(body, PotentialAMask, BitShifts.PotentialA);
     }
 
-    /// <summary>ポテンシャル B をバイナリに設定します。</summary>
+    /// <summary>
+    /// 行動を起こす際の、潜在能力 B をバイナリに設定します。
+    /// </summary>
     /// <param name="body">バイナリ本体。</param>
     /// <param name="value">0 ～ 15 の値。</param>
     /// <returns>設定されたバイナリ本体。</returns>
@@ -197,9 +203,11 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
         return Pack(PotentialBMask, BitShifts.PotentialB, body, value);
     }
 
-    /// <summary>バイナリからポテンシャル B を取得します。</summary>
+    /// <summary>
+    /// バイナリから行動を起こす際の、潜在能力 B を取得します。
+    /// </summary>
     /// <param name="body">バイナリ本体。</param>
-    /// <returns>ポテンシャル B。</returns>
+    /// <returns>行動を起こす際の、潜在能力 B。</returns>
     public static byte UnPackPotentialB(uint body)
     {
         uint PotentialBMask = CreateMask(BitShifts.PotentialB);
@@ -214,7 +222,8 @@ public class PersonalityParamsPacker : UdonSharpBehaviour
     /// <param name="body">バイナリ値。</param>
     /// <param name="value">0 ～ 15 の値。</param>
     /// <returns>新しいバイナリ値。</returns>
-    private static uint Pack(uint mask, BitShifts shift, uint body, byte value)
+    private static uint Pack(
+        uint mask, BitShifts shift, uint body, byte value)
     {
         return (body & ~mask) | ((uint)value << (int)shift);
     }

@@ -4,7 +4,7 @@ using UdonSharp;
 /// テキスト リソース データ群。
 /// </summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class Resources : UdonSharpBehaviour
+public sealed class Parameters : UdonSharpBehaviour
 {
     /// <summary>思考タイプ一覧。</summary>
     public static string[] Brain()

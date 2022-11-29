@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using RES = Resources;
+using RES = Parameters;
 using TDI = TypeDetailIndex;
 
 /// <summary>マインドキューブの情報ビューア。</summary>

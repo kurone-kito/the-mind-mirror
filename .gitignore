@@ -246,3 +246,7 @@ Glyph Report.*
 /Packages/!com.vrchat.core.*/
 /Packages/com.vrchat.*/
 /Packages/.gitignore
+
+# VRWorld Toolkit
+[Aa]ssets/_LastBuild/*
+[Aa]ssets/_LastBuild.meta

@@ -57,6 +57,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 6954529294807130152}
+  acceptableSign: {fileID: 6108632227304578658}
   destination: {fileID: 6459952723571870562}
   form: {fileID: 0}
 --- !u!114 &6954529294807130152

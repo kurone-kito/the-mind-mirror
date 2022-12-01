@@ -13326,7 +13326,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8998524422856429932}
+  acceptableSign: {fileID: 8998524421953745908}
   destination: {fileID: 8178899946030065396}
+  form: {fileID: 1763651463477606668}
   birthInput:
   - {fileID: 8057301176173842426}
   - {fileID: 7268820955312426987}
@@ -13335,7 +13337,6 @@ MonoBehaviour:
   - {fileID: 5605899552572762090}
   - {fileID: 3624946857161373001}
   decideButton: {fileID: 5268287150158470526}
-  form: {fileID: 1763651463477606668}
   nameInput: {fileID: 5430538858551717952}
 --- !u!114 &8998524422856429932
 MonoBehaviour:

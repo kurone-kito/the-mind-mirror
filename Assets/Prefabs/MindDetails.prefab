@@ -58,8 +58,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 333377644431750156}
-  nameLabel: {fileID: 3271405510322556474}
   details: {fileID: 8518887727318992063}
+  globalStackManager: {fileID: 0}
+  nameLabel: {fileID: 3271405510322556474}
   paginationLabel: {fileID: 4504714485634559165}
 --- !u!114 &333377644431750156
 MonoBehaviour:
@@ -598,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1361,7 +1362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

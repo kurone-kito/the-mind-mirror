@@ -2920,8 +2920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 10}
-  m_SizeDelta: {x: 560, y: 30}
+  m_AnchoredPosition: {x: 80, y: 20}
+  m_SizeDelta: {x: 560, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3001313747532496851
 CanvasRenderer:
@@ -4914,7 +4914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 720, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6849782225673105511
@@ -8131,8 +8131,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -12}
-  m_SizeDelta: {x: 560, y: 20}
+  m_AnchoredPosition: {x: 90, y: -5}
+  m_SizeDelta: {x: 540, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4107309751937389903
 CanvasRenderer:
@@ -8161,7 +8161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6642\u5DEE\u3092\u8003\u616E\u3057\u3066\u3044\u306A\u3044\u305F\u3081\u3001\u7D50\u679C\u304C\u4E0D\u81EA\u7136\u306B\u611F\u3058\u305F\u3089\u524D\u5F8C\u306E\u65E5\u4ED8\u3082\u8A66\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044\u3002"
+  m_text: "\u6642\u5DEE\u3092\u8003\u616E\u3057\u3066\u3044\u306A\u3044\u305F\u3081\u3001\u7D50\u679C\u304C\u4E0D\u81EA\u7136\u306B\u611F\u3058\u305F\u3089\u524D\u5F8C\u306E\u65E5\u4ED8\u3082\u8A66\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044\u3002\r\n\u65E5\u672C\u4EBA\u3067\u3082\u6DF1\u591C\u751F\u307E\u308C\u306E\u5834\u5408\u3001\u7A00\u306B\u6642\u5DEE\u306B\u5F53\u3066\u306F\u307E\u308B\u5834\u5408\u304C\u3042\u308A\u307E\u3059\u3002"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f7cab8c21178bc489bdcb82de24bd0a, type: 2}
   m_sharedMaterial: {fileID: -7182816725125710391, guid: 1f7cab8c21178bc489bdcb82de24bd0a,
@@ -8196,7 +8196,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

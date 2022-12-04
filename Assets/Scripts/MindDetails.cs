@@ -1,37 +1,71 @@
-﻿
+﻿using TMPro;
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>マインドキューブの情報ビューア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-public sealed class MindDetails : UdonSharpBehaviour
+public sealed class MindDetails : Observer
 {
-    /// <summary>スタックの接続不備における、エラーメッセージ。</summary>
-    private const string ERR_NO_STACK =
-        "スタックへのリンクが設定されていません。";
+    /// <summary>
+    /// グローバル スタックの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string WARN_NO_GLOBAL_MANAGER =
+        "グローバル スタックへのリンクが設定されていません。";
 
 #pragma warning disable IDE0044
 #pragma warning disable IDE0051
-    /// <summary>フォーム本体。</summary>
+    /// <summary>本文ラベル。</summary>
     [SerializeField]
-    private GameObject body;
-
-    /// <summary>マインドキューブを一時預かりするスタック。</summary>
-    [SerializeField]
-    private MindStack mindStack;
-#pragma warning restore IDE0044
+    private TextMeshPro details;
 #pragma warning restore IDE0051
 
     /// <summary>
-    /// フォーム入力をキャンセルする際に呼び出す、コールバック。
+    /// グローバルにマインドキューブのスタックを管理するクラス。
     /// </summary>
-    public void OnCancel()
+    [SerializeField]
+    private GlobalStackManager globalStackManager;
+
+#pragma warning disable IDE0051
+    /// <summary>名前ラベル。</summary>
+    [SerializeField]
+    private Text nameLabel;
+#pragma warning restore IDE0051
+
+    /// <summary>ページネーションのラベル。</summary>
+    [SerializeField]
+    private TextMeshPro paginationLabel;
+#pragma warning restore IDE0044
+
+    /// <summary>
+    /// 次のページ ボタンを謳歌した際に呼び出す、コールバック。
+    /// </summary>
+    public void OnPushNext()
     {
-        if (mindStack == null)
+        paginationLabel.text = "Next";
+        Debug.Log("OnPushNext");
+    }
+
+    /// <summary>
+    /// 前のページ ボタンを謳歌した際に呼び出す、コールバック。
+    /// </summary>
+    public void OnPushPrevious()
+    {
+        paginationLabel.text = "Prev";
+        Debug.Log("OnPushPrevious");
+    }
+
+    /// <summary>
+    /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
+    /// </summary>
+    public override void OnNotify()
+    {
+        base.OnNotify();
+        if (globalStackManager == null)
         {
-            Debug.LogError(ERR_NO_STACK);
+            Debug.LogWarning(WARN_NO_GLOBAL_MANAGER);
             return;
         }
-        mindStack.PutoutMindCube();
+        Debug.Log($"MindDetails::OnNotify: {globalStackManager.Index}");
     }
 }

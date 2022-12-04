@@ -36,7 +36,7 @@ public sealed class MindWriterBody : UdonSharpBehaviour
         MindCube mindcube =
             collider == null ? null : collider.GetComponent<MindCube>();
 #pragma warning restore IDE0031
-        if (mindcube == null || root.MindCube != null)
+        if (mindcube == null || !root.Acceptable)
         {
             return;
         }

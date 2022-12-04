@@ -1,11 +1,12 @@
 ﻿using UdonSharp;
 using UnityEngine;
+using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
 
 /// <summary>マインドキューブのプール。</summary>
 /// <remarks>
 /// このクラスに同期するフィールドはありませんが、
-/// <see cref="VRC.SDK3.Components.VRCObjectPool"/>
+/// <see cref="VRCObjectPool"/>
 /// の同期阻害を避けるために、明示的に同期設定を行っています。
 /// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Continuous)]
@@ -45,6 +46,13 @@ public sealed class MindCube : UdonSharpBehaviour
     /// <summary>非アクティブ化します。</summary>
     public void DeActive()
     {
+        VRC_Pickup pickup = GetComponent<VRC_Pickup>();
+#pragma warning disable IDE0031
+        if (pickup != null)
+        {
+            pickup.Drop();
+        }
+#pragma warning restore IDE0031
         gameObject.SetActive(false);
     }
 

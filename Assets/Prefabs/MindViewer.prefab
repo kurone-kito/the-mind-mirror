@@ -769,6 +769,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1854186233030948993}
+  acceptableSign: {fileID: 1854186233732307476}
   destination: {fileID: 1502795920858091284}
   form: {fileID: 9017320732595343596}
   brain: {fileID: 6303611676757376187}
@@ -7945,7 +7946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

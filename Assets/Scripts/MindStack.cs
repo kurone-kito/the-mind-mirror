@@ -20,6 +20,10 @@ public class MindStack : UdonSharpBehaviour
         "フォームへのリンクが設定されていません。";
 
 #pragma warning disable IDE0044
+    /// <summary>受け入れ可能であることを示すサイン。</summary>
+    [SerializeField]
+    private GameObject acceptableSign;
+
     /// <summary>排出口。</summary>
     [SerializeField]
     private Transform destination;
@@ -29,8 +33,25 @@ public class MindStack : UdonSharpBehaviour
     private GameObject form;
 #pragma warning restore IDE0044
 
+    /// <summary>受け入れを拒否するかどうか。</summary>
+    private bool forbid;
+
     /// <summary>マインドキューブ。</summary>
     private MindCube mindcube;
+
+    /// <summary>受け入れ可能かどうか。</summary>
+    public bool Acceptable => !Forbid && MindCube == null;
+
+    /// <summary>受け入れを拒否するかどうか。</summary>
+    public bool Forbid
+    {
+        get => forbid;
+        set
+        {
+            forbid = value;
+            UpdateAcceptable();
+        }
+    }
 
     /// <summary>フォーム オブジェクトを取得します。</summary>
     public GameObject Form => form;
@@ -43,7 +64,22 @@ public class MindStack : UdonSharpBehaviour
         {
             mindcube = value;
             OnUpdateMindCube();
+            UpdateAcceptable();
         }
+    }
+
+    /// <summary>
+    /// 受け入れ可否状態が変化した際に、サインの有効状態を更新します。
+    /// </summary>
+    private void UpdateAcceptable()
+    {
+        bool acceptable = !Forbid && MindCube == null;
+#pragma warning disable IDE0031
+        if (acceptableSign != null)
+        {
+            acceptableSign.SetActive(acceptable);
+        }
+#pragma warning restore IDE0031
     }
 
     /// <summary>
@@ -111,6 +147,7 @@ public class MindStack : UdonSharpBehaviour
         {
             return;
         }
+        UpdateAcceptable();
 #pragma warning disable IDE0031
         if (form != null)
         {

@@ -19,7 +19,7 @@ public sealed class GlobalStackManager : Subject
     /// マインドキューブをスタックできるコア オブジェクト。
     /// </summary>
     [SerializeField]
-    private MindStack root;
+    private MindMirror root;
 #pragma warning restore IDE0044
 
     /// <summary>マインドキューブのインデックス。</summary>
@@ -39,6 +39,38 @@ public sealed class GlobalStackManager : Subject
         }
     }
 
+    /// <summary>
+    /// マインドキューブの同期的変数群を取得します。
+    /// </summary>
+    /// <returns>マインドキューブの同期的変数群。</returns>
+    public MindCubeVariables GetMindCubeVariables()
+    {
+        MindCube cube = GetMindCube();
+#pragma warning disable IDE0031
+        return cube == null ? null : cube.Variables;
+#pragma warning restore IDE0031
+    }
+
+    /// <summary>
+    /// マインドキューブを取得します。
+    /// </summary>
+    /// <returns>マインドキューブ。</returns>
+    private MindCube GetMindCube()
+    {
+        if (root == null)
+        {
+            Debug.LogError(ERR_NO_CORE);
+            return null;
+        }
+        MindCube[] cubes = root.Cubes.Cubes;
+        return (
+            cubes == null ||
+            index < 0 ||
+            index >= cubes.Length ||
+            cubes[index] == null
+        ) ? null : cubes[index];
+    }
+
     /// <summary>オブザーバーを呼び出します。</summary>
     protected override void Notify()
     {
@@ -49,6 +81,15 @@ public sealed class GlobalStackManager : Subject
         else
         {
             root.Forbid = index >= 0;
+        }
+        MindCube cube = GetMindCube();
+        if (cube != null && root.MindCube == null)
+        {
+            root.MindCube = cube;
+        }
+        else if (cube == null && root.MindCube != null)
+        {
+            root.MindCube = null;
         }
         base.Notify();
     }

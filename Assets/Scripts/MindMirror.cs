@@ -27,6 +27,9 @@ public sealed class MindMirror : MindStack
     private MindCubes cubes;
 #pragma warning restore IDE0044
 
+    /// <summary>マインドキューブ マネージャーを取得します。</summary>
+    public MindCubes Cubes => cubes;
+
     /// <summary>
     /// マインドキューブの有無が変化した際に呼び出す、コールバック。
     /// </summary>

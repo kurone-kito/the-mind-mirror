@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,6 +66,11 @@ public sealed class MindDetails : Observer
             Debug.LogWarning(WARN_NO_GLOBAL_MANAGER);
             return;
         }
-        Debug.Log($"MindDetails::OnNotify: {globalStackManager.Index}");
+        MindCubeVariables cube = globalStackManager.GetMindCubeVariables();
+        if (cube == null)
+        {
+            return;
+        }
+        nameLabel.text = cube.CubeName;
     }
 }

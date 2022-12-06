@@ -4,4 +4,6 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public sealed class JaResources : FallbackResources
 {
+    /// <summary>言語種別。</summary>
+    public override TypeLanguage Type => TypeLanguage.Japanese;
 }

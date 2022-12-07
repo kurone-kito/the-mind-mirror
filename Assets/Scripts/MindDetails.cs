@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +10,26 @@ public sealed class MindDetails : Observer
     /// <summary>
     /// グローバル スタックの接続不備における、エラーメッセージ。
     /// </summary>
-    private const string WARN_NO_GLOBAL_MANAGER =
+    private const string ERR_NO_GLOBAL_MANAGER =
         "グローバル スタックへのリンクが設定されていません。";
+
+    /// <summary>
+    /// マインドキューブの状態不備における、エラーメッセージ。
+    /// </summary>
+    private const string WARN_INSERTED_THE_EMPTY_MIND_CUBE =
+        @"<align=""center"">診断するマインドキューブが抜け殻のようで、診断ができません。
+<align=""center"">お隣の部屋のマインドライターで魂の情報を書き込んでから、再度お試しください。";
+
+    /// <summary>未実装メッセージ。</summary>
+    private const string INFO_COMING_SOON =
+        @"<align=""center"">COMING SOON...
+
+<align=""center"">マインドビューア(暫定版)を
+<align=""center"">ご利用ください。";
+
+    /// <summary>既定の表示コンテンツ。</summary>
+    private readonly string[] defaultContents =
+        new string[] { string.Empty };
 
 #pragma warning disable IDE0044
 #pragma warning disable IDE0051
@@ -26,24 +44,29 @@ public sealed class MindDetails : Observer
     [SerializeField]
     private GlobalStackManager globalStackManager;
 
-#pragma warning disable IDE0051
     /// <summary>名前ラベル。</summary>
     [SerializeField]
     private Text nameLabel;
-#pragma warning restore IDE0051
 
     /// <summary>ページネーションのラベル。</summary>
     [SerializeField]
     private TextMeshPro paginationLabel;
 #pragma warning restore IDE0044
 
+    /// <summary>表示コンテンツ。</summary>
+    private string[] contents = new string[] { string.Empty };
+
+    /// <summary>現在のページ番号。</summary>
+    private int currentPage = 0;
+
     /// <summary>
     /// 次のページ ボタンを謳歌した際に呼び出す、コールバック。
     /// </summary>
     public void OnPushNext()
     {
-        paginationLabel.text = "Next";
+        currentPage = (currentPage + 1) % contents.Length;
         Debug.Log("OnPushNext");
+        UpdateContents();
     }
 
     /// <summary>
@@ -51,8 +74,18 @@ public sealed class MindDetails : Observer
     /// </summary>
     public void OnPushPrevious()
     {
-        paginationLabel.text = "Prev";
+        int pageCount = contents.Length;
+        currentPage = (currentPage + pageCount - 1) % pageCount;
         Debug.Log("OnPushPrevious");
+        UpdateContents();
+    }
+
+    /// <summary>描画状態を更新します。</summary>
+    private void UpdateContents()
+    {
+        paginationLabel.text =
+            $"{currentPage + 1}/{contents.Length} ページ";
+        details.text = contents[currentPage];
     }
 
     /// <summary>
@@ -63,9 +96,26 @@ public sealed class MindDetails : Observer
         base.OnNotify();
         if (globalStackManager == null)
         {
-            Debug.LogWarning(WARN_NO_GLOBAL_MANAGER);
+            Debug.LogWarning(ERR_NO_GLOBAL_MANAGER);
+            contents = defaultContents;
+            UpdateContents();
             return;
         }
-        Debug.Log($"MindDetails::OnNotify: {globalStackManager.Index}");
+        MindCubeVariables cube = globalStackManager.GetMindCubeVariables();
+        if (cube == null)
+        {
+            contents = defaultContents;
+            UpdateContents();
+            return;
+        }
+        if (cube.Parameter == uint.MaxValue)
+        {
+            contents = new string[] { WARN_INSERTED_THE_EMPTY_MIND_CUBE };
+            UpdateContents();
+            return;
+        }
+        contents = new string[] { INFO_COMING_SOON };
+        nameLabel.text = cube.CubeName;
+        UpdateContents();
     }
 }

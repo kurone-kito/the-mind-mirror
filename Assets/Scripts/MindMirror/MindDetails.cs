@@ -1,7 +1,10 @@
-using TMPro;
+﻿using TMPro;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
+
+using RES = Parameters;
+using TDI = TypeDetailIndex;
 
 /// <summary>マインドキューブの情報ビューア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
@@ -20,12 +23,14 @@ public sealed class MindDetails : Observer
         @"<align=""center"">診断するマインドキューブが抜け殻のようで、診断ができません。
 <align=""center"">お隣の部屋のマインドライターで魂の情報を書き込んでから、再度お試しください。";
 
-    /// <summary>未実装メッセージ。</summary>
-    private const string INFO_COMING_SOON =
-        @"<align=""center"">COMING SOON...
+    /// <summary>
+    /// 簡易ビューアのページにおける、見出しメッセージ。
+    /// </summary>
+    private const string INFO_PARAMS_HEADING =
+        @"<align=""center""><size=540>(暫定版)パラメーター情報
+<align=""center""><size=480>この表示値の解説は、今後のアップデートで追加いたします。
+<align=""left""><size=330>";
 
-<align=""center"">マインドビューア(暫定版)を
-<align=""center"">ご利用ください。";
 
     /// <summary>既定の表示コンテンツ。</summary>
     private readonly string[] defaultContents =
@@ -89,6 +94,28 @@ public sealed class MindDetails : Observer
     }
 
     /// <summary>
+    /// 簡易ビューアーのページの文言を取得します。
+    /// </summary>
+    /// <returns>簡易ビューアーのページの文言。</returns>
+    private string GetParametersPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        string[] dgRes = RES.DetailedGenius();
+        string[] lbRes = RES.Lifebase();
+        string[] ptRes = RES.Potential();
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        string io = $"Inner: {dgRes[vars.Inner]} <pos=50%>Outer: {dgRes[vars.Outer]}";
+        string workstyle = $"Workstyle: {dgRes[vars.WorkStyle]} <pos=50%>Cycle: {vars.Cycle}";
+        string lifebase = $"Lifebase: {lbRes[vars.LifeBase]}";
+        string pb = $"Potential: {ptRes[vars.PotentialA]} - {ptRes[vars.PotentialB]} <pos=50%>Brain: {RES.Brain()[dt[(int)TDI.Brain]]}";
+        string cm = $"Communication: {RES.Communication()[dt[(int)TDI.Communication]]} <pos=50%>Management: {RES.Management()[dt[(int)TDI.Management]]}";
+        string genius = $"Genius: {RES.GeneralGenius()[dt[(int)TDI.Genius]]}";
+        string motivation = $"Motivation: {RES.Motivation()[dt[(int)TDI.Motivation]]}";
+        string pr = $"Position: {RES.Position()[dt[(int)TDI.Position]]} <pos=50%>Response: {RES.Response()[dt[(int)TDI.Response]]}";
+        return $"{INFO_PARAMS_HEADING}\n{io}\n{workstyle}\n{lifebase}\n{pb}\n{cm}\n{genius}\n{motivation}\n{pr}";
+    }
+
+    /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
     /// </summary>
     public override void OnNotify()
@@ -114,7 +141,7 @@ public sealed class MindDetails : Observer
             UpdateContents();
             return;
         }
-        contents = new string[] { INFO_COMING_SOON };
+        contents = new string[] { GetParametersPage() };
         nameLabel.text = cube.CubeName;
         UpdateContents();
     }

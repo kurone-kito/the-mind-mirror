@@ -1,10 +1,7 @@
-using UdonSharp;
-
 /// <summary>
 /// テキスト リソース データ群。
 /// </summary>
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class Parameters : UdonSharpBehaviour
+public static class Parameters
 {
     /// <summary>思考タイプ一覧。</summary>
     public static string[] Brain()

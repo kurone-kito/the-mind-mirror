@@ -1,10 +1,7 @@
-using UdonSharp;
-
 /// <summary>
 /// ハードコーディングした、マスター データ群。
 /// </summary>
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class MasterData : UdonSharpBehaviour
+public static class MasterData
 {
     /// <summary>仕事などの共同活動における、相性マップ。</summary>
     public static byte[][] Biz()

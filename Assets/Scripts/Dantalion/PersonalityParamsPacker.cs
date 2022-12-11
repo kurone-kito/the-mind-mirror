@@ -1,5 +1,3 @@
-using UdonSharp;
-
 /// <summary>性格情報のビットシフト定数。</summary>
 internal enum BitShifts : int
 {
@@ -66,8 +64,7 @@ internal enum BitShifts : int
 /// </item>
 /// </list>
 /// </remarks>
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class PersonalityParamsPacker : UdonSharpBehaviour
+public static class PersonalityParamsPacker
 {
     /// <summary>各性格パラメーターのビット幅。</summary>
     /// <remarks>4 ビット、つまり 0 ～ 15 の値を扱えます。</remarks>

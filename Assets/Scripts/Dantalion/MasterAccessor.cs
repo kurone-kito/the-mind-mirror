@@ -1,9 +1,7 @@
 using System;
-using UdonSharp;
 
 /// <summary>マスター データへのアクセサー。</summary>
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class MasterAccessor : UdonSharpBehaviour
+public static class MasterAccessor
 {
     /// <summary>
     /// 根底となる人生観タイプを決定するために使用する、係数を取得します。

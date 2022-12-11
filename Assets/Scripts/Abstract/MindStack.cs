@@ -1,7 +1,6 @@
 ﻿using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Components;
-using VRC.SDKBase;
 
 /// <summary>マインドキューブを一時預かりするスタック。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -136,17 +135,9 @@ public class MindStack : UdonSharpBehaviour
         MindCube = null;
     }
 
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
+    /// <summary>初期化時に呼び出される、コールバック。</summary>
+    protected virtual void Start()
     {
-        VRCPlayerApi localPlayer = Networking.LocalPlayer;
-        if (!(localPlayer == null || localPlayer == player))
-        {
-            return;
-        }
         UpdateAcceptable();
 #pragma warning disable IDE0031
         if (form != null)

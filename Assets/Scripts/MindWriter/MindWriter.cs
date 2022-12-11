@@ -214,13 +214,12 @@ public sealed class MindWriter : MindStack
         MindCube.Variables.Sync();
     }
 
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
+#pragma warning disable IDE0051
+    /// <summary>初期化時に呼び出される、コールバック。</summary>
+    protected override void Start()
     {
-        base.OnPlayerJoined(player);
+        base.Start();
         ResetBirth();
     }
+#pragma warning restore IDE0051
 }

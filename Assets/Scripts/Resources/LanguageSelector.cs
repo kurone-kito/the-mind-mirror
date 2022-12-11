@@ -2,7 +2,6 @@
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDKBase;
 
 /// <summary>言語セレクター フォーム。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -55,19 +54,7 @@ public sealed class LanguageSelector : UdonSharpBehaviour
         }
     }
 
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
-    {
-        if (Networking.LocalPlayer != player)
-        {
-            return;
-        }
-        Start();
-    }
-
+#pragma warning disable IDE0051
     /// <summary>初期化時に呼び出される、コールバック。</summary>
     private void Start()
     {
@@ -82,4 +69,5 @@ public sealed class LanguageSelector : UdonSharpBehaviour
             nameof(OnSelectEnglish);
         SendCustomEventDelayedFrames(target, 1);
     }
+#pragma warning restore IDE0051
 }

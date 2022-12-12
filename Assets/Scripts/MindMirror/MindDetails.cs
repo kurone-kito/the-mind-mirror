@@ -33,8 +33,7 @@ public sealed class MindDetails : Observer
 
 
     /// <summary>既定の表示コンテンツ。</summary>
-    private readonly string[] defaultContents =
-        new string[] { string.Empty };
+    private readonly string[] defaultContents = new[] { string.Empty };
 
 #pragma warning disable IDE0044
 #pragma warning disable IDE0051
@@ -59,7 +58,7 @@ public sealed class MindDetails : Observer
 #pragma warning restore IDE0044
 
     /// <summary>表示コンテンツ。</summary>
-    private string[] contents = new string[] { string.Empty };
+    private string[] contents = new[] { string.Empty };
 
     /// <summary>現在のページ番号。</summary>
     private int currentPage = 0;
@@ -137,11 +136,11 @@ public sealed class MindDetails : Observer
         }
         if (cube.Parameter == uint.MaxValue)
         {
-            contents = new string[] { WARN_INSERTED_THE_EMPTY_MIND_CUBE };
+            contents = new[] { WARN_INSERTED_THE_EMPTY_MIND_CUBE };
             UpdateContents();
             return;
         }
-        contents = new string[] { GetParametersPage() };
+        contents = new[] { GetParametersPage() };
         nameLabel.text = cube.CubeName;
         UpdateContents();
     }

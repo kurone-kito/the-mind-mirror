@@ -6,7 +6,7 @@ public static class MasterData
     /// <summary>仕事などの共同活動における、相性マップ。</summary>
     public static byte[][] Biz()
     {
-        return new byte[][]
+        return new[]
         {
 #region Biz
             new byte[] {1, 2, 3, 2, 0, 1, 3, 2, 0, 2, 1, 2},
@@ -28,7 +28,7 @@ public static class MasterData
     /// <summary>性格情報における、詳細マップ。</summary>
     public static byte[][] DetailsMap()
     {
-        return new byte[][]
+        return new[]
         {
 #region DetailsMap
             new byte[] { 1, 1, 1, 1, 5, 1, 0 },
@@ -50,7 +50,7 @@ public static class MasterData
     /// <summary>基本素質タイプを決定するための、係数リスト。</summary>
     public static byte[][] Genius()
     {
-        return new byte[][]
+        return new[]
         {
 #region Genius
             new byte[] { 5, 2, 10, 11, 6, 1, 0, 4, 3, 7, 9, 8 },
@@ -72,7 +72,7 @@ public static class MasterData
     /// </summary>
     public static byte[][] LifeBase()
     {
-        return new byte[][]
+        return new[]
         {
 #region LifeBase
             new byte[] { 2, 3, 5, 4, 6, 1, 7, 0, 8, 9 },
@@ -94,7 +94,7 @@ public static class MasterData
     /// </summary>
     public static byte[][] LifeBaseFactor()
     {
-        return new byte[][]
+        return new[]
         {
 #region LifeBaseCoefficients
             new byte[] { 10, 8, 6 },
@@ -120,7 +120,7 @@ public static class MasterData
     /// </summary>
     public static byte[][] LifeBaseThresholds()
     {
-        return new byte[][]
+        return new[]
         {
 #region LifeBaseThresholds
             new byte[] { 9, 13 },
@@ -142,7 +142,7 @@ public static class MasterData
     /// <summary>恋愛・友人などの交際関係における、相性マップ。</summary>
     public static byte[][] Love()
     {
-        return new byte[][]
+        return new[]
         {
 #region Love
             new byte[] { 3, 1, 0, 2, 2, 1, 1, 1, 0, 3, 2, 0 },
@@ -166,7 +166,7 @@ public static class MasterData
     /// </summary>
     public static byte[][] Potential()
     {
-        return new byte[][]
+        return new[]
         {
 #region Potential
             new byte[] { 2, 3, 4, 5, 8, 9, 0, 1, 6, 7 },

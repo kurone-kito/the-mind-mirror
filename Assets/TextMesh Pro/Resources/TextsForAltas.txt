@@ -1750,12 +1750,12 @@ VRCCam
 
 ---
 
-THE MIND MIRROR: 貴方の性格を映す鏡
+<align="center"><size=120%>THE MIND MIRROR: 貴方の性格を映す鏡
 
-積まれているマインドキューブを手に取り、後方のマインドライターで貴方の情報を書き込んでください。現時点では結果を見比べて、似ている性格の人を探すことくらいしかできませんが、ここにある即物的な鏡ではない、マインドキューブを使った貴方の性格を映す鏡を近日中にご用意いたします。
+<align="justified"><size=100%>この部屋には即物的な鏡のほかに、性格を映し出す不思議な鏡があります。まず右下の順路に沿って進み、積んであるマインドキューブを手に取ってください。次にマインドライターで貴方の魂の情報を書き込んでください。最後に奥の部屋に書き込まれ色のついたキューブを差し込むと、貴方の性格を映し出すことでしょう。
 
-Twitter: kurone_kito / VRChat: kurone-kito
-Repository: GitHub:kurone-kito/the-mind-mirror
+<align="center">Twitter: <link="https://twitter.com/kurone_kito">kurone_kito</link> / VRChat: <link="https://vrchat.com/home/group/grp_5a802e77-a436-491a-9edb-39fca4ff7805">kurone-kito</link>
+GitHub:<link="https://github.com/kurone-kito/the-mind-mirror">kurone-kito/the-mind-mirror</link>
 
 ---
 
@@ -1813,10 +1813,12 @@ Kito さん(以下 あなた)の性格
 
 ---
 
-COMING SOON...
+文/A
+日本語
+English
+Español
 
-マインドビューア(暫定版)を
-ご利用ください。
+é
 
 ---
 
@@ -1846,6 +1848,8 @@ COMING SOON...
 ▶祝！このバージョンをもって Community Labs 入りしました！◀
 性格を映す鏡の日本語解説を追加しました！今後もっと解説を拡充します！
 解説を実装しましたので、暫定版のパラメーター表示機能は削除しました。
+マインドキューブを手に取った時、手に吸い付くように実装しました。サイコキネシスとどちらが良いか迷いましたが、手についたほうが自然と判断しました。
+性格を映す鏡に挿入したマインドキューブを他人が返却すると、キューブが暴れて手に負えなくなる不具合を修正しました。
 
 ◆ 2022.12.2 v0.9.0 Pre-ALPHA
 性格を映す鏡へ暫定版マインドビューアーの機能を統合し、暫定版は廃止しました。日本語による解説の実装まで、あともう少しだけお待ちください！

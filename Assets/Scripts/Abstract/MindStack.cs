@@ -114,6 +114,7 @@ public class MindStack : UdonSharpBehaviour
             Debug.LogWarning(ERR_NO_DESTINATION);
             return;
         }
+        cube.ChangeOwner();
         cube.NotifyActive(true);
         Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
         if (rigidbody != null)

@@ -23,7 +23,9 @@
 ## 初期設定
 
 1. Unity Hub でこのプロジェクトを指定して開きます。
-   **Unity Editor バージョンの指定忘れに注意してください**。
+   - **Unity Editor バージョンの指定忘れに注意してください**。
+   - この工程で Visual Studio Code など他の IDE では、
+     当該プロジェクトのフォルダを開かないでください。
 2. 途中で追加のインポートの確認が出るので、全てインポートします。
 3. Unity Editor が起動したら、VRChat SDK Package Resolver を開き、
    未インストールの依存関係がないことを確認します。
@@ -31,7 +33,7 @@
 この時点で開発可能ですが、Visual Studio Code 環境では Intellisense
 が正しく機能しない場合があります。その場合は下記の追加手順を実行します。
 
-1. Unity Editor を閉じます。
+1. Unity Editor および Visual Studio Code など他 IDE を閉じます。
 2. 当該プロジェクトのルート フォルダにある下記拡張子のファイルを探し、
    すべて削除します。
    - `.csproj`

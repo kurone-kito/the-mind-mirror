@@ -1,9 +1,7 @@
-﻿
-using System;
+﻿using System;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDKBase;
 
 /// <summary>レンダラーのインデックス一覧。</summary>
 internal enum RendererIndex
@@ -177,18 +175,6 @@ public sealed class MindCubeVariables : SyncBase
         }
     }
 
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
-    {
-        if (Networking.LocalPlayer == player)
-        {
-            Notify();
-        }
-    }
-
     /// <summary>同期変数のアップデートを通知します。</summary>
     protected override void Notify()
     {
@@ -196,4 +182,12 @@ public sealed class MindCubeVariables : SyncBase
         DestractParameter();
         UpdateColor();
     }
+
+#pragma warning disable IDE0051
+    /// <summary>初期化時に呼び出される、コールバック。</summary>
+    private void Start()
+    {
+        Notify();
+    }
+#pragma warning restore IDE0051
 }

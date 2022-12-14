@@ -1,5 +1,4 @@
-﻿
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
@@ -11,12 +10,14 @@ public sealed class MirrorSystem : UdonSharpBehaviour
     /// <summary>
     /// 鏡オブジェクトの接続不備における、エラーメッセージ。
     /// </summary>
-    private const string ERR_NO_MIRROR = "鏡のオブジェクトが設定されていません。";
+    private const string ERR_NO_MIRROR =
+        "鏡のオブジェクトが設定されていません。";
 
     /// <summary>
     /// トグル スイッチ オブジェクトの接続不備における、エラーメッセージ。
     /// </summary>
-    private const string ERR_NO_TOGGLE = "トグル スイッチへのリンクが設定されていません。";
+    private const string ERR_NO_TOGGLE =
+        "トグル スイッチへのリンクが設定されていません。";
 
 #pragma warning disable IDE0044
     /// <summary>鏡本体オブジェクト。</summary>
@@ -103,15 +104,15 @@ public sealed class MirrorSystem : UdonSharpBehaviour
         toggle.interactable = true;
     }
 
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
+#pragma warning disable IDE0051
+    /// <summary>初期化時に呼び出される、コールバック。</summary>
+    private void Start()
     {
-        if (Networking.LocalPlayer == player)
+        if (body == null)
         {
-            body.SetActive(toggle != null && toggle.isOn);
+            return;
         }
+        body.SetActive(toggle != null && toggle.isOn);
     }
+#pragma warning restore IDE0051
 }

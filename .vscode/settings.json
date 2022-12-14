@@ -10,6 +10,7 @@
     "ProjectSettings/*",
     "Packages/*"
   ],
-  "cSpell.words": ["behaviour", "cref", "kito", "kurone", "mathf", "udon"],
+  "cSpell.language": "csharp, en, es, ja",
+  "cSpell.words": ["behaviour", "kito", "kurone", "mathf", "udon"],
   "editor.formatOnSave": true
 }

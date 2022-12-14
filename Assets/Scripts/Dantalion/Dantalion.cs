@@ -1,5 +1,4 @@
 using System;
-using UdonSharp;
 
 using MD = MasterData;
 using PPP = PersonalityParamsPacker;
@@ -50,15 +49,14 @@ internal enum PSIndex : int
 
 /// <summary>Dantalion エンジンのコア ロジック。</summary>
 /// <seealso cref="https://kurone-kito.github.io/dantalion/"/>
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class Dantalion : UdonSharpBehaviour
+public static class Dantalion
 {
     /// <summary>性格情報を取得します。</summary>
     /// <param name="birth">生年月日。</param>
     /// <returns>性格情報。</returns>
-    public static uint GetPersonality(DateTime birth)
+    public static uint GetPersonality(this DateTime birth)
     {
-        byte[] unpacked = GetUnpackedPersonality(birth);
+        byte[] unpacked = birth.GetUnpackedPersonality();
         if (unpacked == null)
         {
             return uint.MaxValue;
@@ -83,7 +81,7 @@ public sealed class Dantalion : UdonSharpBehaviour
     /// <summary>性格情報を取得します。</summary>
     /// <param name="birth">生年月日。</param>
     /// <returns>性格情報。</returns>
-    private static byte[] GetUnpackedPersonality(DateTime birth)
+    private static byte[] GetUnpackedPersonality(this DateTime birth)
     {
         sbyte monthlyCoefficient =
             MasterAccessor.GetMonthlyCoefficient(birth);
@@ -91,7 +89,7 @@ public sealed class Dantalion : UdonSharpBehaviour
         {
             return null;
         }
-        int[] birthDetails = GetDateDetails(birth);
+        int[] birthDetails = birth.GetDateDetails();
         int[] factors = GetFactors(birthDetails, monthlyCoefficient);
         int cycleIndex = (int)PSIndex.Cycle;
         int lbIndex = (int)PSIndex.LifeBase;
@@ -121,7 +119,7 @@ public sealed class Dantalion : UdonSharpBehaviour
     /// <param name="birth">日付情報。</param>
     /// <returns>日付の詳細情報。</returns>
     /// <seealso cref="BDIndex"/>
-    private static int[] GetDateDetails(DateTime birth)
+    private static int[] GetDateDetails(this DateTime birth)
     {
         int[] details = new int[(int)BDIndex.MAX_VALUE];
         details[(int)BDIndex.Date] = birth.Day;

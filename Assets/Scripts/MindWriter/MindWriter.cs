@@ -85,7 +85,7 @@ public sealed class MindWriter : MindStack
     /// </summary>
     public void OnDecide()
     {
-        WriteToMindCube();
+        WriteToMindCube(false);
         PutoutMindCube();
     }
 
@@ -120,6 +120,13 @@ public sealed class MindWriter : MindStack
         {
             nameInput.text = PlayerName;
         }
+    }
+
+    /// <summary>内容を消去する際に呼び出す、コールバック。</summary>
+    public void OnErase()
+    {
+        WriteToMindCube(true);
+        PutoutMindCube();
     }
 
     /// <summary>
@@ -201,7 +208,8 @@ public sealed class MindWriter : MindStack
     }
 
     /// <summary>マインドキューブに入力内容を書き込みます。</summary>
-    private void WriteToMindCube()
+    /// <param name="erase">消去するかどうか。</param>
+    private void WriteToMindCube(bool erase)
     {
         if (MindCube == null)
         {
@@ -209,8 +217,11 @@ public sealed class MindWriter : MindStack
         }
         MindCube.Variables.ChangeOwner();
         MindCube.Variables.CubeName =
-            nameInput == null ? PlayerName : nameInput.text.Trim();
-        MindCube.Variables.Parameter = birth.GetPersonality();
+            erase ? string.Empty :
+            nameInput == null ? PlayerName :
+            nameInput.text.Trim();
+        MindCube.Variables.Parameter =
+            erase ? uint.MaxValue : birth.GetPersonality();
         MindCube.Variables.Sync();
     }
 

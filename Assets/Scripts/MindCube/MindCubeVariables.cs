@@ -154,8 +154,10 @@ public sealed class MindCubeVariables : SyncBase
             Debug.LogWarning(ERR_NO_RENDERER);
             return;
         }
-        renderers[(int)index].material.color =
-            Color.HSVToRGB(Mathf.Clamp01(value), 1f, 1f);
+        bool init = parameter == uint.MaxValue;
+        Color color = Color.HSVToRGB(Mathf.Clamp01(value), 1f, 1f);
+        renderers[(int)index].material.color = init ? Color.gray : color;
+
     }
 
     /// <summary>名前のレンダリング状態を更新します。</summary>

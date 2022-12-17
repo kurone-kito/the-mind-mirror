@@ -5195,6 +5195,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1114956405}
+  asyncable: 1
   observers:
   - {fileID: 608105468}
   - {fileID: 26769488}

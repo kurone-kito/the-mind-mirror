@@ -5,7 +5,7 @@ using VRC.SDKBase;
 
 /// <summary>鏡のオンオフを管理するクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class MirrorSystem : UdonSharpBehaviour
+public sealed class MirrorSystem : ResourcesObserver
 {
     /// <summary>
     /// 鏡オブジェクトの接続不備における、エラーメッセージ。

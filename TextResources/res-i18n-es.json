@@ -1,0 +1,532 @@
+{
+  "brain": {
+    "detail": {
+      "detail": "",
+      "name": ""
+    },
+    "left": {
+      "detail": "",
+      "more": ["", ""],
+      "name": ""
+    },
+    "right": {
+      "name": "",
+      "detail": "",
+      "more": ["", ""]
+    }
+  },
+  "communication": {
+    "detail": {
+      "detail": "",
+      "name": ""
+    },
+    "fix": {
+      "detail": "",
+      "more": ["", ""],
+      "name": ""
+    },
+    "flex": {
+      "name": "",
+      "detail": "",
+      "more": ["", ""]
+    }
+  },
+  "descriptions": {
+    "cc": "",
+    "detail": "",
+    "details": "",
+    "genius1": "",
+    "genius2": "",
+    "invalid": "",
+    "personality": "",
+    "strategy": "",
+    "weak": ""
+  },
+  "genius": {
+    "detail": {
+      "descriptions": {
+        "inner": "",
+        "outer": "",
+        "workStyle": ""
+      },
+      "detail": "",
+      "inner": "",
+      "name": "",
+      "outer": "",
+      "workStyle": ""
+    },
+    "100": {
+      "detail": ["", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", ""],
+      "weak": ["", "", ""]
+    },
+    "108": {
+      "detail": ["", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", ""],
+      "weak": ["", "", ""]
+    },
+    "125": {
+      "detail": ["", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", "", ""],
+      "weak": ["", ""]
+    },
+    "555": {
+      "detail": ["", "", ""],
+      "name": "",
+      "strategy": [""],
+      "summary": "",
+      "weak": ["", "", ""]
+    },
+    "789": {
+      "detail": ["", "", "", ""],
+      "name": "",
+      "strategy": ["", "", "", ""],
+      "summary": "",
+      "weak": ["", ""]
+    },
+    "888": {
+      "detail": ["", ""],
+      "name": "",
+      "strategy": [""],
+      "summary": "",
+      "weak": ["", ""]
+    },
+    "919": {
+      "detail": ["", "", ""],
+      "name": "",
+      "strategy": ["", ""],
+      "summary": "",
+      "weak": ["", ""]
+    },
+    "000": {
+      "detail": ["", "", ""],
+      "name": "",
+      "strategy": ["", "", ""],
+      "weak": ["", ""],
+      "summary": ""
+    },
+    "001": {
+      "detail": ["", "", ""],
+      "name": "",
+      "weak": ["", ""],
+      "strategy": ["", "", "", ""],
+      "summary": ""
+    },
+    "012": {
+      "detail": ["", "", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", ""],
+      "weak": ["", "", "", ""]
+    },
+    "024": {
+      "detail": ["", "", "", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", "", ""],
+      "weak": ["", ""]
+    },
+    "025": {
+      "detail": ["", "", ""],
+      "name": "",
+      "summary": "",
+      "strategy": ["", ""],
+      "weak": ["", ""]
+    }
+  },
+  "lifeBase": {
+    "application": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "association": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "detail": "",
+    "development": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "expression": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "finance": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "investment": {
+      "detail": [""],
+      "name": ""
+    },
+    "organization": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "quest": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "selfMind": {
+      "detail": ["", ""],
+      "name": ""
+    },
+    "selfReliance": {
+      "detail": ["", ""],
+      "name": ""
+    }
+  },
+  "management": {
+    "detail": {
+      "detail": "",
+      "name": ""
+    },
+    "care": {
+      "detail": "",
+      "more": ["", "", ""],
+      "name": ""
+    },
+    "hope": {
+      "name": "",
+      "detail": "",
+      "more": ["", "", ""]
+    }
+  },
+  "motivation": {
+    "detail": "",
+    "competition": "",
+    "ownMind": "",
+    "power": "",
+    "safety": "",
+    "skillUp": "",
+    "status": ""
+  },
+  "name": "",
+  "position": {
+    "detail": {
+      "detail": "",
+      "name": ""
+    },
+    "adjust": {
+      "detail": "",
+      "more": ["", ""],
+      "name": ""
+    },
+    "brain": {
+      "name": "",
+      "detail": "",
+      "more": ["", ""]
+    },
+    "direct": {
+      "detail": "",
+      "more": ["", ""],
+      "name": ""
+    },
+    "quick": {
+      "detail": "",
+      "more": ["", ""],
+      "name": ""
+    }
+  },
+  "potentials": {
+    "detail": {
+      "name": "",
+      "detail": ""
+    },
+    "Ci": {
+      "detail": ["", ""],
+      "Ci": "$t(potentials.Ci.detail)",
+      "Co": ["$t(potentials.Ci.detail.0)", ""],
+      "Ei": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Ei.detail)"
+      ],
+      "Eo": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Eo.detail)"
+      ],
+      "Fi": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Fi.detail.0)"
+      ],
+      "Fo": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Fo.detail)"
+      ],
+      "Ii": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Ii.detail.0)"
+      ],
+      "Io": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Io.detail.0)"
+      ],
+      "Ni": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.Ni.detail.0)"
+      ],
+      "No": [
+        "$t(potentials.Ci.detail.0)",
+        "$t(potentials.Ci.detail.1)",
+        "$t(potentials.No.detail.0)"
+      ]
+    },
+    "Co": {
+      "detail": ["", ""],
+      "Co": ["$t(potentials.Co.detail.0)", "$t(potentials.Co.detail.1)", ""],
+      "Ei": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Ei.detail)"
+      ],
+      "Eo": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Eo.detail)"
+      ],
+      "Fi": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Fi.detail.0)"
+      ],
+      "Fo": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Fo.detail)"
+      ],
+      "Ii": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Ii.detail.0)"
+      ],
+      "Io": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Io.detail.0)"
+      ],
+      "Ni": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.Ni.detail.0)"
+      ],
+      "No": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "$t(potentials.No.detail.0)"
+      ]
+    },
+    "Ei": {
+      "detail": "",
+      "Ei": ["$t(potentials.Ei.detail)"],
+      "Eo": ["$t(potentials.Ei.detail)", "$t(potentials.Eo.detail)"],
+      "Fi": [
+        "$t(potentials.Ei.detail)",
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)"
+      ],
+      "Fo": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)"
+      ],
+      "Ii": [
+        "$t(potentials.Ei.detail)",
+        "$t(potentials.Ii.detail.0)",
+        "$t(potentials.Ii.detail.1)"
+      ],
+      "Io": ["$t(potentials.Ei.detail)", "$t(potentials.Io.detail.0)"],
+      "Ni": [
+        "$t(potentials.Ei.detail)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Ei.detail)",
+        "$t(potentials.Io.detail.0)",
+        "$t(potentials.Io.detail.1)"
+      ]
+    },
+    "Eo": {
+      "detail": "",
+      "Eo": ["$t(potentials.Eo.detail)"],
+      "Fi": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)"
+      ],
+      "Fo": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)"
+      ],
+      "Ii": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Ii.detail.0)",
+        "$t(potentials.Ii.detail.1)"
+      ],
+      "Io": ["$t(potentials.Eo.detail)", "$t(potentials.Io.detail.0)"],
+      "Ni": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Eo.detail)",
+        "$t(potentials.Io.detail.0)",
+        "$t(potentials.Io.detail.1)"
+      ]
+    },
+    "Fi": {
+      "detail": ["", ""],
+      "Fi": "$t(potentials.Fi.detail)",
+      "Fo": [
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)",
+        "$t(potentials.Fo.detail)"
+      ],
+      "Ii": [
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)",
+        "$t(potentials.Io.detail.0)"
+      ],
+      "Io": [
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Fi.detail.1)",
+        "$t(potentials.Fo.detail)"
+      ],
+      "Ni": [
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Fi.detail.0)",
+        "$t(potentials.No.detail.0)",
+        "$t(potentials.No.detail.1)"
+      ]
+    },
+    "Fo": {
+      "detail": "",
+      "Fo": ["$t(potentials.Fo.detail)"],
+      "Ii": [
+        "$t(potentials.Fo.detail)",
+        "$t(potentials.Ii.detail.0)",
+        "$t(potentials.Ii.detail.1)"
+      ],
+      "Io": ["$t(potentials.Fo.detail)", "$t(potentials.Io.detail.0)"],
+      "Ni": [
+        "$t(potentials.Fo.detail)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Fo.detail)",
+        "$t(potentials.Io.detail.0)",
+        "$t(potentials.Io.detail.1)"
+      ]
+    },
+    "Ii": {
+      "detail": ["", ""],
+      "Ii": "$t(potentials.Ii.detail)",
+      "Io": ["", "$t(potentials.Io.detail.0)", ""],
+      "Ni": [
+        "$t(potentials.Ii.detail.0)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Ii.detail.0)",
+        "$t(potentials.No.detail.0)",
+        "$t(potentials.No.detail.1)"
+      ]
+    },
+    "Io": {
+      "detail": ["", ""],
+      "Io": "$t(potentials.Io.detail)",
+      "Ni": [
+        "$t(potentials.Io.detail.0)",
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Io.detail.0)",
+        "$t(potentials.No.detail.0)",
+        "$t(potentials.No.detail.1)"
+      ]
+    },
+    "Ni": {
+      "detail": ["", ""],
+      "Ni": ["$t(potentials.Ni.detail.0)", "", "$t(potentials.Ni.detail.1)"],
+      "No": ["$t(potentials.Ni.detail.0)", "$t(potentials.No.detail.0)", ""]
+    },
+    "No": {
+      "detail": ["", ""],
+      "No": ["$t(potentials.No.detail.0)", "", "$t(potentials.No.detail.1)"]
+    }
+  },
+  "response": {
+    "detail": {
+      "detail": "",
+      "name": ""
+    },
+    "action": {
+      "detail": "",
+      "more": ["", "", ""],
+      "name": ""
+    },
+    "mind": {
+      "detail": "",
+      "more": ["", "", ""],
+      "name": ""
+    }
+  },
+  "vector": {
+    "detail": {
+      "detail": "Hay tres tipos principales de personalidad humana: “$t(vector.autoridad.nombre)”, “$t(vector.económicamente.nombre)”, y “$t(vector.humanamente.nombre)”.",
+      "name": "Principales categorías de personalidad"
+    },
+    "authority": {
+      "detail": [
+        "Tienen un ego subyacente **por su autoridad** y una personalidad que **persigue su potencial futuro**.",
+        "No pueden escuchar conversaciones largas. En cuanto deciden que algo no es esencial, dejan descaradamente de escuchar la conversación, como jugar con sus teléfonos o dormitar.",
+        "Las personas que coleccionan artículos de marca para vestir a su autoridad suelen tener este tipo de personalidad.",
+        "Suelen tener ansiedades vagas y difíciles de concretar y tienden a trasladarlas a su fuerza motriz."
+      ],
+      "name": "Centrados en la autoridad",
+      "strategy": ["", "", "", ""]
+    },
+    "economically": {
+      "detail": [
+        "Este tipo de personalidad es la que persigue la eficacia, con el ego subyacente de **sacar provecho de la propia riqueza**.",
+        "Suelen estar orientados a las especificaciones y tienden a no respetar las marcas. Sin embargo, algunas personas consideran que las marcas son una especie de especificaciones y les dan importancia.",
+        "**No pueden escuchar conversaciones largas** muy bien. Así que intentan comprender **sólo los puntos principales** y tienden a pensar o decir, **“en pocas palabras... ”**."
+      ],
+      "name": "Centrados en la economía",
+      "strategy": ["", "", ""]
+    },
+    "humanely": {
+      "detail": [
+        "Persiguen la socialidad con un ego para **mejorar su virtud**.",
+        "Tienden a fijarse en la personalidad en muchas cosas. Por ejemplo, al elegir un producto en una tienda o algo así, tienden a decidir basándose en el carácter del vendedor que en su calidad.",
+        "Suelen **ser capaces de escuchar conversaciones largas** de principio a fin con una sonrisa. Sin embargo, **no siempre entienden lo esencial**.",
+        "Si sólo vas al grano brevemente, se quedarán con la curiosidad de la introducción, el desarrollo de la historia y no entenderán el resto."
+      ],
+      "name": "Centrados en el ser humano",
+      "strategy": ["", "", "", ""]
+    }
+  }
+}

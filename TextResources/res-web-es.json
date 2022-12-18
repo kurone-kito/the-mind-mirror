@@ -1,0 +1,35 @@
+{
+  "web": {
+    "appearance": {
+      "name": "",
+      "automatic": "⚙️",
+      "dark": "🌙",
+      "light": "☀️"
+    },
+    "author": "",
+    "description": "",
+    "feature": { "body": ["", "", "", "", "", ""], "title": "" },
+    "form": {
+      "birthday": "",
+      "legend": "",
+      "nickname": "",
+      "notes": ["", "", ""],
+      "submit": ""
+    },
+    "install": ["", "", "", "", "", "", "", "", ""],
+    "language": { "automatic": "🌐", "name": "" },
+    "preface": ["", ""],
+    "result": {
+      "genius": { "inner": "", "outer": "", "workStyle": "" },
+      "heading": "",
+      "lifeBase": { "detail": "", "name": "" },
+      "nickname": "",
+      "potential": "",
+      "probed": "¡Mx. {{nickname}} tiene “{{type}}”!",
+      "profile": ""
+    },
+    "seeRepo": "",
+    "share": { "hashtag": "", "tweet": "" },
+    "tooltip": { "summary": "" }
+  }
+}

@@ -11,6 +11,17 @@
     "Packages/*"
   ],
   "cSpell.language": "csharp, en, es, ja",
-  "cSpell.words": ["behaviour", "kito", "kurone", "mathf", "udon"],
+  "cSpell.words": [
+    "behaviour",
+    "demonological",
+    "effortist",
+    "grimoire",
+    "kito",
+    "kurone",
+    "mathf",
+    "saintist",
+    "socialidad",
+    "udon"
+  ],
   "editor.formatOnSave": true
 }

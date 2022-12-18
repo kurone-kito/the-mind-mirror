@@ -1,83 +1,72 @@
-
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
-using VRC.SDKBase;
 
 /// <summary>出版-購読型モデルにおける、サブジェクト側のクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class Subject : SyncBase
+public class Subject : UdonSharpBehaviour
 {
 #pragma warning disable IDE0044
+    /// <summary>非同期的な通知を行うかどうか。</summary>
+    /// <remarks>
+    /// 実行中に、この値を動的に操作しないでください。
+    /// 一部の通知をキャンセルするなど、予期せぬ動作の原因となります。
+    /// </remarks>
+    [SerializeField]
+    private bool asyncable = false;
+
     /// <summary>オブザーバーのリスト。</summary>
+    /// <remarks>
+    /// 非同期モードで実行中に、この値を動的に増減しないでください。
+    /// 一部の通知をキャンセルするなど、予期せぬ動作の原因となります。
+    /// </remarks>
     [SerializeField]
     private Observer[] observers;
 #pragma warning restore IDE0044
 
-    /// <summary>所有者が変化したことをオブザーバーへ通知します。</summary>
-    protected void NotifyGotOwner()
-    {
-        foreach (Observer observer in observers)
-        {
-#pragma warning disable IDE0031
-            if (observer != null)
-            {
-                observer.OnSubjectGotOwner();
-            }
-#pragma warning restore IDE0031
-        }
-    }
-
-    /// <summary>オブジェクトオーナーを奪取・変更します。</summary>
-    public override void ChangeOwner()
-    {
-        base.ChangeOwner();
-        if (IsOwner)
-        {
-            NotifyGotOwner();
-        }
-    }
-
-    /// <summary>
-    /// 所有者が変化したことを受けた際に呼び出す、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnOwnershipTransferred(VRCPlayerApi player)
-    {
-        if (IsOwner)
-        {
-            NotifyGotOwner();
-        }
-    }
-
-    /// <summary>
-    /// プレイヤーがワールドに入室した際に呼び出される、コールバック。
-    /// </summary>
-    /// <param name="player">プレイヤー情報。</param>
-    public override void OnPlayerJoined(VRCPlayerApi player)
-    {
-        if (Networking.LocalPlayer == player)
-        {
-            foreach (Observer observer in observers)
-            {
-                if (observer != null)
-                {
-                    observer.Subject = this;
-                }
-            }
-        }
-    }
+    /// <summary>現在の呼び出し位置。</summary>
+    private int cursor;
 
     /// <summary>オブザーバーを呼び出します。</summary>
-    protected override void Notify()
+    public virtual void Notify()
+    {
+        if (asyncable)
+        {
+            AsyncNotify();
+        }
+        else
+        {
+            SyncNotify();
+        }
+    }
+
+    /// <summary>非同期的にオブザーバーを呼び出します。</summary>
+    public void AsyncNotify()
+    {
+        if (cursor >= observers.Length)
+        {
+            cursor = 0;
+            return;
+        }
+        if (observers[cursor] == null)
+        {
+            cursor++;
+            AsyncNotify();
+            return;
+        }
+        observers[cursor++].OnNotify(this);
+        SendCustomEventDelayedFrames(nameof(AsyncNotify), 1);
+    }
+
+    /// <summary>同期的にオブザーバーを呼び出します。</summary>
+    private void SyncNotify()
     {
         foreach (Observer observer in observers)
         {
-#pragma warning disable IDE0031
-            if (observer != null)
+            if (observer == null)
             {
-                observer.OnNotify();
+                continue;
             }
-#pragma warning restore IDE0031
+            observer.OnNotify(this);
         }
     }
 }

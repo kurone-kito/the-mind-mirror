@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -150,9 +150,10 @@ public sealed class MindDetails : Observer
     /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
     /// </summary>
-    public override void OnNotify()
+    /// <param name="subject">呼び出し元のサブジェクト。</param>
+    public override void OnNotify(Subject subject)
     {
-        base.OnNotify();
+        base.OnNotify(subject);
         if (globalStackManager == null)
         {
             Debug.LogWarning(ERR_NO_GLOBAL_MANAGER);

@@ -1,26 +1,12 @@
-﻿
-using UdonSharp;
+﻿using UdonSharp;
 
 /// <summary>出版-購読型モデルにおける、オブザーバー側のクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class Observer : UdonSharpBehaviour
+public abstract class Observer : UdonSharpBehaviour
 {
-    /// <summary>
-    /// サブジェクト本体。
-    /// </summary>
-    public Subject Subject { get; set; }
-
     /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
     /// </summary>
-    public virtual void OnNotify()
-    {
-    }
-
-    /// <summary>
-    /// サブジェクトの所有権が成立した際に呼び出す、コールバック。
-    /// </summary>
-    public virtual void OnSubjectGotOwner()
-    {
-    }
+    /// <param name="subject">サブジェクト本体。</param>
+    public abstract void OnNotify(Subject subject);
 }

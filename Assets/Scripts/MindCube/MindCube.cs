@@ -64,4 +64,9 @@ public sealed class MindCube : SyncBase
         SendCustomNetworkEvent(NetworkEventTarget.All, command);
         SendCustomEventDelayedFrames(command, 1);
     }
+
+    /// <summary>同期変数のアップデートを通知します。</summary>
+    protected override void Notify()
+    {
+    }
 }

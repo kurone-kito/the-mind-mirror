@@ -1,11 +1,10 @@
-
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 
 /// <summary>同期関係のユーティリティ クラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class SyncBase : UdonSharpBehaviour
+public abstract class SyncBase : UdonSharpBehaviour
 {
     /// <summary>
     /// 同期の要件不備における、エラーメッセージ。
@@ -48,9 +47,7 @@ public class SyncBase : UdonSharpBehaviour
     }
 
     /// <summary>同期変数のアップデートを通知します。</summary>
-    protected virtual void Notify()
-    {
-    }
+    protected abstract void Notify();
 
 
     /// <summary>

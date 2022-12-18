@@ -5,7 +5,7 @@ using UdonSharp;
 public class FallbackResources : UdonSharpBehaviour
 {
     /// <summary>性格の大分類の見出し。</summary>
-    public virtual string GeniusHeading => "性格の大分類";
+    public virtual string GeniusHeading => "Major categories of personality";
 
     /// <summary>性格の大分類の説明。</summary>
     public virtual string GeniusDescription =>
@@ -44,5 +44,5 @@ public class FallbackResources : UdonSharpBehaviour
     public virtual string[] YourTypeIs => new[] { "あなたは", "です。" };
 
     /// <summary>言語種別。</summary>
-    public virtual TypeLanguage Type => TypeLanguage.Japanese;
+    public virtual TypeLanguage Type => TypeLanguage.English;
 }

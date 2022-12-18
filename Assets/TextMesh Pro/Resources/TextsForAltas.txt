@@ -1649,6 +1649,9 @@
 "They also tend to listen smilingly even if they don't understand, so it is more desirable to ask for confirmation at crucial points.",
 "They have a tendency to be easily influenced when they are praised for their kindness and humanity. Also, it is easier to persuade them if you talk to them with a cause that is not for their own sake but for the sake of the people around them."
 
+---
+
+Principales categorías de personalidad
 
 ---
 
@@ -1826,13 +1829,15 @@ Español
 
 - より詳細な性格診断
   - 素質・人生観・潜在能力・思考タイプ
-- EN & ES supports (Help me DeepL;-)
+- Translation / Traducción (Help me DeepL ;-)
 - BGM ないと寂しいよね
 - カッコいいサムネ！
 - さらなる診断機能
   - 相性診断・役割マップ生成
 - QvPen など、実用アセットの導入
 - お部屋のお化粧
+- 性格診断機能の VPM パッケージ化
+  - さらには .NET Core ライブラリ化も
 
 --------------------------------------------------------------------
 
@@ -1843,6 +1848,11 @@ Español
 ---
 
 更新履歴::CHANGELOG
+
+◆ 2022.12.7 v1.1.0 ALPHA
+言語切り替え機能を追加しました。まだ翻訳率は 4% と低いですが、今後のアップデートで翻訳率を上げていきます。
+マインドライターに消去機能を追加しました。自分の性格情報が刻まれたキューブを残したままワールドを去るのは、ちょっと後ろめたいと思う方も安心です！
+マインドキューブが初期化されているかわかりにくいため、初期状態のマインドキューブの色を変更しました。
 
 ◆ 2022.12.4 v1.0.0 ALPHA
 ▶祝！このバージョンをもって Community Labs 入りしました！◀

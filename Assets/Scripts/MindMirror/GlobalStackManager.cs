@@ -6,7 +6,7 @@ using UnityEngine;
 /// グローバルにマインドキューブのスタックを管理するクラス。
 /// </summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-public sealed class GlobalStackManager : Subject
+public sealed class GlobalStackManager : SyncBase
 {
     /// <summary>
     /// コア オブジェクトの接続不備における、エラーメッセージ。
@@ -14,12 +14,22 @@ public sealed class GlobalStackManager : Subject
     private const string ERR_NO_CORE =
         "コア オブジェクトへのリンクが設定されていません。";
 
+    /// <summary>
+    /// サブジェクトの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string ERR_NO_SUBJECT =
+        "サブジェクトへのリンクが設定されていません。";
+
 #pragma warning disable IDE0044
     /// <summary>
     /// マインドキューブをスタックできるコア オブジェクト。
     /// </summary>
     [SerializeField]
     private MindMirror root;
+
+    /// <summary>オブザーバーに対する、呼び出し窓口。</summary>
+    [SerializeField]
+    private Subject subject;
 #pragma warning restore IDE0044
 
     /// <summary>マインドキューブのインデックス。</summary>
@@ -74,6 +84,11 @@ public sealed class GlobalStackManager : Subject
     /// <summary>オブザーバーを呼び出します。</summary>
     protected override void Notify()
     {
+        if (subject == null)
+        {
+            Debug.LogError(ERR_NO_SUBJECT);
+            return;
+        }
         if (root == null)
         {
             Debug.LogWarning(ERR_NO_CORE);
@@ -91,6 +106,6 @@ public sealed class GlobalStackManager : Subject
         {
             root.MindCube = null;
         }
-        base.Notify();
+        subject.Notify();
     }
 }

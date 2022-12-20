@@ -7,4 +7,7 @@ public enum TypeResponse : byte
     /// <summary>裏方タイプ。</summary>
     /// <remark>周囲を常に仲間で固めた方が、良く動けるタイプ。</remark>
     Mind,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

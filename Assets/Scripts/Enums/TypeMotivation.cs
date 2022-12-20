@@ -13,4 +13,7 @@ public enum TypeMotivation : byte
     SkillUp,
     /// <summary>周囲と異なることができる環境。</summary>
     Status,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

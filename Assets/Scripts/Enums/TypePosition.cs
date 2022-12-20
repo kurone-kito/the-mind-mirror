@@ -9,4 +9,7 @@ public enum TypePosition : byte
     Direct,
     /// <summary>営業タイプ。</summary>
     Quick,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

@@ -7,4 +7,7 @@ public enum TypeBrain : byte
     /// <summary>右脳タイプ。</summary>
     /// <remarks>直感的思考に優位性を持ちます。</remarks>
     Right,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

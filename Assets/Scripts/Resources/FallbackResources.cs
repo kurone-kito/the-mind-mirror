@@ -4,44 +4,94 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class FallbackResources : UdonSharpBehaviour
 {
-    /// <summary>性格の大分類の見出し。</summary>
-    public virtual string GeniusHeading => "Major categories of personality";
+    /// <summary>今後の解説拡充予告のメッセージ。</summary>
+    public virtual string ComingSoon =>
+         "We'll be adding more clairvoyant results in the future!";
 
     /// <summary>性格の大分類の説明。</summary>
     public virtual string GeniusDescription =>
-        $"人の性格は大きく 3 つ、{GeniusTypes[(int)TypeGenius.Authority]}、{GeniusTypes[(int)TypeGenius.Economically]}、{GeniusTypes[(int)TypeGenius.Humanely]} に分類できます。";
+        $"There are three main types of humans personality: “{GeniusTypes[(int)TypeGenius.Authority]}”, “{GeniusTypes[(int)TypeGenius.Economically]}”, and “{GeniusTypes[(int)TypeGenius.Humanely]}”.";
+
+    /// <summary>性格の大分類の見出し。</summary>
+    public virtual string GeniusHeading =>
+        "Major categories of personality";
 
     /// <summary>性格の大分類の種別ごとの見出し。</summary>
     public virtual string[] GeniusTypes =>
-        new[] { "アート脳タイプ", "理系脳タイプ", "文系脳タイプ" };
+        new[]
+        {
+            "Focused on authority",
+            "Focused on economically",
+            "Focused on humanely",
+        };
 
     /// <summary>性格の大分類の種別ごとの説明。</summary>
-    public virtual string[][] GeniusTypesDescriptions => new[]
-    {
+    public virtual string[][] GeniusTypesDescriptions =>
         new[]
         {
-            "<b>己の権威のため</b>を根底のエゴとし、将来性を追求するタイプです。",
-            $"{GeniusTypes[(int)TypeGenius.Authority]}は、<b>長話を聞けません</b>。重要な話でないと判断した途端、スマホをいじったり、居眠りしたりなど、<b>露骨に話を聞かなく</b>なります。",
-            $"ブランドモノだから、と言う理由でブランドものを集める人は、概ね{GeniusTypes[(int)TypeGenius.Authority]}の傾向があります。",
-            "漠然とした、具現化しにくい不安を持っている人が多く、またその不安を原動力に転嫁しやすい特性があります。",
-        },
-        new[]
-        {
-            "<b>己の富のため</b>を根底のエゴとし、効率性を追求するタイプです。",
-            "スペック至上主義の傾向があり、ブランドものを軽視する傾向が強いです。ただし、ブランドも一種のスペックと考え、重視する人も稀にいます。",
-            $"{GeniusTypes[(int)TypeGenius.Economically]}は、<b>長話を聞けません</b>。“<b>つまりこういうことだよね？</b>”と、脳内で<b>要点だけかいつまんで理解</b>しようとします。",
-        },
-        new[]
-        {
-            "<b>己の人格のため</b>を根底のエゴとし、社会性を追求するタイプです。",
-            "多くのことに対し、人柄に重点を置きがちで、店とかで商品を選ぶ際、スペック関係ないのに、販売員の人柄で決めてしまったりする傾向があります。",
-            $"{GeniusTypes[(int)TypeGenius.Humanely]}は、総じて長話をちゃんとニコニコ最初から最後まで聞ける傾向があります。ただし<b>頭に入っているかどうかは別の話</b>。",
-            "話を端折ると“なんで？”となり、その後の話が理解できなくなりがちです。家族で映画とか見る時、勝手にシークバーいじって顰蹙買うことも。",
-        },
-    };
+            new[]
+            {
+                "They have an underlying <b>ego for their authority</b>and a personality that <b>pursues their future potential</b>.",
+                $"They cannot listen to long talks. As soon as they decide that something is not essential, they blatantly stop listening to the conversation, such as playing with their phones or dozing off.",
+                $"People who collect brand-name goods to dress up for their authority tend to have this personality type.",
+                "They tend to have vague, hard-to-realize anxieties and tend to transfer them to their driving force.",
+            },
+            new[]
+            {
+                "This personality type is the pursues efficiency, with the underlying ego being for the <b>sake of one's own wealth</b>.",
+                "They tend to be specs-oriented and tend to disrespect brands. However, some rare people consider brands to be a kind of specs and place importance on them.",
+                $"<b>They cannot listen to long conversations</b> very well. So they try to understand <b>only the main points</b> and tend to think or say, “<b>in a nutshell...</b>”.",
+            },
+            new[]
+            {
+                "They pursue sociality with an ego to <b>improve their virtue</b>.",
+                "They tend to focus on personality in many things. For example, when choosing a product at a store or something, they tend to decide based on the salesperson's character than its quality.",
+                $"They tend to <b>be able to listen to long conversations</b> from beginning to end with a smile. However, they <b>can't always understand to gist</b>.",
+                "If you only get to the point briefly, they will be curious about the introduction, development of the story and not understanding its rest.",
+            },
+        };
 
-    /// <summary>各項目のタイプ見出しの前置詞および後置詞。</summary>
-    public virtual string[] YourTypeIs => new[] { "あなたは", "です。" };
+    /// <summary>3 種類の素質の名前。</summary>
+    public virtual string[] ThreeTypedGeniusName =>
+        new[] { "Inner", "Outer", "Workstyle" };
+
+    /// <summary>3 種類の素質の各解説。</summary>
+    public virtual string[] ThreeTypedGeniusTypesDescription =>
+        new[]
+        {
+            "the underlying personality",
+            "the personality that comes out when you don't trust the other person",
+            "the personality when you are focused or in an emergency"
+        };
+
+    /// <summary>
+    /// 空のマインドキューブを挿入した際の、警告メッセージ。
+    /// </summary>
+    public virtual string WarnOnInsertTheEmptyMindCube =>
+         @"The Mind Cube, used to clairvoyance your personality, is <b>empty</b>.
+Since clairvoyant is impossible in this state, please write your information in the Mind Writer in the previous room and try again.";
+
+    /// <summary>ページ番号のテンプレート。</summary>
+    public virtual string TemplatePages => "Pages: {0}/{1}";
+
+    /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
+    public virtual string TemplateYourTypeIs =>
+        "Your type is“<b>{0}</b>”!";
+
+    /// <summary>説明サイズ。</summary>
+    public virtual int SizeDescription => 200;
+
+    /// <summary>詳細サイズ。</summary>
+    public virtual int SizeDetails => 200;
+
+    /// <summary>見出しサイズ。</summary>
+    public virtual int SizeHeading => 400;
+
+    /// <summary>行サイズ。</summary>
+    public virtual int SizeLine => 105;
+
+    /// <summary>小見出しサイズ。</summary>
+    public virtual int SizeSubHeading => 320;
 
     /// <summary>言語種別。</summary>
     public virtual TypeLanguage Type => TypeLanguage.English;

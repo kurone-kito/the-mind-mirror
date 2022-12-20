@@ -10,9 +10,14 @@ using TDI = TypeDetailIndex;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public sealed class MindDetails : Observer
 {
-    private const string TAG_HEADING = "<align=\"center\"><size=540>";
+    /// <summary>中央寄せ。</summary>
+    private const string CENTER = "<align=\"center\">";
 
-    private const string TAG_DESCRIPTION = "<align=\"center\"><size=480>";
+    /// <summary>両端揃えの左寄せ。</summary>
+    private const string JUSTIFY = "<align=\"justified\">";
+
+    /// <summary>右寄せ。</summary>
+    private const string RIGHT = "<align=\"right\">";
 
     /// <summary>
     /// グローバル スタックの接続不備における、エラーメッセージ。
@@ -31,12 +36,11 @@ public sealed class MindDetails : Observer
     /// 簡易ビューアのページにおける、見出しメッセージ。
     /// </summary>
     private const string INFO_PARAMS_HEADING =
-        TAG_HEADING +
-        @"(暫定版)パラメーター情報
+        CENTER +
+        @"<size=540>(暫定版)パラメーター情報
 <align=""center""><size=330>この表示値の解説は、今後のアップデートで追加いたします。
 (暗い色のパラメーターは日本語解説対応済み)
 <align=""left"">";
-
 
     /// <summary>既定の表示コンテンツ。</summary>
     private readonly string[] defaultContents = new[] { string.Empty };
@@ -115,11 +119,14 @@ public sealed class MindDetails : Observer
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         byte genius = MasterData.DetailsMap()[vars.Inner][(int)TDI.Genius];
         FallbackResources res = ResourcesManager.Resources;
-        string head = $"{TAG_HEADING}{res.GeniusHeading}";
-        string desc = $"<size=330>{res.GeniusDescription}";
-        string copy = $"{TAG_DESCRIPTION}{res.YourTypeIs[0]}{res.GeniusTypes[genius]}{res.YourTypeIs[1]}";
+        string lh = $"<line-height={res.SizeLine}%>";
+        string br = $"\n<line-height={res.SizeLine / 2}%>\n{lh}";
+        string head = $"{CENTER}<size={res.SizeHeading}>{res.GeniusHeading}";
+        string desc = $"{JUSTIFY}<size={res.SizeDescription}>{res.GeniusDescription}";
+        string copy = $"{CENTER}<size={res.SizeSubHeading}>{res.YourTypeIs[0]}{res.GeniusTypes[genius]}{res.YourTypeIs[1]}";
         string details = string.Join("\n▶", res.GeniusTypesDescriptions[genius]);
-        return $"{head}\n{desc}\n{copy}\n<align=\"left\"><size=330>▶{details}\n<align=\"right\"><size=256>▶今後もっと解説を拡充していきます！◀";
+        string detailsWithTag = $"{JUSTIFY}<size={res.SizeDetails}>▶{details}";
+        return $"{lh}{head}{br}{desc}{br}{copy}{br}{detailsWithTag}\n{RIGHT}<size=240>▶今後もっと解説を拡充していきます！◀";
     }
 
     // TODO: このメソッドはどこからも参照していないが、値の取得の参考用に当面残しておく。

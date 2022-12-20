@@ -5218,6 +5218,7 @@ MonoBehaviour:
   - {fileID: 946114903}
   - {fileID: 199092683}
   - {fileID: 911383058}
+  - {fileID: 2049682028}
   availableResources:
   - {fileID: 1340775373}
   - {fileID: 415890515}
@@ -8684,6 +8685,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73b2bdd812a4d242bbdfe454127426f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2049682028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6574421037777846201, guid: 90ba38480d02ee54fab793eb7584dd43,
+    type: 3}
+  m_PrefabInstance: {fileID: 5178387091954019222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af020fd21b54214d8818ac20c8284c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2049942065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7684241992314844021, guid: a2457fe84a5daa54ea409491cb56189a,
@@ -9529,6 +9542,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506022390}
     m_Modifications:
+    - target: {fileID: -7358182386462313898, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: -7358182386462313898, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+    - target: {fileID: 662814965169239397, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 662814965169239397, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
     - target: {fileID: 5178387092549310858, guid: 90ba38480d02ee54fab793eb7584dd43,
         type: 3}
       propertyPath: m_Name
@@ -9638,6 +9663,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574421037777846201, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 6574421037777846201, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+    - target: {fileID: 6892982768752536120, guid: 90ba38480d02ee54fab793eb7584dd43,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ba38480d02ee54fab793eb7584dd43, type: 3}

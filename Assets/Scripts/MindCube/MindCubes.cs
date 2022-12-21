@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>マインドキューブへのリンクを管理するクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-public sealed class MindCubes : UdonSharpBehaviour
+public sealed class MindCubes : ResourcesObserver
 {
 #pragma warning disable IDE0044
     /// <summary>マインドキューブ一覧。</summary>

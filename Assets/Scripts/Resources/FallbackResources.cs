@@ -88,7 +88,7 @@ Since clairvoyant is impossible in this state, please write your information in 
     public virtual int SizeHeading => 400;
 
     /// <summary>行サイズ。</summary>
-    public virtual int SizeLine => 105;
+    public virtual int SizeLine => 72;
 
     /// <summary>小見出しサイズ。</summary>
     public virtual int SizeSubHeading => 320;

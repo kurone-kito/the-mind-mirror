@@ -85,7 +85,7 @@ public sealed class JaResources : FallbackResources
     public override int SizeHeading => 500;
 
     /// <summary>説明サイズ。</summary>
-    public override int SizeLine => 90;
+    public override int SizeLine => 85;
 
     /// <summary>小見出しサイズ。</summary>
     public override int SizeSubHeading => 480;

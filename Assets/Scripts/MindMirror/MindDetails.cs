@@ -3,44 +3,17 @@ using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 
-using RES = Parameters;
 using TDI = TypeDetailIndex;
 
 /// <summary>マインドキューブの情報ビューア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-public sealed class MindDetails : Observer
+public sealed class MindDetails : ResourcesObserver
 {
-    /// <summary>中央寄せ。</summary>
-    private const string CENTER = "<align=\"center\">";
-
-    /// <summary>両端揃えの左寄せ。</summary>
-    private const string JUSTIFY = "<align=\"justified\">";
-
-    /// <summary>右寄せ。</summary>
-    private const string RIGHT = "<align=\"right\">";
-
     /// <summary>
     /// グローバル スタックの接続不備における、エラーメッセージ。
     /// </summary>
     private const string ERR_NO_GLOBAL_MANAGER =
         "グローバル スタックへのリンクが設定されていません。";
-
-    /// <summary>
-    /// マインドキューブの状態不備における、エラーメッセージ。
-    /// </summary>
-    private const string WARN_INSERTED_THE_EMPTY_MIND_CUBE =
-        @"<align=""center"">診断するマインドキューブが抜け殻のようで、診断ができません。
-<align=""center"">お隣の部屋のマインドライターで魂の情報を書き込んでから、再度お試しください。";
-
-    /// <summary>
-    /// 簡易ビューアのページにおける、見出しメッセージ。
-    /// </summary>
-    private const string INFO_PARAMS_HEADING =
-        CENTER +
-        @"<size=540>(暫定版)パラメーター情報
-<align=""center""><size=330>この表示値の解説は、今後のアップデートで追加いたします。
-(暗い色のパラメーターは日本語解説対応済み)
-<align=""left"">";
 
     /// <summary>既定の表示コンテンツ。</summary>
     private readonly string[] defaultContents = new[] { string.Empty };
@@ -105,8 +78,8 @@ public sealed class MindDetails : Observer
     /// <summary>描画状態を更新します。</summary>
     private void UpdateContents()
     {
-        paginationLabel.text =
-            $"{currentPage + 1}/{contents.Length} ページ";
+        paginationLabel.text = ResourcesManager.Resources.GetPages(
+            currentPage + 1, contents.Length);
         details.text = contents[currentPage];
     }
 
@@ -118,41 +91,10 @@ public sealed class MindDetails : Observer
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         byte genius = MasterData.DetailsMap()[vars.Inner][(int)TDI.Genius];
-        FallbackResources res = ResourcesManager.Resources;
-        string lh = $"<line-height={res.SizeLine}%>";
-        string br = $"\n<line-height={res.SizeLine / 2}%>\n{lh}";
-        string head = $"{CENTER}<size={res.SizeHeading}>{res.GeniusHeading}";
-        string desc = $"{JUSTIFY}<size={res.SizeDescription}>{res.GeniusDescription}";
-        string copy = $"{CENTER}<size={res.SizeSubHeading}>{res.YourTypeIs[0]}{res.GeniusTypes[genius]}{res.YourTypeIs[1]}";
-        string details = string.Join("\n▶", res.GeniusTypesDescriptions[genius]);
-        string detailsWithTag = $"{JUSTIFY}<size={res.SizeDetails}>▶{details}";
-        return $"{lh}{head}{br}{desc}{br}{copy}{br}{detailsWithTag}\n{RIGHT}<size=240>▶今後もっと解説を拡充していきます！◀";
+        string content = PageGenerator.CreateGeniusPage(genius);
+        string comingSoon = PageGenerator.CreateComingSoon();
+        return $"{content}\n{comingSoon}";
     }
-
-    // TODO: このメソッドはどこからも参照していないが、値の取得の参考用に当面残しておく。
-#pragma warning disable IDE0051
-    /// <summary>
-    /// 簡易ビューアーのページの文言を取得します。
-    /// </summary>
-    /// <returns>簡易ビューアーのページの文言。</returns>
-    private string GetParametersPage()
-    {
-        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        string[] dgRes = RES.DetailedGenius();
-        string[] lbRes = RES.Lifebase();
-        string[] ptRes = RES.Potential();
-        byte[] dt = MasterData.DetailsMap()[vars.Inner];
-        string io = $"Inner: {dgRes[vars.Inner]} <pos=50%>Outer: {dgRes[vars.Outer]}";
-        string workstyle = $"Workstyle: {dgRes[vars.WorkStyle]} <pos=50%>Cycle: {vars.Cycle}";
-        string lifebase = $"Lifebase: {lbRes[vars.LifeBase]}";
-        string pb = $"Potential: {ptRes[vars.PotentialA]} - {ptRes[vars.PotentialB]} <pos=50%>Brain: {RES.Brain()[dt[(int)TDI.Brain]]}";
-        string cm = $"Communication: {RES.Communication()[dt[(int)TDI.Communication]]} <pos=50%>Management: {RES.Management()[dt[(int)TDI.Management]]}";
-        string genius = $"<color=#a0a0a0>Genius: {RES.GeneralGenius()[dt[(int)TDI.Genius]]}</color>";
-        string motivation = $"Motivation: {RES.Motivation()[dt[(int)TDI.Motivation]]}";
-        string pr = $"Position: {RES.Position()[dt[(int)TDI.Position]]} <pos=50%>Response: {RES.Response()[dt[(int)TDI.Response]]}";
-        return $"{INFO_PARAMS_HEADING}\n{io}\n{workstyle}\n{lifebase}\n{pb}\n{cm}\n{genius}\n{motivation}\n{pr}";
-    }
-#pragma warning restore IDE0051
 
     /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
@@ -177,7 +119,7 @@ public sealed class MindDetails : Observer
         }
         if (cube.Parameter == uint.MaxValue)
         {
-            contents = new[] { WARN_INSERTED_THE_EMPTY_MIND_CUBE };
+            contents = PageGenerator.CreateInvalidCubePage();
             UpdateContents();
             return;
         }

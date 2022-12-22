@@ -241,6 +241,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!4 &26769485 stripped
@@ -2560,6 +2571,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!4 &559351749 stripped
@@ -4194,6 +4216,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4282,6 +4326,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 804555073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &804555075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 804555073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &804949567
 Mesh:
   m_ObjectHideFlags: 0
@@ -5299,6 +5355,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5387,6 +5465,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1033275734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033275736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033275734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1034890926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6660602826397831363, guid: 332771f9f14b09740899cd0b12536481,
@@ -5471,6 +5561,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!4 &1051006346 stripped
@@ -5587,6 +5688,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!4 &1098521100 stripped
@@ -5882,6 +5994,18 @@ MonoBehaviour:
   - {fileID: 690416231}
   - {fileID: 1844939866}
   - {fileID: 109887521}
+  - {fileID: 608105468}
+  - {fileID: 26769488}
+  - {fileID: 1051006349}
+  - {fileID: 1098521103}
+  - {fileID: 946114903}
+  - {fileID: 199092683}
+  - {fileID: 804555075}
+  - {fileID: 1033275736}
+  - {fileID: 1970817777}
+  - {fileID: 2978402062176573349}
+  - {fileID: 2002467977}
+  - {fileID: 1878783136}
   availableResources:
   - {fileID: 1340775373}
   - {fileID: 415890515}
@@ -8353,6 +8477,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!4 &1794471287 stripped
@@ -8910,6 +9045,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -8998,6 +9155,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1878783134}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1878783136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878783134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902593691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7759975337961293073, guid: 1db4b7c29cd922e40b128cf257fce8af,
@@ -9188,6 +9357,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9276,6 +9467,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1970817775}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970817777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1970817775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1972728382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6660602826397831363, guid: 332771f9f14b09740899cd0b12536481,
@@ -9294,6 +9497,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9382,6 +9607,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2002467975}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2002467977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 2002467975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2004846892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10328,6 +10565,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MindDetails
       objectReference: {fileID: 0}
+    - target: {fileID: 2566760133514599736, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3165188615595575163, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3d00dc8dbda0045ab27b8ac4d20cdf, type: 3}
 --- !u!1001 &1467712333316960747
@@ -10423,6 +10671,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeReleaseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1926916247412925609, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2716604356874630746, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+    - target: {fileID: 3764373223239388311, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+        type: 3}
     - target: {fileID: 4814274097771584173, guid: 17a7e5ea17b426646bbdcf5081af12ab,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -10511,6 +10781,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2978402062176573347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2978402062176573349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4451301071413941691, guid: 17a7e5ea17b426646bbdcf5081af12ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 2978402062176573347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ffdef32def2a479f3457caab93ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5178387091954019222
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 /// <summary>リスク管理のタイプ定義。</summary>
-public enum TypeManagement : byte
+public enum TypeManagement : int
 {
     /// <summary>リスク重視。</summary>
     /// <remarks>リスク・リターンともに小さくなりがちなタイプ。</remarks>

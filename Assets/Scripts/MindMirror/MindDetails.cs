@@ -30,6 +30,14 @@ public sealed class MindDetails : ResultPreviewerBase
     private Text nameLabel;
 #pragma warning restore IDE0054
 
+    private string GetDetailedGeniusPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        string content = PageGenerator.CreateDetailedGeniusPage(vars.Inner);
+        string comingSoon = PageGenerator.CreateComingSoon();
+        return $"{content}\n{comingSoon}";
+    }
+
     /// <summary>
     /// 性格の大分類のページの文言を取得します。
     /// </summary>
@@ -38,9 +46,7 @@ public sealed class MindDetails : ResultPreviewerBase
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         byte genius = MasterData.DetailsMap()[vars.Inner][(int)TDI.Genius];
-        string content = PageGenerator.CreateGeniusPage(genius);
-        string comingSoon = PageGenerator.CreateComingSoon();
-        return $"{content}\n{comingSoon}";
+        return PageGenerator.CreateGeniusPage(genius);
     }
 
     /// <summary>
@@ -70,7 +76,7 @@ public sealed class MindDetails : ResultPreviewerBase
             UpdateContents();
             return;
         }
-        Contents = new[] { GetGeniusPage() };
+        Contents = new[] { GetGeniusPage(), GetDetailedGeniusPage() };
         nameLabel.text = cube.CubeName;
         UpdateContents();
     }

@@ -1,5 +1,5 @@
 /// <summary>モチベーションが出やすい環境タイプ定義。</summary>
-public enum TypeMotivation : byte
+public enum TypeMotivation : int
 {
     /// <summary>他人と比べられるような環境。</summary>
     Competition,

@@ -49,93 +49,93 @@
         "outer": "",
         "workStyle": ""
       },
-      "detail": "",
+      "detail": "Una personalidad más detallada e innata. Se clasifica en 12 tipos.",
       "inner": "",
-      "name": "",
+      "name": "Tipo de genio",
       "outer": "",
       "workStyle": ""
     },
     "100": {
       "detail": ["", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo el perfeccionismo",
       "strategy": ["", ""],
+      "summary": "Son severos y testarudos, ¡como un hombre de negocios de primera que no muestra debilidad!",
       "weak": ["", "", ""]
     },
     "108": {
       "detail": ["", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo el naturalismo",
       "strategy": ["", ""],
+      "summary": "Son tímidos, pero una vez que te acostumbras a ellos, son honestos hasta la exageración.",
       "weak": ["", "", ""]
     },
     "125": {
       "detail": ["", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo el romántico",
       "strategy": ["", "", ""],
+      "summary": "Sin rival en sueños y autodisciplina. Directo a la meta a largo plazo.",
       "weak": ["", ""]
     },
     "555": {
       "detail": ["", "", ""],
-      "name": "",
+      "name": "Tipo el sin prisas",
       "strategy": [""],
-      "summary": "",
+      "summary": "Equilibrada, capaz y solidaria, una posición heroica.",
       "weak": ["", "", ""]
     },
     "789": {
       "detail": ["", "", "", ""],
-      "name": "",
+      "name": "Tipo el autoridad",
       "strategy": ["", "", "", ""],
-      "summary": "",
+      "summary": "Una persona con talento que sabe dividir los papeles respetando los logros y la experiencia.",
       "weak": ["", ""]
     },
     "888": {
       "detail": ["", ""],
-      "name": "",
+      "name": "Tipo el Retador",
       "strategy": [""],
-      "summary": "",
+      "summary": "Son ingenuos y curiosos. No les importa si algo no funciona; seguirán intentándolo.",
       "weak": ["", ""]
     },
     "919": {
       "detail": ["", "", ""],
-      "name": "",
+      "name": "Tipo el Socialice",
       "strategy": ["", ""],
-      "summary": "",
+      "summary": "Son buenos negociadores y prefieren la estrategia a corto plazo.",
       "weak": ["", ""]
     },
     "000": {
       "detail": ["", "", ""],
-      "name": "",
+      "name": "Tipo el espiritual",
       "strategy": ["", "", ""],
-      "weak": ["", ""],
-      "summary": ""
+      "summary": "Prefieren vagar sin rumbo y utilizar la intuición aguda y los destellos de inspiración.",
+      "weak": ["", ""]
     },
     "001": {
       "detail": ["", "", ""],
-      "name": "",
+      "name": "Tipo lobo solitario",
       "weak": ["", ""],
-      "strategy": ["", "", "", ""],
-      "summary": ""
+      "summary": "Las palabras “excéntrico”, “friki” o “raro” son un cumplido para ellos. Hacen a su manera como un lobo solitario.",
+      "strategy": ["", "", "", ""]
     },
     "012": {
       "detail": ["", "", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo primeros adoptantes",
+      "summary": "Son early adopters a los que les encanta lo nuevo y persiguen la frescura cada día.",
       "strategy": ["", ""],
       "weak": ["", "", "", ""]
     },
     "024": {
       "detail": ["", "", "", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo el esforzador",
+      "summary": "Son impacientes y tienen un fuerte impulso.",
       "strategy": ["", "", ""],
       "weak": ["", ""]
     },
     "025": {
       "detail": ["", "", ""],
-      "name": "",
-      "summary": "",
+      "name": "Tipo el saintist",
+      "summary": "Son personas que aman a los demás y son personalidades bien informadas.",
       "strategy": ["", ""],
       "weak": ["", ""]
     }

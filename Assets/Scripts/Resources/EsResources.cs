@@ -1,4 +1,4 @@
-using UdonSharp;
+﻿using UdonSharp;
 
 /// <summary>スペイン語テキスト リソース群。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -8,16 +8,59 @@ public sealed class EsResources : FallbackResources
     public override string ComingSoon =>
          "¡En el futuro añadiremos más resultados clarividentes!";
 
+    /// <summary>素質の解説。</summary>
+    public override string DetailedGeniusDescription =>
+        "Una personalidad más detallada e innata. Se clasifica en 12 tipos.";
+
+    /// <summary>素質の見出し。</summary>
+    public override string DetailedGeniusHeading => "Tipo de genio";
+
+    /// <summary>素質の見出し。</summary>
+    public override string[] DetailedGeniusTypeName =>
+        new[]
+        {
+            "Tipo el espiritual",
+            "Tipo lobo solitario",
+            "Tipo primeros adoptantes",
+            "Tipo el esforzador",
+            "Tipo el saintist",
+            "Tipo el perfeccionismo",
+            "Tipo el naturalismo",
+            "Tipo el romántico",
+            "Tipo el sin prisas",
+            "Tipo el autoridad",
+            "Tipo el Retador",
+            "Tipo el Socialice",
+        };
+
+    /// <summary>素質のキャッチコピー。</summary>
+    public override string[] DetailedGeniusTypeSummary =>
+        new[]
+        {
+            "Prefieren vagar sin rumbo y utilizar la intuición aguda y los destellos de inspiración.",
+            "Las palabras “excéntrico”, “friki” o “raro” son un cumplido para ellos. Hacen a su manera como un lobo solitario.",
+            "Son primeros adopters a los que les encanta lo nuevo y persiguen la frescura cada día.",
+            "Son impacientes y tienen un fuerte impulso.",
+            "Son personas que aman a los demás y son personalidades bien informadas.",
+            "Son severos y testarudos, ¡como un hombre de negocios de primera que no muestra debilidad!",
+            "Son tímidos, pero una vez que te acostumbras a ellos, son honestos hasta la exageración.",
+            "Sin rival en sueños y autodisciplina. Directo a la meta a largo plazo.",
+            "Equilibrada, capaz y solidaria, una posición heroica.",
+            "Una persona con talento que sabe dividir los papeles respetando los logros y la experiencia.",
+            "Son ingenuos y curiosos. No les importa si algo no funciona; seguirán intentándolo.",
+            "Son buenos negociadores y prefieren la estrategia a corto plazo.",
+        };
+
     /// <summary>性格の大分類の説明。</summary>
     public override string GeniusDescription =>
-        $"Hay tres tipos principales de personalidad humana: “{GeniusTypes[(int)TypeGenius.Authority]}”, “{GeniusTypes[(int)TypeGenius.Economically]}”, y “{GeniusTypes[(int)TypeGenius.Humanely]}”.";
+        $"Hay tres tipos principales de personalidad humana: “{GeniusTypesName[(int)TypeGenius.Authority]}”, “{GeniusTypesName[(int)TypeGenius.Economically]}”, y “{GeniusTypesName[(int)TypeGenius.Humanely]}”.";
 
     /// <summary>性格の大分類の見出し。</summary>
     public override string GeniusHeading =>
         "Principales categorías de personalidad";
 
     /// <summary>性格の大分類の種別ごとの見出し。</summary>
-    public override string[] GeniusTypes =>
+    public override string[] GeniusTypesName =>
         new[]
         {
             "Centrados en la autoridad",
@@ -26,7 +69,7 @@ public sealed class EsResources : FallbackResources
         };
 
     /// <summary>性格の大分類の種別ごとの説明。</summary>
-    public override string[][] GeniusTypesDescriptions =>
+    public override string[][] GeniusTypesDetails =>
         new[]
         {
             new[]

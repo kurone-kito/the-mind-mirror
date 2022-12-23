@@ -1,5 +1,5 @@
 /// <summary>大まか素質タイプ定義。</summary>
-public enum TypeGenius : byte
+public enum TypeGenius : int
 {
     /// <summary>アート脳タイプ: 自己権威に重きを置く、素質タイプ。</summary>
     Authority,

@@ -1,5 +1,5 @@
 /// <summary>行動を起こす際の、潜在能力タイプ定義。</summary>
-public enum TypePotential : byte
+public enum TypePotential : int
 {
     /// <summary>分析・応用力に優れ、一つのものを追求する能力。</summary>
     Ci,

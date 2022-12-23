@@ -1,8 +1,8 @@
 ◆ 今後のアップデートの予定 ◆
 
 - より詳細な性格診断
-  - 現在 3 通りのみですが、今後数万通りのパターンになります！
-  - 素質・人生観・潜在能力・思考タイプ
+  - 現在 12 通りのみですが、今後数万通りのパターンになります！
+  - 素質における弱点や攻略法・人生観・潜在能力・思考タイプ
 - もっと翻訳進めなきゃ (Help me DeepL ;-)
 - BGM ないと寂しいよね
 - カッコいいサムネ！
@@ -24,8 +24,8 @@
 ◆ Upcoming Updates ◆
 
 - More detailed personality clairvoyance
-  - There are only 3, but there will be tens of thousands of patterns in the future!
-  - Genius, Lifebase, Potential, and thinking type
+  - There are only 12, but there will be tens of thousands of patterns in the future!
+  - Weaknesses and strategies in its genius, Lifebase, Potential, and thinking type
 - Translation (Help me DeepL ;-)
 - BGM is lonely without it
 - Replace with an excellent thumbnail!
@@ -47,8 +47,8 @@
 ◆ Próximas actualizaciones ◆
 
 - Más detalles sobre la clairvoyance de la personalidad
-  - Actualmente hay solo 3, pero habrá miles de patrones en el futuro!
-  - Genio, base vital, potencial y tipo de pensamiento
+  - Actualmente hay solo 12, pero habrá miles de patrones en el futuro!
+  - Debilidades y estrategias en su genio, base vital, potencial y tipo de pensamiento
 - Traducción (Ayúdame DeepL ;-)
 - BGM es triste sin él
 - ¡Sustitúyalo por una excelente miniatura!

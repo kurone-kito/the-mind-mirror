@@ -1,5 +1,5 @@
 /// <summary>詳細な素質タイプ定義。</summary>
-public enum TypeDetailedGenius : byte
+public enum TypeDetailedGenius : int
 {
     /// <summary>敏感タイプ。</summary>
     /// <remarks>直感と閃きを武器に、無目的な放浪が好きなタイプ。</remarks>

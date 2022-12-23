@@ -1,5 +1,5 @@
 /// <summary>素質を持つ、立ち位置タイプ定義。</summary>
-public enum TypePosition : byte
+public enum TypePosition : int
 {
     /// <summary>渉外・調整タイプ。</summary>
     Adjust,

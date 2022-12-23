@@ -1,5 +1,5 @@
 /// <summary>根底となる人生観のタイプ定義。</summary>
-public enum TypeLifebase : byte
+public enum TypeLifebase : int
 {
     /// <summary>何でも自主体験する自分でありたいタイプ。</summary>
     Application,

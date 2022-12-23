@@ -1,5 +1,5 @@
 /// <summary>思考タイプ定義。</summary>
-public enum TypeBrain : byte
+public enum TypeBrain : int
 {
     /// <summary>左脳タイプ。</summary>
     /// <remarks>論理的思考に優位性を持ちます。</remarks>

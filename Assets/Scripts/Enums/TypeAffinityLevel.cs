@@ -1,5 +1,5 @@
 /// <summary>性格同士の相性のレベル定義。</summary>
-public enum TypeAffinityLevel : byte
+public enum TypeAffinityLevel : int
 {
     /// <summary>あまり良くない。</summary>
     Hmm,

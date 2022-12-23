@@ -24,6 +24,18 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 PageGenerator.CreateGeniusPage((int)TypeGenius.Authority),
                 PageGenerator.CreateGeniusPage((int)TypeGenius.Economically),
                 PageGenerator.CreateGeniusPage((int)TypeGenius.Humanely),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A000),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E001),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H012),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A024),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H025),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A100),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H108),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E125),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E555),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H789),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A888),
+                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E919),
             };
     }
 

@@ -23,19 +23,39 @@ public static class PageGenerator
         return $"{RIGHT}<size=230>▶{res.ComingSoon}◀</size>";
     }
 
+    /// <summary>素質ページの文言を取得します。</summary>
+    /// <param name="genius">素質タイプ。</param>
+    /// <returns>素質ページの文言。</returns>
+    public static string CreateDetailedGeniusPage(int genius)
+    {
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.DetailedGeniusTypeName[genius]);
+        return CreateByTemplate(
+            res.DetailedGeniusHeading,
+            res.DetailedGeniusDescription,
+            $"{res.DetailedGeniusTypeSummary[genius]}: {copy}",
+            res.DetailedGeniusTypeDetails[genius]);
+    }
+
     /// <summary>性格の大分類のページの文言を取得します。</summary>
     /// <param name="genius">大まかな性格タイプ。</param>
     /// <returns>性格の大分類のページの文言。</returns>
     public static string CreateGeniusPage(int genius)
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        string lh = $"<line-height={res.SizeLine}%>";
-        string br = $"</line-height>\n<line-height={res.SizeLine / 3}%>\n</line-height>{lh}";
-        string head = $"{CENTER}<size={res.SizeHeading}>{res.GeniusHeading}</size>";
-        string desc = $"{JUSTIFY}<size={res.SizeDescription}>{res.GeniusDescription}</size>";
-        string copy = $"{CENTER}<size={res.SizeSubHeading}>{res.YourTypeIs[0]}{res.GeniusTypes[genius]}{res.YourTypeIs[1]}</size>";
-        string details = CreateDetailList(res.GeniusTypesDescriptions[genius]);
-        return $"{lh}{head}{br}{desc}{br}{copy}{br}{details}";
+        return CreateByTemplate(
+            res.GeniusHeading,
+            res.GeniusDescription,
+            string.Format(
+                res.TemplateYourTypeIs, res.GeniusTypesName[genius]),
+            res.GeniusTypesDetails[genius]
+        );
     }
 
     /// <summary>
@@ -69,6 +89,26 @@ public static class PageGenerator
         string motivation = $"Motivation: {RES.Motivation()[dt[(int)TDI.Motivation]]}";
         string pr = $"Position: {RES.Position()[dt[(int)TDI.Position]]} <pos=50%>Response: {RES.Response()[dt[(int)TDI.Response]]}";
         return $"{io}\n{workstyle}\n{lifebase}\n{pb}\n{cm}\n{genius}\n{motivation}\n{pr}";
+    }
+
+    /// <summary>
+    /// テンプレートに文言を埋め込んで、ページの文言を取得します。
+    /// </summary>
+    /// <param name="heading">見出し。</param>
+    /// <param name="description">説明。</param>
+    /// <param name="copy">コピーライト。</param>
+    /// <param name="details">詳細。</param>
+    /// <returns>ページの文言。</returns>
+    private static string CreateByTemplate(
+        string heading, string description, string copy, string[] details)
+    {
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        string lh = $"<line-height={res.SizeLine}%>";
+        string br = $"</line-height>\n<line-height={res.SizeLine / 3}%>\n</line-height>{lh}";
+        string head = $"<cspace=-0.1em><smallcaps>{heading}</smallcaps></cspace>";
+        string desc = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {description}</size>";
+        string cp = $"{CENTER}<size={res.SizeHeading}><line-height={(int)(res.SizeLine * 1.5f)}%>{copy}</line-height></size>";
+        return $"{lh}{desc}{br}{cp}{br}{CreateDetailList(details)}";
     }
 
     /// <summary>リストを連結し、文言を取得します。</summary>

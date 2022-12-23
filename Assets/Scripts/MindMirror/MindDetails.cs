@@ -55,6 +55,13 @@ public sealed class MindDetails : ResultPreviewerBase
     /// <param name="subject">呼び出し元のサブジェクト。</param>
     public override void OnNotify(Subject subject)
     {
+        if (
+            subject != null &&
+            subject.GetComponent<MindMirrorSubject>() != null
+        )
+        {
+            ResetPage();
+        }
         base.OnNotify(subject);
         if (globalStackManager == null)
         {

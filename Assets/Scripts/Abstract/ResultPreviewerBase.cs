@@ -42,6 +42,12 @@ public abstract class ResultPreviewerBase : ResourcesObserver
         UpdateContents();
     }
 
+    /// <summary>ページ番号をリセットします。</summary>
+    protected void ResetPage()
+    {
+        currentPage = 0;
+    }
+
     /// <summary>描画状態を更新します。</summary>
     protected virtual void UpdateContents()
     {
@@ -53,7 +59,9 @@ public abstract class ResultPreviewerBase : ResourcesObserver
         paginationLabel.text =
             string.Format(
                 res.TemplatePages, currentPage + 1, Contents.Length);
-        details.text = Contents[currentPage];
+        details.text =
+            currentPage >= Contents.Length ? string.Empty :
+            Contents[currentPage];
     }
 
     /// <summary>

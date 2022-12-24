@@ -7295,12 +7295,22 @@ PrefabInstance:
       propertyPath: _syncMethod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1966467169773177453, guid: 27965a5b20b470d4ba5b3992d34f0604,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2110887614962672922, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 2110887614962672922, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
+    - target: {fileID: 2219726932196932133, guid: 27965a5b20b470d4ba5b3992d34f0604,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2276022966065819881, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -7311,6 +7321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _syncMethod
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513873345506103217, guid: 27965a5b20b470d4ba5b3992d34f0604,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3894037679531855697, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
@@ -7395,6 +7410,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8894319777086243321, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
+    - target: {fileID: 8924888256803116911, guid: 27965a5b20b470d4ba5b3992d34f0604,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8998524422856429933, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -7469,7 +7489,7 @@ PrefabInstance:
     - target: {fileID: 8998524423275824720, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 3390
+      value: 5016
       objectReference: {fileID: 0}
     - target: {fileID: 8998524423275824724, guid: 27965a5b20b470d4ba5b3992d34f0604,
         type: 3}

@@ -16,13 +16,13 @@ The birth date is promptly converted irreversibly to clairvoyant information, an
 La fecha de nacimiento se convierte rápidamente de forma irreversible en información clarividente, y la fecha de nacimiento NO se guarda, transmite ni sincroniza.</indent>
 
 1873年2月1日～2050年12月31日の範囲内のみ有効
-Valid only from Feb 1, 1873, to Dec 31, 2050
-Válido únicamente del 1 de feb de 1873 al 31 de dic de 2050
+Only from Feb 1, 1873, to Dec 31, 2050
+Sólo del 1 de febrero de 1873 al 31 de diciembre de 2050
 
 時差を考慮していないため、結果が不自然に感じたら前後の日付も試してみてください。
 日本人でも深夜生まれの場合、稀に時差に当てはまる場合があります。
-This clairvoyant engine does not consider time differences, so if the results seem unnatural, try the dates before and after.
-Este motor clarividente no tiene en cuenta las diferencias horarias, por lo que si los resultados parecen poco naturales, prueba con las fechas anteriores y posteriores.
+This clairvoyant engine does not consider timezone, so if the results seem unnatural, try the dates before and after.
+Este motor clarividente no tiene en cuenta la zona horaria, así que si los resultados parecen poco naturales, prueba con las fechas anteriores y posteriores.
 
 お名前
 Name
@@ -30,9 +30,10 @@ Nombre
 
 ニックネーム
 お名前を入力してください
-Enter your nickname...
-Introduce tu apodo...
+Enter the nickname...
+Introduzca el apodo...
 
+中の人の
 生年月日
 The birth date
 Fecha de nacimiento

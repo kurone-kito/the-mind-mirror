@@ -20,7 +20,8 @@ public static class PageGenerator
     public static string CreateComingSoon()
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        return $"{RIGHT}<size=230>▶{res.ComingSoon}◀</size>";
+        return res == null ? string.Empty :
+            $"{RIGHT}<size=230>▶{res.ComingSoon}◀</size>";
     }
 
     /// <summary>素質ページの文言を取得します。</summary>
@@ -49,12 +50,14 @@ public static class PageGenerator
     public static string CreateGeniusPage(int genius)
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        return CreateByTemplate(
-            res.GeniusHeading,
-            res.GeniusDescription,
-            string.Format(
-                res.TemplateYourTypeIs, res.GeniusTypesName[genius]),
-            res.GeniusTypesDetails[genius]
+        return res == null
+            ? string.Empty
+            : CreateByTemplate(
+                res.GeniusHeading,
+                res.GeniusDescription,
+                string.Format(
+                    res.TemplateYourTypeIs, res.GeniusTypesName[genius]),
+                res.GeniusTypesDetails[genius]
         );
     }
 
@@ -65,7 +68,12 @@ public static class PageGenerator
     public static string[] CreateInvalidCubePage()
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        return new[] { $"{CENTER}{res.WarnOnInsertTheEmptyMindCube}" };
+        return
+            new[]
+            {
+                res == null ? string.Empty :
+                    $"{CENTER}{res.WarnOnInsertTheEmptyMindCube}"
+            };
     }
 
     /// <summary>

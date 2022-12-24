@@ -30,12 +30,30 @@ public sealed class MindDetails : ResultPreviewerBase
     private Text nameLabel;
 #pragma warning restore IDE0054
 
+    /// <summary>素質ページの文言を取得します。</summary>
+    /// <returns>素質ページの文言。</returns>
     private string GetDetailedGeniusPage()
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        string content = PageGenerator.CreateDetailedGeniusPage(vars.Inner);
+        return PageGenerator.CreateDetailedGeniusPage(vars.Inner);
+    }
+
+    /// <summary>素質毎に対する攻略法ページの文言を取得します。</summary>
+    /// <returns>素質毎に対する攻略法ページの文言。</returns>
+    private string GetDetailedGeniusStrategyPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        string content = PageGenerator.CreateDetailedGeniusStrategyPage(vars.Inner);
         string comingSoon = PageGenerator.CreateComingSoon();
         return $"{content}\n{comingSoon}";
+    }
+
+    /// <summary>素質毎の弱点ページの文言を取得します。</summary>
+    /// <returns>素質毎の弱点ページの文言。</returns>
+    private string GetDetailedGeniusWeaknessPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        return PageGenerator.CreateDetailedGeniusWeaknessPage(vars.Inner);
     }
 
     /// <summary>
@@ -83,7 +101,14 @@ public sealed class MindDetails : ResultPreviewerBase
             UpdateContents();
             return;
         }
-        Contents = new[] { GetGeniusPage(), GetDetailedGeniusPage() };
+        Contents =
+            new[]
+            {
+                GetGeniusPage(),
+                GetDetailedGeniusPage(),
+                GetDetailedGeniusWeaknessPage(),
+                GetDetailedGeniusStrategyPage(),
+            };
         nameLabel.text = cube.CubeName;
         UpdateContents();
     }

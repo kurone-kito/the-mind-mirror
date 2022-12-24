@@ -56,84 +56,130 @@
       "workStyle": ""
     },
     "100": {
-      "detail": ["", ""],
+      "detail": [
+        "Les gusta fingir que no son buenos en algo, pero quieren sorprender y destacar estando preparados.",
+        "Tienden a encargarse de todo, intentando hacerlo por su cuenta."
+      ],
       "name": "Tipo el perfeccionismo",
       "strategy": ["", ""],
       "summary": "Son severos y testarudos, ¡como un hombre de negocios de primera que no muestra debilidad!",
       "weak": ["", "", ""]
     },
     "108": {
-      "detail": ["", ""],
+      "detail": [
+        "A menudo son tan directos y honestos como un bebé.",
+        "Son muy tímidos y se vuelven reticentes cuando se les arroja a un lugar lleno de extraños."
+      ],
       "name": "Tipo el naturalismo",
       "strategy": ["", ""],
       "summary": "Son tímidos, pero una vez que te acostumbras a ellos, son honestos hasta la exageración.",
       "weak": ["", "", ""]
     },
     "125": {
-      "detail": ["", ""],
+      "detail": [
+        "Tienen grandes sueños románticos.",
+        "Además, al igual que los adultos mayores, tienen una visión a largo plazo de la vida y aptitudes para ser estoicos a corto plazo."
+      ],
       "name": "Tipo el romántico",
       "strategy": ["", "", ""],
       "summary": "Sin rival en sueños y autodisciplina. Directo a la meta a largo plazo.",
       "weak": ["", ""]
     },
     "555": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Muchas personas tienen un aire de competencia general y autoridad de jefe, como un empleado ejecutivo.",
+        "Pueden acostumbrarse a algo más rápido que los demás, aunque no tengan experiencia.",
+        "Pero se necesita un esfuerzo varias veces mayor que en otros tipos para convertirse en un experto en su campo. En otras palabras, son más adecuados para generalistas que para expertos."
+      ],
       "name": "Tipo el sin prisas",
       "strategy": [""],
       "summary": "Equilibrada, capaz y solidaria, una posición heroica.",
       "weak": ["", "", ""]
     },
     "789": {
-      "detail": ["", "", "", ""],
+      "detail": [
+        "Tienen el espíritu humilde y a la vez imponente de un presidente de empresa.",
+        "Tienen las cualidades cercanas al tipo “$t(vector.authority.name)”. Tienen pueden sopesar la autoridad de los demás y ver lo real.",
+        "Tienen buen ojo para sopesar la autoridad de los demás y detectar la verdadera, y nunca dejan de perfeccionarse para que su autoridad sea más sólida.",
+        "Aunque se les da bien ser héroes anónimos, también les gusta ponerse delante de la gente en el momento oportuno y descremarse."
+      ],
       "name": "Tipo el autoridad",
       "strategy": ["", "", "", ""],
       "summary": "Una persona con talento que sabe dividir los papeles respetando los logros y la experiencia.",
       "weak": ["", ""]
     },
     "888": {
-      "detail": ["", ""],
+      "detail": [
+        "Son como niños y niñas con una naturaleza desafiante, interesados en todas las direcciones.",
+        "Muchos de ellos son tan contundentes que ni siquiera se dan cuenta de que han sido golpeados."
+      ],
       "name": "Tipo el Retador",
       "strategy": [""],
       "summary": "Son ingenuos y curiosos. No les importa si algo no funciona; seguirán intentándolo.",
       "weak": ["", ""]
     },
     "919": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Aunque tienen una enorme capacidad de concentración, el resto del tiempo son siempre perezosos.",
+        "Muchos de ellos tienen una fuerte disposición a hacer lo que haga falta para conseguir lo que quieren y la habilidad de regatear para conseguirlo.",
+        "Son buenos negociadores y tienen madera de vendedores."
+      ],
       "name": "Tipo el Socialice",
       "strategy": ["", ""],
       "summary": "Son buenos negociadores y prefieren la estrategia a corto plazo.",
       "weak": ["", ""]
     },
     "000": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Tienen una filosofía hiperlingüística y una visión del mundo extravagante. Algunos los describen como los sextos sentidos.",
+        "Sin embargo, no son muy dinámicos y muchos de ellos se lo guardan en la cabeza.",
+        "También es habitual que los tipos sensibles se vayan de viaje sin un plan y pierdan el contacto."
+      ],
       "name": "Tipo el espiritual",
       "strategy": ["", "", ""],
       "summary": "Prefieren vagar sin rumbo y utilizar la intuición aguda y los destellos de inspiración.",
       "weak": ["", ""]
     },
     "001": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Les encanta actuar como bichos raros, sin dejarse contaminar por las ideas de los demás.",
+        "Les gusta el individualismo y prefieren trabajar a su ritmo.",
+        "Son los mejores actores para interpretar el papel de “idiota bien pensado”."
+      ],
       "name": "Tipo lobo solitario",
       "weak": ["", ""],
       "summary": "Las palabras “excéntrico”, “friki” o “raro” son un cumplido para ellos. Hacen a su manera como un lobo solitario.",
       "strategy": ["", "", "", ""]
     },
     "012": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Tienen un temperamento juvenil, siempre como adolescentes, incluso cuando crecen.",
+        "Les suele gustar discutir, pero suele ser una larga historia con poca sustancia.",
+        "Aunque tienen muchas ganas de estar delante del público, también saben apoyar todo el proceso entre bastidores."
+      ],
       "name": "Tipo primeros adoptantes",
       "summary": "Son early adopters a los que les encanta lo nuevo y persiguen la frescura cada día.",
       "strategy": ["", ""],
       "weak": ["", "", "", ""]
     },
     "024": {
-      "detail": ["", "", "", ""],
+      "detail": [
+        "Cuando acaban de pensar en algo, son muy trabajadores y están decididos a terminarlo, pero no se les da bien planificar estrategias detalladas.",
+        "Suelen ser apacibles, pero no pueden esperar a que ocurran las cosas.",
+        "Las personas “$t(vector.authority.name)”, en general, tienen el don de ser capaces de convertir la ansiedad en un motor para la acción, pero son especialmente hábiles en ello.",
+        "Pueden memorizar y actuar como si ya supieran algo hace diez años, aunque acaben de aprenderlo por primera vez."
+      ],
       "name": "Tipo el esforzador",
       "summary": "Son impacientes y tienen un fuerte impulso.",
       "strategy": ["", "", ""],
       "weak": ["", ""]
     },
     "025": {
-      "detail": ["", "", ""],
+      "detail": [
+        "Tienen un sentimiento de hermandad con toda la humanidad y poseen cualidades para llevarse bien por igual y de igual a igual.",
+        "Pero, por otro lado, como son “igual de amistosos”, siempre harán un cerco, incluso con los miembros de la familia.",
+        "Suelen estar bien informados porque tienen muchos contactos."
+      ],
       "name": "Tipo el saintist",
       "summary": "Son personas que aman a los demás y son personalidades bien informadas.",
       "strategy": ["", ""],

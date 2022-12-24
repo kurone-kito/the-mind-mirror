@@ -13,7 +13,7 @@ public class FallbackResources : UdonSharpBehaviour
         "A more detailed, innate personality. This is classified into 12 types.";
 
     /// <summary>素質の見出し。</summary>
-    public virtual string DetailedGeniusHeading => "Type of genius";
+    public virtual string DetailedGeniusHeading => "The genius";
 
     /// <summary>各素質の解説。</summary>
     public virtual string[][] DetailedGeniusTypeDetails =>
@@ -47,7 +47,7 @@ public class FallbackResources : UdonSharpBehaviour
             new[]
             {
                 "They have a sense of brotherhood with all humankind and have the qualities to get along equally and equally.",
-                "But, on the other hand, because they are “equally friendly,” they will always make a hedge, even with family members.",
+                "But, on the other hand, because they are “equally friendly”, they will always make a hedge, even with family members.",
                 "They tend to become well informed because they have a lot of connections.",
             },
             new[]
@@ -109,22 +109,163 @@ public class FallbackResources : UdonSharpBehaviour
             "Socialize type",
         };
 
+    /// <summary>各素質に対する、攻略法の解説。</summary>
+    public virtual string[][] DetailedGeniusTypeStrategy =>
+        new[]
+        {
+            new[]
+            {
+                "They do hate any restraint, bondage, or rules.",
+                "When they say “Roger!”, but they tend to don't understand yet the request. So it is a good idea to check with them to avoid problems later on.",
+                "If you are going to do something with a group of people, it is best to put them in a position to be asked to be creative.",
+            },
+            new[]
+            {
+                "They don't like to be paced by others, so they may be challenging to get to know at first sight, but they will be kind to you once you know them.",
+                "In general, seeing the other person with strange eyes is considered a bad thing, but they are exceptions and can use as compliments.",
+                "On the other hand, words such as “unoriginal” or “common sense” can be bad words to them, so be careful.",
+                "When working in a group, they perform best when put in positions requiring them to be creative.",
+            },
+            new[]
+            {
+                "“It's the latest news” and “No one knows about it yet” are powerful words to get their attention.",
+                "On the other hand, worn-out or stable somethings may discourage their interest.",
+            },
+            new[]
+            {
+                "They are impatient and tend to get anxious if they don't get detailed progress reports.",
+                "They tend not to be good at detailed calculations or standing around.",
+            },
+            new[]
+            {
+                "It's taboo to try outfoxing with them, leave them out, skip their turn, or do anything that is not honorable.",
+                "They tend to think equally responsible for all involved and blur their responsibilities collectively, so it is best to follow through.",
+            },
+            new[]
+            {
+                "They are influencing by flattery and VIP treatment.",
+                "They love to surprise you, but be aware that they will complain that they lost face if you deny them.",
+            },
+            new[]
+            {
+                "They are straightforward to understand, as their personalities change considerably before and after they open up.",
+                "If you make them feel at ease, it is easy to get along with them.",
+            },
+            new[]
+            {
+                "When proposing things to them, it is easier to trust if you talk about the risks first and clarify them.",
+                "If you suggest things to them in a humble way, they tend to influence easily.",
+                "They hate intrusive attitudes from above. They can get along well with those who are not so good at it and tend to stress you out without even knowing it.",
+            },
+            new[]
+            {
+                "They can do everything on their own, so they tend to take care of everything on their own. When you entrust them with something, be careful not to let them do too much.",
+            },
+            new[]
+            {
+                "When you introduce yourself to them, don't be modest about your achievements. They will take you at your word and disregard you.",
+                "They tend to talk about themselves for a long time, so it is very effective to direct their conversation appropriately.",
+                "They tend to be apprehensive about places where they have no authority, such as an event they attend for the first time. However, if you escort them, they will recognize you as the “authority” in the situation and follow you.",
+                "Avoid denying their experience straightforward to them. Even if their expertise is wrong, they will anger.",
+            },
+            new[]
+            {
+                "Because of their hard-hitting nature, it may be a good idea to entrust them with positions that might make them fret if left to others, in addition to being salespeople.",
+            },
+            new[]
+            {
+                "It's easier to open up to them if you limit the formalities to the first meeting and create a funky atmosphere the next time you meet.",
+                "They are slackers, but when they are motivated, they do a tremendous amount of work. For this reason, it is essential to let them do their job without pointing out how to do it in detail.",
+            },
+        };
+
     /// <summary>各素質のキャッチコピー。</summary>
     public virtual string[] DetailedGeniusTypeSummary =>
         new[]
         {
-            "They prefer aimless wandering and utilize sharp intuition and flashes of inspiration.",
-            "“Eccentric”, “Freak”, or “Weird” words are a compliment for them! They do in their way like a lone wolf.",
-            "They are early adopters who love new things and pursue freshness every day.",
-            "They are impatient and have a strong drive.",
-            "They are people who love others and are well-informed personalities.",
+            "They prefer aimless wandering and utilize sharp intuition and flashes of inspiration",
+            "“Eccentric”, or “Weird” words are a compliment for them! They do in their way like a lone wolf",
+            "They are early adopters who love new things and pursue freshness every day",
+            "They are impatient and have a strong drive",
+            "They are people who love others and are well-informed personalities",
             "They are severe and stubborn, like a top-notch businessperson who doesn't show weakness!",
-            "They are shy, but once you get used to them, they are honest to a fault.",
-            "No rival in dreams and self-discipline! Straight to the goal in the long run.",
-            "Balanced, capable and caring, a heroic position.",
-            "A talented person who is good at dividing roles by respecting achievements and experience.",
-            "They are naive and curious! They don't care if something doesn't work; they will keep trying.",
-            "They are good negotiators and prefer short-term strategy.",
+            "They are shy, but once you get used to them, they are honest to a fault",
+            "No rival in dreams and self-discipline! Straight to the goal in the long run",
+            "Balanced, capable and caring, a heroic position",
+            "A talented person who is good at dividing roles by respecting achievements and experience",
+            "They are naive and curious! They don't care if something doesn't work; they will keep trying",
+            "They are good negotiators and prefer short-term strategy",
+        };
+
+    /// <summary>各素質における、弱点の解説。</summary>
+    public virtual string[][] DetailedGeniusTypeWeakness =>
+        new[]
+        {
+            new[]
+            {
+                "They tend to clutter up their notes, folders on their desktops, rooms, and everything else if they are not aware.",
+                "They tend to have a strong link between their emotions and their performance. In other words, if they are not in the right frame of mind, they will not make progress.",
+            },
+            new[]
+            {
+                "They tend to do it in their way and not very resourceful.",
+                "They do not like to be pulled along by the pace of others and may impose their own pace on others.",
+            },
+            new[]
+            {
+                "They always like new things, but it's no longer new for them once they know anything. So, they tend to get bored quickly.",
+                "If they have trouble getting started, they tend to lose motivation for even required things.",
+                "They hate intensely to be forced action or angered in front of the public.",
+                "Many peoples say that “Schadenfreude, Take pleasure in the misery of others”. But they are different, and they hate it.",
+            },
+            new[]
+            {
+                "They are impatient and tend to get anxious if they don't get detailed progress reports.",
+                "They tend not to be good at detailed calculations or standing around.",
+            },
+            new[]
+            {
+                "They have a strong sense of camaraderie, so when someone they know gets into trouble, they tend to nose into problems with them.",
+                "Their judgment starts to weaken because they tend to gather too much information from their surroundings.",
+            },
+            new[]
+            {
+                "They tend to be hard on themselves and others and are too concerned about public opinion to take challenging actions.",
+                "They are influencing by flattery and VIP treatment.",
+                "When collaborating with someone, cutting corners is generally a bad thing, but doing it with them will make you especially angry.",
+            },
+            new[]
+            {
+                "They tend to restrict themselves to their sphere of activity and tend to stay in their shells.",
+                "They tend to be too honest in their home positions, such as social networking sites, and many of them become verbally abusive and overly familiar even among their friends.",
+                "Once they let their guard down, they may needlessly trust the other person too much.",
+            },
+            new[]
+            {
+                "They are skeptical and tend to be slow to take things on.",
+                "Reflection is critical, but for them, it can lead to regret because of too much.",
+            },
+            new[]
+            {
+                "They don't like to apologize even when it is their fault. Even if they have apologetic, they are not very good at expressing it.",
+                "Perhaps because they can do everything on their own, they tend to feel uncomfortable when others can't, wondering why they can't do such things.",
+                $"They tend to take on everything in an attempt to do it on their own, and as a result, their efficiency becomes less. The same is true for the “{DetailedGeniusTypeName[(int)TypeDetailedGenius.A100]}” but since the “{DetailedGeniusTypeName[(int)TypeDetailedGenius.E555]}” has the dexterity to do so much on their own, they often don't notice that their performance is declining.",
+            },
+            new[]
+            {
+                "They tend to focus on achievements and authority, whether their own or others, So, they tend to overestimate themselves.",
+                "In general, insensitive and unkind behavior isn't good, but they especially dislike this.",
+            },
+            new[]
+            {
+                "Their interests don't last very long, and they tend not to be good at long-term bargaining.",
+                "They tend to change topics frequently. But others often want to continue the issue a little longer, so they may make others uncomfortable.",
+            },
+            new[]
+            {
+                "They tend to be uncomfortable with the formal atmosphere and unclear attitude.",
+                "They are also not very good at producing stable results in the long term.",
+            },
         };
 
     /// <summary>性格の大分類の説明。</summary>
@@ -192,6 +333,14 @@ Since clairvoyant is impossible in this state, please write your information in 
 
     /// <summary>ページ番号のテンプレート。</summary>
     public virtual string TemplatePages => "Pages: {0}/{1}";
+
+    /// <summary> 各項目における、攻略法のテンプレート。</summary>
+    public virtual string TemplateStrategy =>
+        "Strategies for the “<b>{0}</b>”type";
+
+    /// <summary> 各項目における、弱点のテンプレート。</summary>
+    public virtual string TemplateWeakness =>
+        "Weaknesses of the “<b>{0}</b>”type";
 
     /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
     public virtual string TemplateYourTypeIs =>

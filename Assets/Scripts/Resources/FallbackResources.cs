@@ -4,6 +4,18 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class FallbackResources : UdonSharpBehaviour
 {
+    /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltGenius { get; protected set; }
+
+    /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltDetailedGeniusType { get; protected set; }
+
+    /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltDetailedGeniusWeakness { get; protected set; }
+
+    /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltDetailedGeniusStrategy { get; protected set; }
+
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
          "We'll be adding more clairvoyant results in the future!";
@@ -360,4 +372,66 @@ Since clairvoyant is impossible in this state, please write your information in 
 
     /// <summary>言語種別。</summary>
     public virtual TypeLanguage Type => TypeLanguage.English;
+
+#pragma warning disable IDE0051
+    /// <summary>初期化時に呼び出す、コールバック。</summary>
+    private void Start()
+    {
+        BuiltGenius =
+            new[]
+            {
+                this.CreateGeniusPage((int)TypeGenius.Authority),
+                this.CreateGeniusPage((int)TypeGenius.Economically),
+                this.CreateGeniusPage((int)TypeGenius.Humanely),
+            };
+        BuiltDetailedGeniusType =
+            new[]
+            {
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A000),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E001),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H012),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A024),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H025),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A100),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H108),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E125),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E555),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H789),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A888),
+                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E919),
+            };
+        BuiltDetailedGeniusWeakness =
+            new[]
+            {
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A000),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E001),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H012),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A024),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H025),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A100),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H108),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E125),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E555),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H789),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A888),
+                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E919),
+            };
+        BuiltDetailedGeniusStrategy =
+            new[]
+            {
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A000),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E001),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H012),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A024),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H025),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A100),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H108),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E125),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E555),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H789),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A888),
+                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E919),
+            };
+    }
+#pragma warning restore IDE0051
 }

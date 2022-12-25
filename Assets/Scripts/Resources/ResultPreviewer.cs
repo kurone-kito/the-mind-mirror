@@ -1,4 +1,4 @@
-﻿using UdonSharp;
+using UdonSharp;
 using UnityEngine;
 
 /// <summary>表示テスト用の結果情報ビューア。</summary>
@@ -18,49 +18,17 @@ public sealed class ResultPreviewer : ResultPreviewerBase
     /// <summary>ページ内容を更新します。</summary>
     public void UpdatePages()
     {
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        if (res == null)
+        {
+            return;
+        }
         Contents =
-            new[]
-            {
-                PageGenerator.CreateGeniusPage((int)TypeGenius.Authority),
-                PageGenerator.CreateGeniusPage((int)TypeGenius.Economically),
-                PageGenerator.CreateGeniusPage((int)TypeGenius.Humanely),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A000),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E001),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H012),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A024),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H025),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A100),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H108),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E125),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E555),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.H789),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.A888),
-                PageGenerator.CreateDetailedGeniusPage((int)TypeDetailedGenius.E919),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A000),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E001),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H012),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A024),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H025),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A100),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H108),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E125),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E555),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H789),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A888),
-                PageGenerator.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E919),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A000),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E001),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H012),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A024),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H025),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A100),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H108),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E125),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E555),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H789),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A888),
-                PageGenerator.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E919),
-            };
+            ArrayUtils.Flatten(
+                res.BuiltGenius,
+                res.BuiltDetailedGeniusType,
+                res.BuiltDetailedGeniusWeakness,
+                res.BuiltDetailedGeniusStrategy);
     }
 
     /// <summary>描画状態を更新します。</summary>

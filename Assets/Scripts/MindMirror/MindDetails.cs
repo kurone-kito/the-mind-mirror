@@ -2,8 +2,6 @@ using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 
-using TDI = TypeDetailIndex;
-
 /// <summary>マインドキューブの情報ビューア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public sealed class MindDetails : ResultPreviewerBase
@@ -35,7 +33,8 @@ public sealed class MindDetails : ResultPreviewerBase
     private string GetDetailedGeniusPage()
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        return PageGenerator.CreateDetailedGeniusPage(vars.Inner);
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltDetailedGeniusType[vars.Inner];
     }
 
     /// <summary>素質毎に対する攻略法ページの文言を取得します。</summary>
@@ -43,9 +42,8 @@ public sealed class MindDetails : ResultPreviewerBase
     private string GetDetailedGeniusStrategyPage()
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        string content = PageGenerator.CreateDetailedGeniusStrategyPage(vars.Inner);
-        string comingSoon = PageGenerator.CreateComingSoon();
-        return $"{content}\n{comingSoon}";
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltDetailedGeniusStrategy[vars.Inner];
     }
 
     /// <summary>素質毎の弱点ページの文言を取得します。</summary>
@@ -53,7 +51,8 @@ public sealed class MindDetails : ResultPreviewerBase
     private string GetDetailedGeniusWeaknessPage()
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        return PageGenerator.CreateDetailedGeniusWeaknessPage(vars.Inner);
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltDetailedGeniusWeakness[vars.Inner];
     }
 
     /// <summary>
@@ -63,8 +62,9 @@ public sealed class MindDetails : ResultPreviewerBase
     private string GetGeniusPage()
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
-        byte genius = MasterData.DetailsMap()[vars.Inner][(int)TDI.Genius];
-        return PageGenerator.CreateGeniusPage(genius);
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] details = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltGenius[details[(int)TypeDetailIndex.Genius]];
     }
 
     /// <summary>
@@ -101,13 +101,14 @@ public sealed class MindDetails : ResultPreviewerBase
             UpdateContents();
             return;
         }
+        string comingSoon = PageGenerator.CreateComingSoon();
         Contents =
             new[]
             {
                 GetGeniusPage(),
                 GetDetailedGeniusPage(),
                 GetDetailedGeniusWeaknessPage(),
-                GetDetailedGeniusStrategyPage(),
+                $"{GetDetailedGeniusStrategyPage()}\n{comingSoon}"
             };
         nameLabel.text = cube.CubeName;
         UpdateContents();

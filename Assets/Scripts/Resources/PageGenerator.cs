@@ -25,11 +25,12 @@ public static class PageGenerator
     }
 
     /// <summary>素質ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
     /// <param name="genius">素質タイプ。</param>
     /// <returns>素質ページの文言。</returns>
-    public static string CreateDetailedGeniusPage(int genius)
+    public static string CreateDetailedGeniusPage(
+        this FallbackResources res, int genius)
     {
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         if (res == null)
         {
             return string.Empty;
@@ -37,7 +38,7 @@ public static class PageGenerator
         string copy =
             string.Format(
                 res.TemplateYourTypeIs, res.DetailedGeniusTypeName[genius]);
-        return CreateByTemplate(
+        return res.CreateByTemplate(
             res.DetailedGeniusHeading,
             res.DetailedGeniusDescription,
             $"{res.DetailedGeniusTypeSummary[genius]}: {copy}",
@@ -45,31 +46,33 @@ public static class PageGenerator
     }
 
     /// <summary>素質毎に対する攻略法ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
     /// <param name="genius">素質タイプ。</param>
     /// <returns>素質毎に対する攻略法ページの文言。</returns>
-    public static string CreateDetailedGeniusStrategyPage(int genius)
+    public static string CreateDetailedGeniusStrategyPage(
+        this FallbackResources res, int genius)
     {
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         return res == null
             ? string.Empty
-            : CreateByTemplate(
+            : res.CreateByTemplate(
                 res.DetailedGeniusHeading,
                 res.DetailedGeniusDescription,
-                    string.Format(
-                        res.TemplateStrategy,
-                        res.DetailedGeniusTypeName[genius]),
+                string.Format(
+                    res.TemplateStrategy,
+                    res.DetailedGeniusTypeName[genius]),
                 res.DetailedGeniusTypeStrategy[genius]);
     }
 
     /// <summary>素質毎の弱点ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
     /// <param name="genius">素質タイプ。</param>
     /// <returns>素質毎の弱点ページの文言。</returns>
-    public static string CreateDetailedGeniusWeaknessPage(int genius)
+    public static string CreateDetailedGeniusWeaknessPage(
+        this FallbackResources res, int genius)
     {
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         return res == null
             ? string.Empty
-            : CreateByTemplate(
+            : res.CreateByTemplate(
                 res.DetailedGeniusHeading,
                 res.DetailedGeniusDescription,
                 string.Format(
@@ -79,20 +82,20 @@ public static class PageGenerator
     }
 
     /// <summary>性格の大分類のページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
     /// <param name="genius">大まかな性格タイプ。</param>
     /// <returns>性格の大分類のページの文言。</returns>
-    public static string CreateGeniusPage(int genius)
+    public static string CreateGeniusPage(
+        this FallbackResources res, int genius)
     {
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         return res == null
             ? string.Empty
-            : CreateByTemplate(
+            : res.CreateByTemplate(
                 res.GeniusHeading,
                 res.GeniusDescription,
                 string.Format(
                     res.TemplateYourTypeIs, res.GeniusTypesName[genius]),
-                res.GeniusTypesDetails[genius]
-        );
+                res.GeniusTypesDetails[genius]);
     }
 
     /// <summary>
@@ -115,7 +118,7 @@ public static class PageGenerator
     /// </summary>
     /// <param name="vars">マインドキューブの変数。</param>
     /// <returns>簡易ビューアーのページの文言。</returns>
-    public static string CreateParametersPage(MindCubeVariables vars)
+    public static string CreateParametersPage(this MindCubeVariables vars)
     {
         // TODO: このメソッドはどこからも参照していないが、値の取得の参考用に当面残しておく。
         string[] dgRes = RES.DetailedGenius();
@@ -136,12 +139,14 @@ public static class PageGenerator
     /// <summary>
     /// テンプレートに文言を埋め込んで、ページの文言を取得します。
     /// </summary>
+    /// <param name="res">リソース。</param>
     /// <param name="heading">見出し。</param>
     /// <param name="description">説明。</param>
     /// <param name="copy">コピーライト。</param>
     /// <param name="details">詳細。</param>
     /// <returns>ページの文言。</returns>
     private static string CreateByTemplate(
+        this FallbackResources res,
         string heading,
         string description,
         string copy,
@@ -149,7 +154,6 @@ public static class PageGenerator
         float mulHeadingSize = 1f,
         float mulDetailsSize = 1f)
     {
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         int sizeHeading = (int)(res.SizeHeading * mulHeadingSize);
         int catchHeight = (int)(res.SizeLine * 1.5f);
         string lh = $"<line-height={res.SizeLine}%>";
@@ -157,15 +161,16 @@ public static class PageGenerator
         string head = $"<cspace=-0.1em><smallcaps>{heading}</smallcaps></cspace>";
         string desc = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {description}</size>";
         string cp = $"{CENTER}<size={sizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>";
-        return $"{lh}{desc}{br}{cp}{br}{CreateDetailList(details, mulDetailsSize)}";
+        return $"{lh}{desc}{br}{cp}{br}{res.CreateDetailList(details, mulDetailsSize)}";
     }
 
     /// <summary>リストを連結し、文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
     /// <param name="list">リスト。</param>
     /// <param name="mulSize">サイズの倍率。</param>
     /// <returns>文言。</returns>
     private static string CreateDetailList(
-        string[] list, float mulSize = 1f)
+        this FallbackResources res, string[] list, float mulSize = 1f)
     {
         if (list == null || list.Length == 0)
         {
@@ -173,7 +178,6 @@ public static class PageGenerator
         }
         const string MARK = "▶";
         const string INDENT = "<indent=4%>";
-        FallbackResources res = ResourcesManager.GetInstance().Resources;
         int size = (int)(res.SizeDetails * mulSize);
         string body = string.Join($"</indent>\n{MARK}{INDENT}", list);
         return $"{JUSTIFY}<size={size}>{MARK}{INDENT}{body}</indent></size>";

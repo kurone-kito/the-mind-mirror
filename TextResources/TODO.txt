@@ -1,0 +1,66 @@
+◆ 今後のアップデートの予定 ◆
+
+- より詳細な性格診断
+    - 現在 12 通りのみですが、今後数万通りのパターンになります！
+    - 人生観・潜在能力・思考タイプ
+- もっと翻訳進めなきゃ (Help me DeepL ;-)
+- BGM ないと寂しいよね
+- カッコいいサムネ！
+- さらなる診断機能
+  - 相性診断・役割マップ生成
+- QvPen など、実用アセットの導入
+- お部屋のお化粧
+- 性格診断機能の VPM パッケージ化
+    - さらには .NET Core ライブラリ化も
+
+--------------------------------------------------------------------
+
+◆ 使用アセット一覧 ◆
+
+- IPA exGothic Font
+
+---
+
+◆ Upcoming Updates ◆
+
+- More detailed personality clairvoyance
+  - There are only 12, but there will be tens of thousands of patterns in the future!
+  - Lifebase, Potential, and thinking type
+- Translation (Help me DeepL ;-)
+- BGM is lonely without it
+- Replace with an excellent thumbnail!
+- More clairvoyance features
+  - Compatibility detection with anyone and role map generation
+- Embedding some practical assets e.g., QvPen
+- Decorating this room
+- Make the VPM package of personality clairvoyance feature
+  - Even .NET Core library
+
+--------------------------------------------------------------------
+
+◆ List of assets used ◆
+
+- IPA exGothic Font
+
+---
+
+◆ Próximas actualizaciones ◆
+
+- Más detalles sobre la clairvoyance de la personalidad
+  - Actualmente hay solo 12, pero habrá miles de patrones en el futuro!
+  - Debilidades y estrategias en su genio, base vital, potencial y tipo de pensamiento
+- Traducción (Ayúdame DeepL ;-)
+- BGM es triste sin él
+- ¡Sustitúyalo por una excelente miniatura!
+- Más características de clairvoyance
+  - Detección de compatibilidad con cualquiera y generación de mapa de roles
+- Incorporación de algunos activos prácticos, por ejemplo, QvPen
+- Decoración de esta habitación
+- Hacer el paquete VPM de la característica de clairvoyance de la personalidad
+  - Incluso la biblioteca .NET Core
+
+--------------------------------------------------------------------
+
+◆ Lista de activos utilizados ◆
+
+- IPA exGothic Font

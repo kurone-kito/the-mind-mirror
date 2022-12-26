@@ -1,0 +1,51 @@
+マインドライター
+The Mind Writer
+el Escritor Mental
+
+マインドキューブに転写する、魂の情報を入力してください。
+Enter your name and date of birth to write your personality in the Mind Cube.
+Introduce tu nombre y fecha de nacimiento para escribir tu personalidad en el Cubo Mental.
+
+
+<line-height=120%>※ <indent=5%>このフォームはローカルで、他のプレイヤーには表示されません。
+</indent>
+<indent=5%>生年月日はプライバシー情報なので、性格情報への不可逆的な計算後、即座に破棄し、保存・送信・同期をしません。</indent>
+<line-height=120%>* <indent=3%>This form is invisible to other players due to local display.
+The birth date is promptly converted irreversibly to clairvoyant information, and the birth date is NOT saved, transmitted, or synchronized.</indent>
+<line-height=120%>* <indent=3%>Esta forma es invisible para otros jugadores debido a la visualización local.
+La fecha de nacimiento se convierte rápidamente de forma irreversible en información clarividente, y la fecha de nacimiento NO se guarda, transmite ni sincroniza.</indent>
+
+1873年2月1日～2050年12月31日の範囲内のみ有効
+Only from Feb 1, 1873, to Dec 31, 2050
+Sólo del 1 de febrero de 1873 al 31 de diciembre de 2050
+
+時差を考慮していないため、結果が不自然に感じたら前後の日付も試してみてください。
+日本人でも深夜生まれの場合、稀に時差に当てはまる場合があります。
+This clairvoyant engine does not consider timezone, so if the results seem unnatural, try the dates before and after.
+Este motor clarividente no tiene en cuenta la zona horaria, así que si los resultados parecen poco naturales, prueba con las fechas anteriores y posteriores.
+
+お名前
+Name
+Nombre
+
+ニックネーム
+お名前を入力してください
+Enter the nickname...
+Introduzca el apodo...
+
+中の人の
+生年月日
+The birth date
+Fecha de nacimiento
+
+キャンセル
+Cancel
+Cancelar
+
+削除
+Erase
+Borrar
+
+書き込む
+Decide
+Decida

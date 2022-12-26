@@ -1,0 +1,21 @@
+『性格を映す鏡』
+
+<line-height=130%>マインドキューブを挿入してください。この装置で、貴方の性格を映し出します。</line-height>
+
+<line-height=130%><align="justified">※ <indent=8%>性格表示は<b>グローバル表示</b>です。性格がバレたくない方はご注意ください。</indent></line-height>
+
+---
+
+<line-height=120%><size=38>“The Mirror of Personality”</size></line-height>
+
+<line-height=120%>Please insert your Mind Cube. This device reflects your personality.</line-height>
+
+<line-height=120%><align="justified">* <indent=5%>The personality <b>displayed is global</b>. Please be careful if you do not want your nature to be revealed.</indent></line-height>
+
+---
+
+<line-height=120%><size=38>“El espejo de la personalidad”</size></line-height>
+
+<line-height=120%>Por favor, inserte su Cubo Mental. Este dispositivo refleja su personalidad.</line-height>
+
+<line-height=120%><align="justified">* <indent=5%>La personalidad <b>mostrada es global</b>. Tenga cuidado si no quiere que se revele su naturaleza.</indent></line-height>

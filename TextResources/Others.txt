@@ -1,0 +1,20 @@
+0123456789
+
+VRCCam
+4 1.5 -0.7
+2.8 1.5 -0.8
+
+▲
+順路
+Ruta
+Route
+
+Kurone Kito é
+黒音キト
+
+文/A
+日本語
+English
+Español
+中文
+%

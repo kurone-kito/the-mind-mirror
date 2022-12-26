@@ -194,7 +194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Espa\xF1ol</b> (4%)"
+  m_text: "<b>Espa\xF1ol</b> (68%)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f7cab8c21178bc489bdcb82de24bd0a, type: 2}
   m_sharedMaterial: {fileID: -7182816725125710391, guid: 1f7cab8c21178bc489bdcb82de24bd0a,
@@ -222,8 +222,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <b>English</b> (4%)
+  m_text: <b>English</b> (75%)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f7cab8c21178bc489bdcb82de24bd0a, type: 2}
   m_sharedMaterial: {fileID: -7182816725125710391, guid: 1f7cab8c21178bc489bdcb82de24bd0a,
@@ -560,8 +560,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1026,8 +1026,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

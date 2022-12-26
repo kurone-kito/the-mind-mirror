@@ -4,6 +4,12 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class FallbackResources : UdonSharpBehaviour
 {
+    /// <summary>3 種類の素質ページの文言のうち、固定部分のビルド済みページを取得します。</summary>
+    public string Built3TypedGeniusFixedPart { get; protected set; }
+
+    /// <summary>3 種類の素質ページの文言のビルド済みページを取得します。</summary>
+    public string[] Built3TypedGenius { get; protected set; }
+
     /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
     public string[] BuiltGenius { get; protected set; }
 
@@ -336,6 +342,17 @@ public class FallbackResources : UdonSharpBehaviour
             "the personality when you are focused or in an emergency"
         };
 
+    /// <summary>3 種類の素質の解説。</summary>
+    public virtual string[] ThreeTypedGeniusDescription =>
+        new[]
+        {
+            "A person has 3 of these personalities, and the personality that emerges varies depending on the situation.",
+            $"Of these, “{ThreeTypedGeniusName[0]}” accounts for most of a person's personality.",
+        };
+
+    /// <summary>3 種類の素質の見出し。</summary>
+    public virtual string ThreeTypedGeniusHeading => "3 geniuses";
+
     /// <summary>
     /// 空のマインドキューブを挿入した際の、警告メッセージ。
     /// </summary>
@@ -377,6 +394,23 @@ Since clairvoyant is impossible in this state, please write your information in 
     /// <summary>初期化時に呼び出す、コールバック。</summary>
     private void Start()
     {
+        Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
+        Built3TypedGenius =
+            new[]
+            {
+                this.Create3GeniusPage((int)TypeDetailedGenius.A000),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E001),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H012),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A024),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H025),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A100),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H108),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E125),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E555),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H789),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A888),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E919),
+            };
         BuiltGenius =
             new[]
             {

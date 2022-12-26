@@ -1,4 +1,4 @@
-﻿using UdonSharp;
+using UdonSharp;
 
 /// <summary>日本語テキスト リソース群。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -319,6 +319,17 @@ public sealed class JaResources : FallbackResources
             "相手を信用しない時に出る性格",
             "集中時や緊急時に現れる性格"
         };
+
+    /// <summary>3 種類の素質の解説。</summary>
+    public override string[] ThreeTypedGeniusDescription =>
+        new[]
+        {
+            "人は他に 2 種類、合計 3 種類の素質をもち、状況により現れる素質が異なります。",
+            $"そのうち、“{ThreeTypedGeniusName[0]}”が<b>その人の持つ性格の殆ど</b>、80%以上を占めています。"
+        };
+
+    /// <summary>3 種類の素質の見出し。</summary>
+    public override string ThreeTypedGeniusHeading => "3 種類の素質";
 
     /// <summary>
     /// 空のマインドキューブを挿入した際の、警告メッセージ。

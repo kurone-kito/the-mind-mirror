@@ -47,7 +47,7 @@
     "cc": "Personality number",
     "detail": "Details of people whose personality type is classified as {{type}}, and how to handle them.",
     "details": "List of available personality type codes",
-    "genius1": "A person has three of these personalities, and the personality that emerges varies depending on the situation.",
+    "genius1": "A person has 3 of these personalities, and the personality that emerges varies depending on the situation.",
     "genius2": "Of these, “$t(genius.detail.descriptions.inner)” accounts for most of a person's personality.",
     "invalid": "An invalid birthday {{type}} has been detected. This app is only available from Feb 01, 1873, to Dec 32, 2050.",
     "personality": "The personality of the person whose birthday is {{type}} and how to handle them.",
@@ -61,7 +61,7 @@
         "outer": "**$t(genius.detail.outer)**: the personality that comes out when you don't trust the other person",
         "workStyle": "**$t(genius.detail.workStyle)**: the personality when you are focused or in an emergency"
       },
-      "detail": "A more detailed, innate personality. This is classified into 12 types. ",
+      "detail": "A more detailed, innate personality. This is classified into 12 types.",
       "inner": "Inner",
       "name": "Type of genius",
       "outer": "Outer",
@@ -219,7 +219,7 @@
       "strategy": [
         "They don't like to be paced by others, so they may be challenging to get to know at first sight, but they will be kind to you once you know them.",
         "In general, seeing the other person with strange eyes is considered a bad thing, but they are exceptions and can use as compliments.",
-        "On the other hand, words such as “unoriginal” or “common sense” can be bad words to them, so be careful.",
+        "On the other hand, words such as “impersonal” or “common sense” can be bad words to them, so be careful.",
         "When working in a group, they perform best when put in positions requiring them to be creative."
       ],
       "summary": "“Eccentric”, “Freak”, or “Weird” words are a compliment for them! They do in their way like a lone wolf."

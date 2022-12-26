@@ -32,28 +32,28 @@
     }
   },
   "descriptions": {
-    "cc": "",
-    "detail": "",
-    "details": "",
-    "genius1": "",
-    "genius2": "",
-    "invalid": "",
-    "personality": "",
-    "strategy": "",
-    "weak": ""
+    "cc": "Número de personalidad",
+    "detail": "Detalles de las personas cuyo tipo de personalidad se clasifica como {{type}}, y cómo tratarlas.",
+    "details": "Lista de códigos de tipo de personalidad disponibles",
+    "genius1": "Una persona tiene 3 de estas personalidades, y la personalidad que emerge varía en función de la situación.",
+    "genius2": "De ellos, “$t(genius.detail.descriptions.inner)” representa la mayor parte de la personalidad de una persona.",
+    "invalid": "Se ha detectado un {{type}} de cumpleaños no válido. Esta aplicación solo está disponible del 01 de feb de 1873 al 32 de dic de 2050.",
+    "personality": "La personalidad de la persona cuyo cumpleaños es {{type}} y cómo tratarla.",
+    "strategy": "Estrategias para este tipo de personalidad",
+    "weak": "Debilidades de este tipo de personalidad"
   },
   "genius": {
     "detail": {
       "descriptions": {
-        "inner": "",
-        "outer": "",
-        "workStyle": ""
+        "inner": "**$t(genius.detail.inner)**: la personalidad subyacente",
+        "outer": "**$t(genius.detail.outer)**: la personalidad que sale cuando no confías en la otra persona",
+        "workStyle": "**$t(genius.detail.workStyle)**: la personalidad cuando estás concentrado o en una emergencia"
       },
       "detail": "Una personalidad más detallada e innata. Se clasifica en 12 tipos.",
-      "inner": "",
+      "inner": "Interior",
       "name": "Tipo de genio",
-      "outer": "",
-      "workStyle": ""
+      "outer": "Exterior",
+      "workStyle": "Trabajo"
     },
     "100": {
       "detail": [
@@ -61,9 +61,16 @@
         "Tienden a encargarse de todo, intentando hacerlo por su cuenta."
       ],
       "name": "Tipo el perfeccionismo",
-      "strategy": ["", ""],
+      "strategy": [
+        "Les influyen los halagos y el trato VIP.",
+        "Les encanta sorprenderte, pero ten en cuenta que se quejarán de haber perdido prestigio si se lo niegas."
+      ],
       "summary": "Son severos y testarudos, ¡como un hombre de negocios de primera que no muestra debilidad!",
-      "weak": ["", "", ""]
+      "weak": [
+        "Tienden a ser duros consigo mismos y con los demás y les preocupa demasiado la opinión pública como para emprender acciones desafiantes.",
+        "Les influyen los halagos y el trato VIP.",
+        "Cuando colaboras con alguien, tomar atajos suele ser malo, pero hacerlo con él te enfadará especialmente."
+      ]
     },
     "108": {
       "detail": [
@@ -71,9 +78,16 @@
         "Son muy tímidos y se vuelven reticentes cuando se les arroja a un lugar lleno de extraños."
       ],
       "name": "Tipo el naturalismo",
-      "strategy": ["", ""],
+      "strategy": [
+        "Son fáciles de entender, ya que su personalidad cambia considerablemente antes y después de abrirse.",
+        "Si les haces sentir a gusto, es fácil llevarse bien con ellos."
+      ],
       "summary": "Son tímidos, pero una vez que te acostumbras a ellos, son honestos hasta la exageración.",
-      "weak": ["", "", ""]
+      "weak": [
+        "Tienden a limitarse a su esfera de actividad y a permanecer en su caparazón.",
+        "Tienden a ser demasiado honestos en sus posiciones de origen, como en las redes sociales, y muchos de ellos se vuelven verbalmente abusivos y excesivamente familiares incluso entre sus amigos.",
+        "Una vez que bajan la guardia, pueden confiar demasiado en la otra persona sin necesidad."
+      ]
     },
     "125": {
       "detail": [
@@ -81,9 +95,16 @@
         "Además, al igual que los adultos mayores, tienen una visión a largo plazo de la vida y aptitudes para ser estoicos a corto plazo."
       ],
       "name": "Tipo el romántico",
-      "strategy": ["", "", ""],
+      "strategy": [
+        "Cuando les propongas cosas, es más fácil que confíen si antes hablas de los riesgos y los aclaras.",
+        "Si les sugieres las cosas con humildad, tienden a influir fácilmente.",
+        "Detestan las actitudes intrusivas desde arriba. Pueden llevarse bien con los que no lo son tanto y tienden a estresarte sin ni siquiera saberlo."
+      ],
       "summary": "Sin rival en sueños y autodisciplina. Directo a la meta a largo plazo.",
-      "weak": ["", ""]
+      "weak": [
+        "Son escépticos y tienden a ser lentos a la hora de asumir las cosas.",
+        "La reflexión es fundamental, pero para ellos puede conducir al arrepentimiento por exceso."
+      ]
     },
     "555": {
       "detail": [
@@ -92,9 +113,15 @@
         "Pero se necesita un esfuerzo varias veces mayor que en otros tipos para convertirse en un experto en su campo. En otras palabras, son más adecuados para generalistas que para expertos."
       ],
       "name": "Tipo el sin prisas",
-      "strategy": [""],
+      "strategy": [
+        "Pueden hacerlo todo solos, por lo que tienden a ocuparse de todo por su cuenta. Cuando les confíes algo, ten cuidado de no dejarles hacer demasiado."
+      ],
       "summary": "Equilibrada, capaz y solidaria, una posición heroica.",
-      "weak": ["", "", ""]
+      "weak": [
+        "No les gusta disculparse aunque sea por su culpa. Aunque se hayan disculpado, no saben expresarlo muy bien.",
+        "Quizá porque pueden hacerlo todo por sí mismos, tienden a sentirse incómodos cuando los demás no pueden, preguntándose por qué ellos no pueden hacer esas cosas.",
+        "Tienden a encargarse de todo en un intento de hacerlo por sí solos y, como resultado, su eficacia disminuye. Lo mismo ocurre con el “$t(genius.100.name)”, pero como el “$t(genius.555.name)” tiene la destreza de hacer tanto por su cuenta, a menudo no se da cuenta de que su rendimiento está disminuyendo."
+      ]
     },
     "789": {
       "detail": [
@@ -104,9 +131,17 @@
         "Aunque se les da bien ser héroes anónimos, también les gusta ponerse delante de la gente en el momento oportuno y descremarse."
       ],
       "name": "Tipo el autoridad",
-      "strategy": ["", "", "", ""],
+      "strategy": [
+        "Cuando te presentes a ellos, no seas modesto sobre tus logros. Te tomarán la palabra y no te tendrán en cuenta.",
+        "Tienden a hablar de sí mismos durante mucho tiempo, por lo que es muy eficaz dirigir su conversación adecuadamente.",
+        "Suelen mostrarse aprensivos en lugares en los que no tienen autoridad, como un evento al que asisten por primera vez. Sin embargo, si les acompaña, le reconocerán como la “autoridad” en la situación y le seguirán.",
+        "Evita negarles su experiencia sin rodeos. Aunque su experiencia sea errónea, se enfadarán."
+      ],
       "summary": "Una persona con talento que sabe dividir los papeles respetando los logros y la experiencia.",
-      "weak": ["", ""]
+      "weak": [
+        "Tienden a centrarse en los logros y la autoridad, ya sean propios o ajenos, por lo que tienden a sobrevalorarse.",
+        "En general, los comportamientos insensibles y poco amables no son buenos, pero esto les desagrada especialmente."
+      ]
     },
     "888": {
       "detail": [
@@ -114,9 +149,14 @@
         "Muchos de ellos son tan contundentes que ni siquiera se dan cuenta de que han sido golpeados."
       ],
       "name": "Tipo el Retador",
-      "strategy": [""],
+      "strategy": [
+        "Debido a su dureza, puede ser una buena idea confiarles puestos que podrían inquietarles si se dejaran en manos de otros, además de ser vendedores."
+      ],
       "summary": "Son ingenuos y curiosos. No les importa si algo no funciona; seguirán intentándolo.",
-      "weak": ["", ""]
+      "weak": [
+        "Sus intereses no duran mucho y no suelen ser buenos negociadores a largo plazo.",
+        "Suelen cambiar de tema con frecuencia. Pero otros suelen querer prolongar el tema un poco más, por lo que pueden incomodar a los demás."
+      ]
     },
     "919": {
       "detail": [
@@ -125,9 +165,15 @@
         "Son buenos negociadores y tienen madera de vendedores."
       ],
       "name": "Tipo el Socialice",
-      "strategy": ["", ""],
+      "strategy": [
+        "Es más fácil abrirse a ellos si limitas las formalidades al primer encuentro y creas un ambiente divertido la próxima vez que os veáis.",
+        "Son holgazanes, pero cuando están motivados, realizan una enorme cantidad de trabajo. Por eso es fundamental dejarles hacer su trabajo sin indicarles detalladamente cómo hacerlo."
+      ],
       "summary": "Son buenos negociadores y prefieren la estrategia a corto plazo.",
-      "weak": ["", ""]
+      "weak": [
+        "Suelen sentirse incómodos con el ambiente formal y la actitud poco clara.",
+        "Tampoco son muy buenos a la hora de producir resultados estables a largo plazo."
+      ]
     },
     "000": {
       "detail": [
@@ -136,9 +182,16 @@
         "También es habitual que los tipos sensibles se vayan de viaje sin un plan y pierdan el contacto."
       ],
       "name": "Tipo el espiritual",
-      "strategy": ["", "", ""],
+      "strategy": [
+        "Odian cualquier restricción, esclavitud o regla.",
+        "Cuando dicen “¡Entendido!”, tienden a no entender todavía la petición. Así que es buena idea consultarlo con ellos para evitar problemas más adelante.",
+        "Si vas a hacer algo con un grupo de personas, lo mejor es ponerlas en situación de que se les pida que sean creativas."
+      ],
       "summary": "Prefieren vagar sin rumbo y utilizar la intuición aguda y los destellos de inspiración.",
-      "weak": ["", ""]
+      "weak": [
+        "Tienden a desordenar sus notas, las carpetas de sus escritorios, las habitaciones y todo lo demás si no son conscientes.",
+        "Suelen tener un fuerte vínculo entre sus emociones y su rendimiento. En otras palabras, si no están en el estado de ánimo adecuado, no progresarán."
+      ]
     },
     "001": {
       "detail": [
@@ -147,9 +200,17 @@
         "Son los mejores actores para interpretar el papel de “idiota bien pensado”."
       ],
       "name": "Tipo lobo solitario",
-      "weak": ["", ""],
+      "strategy": [
+        "No les gusta que los demás les sigan el ritmo, por lo que puede resultar difícil conocerlos a primera vista, pero serán amables con usted una vez que los conozca.",
+        "En general, ver a la otra persona con ojos extraños se considera algo malo, pero son excepciones y se pueden utilizar como cumplidos.",
+        "Por otro lado, palabras como “impersonal” o “sentido común” pueden ser malas palabras para ellos, así que ten cuidado.",
+        "Cuando trabajan en grupo, rinden mejor cuando se les coloca en puestos que les exigen ser creativos."
+      ],
       "summary": "Las palabras “excéntrico”, “friki” o “raro” son un cumplido para ellos. Hacen a su manera como un lobo solitario.",
-      "strategy": ["", "", "", ""]
+      "weak": [
+        "Suelen hacerlo a su manera y no son muy ingeniosos.",
+        "No les gusta dejarse arrastrar por el ritmo de los demás y pueden imponer su propio ritmo a los demás."
+      ]
     },
     "012": {
       "detail": [
@@ -158,9 +219,17 @@
         "Aunque tienen muchas ganas de estar delante del público, también saben apoyar todo el proceso entre bastidores."
       ],
       "name": "Tipo primeros adoptantes",
+      "strategy": [
+        "“Es la última noticia” y “Nadie lo sabe todavía” son palabras poderosas para captar su atención.",
+        "Por otro lado, las cosas desgastadas o estables pueden desalentar su interés."
+      ],
       "summary": "Son early adopters a los que les encanta lo nuevo y persiguen la frescura cada día.",
-      "strategy": ["", ""],
-      "weak": ["", "", "", ""]
+      "weak": [
+        "Siempre les gustan las cosas nuevas, pero para ellos dejan de serlo cuando ya lo saben todo. Por eso, tienden a aburrirse rápidamente.",
+        "Si tienen problemas para empezar, tienden a perder la motivación incluso para las cosas necesarias.",
+        "Odian intensamente que se les obligue a actuar o se les enfade delante del público.",
+        "Muchas personas dicen que “Schadenfreude, Sentir placer en la miseria de los demás”. Pero ellos son diferentes, y lo odian."
+      ]
     },
     "024": {
       "detail": [
@@ -170,9 +239,16 @@
         "Pueden memorizar y actuar como si ya supieran algo hace diez años, aunque acaben de aprenderlo por primera vez."
       ],
       "name": "Tipo el esforzador",
+      "strategy": [
+        "Por lo general, no es buena idea enfadar a los demás, pero estas personas, de modales normalmente suaves, tienen la forma más espeluznante de enfadarse entre sus muchos tipos de personalidad.",
+        "Son adecuados como coordinadores o directores interpersonales. Pero, por otro lado, si les das la responsabilidad de la planificación, producirán una serie de productos efímeros porque cambian sus creaciones con frecuencia debido a la ansiedad.",
+        "Cuando se trabaja con ellos, conviene ser frecuente y minucioso en los informes, la comunicación y las consultas."
+      ],
       "summary": "Son impacientes y tienen un fuerte impulso.",
-      "strategy": ["", "", ""],
-      "weak": ["", ""]
+      "weak": [
+        "Son impacientes y tienden a ponerse nerviosos si no reciben informes detallados de sus progresos.",
+        "No se les suelen dar bien los cálculos detallados ni quedarse parados."
+      ]
     },
     "025": {
       "detail": [
@@ -181,9 +257,15 @@
         "Suelen estar bien informados porque tienen muchos contactos."
       ],
       "name": "Tipo el saintist",
+      "strategy": [
+        "Es tabú intentar engañarles, dejarles fuera, saltarse su turno o hacer cualquier cosa que no sea honorable.",
+        "Tienden a pensar que todos los implicados son igualmente responsables y difuminan sus responsabilidades de forma colectiva, por lo que es mejor seguirles la corriente."
+      ],
       "summary": "Son personas que aman a los demás y son personalidades bien informadas.",
-      "strategy": ["", ""],
-      "weak": ["", ""]
+      "weak": [
+        "Tienen un fuerte sentido de la camaradería, por lo que cuando alguien que conocen se mete en problemas, tienden a meterse en problemas con ellos.",
+        "Su juicio empieza a debilitarse porque tienden a recoger demasiada información de su entorno."
+      ]
     }
   },
   "lifeBase": {

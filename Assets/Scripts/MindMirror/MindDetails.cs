@@ -76,6 +76,15 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.BuiltGenius[details[(int)TypeDetailIndex.Genius]];
     }
 
+    /// <summary>人生観ページの文言を取得します。</summary>
+    /// <returns>人生観ページの文言。</returns>
+    private string GetLifeBasePage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltLifebase[vars.LifeBase];
+    }
+
     /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
     /// </summary>
@@ -118,7 +127,8 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetDetailedGeniusPage(),
                 GetDetailedGeniusWeaknessPage(),
                 GetDetailedGeniusStrategyPage(),
-                $"{Get3TypedGeniusPage()}\n{comingSoon}",
+                Get3TypedGeniusPage(),
+                $"{GetLifeBasePage()}\n{comingSoon}",
             };
         nameLabel.text = cube.CubeName;
         UpdateContents();

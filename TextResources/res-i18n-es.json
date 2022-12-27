@@ -270,45 +270,74 @@
   },
   "lifeBase": {
     "application": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "A este tipo de personas se les suele dar bien crear organizaciones.",
+        "También es más probable que sean cuidadores y guardianes."
+      ],
+      "name": "me gustaría ser yo quien lo experimentara todo."
     },
     "association": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiende a ser más curiosa intelectualmente que los demás.",
+        "Tienen una capacidad extraordinaria para sacar sus ideas adelante en cada momento."
+      ],
+      "name": "me gustaría hacerlo inmediatamente cuando pienso."
     },
-    "detail": "",
+    "detail": "Visión de la vida",
     "development": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiene una gran sensibilidad, capacidad de razonamiento e imaginación.",
+        "También tienen un fuerte sentido de la justicia y suelen ser mentes sensibles."
+      ],
+      "name": "quisieran ser perfeccionistas."
     },
     "expression": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiende a ser un buen conversador.",
+        "Además, suelen tener un espíritu juguetón que hace que la otra persona se entretenga más que ella misma."
+      ],
+      "name": "me gustaría ser honesto conmigo mismo"
     },
     "finance": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiende a tener el deseo de ser atractiva.",
+        "Además, también son personas cariñosas, y muchas tienen el deseo de hacerse notar por quienes les rodean."
+      ],
+      "name": "me gustaría tenerlo todo al alcance de la vista."
     },
     "investment": {
-      "detail": [""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona es fuerte con los números y tiene una notable capacidad para ver el significado de los valores que representan."
+      ],
+      "name": "me gustaría ser un coleccionista con los pies en la tierra."
     },
     "organization": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiene una excelente autodisciplina.",
+        "Muchos de ellos también tienen la firme voluntad de retribuir."
+      ],
+      "name": "le gustaría vivir como miembro de un grupo."
     },
     "quest": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de personas tienden a ser lógicas, inteligentes y rápidas.",
+        "Respetan a los clásicos y destacan en la toma de decisiones a través de los estudios iniciados por filósofos anteriores."
+      ],
+      "name": "me gustaría aprender de la sabiduría de mis pioneros."
     },
     "selfMind": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona suele ser hábil para hacer valer su voluntad mientras escucha a los demás.",
+        "También trabajan en equipos de amigos y tienen una mentalidad inflexible hasta que las cosas se consiguen."
+      ],
+      "name": "le gustaría ser siempre el líder del grupo."
     },
     "selfReliance": {
-      "detail": ["", ""],
-      "name": ""
+      "detail": [
+        "Este tipo de persona tiende a ser competitiva.",
+        "Tienen un fuerte sentido de sí mismos y saben vivir sin dejarse influir por los demás."
+      ],
+      "name": "le gustaría ser un lobo solitario."
     }
   },
   "management": {
@@ -339,7 +368,7 @@
   "name": "",
   "position": {
     "detail": {
-      "detail": "",
+      "detail": "Cada tipo de personalidad se adapta a un papel diferente. Así que, en general, es mejor superar tus puntos débiles delegándolos en la persona adecuada en el lugar adecuado, en lugar de hacerlo tú solo, para poder conseguir grandes resultados.",
       "name": ""
     },
     "adjust": {
@@ -365,13 +394,19 @@
   },
   "potentials": {
     "detail": {
-      "name": "",
-      "detail": ""
+      "name": "Capacidad potencial",
+      "detail": "Las personas tienen potenciales inherentes que pueden ejercer cuando actúan."
     },
     "Ci": {
-      "detail": ["", ""],
+      "detail": [
+        "Este tipo de persona posee una excelente capacidad de análisis y aplicación y tiene predisposición a dedicarse a una sola cosa a la vez.",
+        "Tienen el poder del arreglo más que el de la originalidad."
+      ],
       "Ci": "$t(potentials.Ci.detail)",
-      "Co": ["$t(potentials.Ci.detail.0)", ""],
+      "Co": [
+        "$t(potentials.Ci.detail.0)",
+        "También pueden crear de la nada y el potencial de sublimar el trabajo de otros."
+      ],
       "Ei": [
         "$t(potentials.Ci.detail.0)",
         "$t(potentials.Ci.detail.1)",
@@ -414,8 +449,15 @@
       ]
     },
     "Co": {
-      "detail": ["", ""],
-      "Co": ["$t(potentials.Co.detail.0)", "$t(potentials.Co.detail.1)", ""],
+      "detail": [
+        "Este tipo de persona tiene el potencial de perseguir una cosa sin descanso.",
+        "También pueden crear algo de la nada y ser sensibles a lo nuevo."
+      ],
+      "Co": [
+        "$t(potentials.Co.detail.0)",
+        "$t(potentials.Co.detail.1)",
+        "Por otro lado, no suelen ser buenos ordenando o desarrollando lo que ya existe."
+      ],
       "Ei": [
         "$t(potentials.Co.detail.0)",
         "$t(potentials.Co.detail.1)",
@@ -458,7 +500,7 @@
       ]
     },
     "Ei": {
-      "detail": "",
+      "detail": "Este tipo de persona puede expresarse piensa, de forma no verbal, como un artista.",
       "Ei": ["$t(potentials.Ei.detail)"],
       "Eo": ["$t(potentials.Ei.detail)", "$t(potentials.Eo.detail)"],
       "Fi": [
@@ -489,7 +531,7 @@
       ]
     },
     "Eo": {
-      "detail": "",
+      "detail": "Este tipo de persona puede expresarse activamente a través de las palabras.",
       "Eo": ["$t(potentials.Eo.detail)"],
       "Fi": [
         "$t(potentials.Eo.detail)",
@@ -519,7 +561,10 @@
       ]
     },
     "Fi": {
-      "detail": ["", ""],
+      "detail": [
+        "Este tipo de persona tiene el potencial de ver el significado oculto tras los números.",
+        "También intentan hacer las cosas con cuidado."
+      ],
       "Fi": "$t(potentials.Fi.detail)",
       "Fo": [
         "$t(potentials.Fi.detail.0)",
@@ -548,7 +593,7 @@
       ]
     },
     "Fo": {
-      "detail": "",
+      "detail": "Este tipo de persona tiene potencial para expresar cosas con números y datos.",
       "Fo": ["$t(potentials.Fo.detail)"],
       "Ii": [
         "$t(potentials.Fo.detail)",
@@ -568,9 +613,16 @@
       ]
     },
     "Ii": {
-      "detail": ["", ""],
+      "detail": [
+        "Este tipo de persona sabe escuchar y puede averiguar lo que piensa la otra persona.",
+        "Entonces pueden hablar y transmitir sus intenciones a la otra persona."
+      ],
       "Ii": "$t(potentials.Ii.detail)",
-      "Io": ["", "$t(potentials.Io.detail.0)", ""],
+      "Io": [
+        "Este tipo de persona es a la vez un buen conversador y un buen oyente y tiene una capacidad equilibrada para hablar.",
+        "$t(potentials.Io.detail.0)",
+        "Por otra parte, también saben escuchar y averiguar lo que piensa la otra persona."
+      ],
       "Ni": [
         "$t(potentials.Ii.detail.0)",
         "$t(potentials.Ni.detail.0)",
@@ -583,7 +635,10 @@
       ]
     },
     "Io": {
-      "detail": ["", ""],
+      "detail": [
+        "Este tipo de persona es un hablador insistente que prefiere contar una historia a escucharla.",
+        "Además, aquellos cuya personalidad interior es “$t(genius.001.name)” tienden a ser dictatoriales."
+      ],
       "Io": "$t(potentials.Io.detail)",
       "Ni": [
         "$t(potentials.Io.detail.0)",
@@ -597,13 +652,31 @@
       ]
     },
     "Ni": {
-      "detail": ["", ""],
-      "Ni": ["$t(potentials.Ni.detail.0)", "", "$t(potentials.Ni.detail.1)"],
-      "No": ["$t(potentials.Ni.detail.0)", "$t(potentials.No.detail.0)", ""]
+      "detail": [
+        "Este tipo de persona tiene el potencial de mantener o solidificar interiormente un grupo u organización.",
+        "Son personas organizadas, bien planificadas y con una excelente capacidad de autogestión."
+      ],
+      "Ni": [
+        "$t(potentials.Ni.detail.0)",
+        "Sin embargo, no suelen ser buenos creando nuevos equipos o desarrollando y ampliando sus grupos.",
+        "$t(potentials.Ni.detail.1)"
+      ],
+      "No": [
+        "$t(potentials.Ni.detail.0)",
+        "$t(potentials.No.detail.0)",
+        "Son meticulosos, organizados, atentos y tienen una excelente capacidad de autogestión."
+      ]
     },
     "No": {
-      "detail": ["", ""],
-      "No": ["$t(potentials.No.detail.0)", "", "$t(potentials.No.detail.1)"]
+      "detail": [
+        "Este tipo de persona tiene potencial para crear grupos y organizaciones y desarrollarlos hacia el exterior.",
+        "También suelen ser personas muy cariñosas."
+      ],
+      "No": [
+        "$t(potentials.No.detail.0)",
+        "No suelen ser buenos manteniendo grupos, e incluso cuando los crean, tienden a desaparecer espontáneamente.",
+        "$t(potentials.No.detail.1)"
+      ]
     }
   },
   "response": {

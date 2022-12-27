@@ -184,6 +184,30 @@ public static class PageGenerator
             };
     }
 
+    /// <summary>人生観ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="genius">人生観タイプ。</param>
+    /// <returns>人生観ページの文言。</returns>
+    public static string CreateLifeBasePage(
+        this FallbackResources res, int lifebase)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copyHeading =
+            string.Format(
+                res.TemplateYourType, res.LifeBaseHeading.ToLower());
+        return
+            res.CreateByTemplate(
+                res.LifeBaseHeading,
+                res.LifeBaseDescription,
+                $"{copyHeading}: {res.LifeBaseTypesName[lifebase]}",
+                res.LifeBaseTypesDetail[lifebase],
+                1.5f,
+                1.5f);
+    }
+
     /// <summary>
     /// 簡易ビューアーのページの文言を取得します。
     /// </summary>

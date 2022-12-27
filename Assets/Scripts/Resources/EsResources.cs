@@ -314,6 +314,29 @@ public sealed class EsResources : FallbackResources
             },
         };
 
+    /// <summary>人生観の解説。</summary>
+    public override string LifeBaseDescription =>
+        "Las personas también tienen un ego latente con el que nacen, además de las tres personalidades.";
+
+    /// <summary>人生観の見出し。</summary>
+    public override string LifeBaseHeading => "Visión de la vida";
+
+    /// <summary>人生観のタイプ別名前一覧。</summary>
+    public override string[] LifeBaseTypesName =>
+        new[]
+        {
+            "me gustaría ser yo quien lo experimentara todo.",
+            "me gustaría hacerlo inmediatamente cuando pienso.",
+            "quisieran ser perfeccionistas.",
+            "me gustaría ser honesto conmigo mismo",
+            "me gustaría tenerlo todo al alcance de la vista.",
+            "me gustaría ser un coleccionista con los pies en la tierra.",
+            "le gustaría vivir como miembro de un grupo.",
+            "me gustaría aprender de la sabiduría de mis pioneros.",
+            "le gustaría ser siempre el líder del grupo.",
+            "le gustaría ser un lobo solitario.",
+        };
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "Interior", "Exterior", "Trabajo" };
@@ -358,6 +381,9 @@ Dado que la clarividencia es imposible en este estado, por favor escriba su info
     /// <summary> 各項目における、弱点のテンプレート。</summary>
     public override string TemplateWeakness =>
         "Debilidades del tipo “<b>{0}</b>”";
+
+    /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
+    public override string TemplateYourType => "Tu {0}";
 
     /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
     public override string TemplateYourTypeIs =>

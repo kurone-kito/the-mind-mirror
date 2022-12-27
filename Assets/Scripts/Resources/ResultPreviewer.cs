@@ -1,4 +1,4 @@
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 
 /// <summary>表示テスト用の結果情報ビューア。</summary>
@@ -29,7 +29,8 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 res.BuiltDetailedGeniusType,
                 res.BuiltDetailedGeniusWeakness,
                 res.BuiltDetailedGeniusStrategy,
-                res.Built3TypedGenius);
+                res.Built3TypedGenius,
+                res.BuiltLifebase);
     }
 
     /// <summary>描画状態を更新します。</summary>

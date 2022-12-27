@@ -1,35 +1,51 @@
 {
   "web": {
     "appearance": {
-      "name": "",
-      "automatic": "⚙️",
-      "dark": "🌙",
-      "light": "☀️"
+      "name": "Apariencia",
+      "automatic": "⚙️ Automático",
+      "dark": "🌙 Oscuro",
+      "light": "☀️ Luz"
     },
-    "author": "",
-    "description": "",
-    "feature": { "body": ["", "", "", "", "", ""], "title": "" },
+    "author": "Kurone Kito",
+    "description": "Calcula la personalidad a partir del cumpleaños.",
+    "feature": {
+      "body": ["", "", "", "", "", ""],
+      "title": "Características del módulo"
+    },
     "form": {
-      "birthday": "",
-      "legend": "",
-      "nickname": "",
+      "birthday": "Introducir la fecha de cumpleaños (obligatorio)",
+      "legend": "Demostración: ¡Pruébalo!",
+      "nickname": "Introduzca el apodo (opcional)",
       "notes": ["", "", ""],
-      "submit": ""
+      "submit": "¡Comprueba la personalidad!"
     },
-    "install": ["", "", "", "", "", "", "", "", ""],
-    "language": { "automatic": "🌐", "name": "" },
+    "install": [
+      "```sh",
+      "# Uso para CLI (Linux / macOS / Windows / u otro entorno Node.js >= v12.1)",
+      "> npm install --global @kurone-kito/dantalion-cli",
+      "> dantalion personality 2000-01-01",
+      "> dantalion --help # Mostrar más uso",
+      "",
+      "# Utilización como módulo",
+      "> npm install --save @kurone-kito/dantalion-core",
+      "```"
+    ],
+    "language": { "automatic": "🌐 Automático", "name": "Lengua" },
     "preface": ["", ""],
     "result": {
       "genius": { "inner": "", "outer": "", "workStyle": "" },
       "heading": "",
-      "lifeBase": { "detail": "", "name": "" },
-      "nickname": "",
+      "lifeBase": {
+        "detail": "Las personas también tienen un ego latente con el que nacen, además de las tres personalidades.",
+        "name": ""
+      },
+      "nickname": "Anónimo",
       "potential": "",
       "probed": "¡Mx. {{nickname}} tiene “{{type}}”!",
-      "profile": ""
+      "profile": "ID del expediente personal"
     },
-    "seeRepo": "",
-    "share": { "hashtag": "", "tweet": "" },
-    "tooltip": { "summary": "" }
+    "seeRepo": "Para más detalles sobre la biblioteca, consulte el repositorio GitHub.",
+    "share": { "hashtag": "", "tweet": "¡Tuitea el resultado!" },
+    "tooltip": { "summary": "Toque aquí, expandiré o colapsaré." }
   }
 }

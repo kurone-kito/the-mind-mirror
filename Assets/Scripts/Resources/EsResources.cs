@@ -110,6 +110,77 @@ public sealed class EsResources : FallbackResources
             "Tipo el Socialice",
         };
 
+    /// <summary>各素質に対する、攻略法の解説。</summary>
+    public override string[][] DetailedGeniusTypeStrategy =>
+        new[]
+        {
+            new[]
+            {
+                "Odian cualquier restricción, esclavitud o regla.",
+                "Cuando dicen “¡Entendido!”, tienden a no entender todavía la petición. Así que es buena idea consultarlo con ellos para evitar problemas más adelante.",
+                "Si vas a hacer algo con un grupo de personas, lo mejor es ponerlas en situación de que se les pida que sean creativas.",
+            },
+            new[]
+            {
+                "No les gusta que los demás les sigan el ritmo, por lo que puede resultar difícil conocerlos a primera vista, pero serán amables con usted una vez que los conozca.",
+                "En general, ver a la otra persona con ojos extraños se considera algo malo, pero son excepciones y se pueden utilizar como cumplidos.",
+                "Por otro lado, palabras como “impersonal” o “sentido común” pueden ser malas palabras para ellos, así que ten cuidado.",
+                "Cuando trabajan en grupo, rinden mejor cuando se les coloca en puestos que les exigen ser creativos.",
+            },
+            new[]
+            {
+                "“Es la última noticia” y “Nadie lo sabe todavía” son palabras poderosas para captar su atención.",
+                "Por otro lado, las cosas desgastadas o estables pueden desalentar su interés.",
+            },
+            new[]
+            {
+                "Por lo general, no es buena idea enfadar a los demás, pero estas personas, de modales normalmente suaves, tienen la forma más espeluznante de enfadarse entre sus muchos tipos de personalidad.",
+                "Son adecuados como coordinadores o directores interpersonales. Pero, por otro lado, si les das la responsabilidad de la planificación, producirán una serie de productos efímeros porque cambian sus creaciones con frecuencia debido a la ansiedad.",
+                "Cuando se trabaja con ellos, conviene ser frecuente y minucioso en los informes, la comunicación y las consultas.",
+            },
+            new[]
+            {
+                "Es tabú intentar engañarles, dejarles fuera, saltarse su turno o hacer cualquier cosa que no sea honorable.",
+                "Tienden a pensar que todos los implicados son igualmente responsables y difuminan sus responsabilidades de forma colectiva, por lo que es mejor seguirles la corriente.",
+            },
+            new[]
+            {
+                "Les influyen los halagos y el trato VIP.",
+                "Les encanta sorprenderte, pero ten en cuenta que se quejarán de haber perdido prestigio si se lo niegas."
+            },
+            new[]
+            {
+                "Son fáciles de entender, ya que su personalidad cambia considerablemente antes y después de abrirse.",
+                "Si les haces sentir a gusto, es fácil llevarse bien con ellos."
+            },
+            new[]
+            {
+                "Cuando les propongas cosas, es más fácil que confíen si antes hablas de los riesgos y los aclaras.",
+                "Si les sugieres las cosas con humildad, tienden a influir fácilmente.",
+                "Detestan las actitudes intrusivas desde arriba. Pueden llevarse bien con los que no lo son tanto y tienden a estresarte sin ni siquiera saberlo.",
+            },
+            new[]
+            {
+                "Pueden hacerlo todo solos, por lo que tienden a ocuparse de todo por su cuenta. Cuando les confíes algo, ten cuidado de no dejarles hacer demasiado.",
+            },
+            new[]
+            {
+                "Cuando te presentes a ellos, no seas modesto sobre tus logros. Te tomarán la palabra y no te tendrán en cuenta.",
+                "Tienden a hablar de sí mismos durante mucho tiempo, por lo que es muy eficaz dirigir su conversación adecuadamente.",
+                "Suelen mostrarse aprensivos en lugares en los que no tienen autoridad, como un evento al que asisten por primera vez. Sin embargo, si les acompaña, le reconocerán como la “autoridad” en la situación y le seguirán.",
+                "Evita negarles su experiencia sin rodeos. Aunque su experiencia sea errónea, se enfadarán.",
+            },
+            new[]
+            {
+                "Debido a su dureza, puede ser una buena idea confiarles puestos que podrían inquietarles si se dejaran en manos de otros, además de ser vendedores.",
+            },
+            new[]
+            {
+                "Es más fácil abrirse a ellos si limitas las formalidades al primer encuentro y creas un ambiente divertido la próxima vez que os veáis.",
+                "Son holgazanes, pero cuando están motivados, realizan una enorme cantidad de trabajo. Por eso es fundamental dejarles hacer su trabajo sin indicarles detalladamente cómo hacerlo.",
+            },
+        };
+
     /// <summary>素質のキャッチコピー。</summary>
     public override string[] DetailedGeniusTypeSummary =>
         new[]
@@ -126,6 +197,78 @@ public sealed class EsResources : FallbackResources
             "Una persona con talento que sabe dividir los papeles respetando los logros y la experiencia",
             "Son ingenuos y curiosos. No les importa si algo no funciona; seguirán intentándolo",
             "Son buenos negociadores y prefieren la estrategia a corto plazo",
+        };
+
+
+    /// <summary>各素質における、弱点の解説。</summary>
+    public override string[][] DetailedGeniusTypeWeakness =>
+        new[]
+        {
+            new[]
+            {
+                "Tienden a desordenar sus notas, las carpetas de sus escritorios, las habitaciones y todo lo demás si no son conscientes.",
+                "Suelen tener un fuerte vínculo entre sus emociones y su rendimiento. En otras palabras, si no están en el estado de ánimo adecuado, no progresarán.",
+            },
+            new[]
+            {
+                "Suelen hacerlo a su manera y no son muy ingeniosos.",
+                "No les gusta dejarse arrastrar por el ritmo de los demás y pueden imponer su propio ritmo a los demás.",
+            },
+            new[]
+            {
+                "Siempre les gustan las cosas nuevas, pero para ellos dejan de serlo cuando ya lo saben todo. Por eso, tienden a aburrirse rápidamente.",
+                "Si tienen problemas para empezar, tienden a perder la motivación incluso para las cosas necesarias.",
+                "Odian intensamente que se les obligue a actuar o se les enfade delante del público.",
+                "Muchas personas dicen que “Schadenfreude, Sentir placer en la miseria de los demás”. Pero ellos son diferentes, y lo odian.",
+            },
+            new[]
+            {
+                "Son impacientes y tienden a ponerse nerviosos si no reciben informes detallados de sus progresos.",
+                "No se les suelen dar bien los cálculos detallados ni quedarse parados.",
+            },
+            new[]
+            {
+                "Tienen un fuerte sentido de la camaradería, por lo que cuando alguien que conocen se mete en problemas, tienden a meterse en problemas con ellos.",
+                "Su juicio empieza a debilitarse porque tienden a recoger demasiada información de su entorno.",
+            },
+            new[]
+            {
+                "Tienden a ser duros consigo mismos y con los demás y les preocupa demasiado la opinión pública como para emprender acciones desafiantes.",
+                "Les influyen los halagos y el trato VIP.",
+                "Cuando colaboras con alguien, tomar atajos suele ser malo, pero hacerlo con él te enfadará especialmente.",
+            },
+            new[]
+            {
+                "Tienden a limitarse a su esfera de actividad y a permanecer en su caparazón.",
+                "Tienden a ser demasiado honestos en sus posiciones de origen, como en las redes sociales, y muchos de ellos se vuelven verbalmente abusivos y excesivamente familiares incluso entre sus amigos.",
+                "Una vez que bajan la guardia, pueden confiar demasiado en la otra persona sin necesidad.",
+            },
+            new[]
+            {
+                "Son escépticos y tienden a ser lentos a la hora de asumir las cosas.",
+                "La reflexión es fundamental, pero para ellos puede conducir al arrepentimiento por exceso.",
+            },
+            new[]
+            {
+                "No les gusta disculparse aunque sea por su culpa. Aunque se hayan disculpado, no saben expresarlo muy bien.",
+                "Quizá porque pueden hacerlo todo por sí mismos, tienden a sentirse incómodos cuando los demás no pueden, preguntándose por qué ellos no pueden hacer esas cosas.",
+                $"Tienden a encargarse de todo en un intento de hacerlo por sí solos y, como resultado, su eficacia disminuye. Lo mismo ocurre con el “{DetailedGeniusTypeName[(int)TypeDetailedGenius.A100]}”, pero como el “{DetailedGeniusTypeName[(int)TypeDetailedGenius.E555]}” tiene la destreza de hacer tanto por su cuenta, a menudo no se da cuenta de que su rendimiento está disminuyendo.",
+            },
+            new[]
+            {
+                "Tienden a centrarse en los logros y la autoridad, ya sean propios o ajenos, por lo que tienden a sobrevalorarse.",
+                "En general, los comportamientos insensibles y poco amables no son buenos, pero esto les desagrada especialmente.",
+            },
+            new[]
+            {
+                "Sus intereses no duran mucho y no suelen ser buenos negociadores a largo plazo.",
+                "Suelen cambiar de tema con frecuencia. Pero otros suelen querer prolongar el tema un poco más, por lo que pueden incomodar a los demás.",
+            },
+            new[]
+            {
+                "Suelen sentirse incómodos con el ambiente formal y la actitud poco clara.",
+                "Tampoco son muy buenos a la hora de producir resultados estables a largo plazo.",
+            },
         };
 
     /// <summary>性格の大分類の説明。</summary>
@@ -171,6 +314,29 @@ public sealed class EsResources : FallbackResources
             },
         };
 
+    /// <summary>人生観の解説。</summary>
+    public override string LifeBaseDescription =>
+        "Las personas también tienen un ego latente con el que nacen, además de las tres personalidades.";
+
+    /// <summary>人生観の見出し。</summary>
+    public override string LifeBaseHeading => "Visión de la vida";
+
+    /// <summary>人生観のタイプ別名前一覧。</summary>
+    public override string[] LifeBaseTypesName =>
+        new[]
+        {
+            "me gustaría ser yo quien lo experimentara todo.",
+            "me gustaría hacerlo inmediatamente cuando pienso.",
+            "quisieran ser perfeccionistas.",
+            "me gustaría ser honesto conmigo mismo",
+            "me gustaría tenerlo todo al alcance de la vista.",
+            "me gustaría ser un coleccionista con los pies en la tierra.",
+            "le gustaría vivir como miembro de un grupo.",
+            "me gustaría aprender de la sabiduría de mis pioneros.",
+            "le gustaría ser siempre el líder del grupo.",
+            "le gustaría ser un lobo solitario.",
+        };
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "Interior", "Exterior", "Trabajo" };
@@ -184,6 +350,17 @@ public sealed class EsResources : FallbackResources
             "la personalidad cuando estás concentrado o en una emergencia",
         };
 
+    /// <summary>3 種類の素質の解説。</summary>
+    public override string[] ThreeTypedGeniusDescription =>
+        new[]
+        {
+            "Una persona tiene 3 de estas personalidades, y la personalidad que emerge varía en función de la situación.",
+            $"De ellos, “{ThreeTypedGeniusName[0]} representa la mayor parte de la personalidad de una persona."
+        };
+
+    /// <summary>3 種類の素質の見出し。</summary>
+    public override string ThreeTypedGeniusHeading => "3 Genios";
+
     /// <summary>
     /// 空のマインドキューブを挿入した際の、警告メッセージ。
     /// </summary>
@@ -196,6 +373,17 @@ Dado que la clarividencia es imposible en este estado, por favor escriba su info
 
     /// <summary>ページ番号のテンプレート。</summary>
     public override string TemplatePages => "Páginas: {0}/{1}";
+
+    /// <summary> 各項目における、攻略法のテンプレート。</summary>
+    public override string TemplateStrategy =>
+        "Estrategias para el tipo “<b>{0}</b>”";
+
+    /// <summary> 各項目における、弱点のテンプレート。</summary>
+    public override string TemplateWeakness =>
+        "Debilidades del tipo “<b>{0}</b>”";
+
+    /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
+    public override string TemplateYourType => "Tu {0}";
 
     /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
     public override string TemplateYourTypeIs =>

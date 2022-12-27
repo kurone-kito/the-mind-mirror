@@ -4,6 +4,12 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class FallbackResources : UdonSharpBehaviour
 {
+    /// <summary>3 種類の素質ページの文言のうち、固定部分のビルド済みページを取得します。</summary>
+    public string Built3TypedGeniusFixedPart { get; protected set; }
+
+    /// <summary>3 種類の素質ページの文言のビルド済みページを取得します。</summary>
+    public string[] Built3TypedGenius { get; protected set; }
+
     /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
     public string[] BuiltGenius { get; protected set; }
 
@@ -15,6 +21,9 @@ public class FallbackResources : UdonSharpBehaviour
 
     /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
     public string[] BuiltDetailedGeniusStrategy { get; protected set; }
+
+    /// <summary>人生観別のビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltLifebase { get; protected set; }
 
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
@@ -323,6 +332,84 @@ public class FallbackResources : UdonSharpBehaviour
             },
         };
 
+    /// <summary>人生観の解説。</summary>
+    public virtual string LifeBaseDescription =>
+        "Peoples also have a latent ego that they are born with, in addition to the three personalities.";
+
+    /// <summary>人生観の見出し。</summary>
+    public virtual string LifeBaseHeading => "View of life";
+
+    /// <summary>人生観のタイプ別解説。</summary>
+    public virtual string[][] LifeBaseTypesDetail =>
+        new[]
+        {
+            new[]
+            {
+                "This type of person tends to be good at building organizations.",
+                "They are also more likely to be custodial and caring.",
+            },
+            new[]
+            {
+                "This type of person tends to be more intellectually curious than others.",
+                "They have a remarkable ability to come up with their ideas to get them through the moment.",
+            },
+            new[]
+            {
+                "This type of person has a keen sense of sensitivity, reasoning ability, and imagination.",
+                "They also have a strong sense of justice and are often sensitive minds.",
+            },
+            new[]
+            {
+                "This type of person tends to be a good talker.",
+                "In addition, they tend to have a playful spirit that makes the other person more entertained than themselves.",
+            },
+            new[]
+            {
+                "This type of person tends to have a desire to be attractive.",
+                "In addition, they are also caring people, and many have a desire to be noticed by those around them.",
+            },
+            new[]
+            {
+                "This type of person is strong with numbers and has a remarkable ability to see the meaning of the values they represent.",
+            },
+            new[]
+            {
+                "This type of person has excellent self-discipline.",
+                "Many of them also have a strong mind of giving back.",
+            },
+            new[]
+            {
+                "This type of person tends to be logical, intelligent, and quick-witted.",
+                "They respect the classics and excel at making decisions through the studies pioneered by earlier philosophers.",
+            },
+            new[]
+            {
+                "This type of person tends to be skilled at asserting their will while listening to others.",
+                "They also work in teams of friends and have an uncompromising mentality until things are accomplished.",
+            },
+            new[]
+            {
+                "This type of person tends to be competitive.",
+                "They have a strong sense of self and are good at living without being influenced by others.",
+            },
+        };
+
+    /// <summary>人生観のタイプ別名前一覧。</summary>
+    public virtual string[] LifeBaseTypesName =>
+        new[]
+        {
+            "would like to be the one who experiences everything myself.",
+            "would like to do it immediately when they think.",
+            "would like to be perfectionists.",
+            "would like to be honest with themselves.",
+            "would like to put everything within eye reach.",
+            "would like to be a down-to-earth collector.",
+            "would like to live as a member of a group.",
+            "would like to learn from the wisdom of their pioneers.",
+            "would like to be the leader of the group always.",
+            "would like to be a lone wolf.",
+        };
+
     /// <summary>3 種類の素質の名前。</summary>
     public virtual string[] ThreeTypedGeniusName =>
         new[] { "Inner", "Outer", "Workstyle" };
@@ -335,6 +422,17 @@ public class FallbackResources : UdonSharpBehaviour
             "the personality that comes out when you don't trust the other person",
             "the personality when you are focused or in an emergency"
         };
+
+    /// <summary>3 種類の素質の解説。</summary>
+    public virtual string[] ThreeTypedGeniusDescription =>
+        new[]
+        {
+            "A person has 3 of these personalities, and the personality that emerges varies depending on the situation.",
+            $"Of these, “{ThreeTypedGeniusName[0]}” accounts for most of a person's personality.",
+        };
+
+    /// <summary>3 種類の素質の見出し。</summary>
+    public virtual string ThreeTypedGeniusHeading => "3 geniuses";
 
     /// <summary>
     /// 空のマインドキューブを挿入した際の、警告メッセージ。
@@ -353,6 +451,9 @@ Since clairvoyant is impossible in this state, please write your information in 
     /// <summary> 各項目における、弱点のテンプレート。</summary>
     public virtual string TemplateWeakness =>
         "Weaknesses of the “<b>{0}</b>”type";
+
+    /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
+    public virtual string TemplateYourType => "Your {0}";
 
     /// <summary>各項目における、タイプ見出しのテンプレート。</summary>
     public virtual string TemplateYourTypeIs =>
@@ -377,6 +478,23 @@ Since clairvoyant is impossible in this state, please write your information in 
     /// <summary>初期化時に呼び出す、コールバック。</summary>
     private void Start()
     {
+        Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
+        Built3TypedGenius =
+            new[]
+            {
+                this.Create3GeniusPage((int)TypeDetailedGenius.A000),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E001),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H012),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A024),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H025),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A100),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H108),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E125),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E555),
+                this.Create3GeniusPage((int)TypeDetailedGenius.H789),
+                this.Create3GeniusPage((int)TypeDetailedGenius.A888),
+                this.Create3GeniusPage((int)TypeDetailedGenius.E919),
+            };
         BuiltGenius =
             new[]
             {
@@ -431,6 +549,20 @@ Since clairvoyant is impossible in this state, please write your information in 
                 this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H789),
                 this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A888),
                 this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E919),
+            };
+        BuiltLifebase =
+            new[]
+            {
+                this.CreateLifeBasePage((int)TypeLifebase.Application),
+                this.CreateLifeBasePage((int)TypeLifebase.Association),
+                this.CreateLifeBasePage((int)TypeLifebase.Development),
+                this.CreateLifeBasePage((int)TypeLifebase.Expression),
+                this.CreateLifeBasePage((int)TypeLifebase.Finance),
+                this.CreateLifeBasePage((int)TypeLifebase.Investment),
+                this.CreateLifeBasePage((int)TypeLifebase.Organization),
+                this.CreateLifeBasePage((int)TypeLifebase.Quest),
+                this.CreateLifeBasePage((int)TypeLifebase.SelfMind),
+                this.CreateLifeBasePage((int)TypeLifebase.SelfReliance),
             };
     }
 #pragma warning restore IDE0051

@@ -28,6 +28,15 @@ public sealed class MindDetails : ResultPreviewerBase
     private Text nameLabel;
 #pragma warning restore IDE0054
 
+    /// <summary>3 種類の素質ページの文言を取得します。</summary>
+    /// <returns>3 種類の素質ページの文言。</returns>
+    private string Get3TypedGeniusPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.Create3GeniusPage(vars.Inner, vars.Outer, vars.WorkStyle);
+    }
+
     /// <summary>素質ページの文言を取得します。</summary>
     /// <returns>素質ページの文言。</returns>
     private string GetDetailedGeniusPage()
@@ -65,6 +74,15 @@ public sealed class MindDetails : ResultPreviewerBase
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         byte[] details = MasterData.DetailsMap()[vars.Inner];
         return res.BuiltGenius[details[(int)TypeDetailIndex.Genius]];
+    }
+
+    /// <summary>人生観ページの文言を取得します。</summary>
+    /// <returns>人生観ページの文言。</returns>
+    private string GetLifeBasePage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltLifebase[vars.LifeBase];
     }
 
     /// <summary>
@@ -108,7 +126,9 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetGeniusPage(),
                 GetDetailedGeniusPage(),
                 GetDetailedGeniusWeaknessPage(),
-                $"{GetDetailedGeniusStrategyPage()}\n{comingSoon}"
+                GetDetailedGeniusStrategyPage(),
+                Get3TypedGeniusPage(),
+                $"{GetLifeBasePage()}\n{comingSoon}",
             };
         nameLabel.text = cube.CubeName;
         UpdateContents();

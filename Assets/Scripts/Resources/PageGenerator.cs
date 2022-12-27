@@ -15,6 +15,77 @@ public static class PageGenerator
     /// <summary>右寄せ。</summary>
     private const string RIGHT = "<align=\"right\">";
 
+    /// <summary>3 種類の素質ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="genius">素質タイプ。</param>
+    /// <returns>3 種類の素質ページの文言。</returns>
+    public static string Create3GeniusPage(
+        this FallbackResources res,
+        int genius)
+    {
+        return res.Create3GeniusPage(genius, genius, genius);
+    }
+
+    /// <summary>3 種類の素質ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="inner">内面素質タイプ。</param>
+    /// <param name="outer">外面素質タイプ。</param>
+    /// <param name="workstyle">集中時素質タイプ。</param>
+    /// <returns>3 種類の素質ページの文言。</returns>
+    public static string Create3GeniusPage(
+        this FallbackResources res,
+        int inner,
+        int outer,
+        int workstyle)
+    {
+        string fixedPart =
+            res.Built3TypedGeniusFixedPart ??
+            res.Create3GeniusPageFixedPart();
+        string[] src =
+            "<cspace=-0.1em>{0}</cspace>: <b>{1}</b>; {2}".MapWithFormat(
+                new[]
+                {
+                    res.ThreeTypedGeniusName,
+                    new[]
+                    {
+                        res.DetailedGeniusTypeName[inner],
+                        res.DetailedGeniusTypeName[outer],
+                        res.DetailedGeniusTypeName[workstyle],
+                    },
+                    new[]
+                    {
+                        res.DetailedGeniusTypeSummary[inner],
+                        res.DetailedGeniusTypeSummary[outer],
+                        res.DetailedGeniusTypeSummary[workstyle],
+                    },
+                });
+        return $"{fixedPart}{res.CreateDetailList(src)}";
+    }
+
+    /// <summary>
+    /// 3 種類の素質ページの文言のうち、固定部分を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <returns>3 種類の素質ページの文言。</returns>
+    public static string Create3GeniusPageFixedPart(
+        this FallbackResources res)
+    {
+        string lh = $"<line-height={res.SizeLine}%>";
+        string br = $"</line-height>\n<line-height={res.SizeLine / 10}%>\n</line-height>{lh}";
+        string thin = "<cspace=-0.1em>";
+        string head = $"{thin}<smallcaps>{res.ThreeTypedGeniusHeading}</smallcaps></cspace>";
+        string desc1 = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {res.ThreeTypedGeniusDescription[0]}</size>";
+        string desc2 = $"{JUSTIFY}<size={res.SizeDescription}>{res.ThreeTypedGeniusDescription[1]}</size>";
+        string[] src = $"{thin}<b>{{0}}</b></cspace>: {{1}}".MapWithFormat(
+            new[]
+            {
+                res.ThreeTypedGeniusName,
+                res.ThreeTypedGeniusTypesDescription
+            });
+        string typesDesc = res.CreateDetailList(src);
+        return $"{lh}{desc1}{br}{typesDesc}{br}{desc2}{br}";
+    }
+
     /// <summary>今後の解説拡充予告のメッセージを取得します。</summary>
     /// <returns>今後の解説拡充予告のメッセージ。</returns>
     public static string CreateComingSoon()
@@ -113,6 +184,30 @@ public static class PageGenerator
             };
     }
 
+    /// <summary>人生観ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="genius">人生観タイプ。</param>
+    /// <returns>人生観ページの文言。</returns>
+    public static string CreateLifeBasePage(
+        this FallbackResources res, int lifebase)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copyHeading =
+            string.Format(
+                res.TemplateYourType, res.LifeBaseHeading.ToLower());
+        return
+            res.CreateByTemplate(
+                res.LifeBaseHeading,
+                res.LifeBaseDescription,
+                $"{copyHeading}: {res.LifeBaseTypesName[lifebase]}",
+                res.LifeBaseTypesDetail[lifebase],
+                1.5f,
+                1.5f);
+    }
+
     /// <summary>
     /// 簡易ビューアーのページの文言を取得します。
     /// </summary>
@@ -176,7 +271,7 @@ public static class PageGenerator
         {
             return string.Empty;
         }
-        const string MARK = "▶";
+        const string MARK = "◆";
         const string INDENT = "<indent=4%>";
         int size = (int)(res.SizeDetails * mulSize);
         string body = string.Join($"</indent>\n{MARK}{INDENT}", list);

@@ -113,7 +113,7 @@ public sealed class MindDetails : ResultPreviewerBase
             UpdateContents();
             return;
         }
-        if (cube.Parameter == uint.MaxValue)
+        if (cube.Empty)
         {
             Contents = PageGenerator.CreateInvalidCubePage();
             UpdateContents();

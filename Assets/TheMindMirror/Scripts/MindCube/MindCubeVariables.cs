@@ -100,6 +100,11 @@ public sealed class MindCubeVariables : SyncBase
         }
     }
 
+    /// <summary>
+    /// マインドキューブが未使用状態であるかどうかを取得します。
+    /// </summary>
+    public bool Empty => Parameter == uint.MaxValue;
+
     /// <summary>パラメーターを取得、または設定します。</summary>
     public uint Parameter
     {
@@ -112,6 +117,7 @@ public sealed class MindCubeVariables : SyncBase
         }
     }
 
+    /// <summary>パラメーターを分解します。</summary>
     private void DestractParameter()
     {
         Cycle = PersonalityParamsPacker.UnPackCycle(parameter);
@@ -154,9 +160,8 @@ public sealed class MindCubeVariables : SyncBase
             Debug.LogWarning(ERR_NO_RENDERER);
             return;
         }
-        bool init = parameter == uint.MaxValue;
         Color color = Color.HSVToRGB(Mathf.Clamp01(value), 1f, 1f);
-        renderers[(int)index].material.color = init ? Color.gray : color;
+        renderers[(int)index].material.color = Empty ? Color.gray : color;
 
     }
 

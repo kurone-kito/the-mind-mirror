@@ -479,91 +479,32 @@ Since clairvoyant is impossible in this state, please write your information in 
     private void Start()
     {
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
-        Built3TypedGenius =
-            new[]
-            {
-                this.Create3GeniusPage((int)TypeDetailedGenius.A000),
-                this.Create3GeniusPage((int)TypeDetailedGenius.E001),
-                this.Create3GeniusPage((int)TypeDetailedGenius.H012),
-                this.Create3GeniusPage((int)TypeDetailedGenius.A024),
-                this.Create3GeniusPage((int)TypeDetailedGenius.H025),
-                this.Create3GeniusPage((int)TypeDetailedGenius.A100),
-                this.Create3GeniusPage((int)TypeDetailedGenius.H108),
-                this.Create3GeniusPage((int)TypeDetailedGenius.E125),
-                this.Create3GeniusPage((int)TypeDetailedGenius.E555),
-                this.Create3GeniusPage((int)TypeDetailedGenius.H789),
-                this.Create3GeniusPage((int)TypeDetailedGenius.A888),
-                this.Create3GeniusPage((int)TypeDetailedGenius.E919),
-            };
-        BuiltGenius =
-            new[]
-            {
-                this.CreateGeniusPage((int)TypeGenius.Authority),
-                this.CreateGeniusPage((int)TypeGenius.Economically),
-                this.CreateGeniusPage((int)TypeGenius.Humanely),
-            };
+        BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];
+        for (int i = (int)TypeGenius.MAX_VALUE; --i >= 0;)
+        {
+            BuiltGenius[i] = this.CreateGeniusPage(i);
+        }
+        Built3TypedGenius = new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusType =
-            new[]
-            {
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A000),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E001),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H012),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A024),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H025),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A100),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H108),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E125),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E555),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.H789),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.A888),
-                this.CreateDetailedGeniusPage((int)TypeDetailedGenius.E919),
-            };
+            new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusWeakness =
-            new[]
-            {
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A000),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E001),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H012),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A024),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H025),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A100),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H108),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E125),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E555),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.H789),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.A888),
-                this.CreateDetailedGeniusWeaknessPage((int)TypeDetailedGenius.E919),
-            };
+            new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusStrategy =
-            new[]
-            {
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A000),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E001),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H012),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A024),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H025),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A100),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H108),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E125),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E555),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.H789),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.A888),
-                this.CreateDetailedGeniusStrategyPage((int)TypeDetailedGenius.E919),
-            };
-        BuiltLifebase =
-            new[]
-            {
-                this.CreateLifeBasePage((int)TypeLifebase.Application),
-                this.CreateLifeBasePage((int)TypeLifebase.Association),
-                this.CreateLifeBasePage((int)TypeLifebase.Development),
-                this.CreateLifeBasePage((int)TypeLifebase.Expression),
-                this.CreateLifeBasePage((int)TypeLifebase.Finance),
-                this.CreateLifeBasePage((int)TypeLifebase.Investment),
-                this.CreateLifeBasePage((int)TypeLifebase.Organization),
-                this.CreateLifeBasePage((int)TypeLifebase.Quest),
-                this.CreateLifeBasePage((int)TypeLifebase.SelfMind),
-                this.CreateLifeBasePage((int)TypeLifebase.SelfReliance),
-            };
+            new string[(int)TypeDetailedGenius.MAX_VALUE];
+        for (int i = (int)TypeDetailedGenius.MAX_VALUE; --i >= 0;)
+        {
+            Built3TypedGenius[i] = this.Create3GeniusPage(i);
+            BuiltDetailedGeniusType[i] = this.CreateDetailedGeniusPage(i);
+            BuiltDetailedGeniusWeakness[i] =
+                this.CreateDetailedGeniusWeaknessPage(i);
+            BuiltDetailedGeniusStrategy[i] =
+                this.CreateDetailedGeniusStrategyPage(i);
+        }
+        BuiltLifebase = new string[(int)TypeLifebase.MAX_VALUE];
+        for (int i = (int)TypeLifebase.MAX_VALUE; --i >= 0;)
+        {
+            BuiltLifebase[i] = this.CreateLifeBasePage(i);
+        }
     }
 #pragma warning restore IDE0051
 }

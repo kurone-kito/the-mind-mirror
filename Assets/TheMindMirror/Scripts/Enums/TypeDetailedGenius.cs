@@ -37,4 +37,7 @@ public enum TypeDetailedGenius : int
     /// <summary>実益タイプ。</summary>
     /// <remarks>先手必勝の短期決戦型！駆け引き上手なタイプ。</remarks>
     E919,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

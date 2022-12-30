@@ -21,4 +21,7 @@ public enum TypePotential : int
     Ni,
     /// <summary>集団・組織を外向きに拡大・発展させる能力。</summary>
     No,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

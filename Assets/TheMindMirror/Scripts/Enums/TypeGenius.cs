@@ -7,4 +7,7 @@ public enum TypeGenius : int
     Economically,
     /// <summary>文系脳タイプ: 自己人格に重きを置く、素質タイプ。</summary>
     Humanely,
+    /// <summary>列挙値の最大値。</summary>
+    /// <remarks>この値はインデックスとしては無効です。</remarks>
+    MAX_VALUE,
 }

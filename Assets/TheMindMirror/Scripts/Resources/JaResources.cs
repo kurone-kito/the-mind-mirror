@@ -386,6 +386,13 @@ public sealed class JaResources : FallbackResources
             "一匹オオカミな自分でありたい",
         };
 
+    /// <summary>潜在能力の説明。</summary>
+    public override string PotentialDescription =>
+        "行動する際に発揮できる、固有の潜在能力を持っています。";
+
+    /// <summary>潜在能力の見出し。</summary>
+    public override string PotentialHeading => "潜在能力";
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "本性", "装い", "集中" };

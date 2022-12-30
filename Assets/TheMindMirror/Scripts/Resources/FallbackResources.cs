@@ -25,6 +25,9 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>人生観別のビルド済みページ一覧を取得します。</summary>
     public string[] BuiltLifebase { get; protected set; }
 
+    /// <summary>潜在能力別のビルド済みページ一覧を取得します。</summary>
+    public string[][] BuiltPotentials { get; protected set; }
+
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
          "We'll be adding more clairvoyant results in the future!";
@@ -410,6 +413,13 @@ public class FallbackResources : UdonSharpBehaviour
             "would like to be a lone wolf.",
         };
 
+    /// <summary>潜在能力の説明。</summary>
+    public virtual string PotentialDescription =>
+        "People have inherent potentials that they can exercise when they act.";
+
+    /// <summary>潜在能力の見出し。</summary>
+    public virtual string PotentialHeading => "Potentials";
+
     /// <summary>3 種類の素質の名前。</summary>
     public virtual string[] ThreeTypedGeniusName =>
         new[] { "Inner", "Outer", "Workstyle" };
@@ -504,6 +514,15 @@ Since clairvoyant is impossible in this state, please write your information in 
         for (int i = (int)TypeLifebase.MAX_VALUE; --i >= 0;)
         {
             BuiltLifebase[i] = this.CreateLifeBasePage(i);
+        }
+        BuiltPotentials = new string[(int)TypePotential.MAX_VALUE][];
+        for (int i = (int)TypePotential.MAX_VALUE; --i >= 0;)
+        {
+            BuiltPotentials[i] = new string[(int)TypePotential.MAX_VALUE];
+            for (int j = (int)TypePotential.MAX_VALUE; --j >= 0;)
+            {
+                BuiltPotentials[i][j] = this.CreatePotentialPage(i, j);
+            }
         }
     }
 #pragma warning restore IDE0051

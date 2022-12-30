@@ -208,6 +208,29 @@ public static class PageGenerator
                 1.5f);
     }
 
+    /// <summary>潜在能力ページの文言を取得します。</summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="potentialA">潜在能力 A。</param>
+    /// <param name="potentialB">潜在能力 B。</param>
+    /// <returns>潜在能力ページの文言。</returns>
+    public static string CreatePotentialPage(
+        this FallbackResources res, int potentialA, int potentialB)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copyHeading =
+            string.Format(
+                res.TemplateYourType, res.PotentialHeading.ToLower());
+        return
+            res.CreateByTemplate(
+                res.PotentialHeading,
+                res.PotentialDescription,
+                copyHeading,
+                new string[0]);
+    }
+
     /// <summary>
     /// 簡易ビューアーのページの文言を取得します。
     /// </summary>

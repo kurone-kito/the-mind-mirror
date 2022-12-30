@@ -337,6 +337,13 @@ public sealed class EsResources : FallbackResources
             "le gustaría ser un lobo solitario.",
         };
 
+    /// <summary>潜在能力の説明。</summary>
+    public override string PotentialDescription =>
+        "Las personas tienen potenciales inherentes que pueden ejercer cuando actúan.";
+
+    /// <summary>潜在能力の見出し。</summary>
+    public override string PotentialHeading => "Capacidad potencial";
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "Interior", "Exterior", "Trabajo" };

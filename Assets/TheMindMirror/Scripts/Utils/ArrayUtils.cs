@@ -24,6 +24,19 @@ public static class ArrayUtils
         return flattened;
     }
 
+    /// <summary>2つの配列を連結します。</summary>
+    /// <typeparam name="T">配列の要素の型。</typeparam>
+    /// <param name="array1">連結する配列。</param>
+    /// <param name="array2">連結する配列。</param>
+    /// <returns>連結した配列。</returns>
+    public static T[] Join<T>(T[] array1, T[] array2)
+    {
+        T[] joined = new T[array1.Length + array2.Length];
+        array1.CopyTo(joined, 0);
+        array2.CopyTo(joined, array1.Length);
+        return joined;
+    }
+
     /// <summary>
     /// フォーマット文字列と引数の配列をマッピングします。
     /// </summary>
@@ -31,9 +44,9 @@ public static class ArrayUtils
     /// <param name="args">引数の配列。</param>
     /// <returns>マッピングされた文字列の配列。</returns>
     public static string[] MapWithFormat(
-        // 可変長引数でジャグ配列を渡すと、UdonSharp のバグで最終要素しか
-        // 渡らないため、new string[] { ... } でラップして渡す。
-        this string format, string[][] args)
+            // 可変長引数でジャグ配列を渡すと、UdonSharp のバグで最終要素しか
+            // 渡らないため、new string[] { ... } でラップして渡す。
+            this string format, string[][] args)
     {
         int argsLength = args.Length;
         int min = int.MaxValue;

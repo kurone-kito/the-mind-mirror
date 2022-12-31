@@ -14,10 +14,6 @@ public class MindStack : UdonSharpBehaviour
     private const string ERR_NO_DESTINATION =
         "排出先へのリンクが設定されていません。";
 
-    /// <summary>フォームの接続不備における、エラーメッセージ。</summary>
-    private const string ERR_NO_FORM =
-        "フォームへのリンクが設定されていません。";
-
 #pragma warning disable IDE0044
     /// <summary>受け入れ可能であることを示すサイン。</summary>
     [SerializeField]
@@ -26,6 +22,12 @@ public class MindStack : UdonSharpBehaviour
     /// <summary>排出口。</summary>
     [SerializeField]
     private Transform destination;
+
+    /// <summary>
+    /// フォームが表示中に非表示化する物体があれば指定します。
+    /// </summary>
+    [SerializeField]
+    private GameObject hiddenOnFormShown;
 
     /// <summary>フォーム。</summary>
     [SerializeField]
@@ -86,12 +88,7 @@ public class MindStack : UdonSharpBehaviour
     /// </summary>
     protected virtual void OnUpdateMindCube()
     {
-        if (form == null)
-        {
-            Debug.LogWarning(ERR_NO_FORM);
-            return;
-        }
-        form.SetActive(MindCube != null);
+        UpdateShowForm();
 #pragma warning disable IDE0031
         if (MindCube != null)
         {
@@ -140,10 +137,21 @@ public class MindStack : UdonSharpBehaviour
     protected virtual void Start()
     {
         UpdateAcceptable();
+        UpdateShowForm();
+    }
+
+    /// <summary>フォームの表示状態を更新します。</summary>
+    private void UpdateShowForm()
+    {
+        bool showForm = MindCube != null;
 #pragma warning disable IDE0031
         if (form != null)
         {
-            form.SetActive(MindCube != null);
+            form.SetActive(showForm);
+        }
+        if (hiddenOnFormShown != null)
+        {
+            hiddenOnFormShown.SetActive(!showForm);
         }
 #pragma warning restore IDE0031
     }

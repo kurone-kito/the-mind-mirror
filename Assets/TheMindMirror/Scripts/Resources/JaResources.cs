@@ -307,6 +307,33 @@ public sealed class JaResources : FallbackResources
             },
         };
 
+    /// <summary>性格の大分類の種別ごとの攻略法。</summary>
+    public override string[][] GeniusTypesStrategies =>
+        new[]
+        {
+            new[]
+            {
+                $"{GeniusTypesName[(int)TypeGenius.Authority]}・{GeniusTypesName[(int)TypeGenius.Economically]}・{GeniusTypesName[(int)TypeGenius.Humanely]}でそれぞれ三すくみのような関係があり、{GeniusTypesName[(int)TypeGenius.Economically]}より{GeniusTypesName[(int)TypeGenius.Humanely]}を説得できやすい傾向があります。",
+                "話を持ちかける際は、事前に重要なところを吟味して、そこに対する<b>インパクト</b>の強さを<b>すっごい強調して説明</b>すると、話が通じやすいです。",
+                $"{GeniusTypesName[(int)TypeGenius.Authority]}は、自分の抱える不安をバネにした行動力を持っています。やや邪道ですが、不安を与えてからベネフィットを提案する、<b>鞭飴</b>作戦が有効です。",
+                "また、相手の<b>権威性アップ</b>をベネフィットに訴えかけると、刺さりやすいです。",
+            },
+            new[]
+            {
+                $"{GeniusTypesName[(int)TypeGenius.Authority]}・{GeniusTypesName[(int)TypeGenius.Economically]}・{GeniusTypesName[(int)TypeGenius.Humanely]}でそれぞれ三すくみのような関係があり、{GeniusTypesName[(int)TypeGenius.Humanely]}より{GeniusTypesName[(int)TypeGenius.Authority]}を説得できやすい傾向があります。",
+                "話をする際は事前に重要なところを吟味して<b>要点だけ</b>を伝え、残りは質疑応答にするか資料などにして渡すなどすると、話が通じやすいです。",
+                "<b>興味ある話</b>を聞くと、真剣に話を聞くあまり、怒り顔になるなど、至極<b>険悪な空気になりやすい</b>傾向があります。ここで諦めずにしっかり話すと、最後には納得してくれるケースが多いです。",
+                $"{GeniusTypesName[(int)TypeGenius.Economically]}は、儲け話に対するアレルギーを持つ人が少なく、ぼかさず直球的に踏み込んでも大丈夫です。ただし<b>数値に強い</b>傾向があるため、納得のいくビジネスモデルやエビデンスを用意しないと、納得してくれないでしょう。",
+            },
+            new[]
+            {
+                $"{GeniusTypesName[(int)TypeGenius.Authority]}・{GeniusTypesName[(int)TypeGenius.Economically]}・{GeniusTypesName[(int)TypeGenius.Humanely]}でそれぞれ三すくみのような関係があり、{GeniusTypesName[(int)TypeGenius.Authority]}より{GeniusTypesName[(int)TypeGenius.Economically]}を説得できやすい傾向があります。",
+                "話をする際は、<b>起承転結を順番通り</b>、冗長な補足も都度つけて説明すると話が通りやすいです。端折ると“何で？”となって、その後の話が理解できなくなりがちです。",
+                $"また{GeniusTypesName[(int)TypeGenius.Humanely]}は、<b>わかってなくてもニコニコ聞いてしまう</b>ので、要所要所で確認をとるとベターでしょう。",
+                "<b>人柄や、人の良さに訴えかける</b>と弱い傾向があります。また、本人のためというより、本人の周りの人のため、みたいな大義名分で攻めると説得しやすいでしょう。",
+            },
+        };
+
     /// <summary>人生観の解説。</summary>
     public override string LifeBaseDescription =>
         "人は3つの素質の他に、潜在的に持って生まれたエゴを秘めています。";

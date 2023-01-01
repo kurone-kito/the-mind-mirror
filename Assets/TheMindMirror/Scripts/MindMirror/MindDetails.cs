@@ -64,9 +64,7 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.BuiltDetailedGeniusWeakness[vars.Inner];
     }
 
-    /// <summary>
-    /// 性格の大分類のページの文言を取得します。
-    /// </summary>
+    /// <summary>性格の大分類のページの文言を取得します。</summary>
     /// <returns>性格の大分類のページの文言。</returns>
     private string GetGeniusPage()
     {
@@ -74,6 +72,16 @@ public sealed class MindDetails : ResultPreviewerBase
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         byte[] details = MasterData.DetailsMap()[vars.Inner];
         return res.BuiltGenius[details[(int)TypeDetailIndex.Genius]];
+    }
+
+    /// <summary>性格の大分類別の攻略法ページの文言を取得します。</summary>
+    /// <returns>性格の大分類別の攻略法ページの文言。</returns>
+    private string GetGeniusStrategyPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] details = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltGeniusStrategy[details[(int)TypeDetailIndex.Genius]];
     }
 
     /// <summary>人生観ページの文言を取得します。</summary>
@@ -133,6 +141,7 @@ public sealed class MindDetails : ResultPreviewerBase
             new[]
             {
                 GetGeniusPage(),
+                GetGeniusStrategyPage(),
                 GetDetailedGeniusPage(),
                 GetDetailedGeniusWeaknessPage(),
                 GetDetailedGeniusStrategyPage(),

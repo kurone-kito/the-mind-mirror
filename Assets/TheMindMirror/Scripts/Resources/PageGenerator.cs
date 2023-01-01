@@ -170,6 +170,25 @@ public static class PageGenerator
     }
 
     /// <summary>
+    /// 性格の大分類に対する攻略法のページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="genius">大まかな性格タイプ。</param>
+    /// <returns>性格の大分類に対する攻略法のページの文言。</returns>
+    public static string CreateGeniusStrategyPage(
+        this FallbackResources res, int genius)
+    {
+        return res == null
+            ? string.Empty
+            : res.CreateByTemplate(
+                res.GeniusHeading,
+                res.GeniusDescription,
+                string.Format(
+                    res.TemplateStrategy, res.GeniusTypesName[genius]),
+                res.GeniusTypesStrategies[genius]);
+    }
+
+    /// <summary>
     /// マインドキューブが空である場合の、警告ページを取得します。
     /// </summary>
     /// <returns>警告ページ。</returns>

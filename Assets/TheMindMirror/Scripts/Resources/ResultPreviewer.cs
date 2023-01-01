@@ -26,6 +26,7 @@ public sealed class ResultPreviewer : ResultPreviewerBase
         Contents =
             ArrayUtils.Flatten(
                 res.BuiltGenius,
+                res.BuiltGeniusStrategy,
                 res.BuiltDetailedGeniusType,
                 res.BuiltDetailedGeniusWeakness,
                 res.BuiltDetailedGeniusStrategy,

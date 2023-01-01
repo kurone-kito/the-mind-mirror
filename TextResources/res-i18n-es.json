@@ -708,7 +708,12 @@
         "Suelen tener ansiedades vagas y difíciles de concretar y tienden a trasladarlas a su fuerza motriz."
       ],
       "name": "Centrados en la autoridad",
-      "strategy": ["", "", "", ""]
+      "strategy": [
+        "Existe una relación como de piedra-papel-tijera entre el tipo “$t(vector.authority.name)”, el tipo “$t(vector.economically.name)” y el tipo “$t(vector.humanely.name)”. Es más fácil hablar con el tipo “$t(vector.humanely.name)” que con el tipo “$t(vector.economically.name)”.",
+        "Cuando te dirijas a alguien para una charla, es más fácil llegar a él si examinas de antemano los puntos esenciales y los explicas haciendo **gran hincapié en su impacto**.",
+        "Tienen el poder de actuar en función de sus inseguridades. Así que **el método del palo y la zanahoria**, en el que les provocas ansiedad y luego les propones beneficios, es convincente.",
+        "Also, if you appeal to them **to increase their authority**, they are more likely to be influenced."
+      ]
     },
     "economically": {
       "detail": [
@@ -717,7 +722,12 @@
         "**No pueden escuchar conversaciones largas** muy bien. Así que intentan comprender **sólo los puntos principales** y tienden a pensar o decir, **“en pocas palabras... ”**."
       ],
       "name": "Centrados en la economía",
-      "strategy": ["", "", ""]
+      "strategy": [
+        "Existe una relación como de piedra-papel-tijera entre el tipo “$t(vector.authority.name)”, el tipo “$t(vector.economically.name)” y el tipo “$t(vector.humanely.name)”. Es más fácil hablar con el tipo “$t(vector.authority.name)” que con el tipo “$t(vector.humanely.name)”.",
+        "Al darles una charla, es más fácil que la superen si **examinamos previamente los puntos esenciales** y presentamos brevemente los puntos principales, dejando el resto para preguntas y respuestas o repartiendo material.",
+        "Parecen **enfadarse mucho** cuando **escuchan algo que les interesa**. Sin embargo, **sólo escuchan con seriedad** y **normalmente no se enfadan**, por lo que es esencial soportar el ambiente amargo cuando se habla con ellos.",
+        "Son menos alérgicos a hablar de beneficios, así que está bien ir directamente al grano sin soltar prenda. Sin embargo, como suelen ser sagaces con los números, no les convencerás a menos que les aportes un modelo de negocio y pruebas convincentes."
+      ]
     },
     "humanely": {
       "detail": [
@@ -727,7 +737,12 @@
         "Si sólo vas al grano brevemente, se quedarán con la curiosidad de la introducción, el desarrollo de la historia y no entenderán el resto."
       ],
       "name": "Centrados en el ser humano",
-      "strategy": ["", "", "", ""]
+      "strategy": [
+        "Existe una relación como de piedra-papel-tijera entre el tipo “$t(vector.authority.name)”, el tipo “$t(vector.economically.name)” y el tipo “$t(vector.humanely.name)”. Es más fácil hablar con el tipo “$t(vector.economically.name)” que con el tipo “$t(vector.authority.name)”.",
+        "Cuando hables con ellos, te resultará más fácil entenderles si les explicas la historia **en orden**, con algunos **añadidos redundantes** cada vez.",
+        "También tienden a escuchar sonriendo aunque no entiendan, por lo que es más conveniente pedir confirmación en los momentos cruciales.",
+        "Tienen tendencia a dejarse influir fácilmente cuando se les elogia por su bondad y humanidad. Además, es más fácil persuadirles si se les habla con una causa que no sea por su propio bien, sino por el bien de las personas que les rodean."
+      ]
     }
   }
 }

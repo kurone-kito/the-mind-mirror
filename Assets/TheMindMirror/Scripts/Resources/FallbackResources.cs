@@ -4,14 +4,24 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class FallbackResources : UdonSharpBehaviour
 {
-    /// <summary>3 種類の素質ページの文言のうち、固定部分のビルド済みページを取得します。</summary>
+    /// <summary>
+    /// 3 種類の素質ページの文言のうち、
+    /// 固定部分のビルド済みページを取得します。
+    /// </summary>
     public string Built3TypedGeniusFixedPart { get; protected set; }
 
-    /// <summary>3 種類の素質ページの文言のビルド済みページを取得します。</summary>
+    /// <summary>
+    /// 3 種類の素質ページの文言のビルド済みページを取得します。
+    /// </summary>
     public string[] Built3TypedGenius { get; protected set; }
 
     /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
     public string[] BuiltGenius { get; protected set; }
+
+    /// <summary>
+    /// 性格の大分類別攻略法のビルド済みページ一覧を取得します。
+    /// </summary>
+    public string[] BuiltGeniusStrategy { get; protected set; }
 
     /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
     public string[] BuiltDetailedGeniusType { get; protected set; }
@@ -338,6 +348,33 @@ public class FallbackResources : UdonSharpBehaviour
             },
         };
 
+    /// <summary>性格の大分類の種別ごとの攻略法。</summary>
+    public virtual string[][] GeniusTypesStrategies =>
+        new[]
+        {
+            new[]
+            {
+                $"There is a relationship like the rock-paper-scissors between the “{GeniusTypesName[(int)TypeGenius.Authority]}” type, “{GeniusTypesName[(int)TypeGenius.Economically]}” type, and “{GeniusTypesName[(int)TypeGenius.Humanely]}” type. They are easier to talk to the “{GeniusTypesName[(int)TypeGenius.Humanely]}” type than the “{GeniusTypesName[(int)TypeGenius.Economically]}” type.",
+                "When approaching someone for a talk, it is easier to get through to them if you examine the essential points beforehand and explain them with <b>great emphasis on their impact</b>.",
+                "They have the power to act on their insecurities. So <b>the carrot and stick method</b>, where you give them anxiety and then propose benefits, is compelling.",
+                "Also, if you appeal to them <b>to increase their authority</b>, they are more likely to be influenced.",
+            },
+            new[]
+            {
+                $"There is a relationship like the rock-paper-scissors between the “{GeniusTypesName[(int)TypeGenius.Authority]}” type, “{GeniusTypesName[(int)TypeGenius.Economically]}” type, and “{GeniusTypesName[(int)TypeGenius.Humanely]}” type. They are easier to talk to the “{GeniusTypesName[(int)TypeGenius.Authority]}” type than the “{GeniusTypesName[(int)TypeGenius.Humanely]}” type.",
+                "When giving a talk to them, they are easier to get through if you <b>examine the essential points beforehand</b> and briefly present the main points, leaving the rest for questions and answers or handing out materials.",
+                "They look like to get <b>strong angry</b> when they <b>hear something that interests them</b>. However, they are <b>only listening seriously</b> and are <b>usually not angry</b>, so it is essential to endure the bitter atmosphere when talking with them.",
+                "They are less allergic to talk of profit, so it is okay to go straight to the point without blurting it out. However, since they tend to be shrewd about numbers, you will not convince them unless you provide a convincing business model and evidence.",
+            },
+            new[]
+            {
+                $"There is a relationship like the rock-paper-scissors between the “{GeniusTypesName[(int)TypeGenius.Authority]}” type, “{GeniusTypesName[(int)TypeGenius.Economically]}” type, and “{GeniusTypesName[(int)TypeGenius.Humanely]}” type. They are easier to talk to the “{GeniusTypesName[(int)TypeGenius.Economically]}” type than the “{GeniusTypesName[(int)TypeGenius.Authority]}” type.",
+                "When talking to them, you can get through to them easier if you explain the story <b>in order</b>, with a few <b>redundant additions</b> each time.",
+                "They also tend to listen smilingly even if they don't understand, so it is more desirable to ask for confirmation at crucial points.",
+                "They have a tendency to be easily influenced when they are praised for their kindness and humanity. Also, it is easier to persuade them if you talk to them with a cause that is not for their own sake but for the sake of the people around them.",
+            },
+        };
+
     /// <summary>人生観の解説。</summary>
     public virtual string LifeBaseDescription =>
         "Peoples also have a latent ego that they are born with, in addition to the three personalities.";
@@ -609,9 +646,11 @@ Since clairvoyant is impossible in this state, please write your information in 
 
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
         BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];
+        BuiltGeniusStrategy = new string[(int)TypeGenius.MAX_VALUE];
         for (int i = (int)TypeGenius.MAX_VALUE; --i >= 0;)
         {
             BuiltGenius[i] = this.CreateGeniusPage(i);
+            BuiltGeniusStrategy[i] = this.CreateGeniusStrategyPage(i);
         }
         Built3TypedGenius = new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusType =

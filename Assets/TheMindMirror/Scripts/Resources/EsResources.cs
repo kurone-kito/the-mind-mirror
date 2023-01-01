@@ -314,6 +314,33 @@ public sealed class EsResources : FallbackResources
             },
         };
 
+    /// <summary>性格の大分類の種別ごとの攻略法。</summary>
+    public override string[][] GeniusTypesStrategies =>
+        new[]
+        {
+            new[]
+            {
+                $"Existe una relación como de piedra-papel-tijera entre el tipo “{GeniusTypesName[(int)TypeGenius.Authority]}”, el tipo “{GeniusTypesName[(int)TypeGenius.Economically]}” y el tipo “{GeniusTypesName[(int)TypeGenius.Humanely]}”. Es más fácil hablar con el tipo “{GeniusTypesName[(int)TypeGenius.Humanely]}” que con el tipo “{GeniusTypesName[(int)TypeGenius.Economically]}”.",
+                "Cuando te dirijas a alguien para una charla, es más fácil llegar a él si examinas de antemano los puntos esenciales y los explicas haciendo <b>gran hincapié en su impacto</b>.",
+                "Tienen el poder de actuar en función de sus inseguridades. Así que <b>el método del palo y la zanahoria</b>, en el que les provocas ansiedad y luego les propones beneficios, es convincente.",
+                "Also, if you appeal to them <b>to increase their authority</b>, they are more likely to be influenced.",
+            },
+            new[]
+            {
+                $"Existe una relación como de piedra-papel-tijera entre el tipo “{GeniusTypesName[(int)TypeGenius.Authority]}”, el tipo “{GeniusTypesName[(int)TypeGenius.Economically]}” y el tipo “{GeniusTypesName[(int)TypeGenius.Humanely]}”. Es más fácil hablar con el tipo “{GeniusTypesName[(int)TypeGenius.Authority]}” que con el tipo “{GeniusTypesName[(int)TypeGenius.Humanely]}”.",
+                "Al darles una charla, es más fácil que la superen si <b>examinamos previamente los puntos esenciales</b> y presentamos brevemente los puntos principales, dejando el resto para preguntas y respuestas o repartiendo material.",
+                "Parecen <b>enfadarse mucho</b> cuando <b>escuchan algo que les interesa</b>. Sin embargo, <b>sólo escuchan con seriedad</b> y <b>normalmente no se enfadan</b>, por lo que es esencial soportar el ambiente amargo cuando se habla con ellos.",
+                "Son menos alérgicos a hablar de beneficios, así que está bien ir directamente al grano sin soltar prenda. Sin embargo, como suelen ser sagaces con los números, no les convencerás a menos que les aportes un modelo de negocio y pruebas convincentes.",
+            },
+            new[]
+            {
+                $"Existe una relación como de piedra-papel-tijera entre el tipo “{GeniusTypesName[(int)TypeGenius.Authority]}”, el tipo “{GeniusTypesName[(int)TypeGenius.Economically]}” y el tipo “{GeniusTypesName[(int)TypeGenius.Humanely]}”. Es más fácil hablar con el tipo “{GeniusTypesName[(int)TypeGenius.Economically]}” que con el tipo “{GeniusTypesName[(int)TypeGenius.Authority]}”.",
+                "Cuando hables con ellos, te resultará más fácil entenderles si les explicas la historia <b>en orden</b>, con algunos <b>añadidos redundantes</b> cada vez.",
+                "También tienden a escuchar sonriendo aunque no entiendan, por lo que es más conveniente pedir confirmación en los momentos cruciales.",
+                "Tienen tendencia a dejarse influir fácilmente cuando se les elogia por su bondad y humanidad. Además, es más fácil persuadirles si se les habla con una causa que no sea por su propio bien, sino por el bien de las personas que les rodean.",
+            },
+        };
+
     /// <summary>人生観の解説。</summary>
     public override string LifeBaseDescription =>
         "Las personas también tienen un ego latente con el que nacen, además de las tres personalidades.";

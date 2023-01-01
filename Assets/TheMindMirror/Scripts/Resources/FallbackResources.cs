@@ -28,6 +28,9 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>潜在能力別のビルド済みページ一覧を取得します。</summary>
     public string[][] BuiltPotentials { get; protected set; }
 
+    /// <summary>潜在能力別のビルド済み特徴一覧を取得します。</summary>
+    public string[][][] BuiltPotentialDetails { get; protected set; }
+
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
          "We'll be adding more clairvoyant results in the future!";
@@ -420,6 +423,72 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>潜在能力の見出し。</summary>
     public virtual string PotentialHeading => "Potentials";
 
+    /// <summary>潜在能力における、各タイプの追加解説。</summary>
+    public virtual string[] PotentialTypeAdditional =>
+        new[]
+        {
+            "They also can create from nothing and the potential to sublimate the work of others.",
+            "On the other hand, they tend not to be good at arranging or developing what is already there.",
+            "This type of person is both a good talker and a good listener and has a well-balanced ability to talk.",
+            "On the other hand, they are also good listeners and can find out what the other person is thinking.",
+            "However, they tend not to be good at creating new teams or developing and expanding their groups.",
+            "They are meticulous, organized, caring, and have excellent self-management skills.",
+            "They tend not to be good at maintaining groups, and even when they create them, they tend to disappear spontaneously.",
+        };
+
+    /// <summary>潜在能力における、各タイプの解説。</summary>
+    public virtual string[][] PotentialTypeBase =>
+        new[]
+        {
+            new[]
+            {
+                "This type of person has excellent analytical and application skills and has a predisposition to pursue one thing at a time.",
+                "They have the power of arrangement rather than the power of originality.",
+            },
+            new[]
+            {
+                "This type of person has the potential to pursue one thing relentlessly.",
+                "They also can create something out of nothing and be sensitive to new things.",
+            },
+            new[]
+            {
+                "This type of person can express themselves thinks, in a nonverbal way, like an artist.",
+            },
+            new[]
+            {
+                "This type of person can express themselves think actively through words.",
+            },
+            new[]
+            {
+                "This type of person has the potential to see the hidden meaning behind the numbers.",
+                "They also try to do things carefully.",
+            },
+            new[]
+            {
+                "This type of person has the potential to express things with numbers and data.",
+            },
+            new[]
+            {
+                "This type of person is a good listener and can find out what the other person is thinking.",
+                "They then can talk and convey their intentions to the other person.",
+            },
+            new[]
+            {
+                "This type of person is a pushy talker who would instead tell a story than listen to it.",
+                $"Furthermore, those of them whose inner personality is “{DetailedGeniusTypeName[(int)TypeDetailedGenius.E001]}” tend to be dictatorial.",
+            },
+            new[]
+            {
+                "This type of person has the potential to maintain or inwardly solidify a group or organization.",
+                "They are organized, well-planned, and have excellent self-management skills.",
+            },
+            new[]
+            {
+                "This type of person has the potential to create groups and organizations and develop them outwardly.",
+                "They are also often very caring people.",
+            },
+        };
+
     /// <summary>3 種類の素質の名前。</summary>
     public virtual string[] ThreeTypedGeniusName =>
         new[] { "Inner", "Outer", "Workstyle" };
@@ -484,10 +553,60 @@ Since clairvoyant is impossible in this state, please write your information in 
     /// <summary>言語種別。</summary>
     public virtual TypeLanguage Type => TypeLanguage.English;
 
+    /// <summary>潜在能力のタイプ別解説を作成します。</summary>
+    /// <returns>潜在能力のタイプ別解説。</returns>
+    private string[][][] CreatePotentialTypeDetails()
+    {
+        string[] a = PotentialTypeAdditional;
+        string[][] b = PotentialTypeBase;
+        string[][][] result =
+            new string[(int)TypePotential.MAX_VALUE][][];
+        for (int i = 0; i < result.Length; i++)
+        {
+            result[i] = new string[(int)TypePotential.MAX_VALUE][];
+            for (int j = 0; j < result[i].Length; j++)
+            {
+                result[i][j] = i == j ? b[i] : ArrayUtils.Join(b[i], b[j]);
+            }
+        }
+        string[] CiCo = ArrayUtils.Flatten(
+            new[] { b[(int)TypePotential.Ci][0] }, new[] { a[0] });
+        string[] CoCo = ArrayUtils.Flatten(
+            b[(int)TypePotential.Co], new[] { a[1] });
+        string[] IiIo = ArrayUtils.Flatten(
+            new[] { a[2] },
+            new[] { b[(int)TypePotential.Io][0] },
+            new[] { a[3] });
+        string[] NiNi = ArrayUtils.Flatten(
+            new[] { b[(int)TypePotential.Ni][0] },
+            new[] { a[4] },
+            new[] { b[(int)TypePotential.Ni][1] });
+        string[] NiNo = ArrayUtils.Flatten(
+            new[] { b[(int)TypePotential.Ni][0] },
+            new[] { b[(int)TypePotential.No][0] },
+            new[] { a[5] });
+        string[] NoNo = ArrayUtils.Flatten(
+            new[] { b[(int)TypePotential.No][0] },
+            new[] { a[6] },
+            new[] { b[(int)TypePotential.No][1] });
+        result[(int)TypePotential.Ci][(int)TypePotential.Co] = CiCo;
+        result[(int)TypePotential.Co][(int)TypePotential.Ci] = CiCo;
+        result[(int)TypePotential.Co][(int)TypePotential.Co] = CoCo;
+        result[(int)TypePotential.Ii][(int)TypePotential.Io] = IiIo;
+        result[(int)TypePotential.Io][(int)TypePotential.Ii] = IiIo;
+        result[(int)TypePotential.Ni][(int)TypePotential.Ni] = NiNi;
+        result[(int)TypePotential.Ni][(int)TypePotential.No] = NiNo;
+        result[(int)TypePotential.No][(int)TypePotential.Ni] = NiNo;
+        result[(int)TypePotential.No][(int)TypePotential.No] = NoNo;
+        return result;
+    }
+
 #pragma warning disable IDE0051
     /// <summary>初期化時に呼び出す、コールバック。</summary>
     private void Start()
     {
+        BuiltPotentialDetails = CreatePotentialTypeDetails();
+
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
         BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];
         for (int i = (int)TypeGenius.MAX_VALUE; --i >= 0;)

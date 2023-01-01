@@ -344,6 +344,72 @@ public sealed class EsResources : FallbackResources
     /// <summary>潜在能力の見出し。</summary>
     public override string PotentialHeading => "Capacidad potencial";
 
+    /// <summary>潜在能力における、各タイプの追加解説。</summary>
+    public override string[] PotentialTypeAdditional =>
+        new[]
+        {
+            "También pueden crear de la nada y el potencial de sublimar el trabajo de otros.",
+            "Por otro lado, no suelen ser buenos ordenando o desarrollando lo que ya existe.",
+            "Este tipo de persona es a la vez un buen conversador y un buen oyente y tiene una capacidad equilibrada para hablar.",
+            "Por otra parte, también saben escuchar y averiguar lo que piensa la otra persona.",
+            "Sin embargo, no suelen ser buenos creando nuevos equipos o desarrollando y ampliando sus grupos.",
+            "Son meticulosos, organizados, atentos y tienen una excelente capacidad de autogestión.",
+            "No suelen ser buenos manteniendo grupos, e incluso cuando los crean, tienden a desaparecer espontáneamente.",
+        };
+
+    /// <summary>潜在能力における、各タイプの解説。</summary>
+    public override string[][] PotentialTypeBase =>
+        new[]
+        {
+            new[]
+            {
+                "Este tipo de persona posee una excelente capacidad de análisis y aplicación y tiene predisposición a dedicarse a una sola cosa a la vez.",
+                "Tienen el poder del arreglo más que el de la originalidad.",
+            },
+            new[]
+            {
+                "Este tipo de persona tiene el potencial de perseguir una cosa sin descanso.",
+                "También pueden crear algo de la nada y ser sensibles a lo nuevo.",
+            },
+            new[]
+            {
+                "Este tipo de persona puede expresarse piensa, de forma no verbal, como un artista.",
+            },
+            new[]
+            {
+                "Este tipo de persona puede expresarse activamente a través de las palabras.",
+            },
+            new[]
+            {
+                "Este tipo de persona tiene el potencial de ver el significado oculto tras los números.",
+                "También intentan hacer las cosas con cuidado.",
+            },
+            new[]
+            {
+                "Este tipo de persona tiene potencial para expresar cosas con números y datos.",
+            },
+            new[]
+            {
+                "Este tipo de persona sabe escuchar y puede averiguar lo que piensa la otra persona.",
+                "Entonces pueden hablar y transmitir sus intenciones a la otra persona.",
+            },
+            new[]
+            {
+                "Este tipo de persona es un hablador insistente que prefiere contar una historia a escucharla.",
+                $"Además, aquellos cuya personalidad interior es “{DetailedGeniusTypeName[(int)TypeDetailedGenius.E001]}” tienden a ser dictatoriales.",
+            },
+            new[]
+            {
+                "Este tipo de persona tiene el potencial de mantener o solidificar interiormente un grupo u organización.",
+                "Son personas organizadas, bien planificadas y con una excelente capacidad de autogestión.",
+            },
+            new[]
+            {
+                "Este tipo de persona tiene potencial para crear grupos y organizaciones y desarrollarlos hacia el exterior.",
+                "También suelen ser personas muy cariñosas.",
+            },
+        };
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "Interior", "Exterior", "Trabajo" };

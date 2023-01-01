@@ -204,8 +204,7 @@ public static class PageGenerator
                 res.LifeBaseDescription,
                 $"{copyHeading}: {res.LifeBaseTypesName[lifebase]}",
                 res.LifeBaseTypesDetail[lifebase],
-                1.5f,
-                1.5f);
+                1.7f);
     }
 
     /// <summary>潜在能力ページの文言を取得します。</summary>
@@ -228,7 +227,8 @@ public static class PageGenerator
                 res.PotentialHeading,
                 res.PotentialDescription,
                 copyHeading,
-                new string[0]);
+                res.BuiltPotentialDetails[potentialA][potentialB],
+                1.3f);
     }
 
     /// <summary>
@@ -262,6 +262,7 @@ public static class PageGenerator
     /// <param name="description">説明。</param>
     /// <param name="copy">コピーライト。</param>
     /// <param name="details">詳細。</param>
+    /// <param name="mulSizeLine">行の高さの倍率。</param>
     /// <returns>ページの文言。</returns>
     private static string CreateByTemplate(
         this FallbackResources res,
@@ -269,26 +270,24 @@ public static class PageGenerator
         string description,
         string copy,
         string[] details,
-        float mulHeadingSize = 1f,
-        float mulDetailsSize = 1f)
+        float mulSizeLine = 1f)
     {
-        int sizeHeading = (int)(res.SizeHeading * mulHeadingSize);
-        int catchHeight = (int)(res.SizeLine * 1.5f);
-        string lh = $"<line-height={res.SizeLine}%>";
-        string br = $"</line-height>\n<line-height={res.SizeLine / 3}%>\n</line-height>{lh}";
+        int sizeLine = (int)(res.SizeLine * mulSizeLine);
+        int catchHeight = (int)(sizeLine * 1.5f);
+        string lh = $"<line-height={sizeLine}%>";
+        string br = $"</line-height>\n<line-height={sizeLine / 3}%>\n</line-height>{lh}";
         string head = $"<cspace=-0.1em><smallcaps>{heading}</smallcaps></cspace>";
         string desc = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {description}</size>";
-        string cp = $"{CENTER}<size={sizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>";
-        return $"{lh}{desc}{br}{cp}{br}{res.CreateDetailList(details, mulDetailsSize)}";
+        string cp = $"{CENTER}<size={res.SizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>";
+        return $"{lh}{desc}{br}{cp}{br}{res.CreateDetailList(details)}";
     }
 
     /// <summary>リストを連結し、文言を取得します。</summary>
     /// <param name="res">リソース。</param>
     /// <param name="list">リスト。</param>
-    /// <param name="mulSize">サイズの倍率。</param>
     /// <returns>文言。</returns>
     private static string CreateDetailList(
-        this FallbackResources res, string[] list, float mulSize = 1f)
+        this FallbackResources res, string[] list)
     {
         if (list == null || list.Length == 0)
         {
@@ -296,8 +295,7 @@ public static class PageGenerator
         }
         const string MARK = "◆";
         const string INDENT = "<indent=4%>";
-        int size = (int)(res.SizeDetails * mulSize);
         string body = string.Join($"</indent>\n{MARK}{INDENT}", list);
-        return $"{JUSTIFY}<size={size}>{MARK}{INDENT}{body}</indent></size>";
+        return $"{JUSTIFY}<size={res.SizeDetails}>{MARK}{INDENT}{body}</indent></size>";
     }
 }

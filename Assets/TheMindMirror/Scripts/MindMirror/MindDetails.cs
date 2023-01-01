@@ -85,6 +85,15 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.BuiltLifebase[vars.LifeBase];
     }
 
+    /// <summary>潜在能力ページの文言を取得します。</summary>
+    /// <returns>潜在能力ページの文言。</returns>
+    private string GetPotentialPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        return res.BuiltPotentials[vars.PotentialA][vars.PotentialB];
+    }
+
     /// <summary>
     /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
     /// </summary>
@@ -128,7 +137,8 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetDetailedGeniusWeaknessPage(),
                 GetDetailedGeniusStrategyPage(),
                 Get3TypedGeniusPage(),
-                $"{GetLifeBasePage()}\n{comingSoon}",
+                GetLifeBasePage(),
+                $"{GetPotentialPage()}\n{comingSoon}",
             };
         nameLabel.text = cube.CubeName;
         UpdateContents();

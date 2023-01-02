@@ -1,34 +1,46 @@
 {
   "brain": {
     "detail": {
-      "detail": "",
-      "name": ""
+      "detail": "Según la persona, pueden dividirse en del tipo “$t(brain.left.name)” o del tipo “$t(brain.right.name)”.",
+      "name": "Métodos de reflexión"
     },
     "left": {
-      "detail": "",
-      "more": ["", ""],
-      "name": ""
+      "detail": "Son excelentes en pensamiento **lógico**.",
+      "more": [
+        "Aunque se les da bien pensar basándose en números y datos, tienden a confundirse en situaciones incoherentes.",
+        "Tienden a ceñirse a las pruebas numéricas y no se les da bien trabajar de forma intuitiva."
+      ],
+      "name": "Pensamiento zurdo"
     },
     "right": {
-      "name": "",
-      "detail": "",
-      "more": ["", ""]
+      "detail": "Son excelentes en el pensamiento **intuitivo**.",
+      "more": [
+        "Aunque son **buenos en el uso de la imaginación**, como en la lluvia de ideas, tienden a ignorar las pruebas y a moverse primero con la intuición.",
+        "En **situaciones complicadas**, son **fáciles de dejar de pensar**."
+      ],
+      "name": "Pensamiento cerebral derecho"
     }
   },
   "communication": {
     "detail": {
-      "detail": "",
-      "name": ""
+      "detail": "Dependiendo de la persona, pueden dividirse en el tipo“$t(communication.fix.name)” o el tipo “$t(communication.flex.name) ”.",
+      "name": "Formas de pensar en el diálogo"
     },
     "fix": {
-      "detail": "",
-      "more": ["", ""],
-      "name": ""
+      "detail": "Hacen un diálogo que prosigue con una conclusión.",
+      "more": [
+        "Tienden a racionalizar y a hacerse entender.",
+        "Se sienten aliviados cuando las cosas están claramente definidas, como el tiempo y el lugar, pero tienden a sentirse inquietos cuando las cosas no están claras."
+      ],
+      "name": "**Arreglo**: orientado a la clarificación"
     },
     "flex": {
-      "name": "",
-      "detail": "",
-      "more": ["", ""]
+      "detail": "Son buenos concluyendo **fluidamente**.",
+      "more": [
+        "También tienden a utilizar el emocionalismo para transmitir su punto de vista.",
+        "Pueden manejarse con ambigüedad en términos de tiempo, lugar, etc., pero **se sienten limitados cuando se trata de claridad**."
+      ],
+      "name": "**Flex**: orientado a la liquidez"
     }
   },
   "descriptions": {
@@ -342,54 +354,74 @@
   },
   "management": {
     "detail": {
-      "detail": "",
-      "name": ""
+      "detail": "Dependiendo de la persona, pueden dividirse en el tipo “$t(management.care.name)” o el tipo “$t(management.hope.name)”.",
+      "name": "Ventajas e inconvenientes"
     },
     "care": {
-      "detail": "",
-      "more": ["", "", ""],
-      "name": ""
+      "detail": "Tienen buen ojo para **ver los costes y riesgos** de las oportunidades.",
+      "more": [
+        "Son pesimistas y tienden a ser personas muy precavidas.",
+        "Buscan lo que pueden hacer eliminando lo que no pueden hacer, por lo que, aunque rara vez cometen grandes errores, tienden a perder oportunidades importantes.",
+        "Tendemos a darles una impresión negativa, pero muchos pueden ser positivos porque saben afrontar los riesgos una vez que los conocen."
+      ],
+      "name": "**Cuidados**: El orientado al riesgo"
     },
     "hope": {
-      "name": "",
-      "detail": "",
-      "more": ["", "", ""]
+      "detail": "Tienen un ojo excelente para ver las oportunidades significativas que se esconden detrás de las oportunidades.",
+      "more": [
+        "También tienden a **ser optimistas e imprudentes**.",
+        "Aunque no tienen miedo al fracaso, cometen un gran error y nunca vuelven a intentarlo.",
+        "Tendemos a tener una impresión positiva de ellos, pero **no están familiarizados con el riesgo y tienen vagos temores** que les llevan a **pensar negativamente**."
+      ],
+      "name": "**Esperanza**: la empresa orientada"
     }
   },
   "motivation": {
-    "detail": "",
-    "competition": "",
-    "ownMind": "",
-    "power": "",
-    "safety": "",
-    "skillUp": "",
-    "status": ""
+    "detail": "Un entorno en el que es fácil encontrar motivación",
+    "competition": "Crecen motivados en un entorno que pueden comparar con el de otras personas.",
+    "ownMind": "Crecen motivación donde el medio ambiente que pueden hacer en su plan.",
+    "power": "Crecen motivados donde el entorno que pueden hacer tan pronto como piensan en ello.",
+    "safety": "Crecen motivados en un entorno en el que pueden perseguir la seguridad y la paz.",
+    "skillUp": "Crecen motivación donde el medio ambiente que pueden sentir la mejora diaria.",
+    "status": "Crecen motivados donde el entorno que pueden ser diferentes de los demás."
   },
-  "name": "",
+  "name": "Español",
   "position": {
     "detail": {
       "detail": "Cada tipo de personalidad se adapta a un papel diferente. Así que, en general, es mejor superar tus puntos débiles delegándolos en la persona adecuada en el lugar adecuado, en lugar de hacerlo tú solo, para poder conseguir grandes resultados.",
-      "name": ""
+      "name": "Idoneidad para el puesto"
     },
     "adjust": {
-      "detail": "",
-      "more": ["", ""],
-      "name": ""
+      "detail": "Son como comandantes en primera línea con **excelentes dotes de coordinación sobre el terreno**.",
+      "more": [
+        "Les gusta estar delante de la gente, pero son más aptos para la coordinación interpersonal que para las ventas.",
+        "Son más adecuados para funciones de apoyo, como tramitar reclamaciones o ejercer de gestores."
+      ],
+      "name": "**Ajustar**: Adecuado como coordinador en una organización"
     },
     "brain": {
-      "name": "",
-      "detail": "",
-      "more": ["", ""]
+      "detail": "Tiene una fuerte creatividad y muestra el mejor rendimiento **como cerebro entre bastidores**.",
+      "more": [
+        "En las lluvias de ideas, lo mejor es contar con ellos como miembros clave para obtener el mejor rendimiento.",
+        "Por otro lado, si dejas al vendedor en sus manos, puede soltar una bomba."
+      ],
+      "name": "**Cerebro**: Apto como planificador de estrategias"
     },
     "direct": {
-      "detail": "",
-      "more": ["", ""],
-      "name": ""
+      "detail": "Tienen una capacidad de aprendizaje equilibrada y pueden hacer de todo un poco, desde in situ hasta entre bastidores.",
+      "more": [
+        "Pueden hacerlo todo suele ser su perdición, y tienden a asumirlo todo ellos solos.",
+        "En muchos casos, ya trabajan como directivos."
+      ],
+      "name": "**Directo**: Adecuado como líder"
     },
     "quick": {
-      "detail": "",
-      "more": ["", ""],
-      "name": ""
+      "detail": "Son **muy dinámicos** y los más adecuados para negociaciones y reuniones de negocios con clientes.",
+      "more": [
+        "Tienen una energía intensa y vital para estar delante de la gente y ser activos.",
+        "Suelen verse ahogados por el trabajo entre bastidores y no duran mucho."
+      ],
+      "name": "**Rápido**: Apto como vendedor"
     }
   },
   "potentials": {
@@ -681,18 +713,26 @@
   },
   "response": {
     "detail": {
-      "detail": "",
-      "name": ""
+      "detail": "Dependiendo de la persona, pueden dividirse en el tipo “$t(response.action.name)” o el tipo “$t(response.mind.name)”.",
+      "name": "Idoneidad para el trabajo"
     },
     "action": {
-      "detail": "",
-      "more": ["", "", ""],
-      "name": ""
+      "detail": "Se centran en poner la energía en acción y sienten que su lugar está en la vanguardia de lo in situ.",
+      "more": [
+        "Tienden a **actuar antes de pensar**.",
+        "Un grupo de personas con el mismo tipo de personalidad que ellos en proporción dará la impresión de ser inestable pero activo.",
+        "Aunque se les dan bien las apariciones en público, a muchos de ellos se les atraganta fácilmente el trabajo entre bastidores, como el trabajo de oficina, las manufacturas o el funcionamiento de las máquinas."
+      ],
+      "name": "Salir en público"
     },
     "mind": {
-      "detail": "",
-      "more": ["", "", ""],
-      "name": ""
+      "detail": "Valoran poner energía en pensar y consideran que desempeñar un papel entre bastidores es valioso.",
+      "more": [
+        "Son más del tipo que piensa antes de actuar.",
+        "Un grupo con una proporción de su tipo de personas parecerá estancado, pero dará la impresión de tener los pies en la tierra y ser sólido.",
+        "Aunque se les da bien el trabajo de oficina, la fabricación y el manejo de máquinas, no se les da bien reunirse en persona, y muchos de ellos se cansan fácilmente de trabajar en público."
+      ],
+      "name": "Trabajo entre bastidores"
     }
   },
   "vector": {

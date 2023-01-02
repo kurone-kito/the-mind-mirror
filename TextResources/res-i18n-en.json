@@ -5,7 +5,7 @@
       "name": "Thinking methods"
     },
     "left": {
-      "detail": "They are excellent at logical thinking.",
+      "detail": "They are excellent at **logical** thinking.",
       "more": [
         "While they are good at thinking based on numbers and data, they tend to confuse in rambling situations.",
         "They tend to stick to numerical evidence and are not good at working intuitively."
@@ -13,12 +13,12 @@
       "name": "Left-brained thinking"
     },
     "right": {
-      "name": "Right-brained thinking",
-      "detail": "They are excellent at **intuitive thinking**.",
+      "detail": "They are excellent at **intuitive** thinking.",
       "more": [
         "While they're **good at using imagination**, such as brainstorming, They tend to disregard the evidence and move with intuition first.",
         "In **complicated situations**, they are **easy to stop thinking**."
-      ]
+      ],
+      "name": "Right-brained thinking"
     }
   },
   "communication": {
@@ -35,12 +35,12 @@
       "name": "**Fix**: Clarification-oriented"
     },
     "flex": {
-      "name": "**Flex**: Liquidity-oriented",
       "detail": "They are good at concluding **fluidly**.",
       "more": [
         "They also tend to use emotionalism to get their point across.",
         "They can manage with ambiguity in terms of time, place, etc., but they **feel constrained when it comes to clarity**."
-      ]
+      ],
+      "name": "**Flex**: Liquidity-oriented"
     }
   },
   "descriptions": {
@@ -367,17 +367,17 @@
       "name": "**Care**: The risk-oriented"
     },
     "hope": {
-      "name": "**Hope**: The venture-oriented",
       "detail": "They have an excellent eye for seeing the significant chances hidden behind opportunities.",
       "more": [
         "They also tend to **be optimistic and reckless**.",
         "While not afraid of failure, they make a big mistake never try it again.",
         "We tend to have a positive impression on them, but they are **unfamiliar with risk and have vague fears** that lead them to **think negatively**."
-      ]
+      ],
+      "name": "**Hope**: The venture-oriented"
     }
   },
   "motivation": {
-    "detail": "An environment where motivation is easy to find",
+    "detail": "The environment where motivation is easy to find",
     "competition": "They grow motivation where the environment that they can compare with other people's.",
     "ownMind": "They grow motivation where the environment that they can do on their plan.",
     "power": "They grow motivation where the environment that they can do as soon as they think about it.",
@@ -400,12 +400,12 @@
       "name": "**Adjust**: Suited as a coordinate in an organization"
     },
     "brain": {
-      "name": "**Brain**: Suited as a strategy planner",
       "detail": "It has strong creativity and shows the best performance **as a brain behind the scenes**.",
       "more": [
         "When brainstorming, it is best to have them as key members for the best performance.",
         "On the other hand, if you leave the salesperson to them, they may drop a bomb."
-      ]
+      ],
+      "name": "**Brain**: Suited as a strategy planner"
     },
     "direct": {
       "detail": "They have balanced learning skills and can do some extent of everything, from on-site to behind the scenes.",

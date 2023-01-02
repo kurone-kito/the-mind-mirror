@@ -9,14 +9,25 @@
     "author": "Kurone Kito",
     "description": "Calcula la personalidad a partir del cumpleaños.",
     "feature": {
-      "body": ["", "", "", "", "", ""],
+      "body": [
+        "La biblioteca se basa en los Cuatro Pilares del Destino y puede utilizarse para evaluar la personalidad desde el 1 de feb de 1873 hasta el 31 de dic de 2050.",
+        "La parte del cálculo de la personalidad y la parte de la redacción están en una biblioteca separada. Por lo tanto, puede utilizar su redacción.",
+        "La parte principal no tiene dependencias y se puede utilizar en cualquier entorno que ejecute Node.js >= v12.1.",
+        "Se ha transpuesto a JS (ES2019) y puede ejecutarse rápidamente en los navegadores modernos actuales.",
+        "Los archivos d.ts de TypeScript también se incluyen en el paquete.",
+        "En el futuro, la biblioteca admitirá el diagnóstico de compatibilidad por tipo de personalidad."
+      ],
       "title": "Características del módulo"
     },
     "form": {
       "birthday": "Introducir la fecha de cumpleaños (obligatorio)",
       "legend": "Demostración: ¡Pruébalo!",
       "nickname": "Introduzca el apodo (opcional)",
-      "notes": ["", "", ""],
+      "notes": [
+        "La aplicación puede utilizarse para evaluar la personalidad desde el 1 de feb de 1873 hasta el 31 de dic de 2050.",
+        "No tiene en cuenta las zonas horarias. Por lo tanto, mover la fecha hacia adelante y hacia atrás puede resolver si no está satisfecho con la personalidad inferida.",
+        "Aunque la fecha de nacimiento se trata como información personal en general, esta página web no almacena información personal de forma no volátil o enviar. Por cierto, se convierte irreversiblemente en datos de evaluación de la personalidad."
+      ],
       "submit": "¡Comprueba la personalidad!"
     },
     "install": [
@@ -31,21 +42,28 @@
       "```"
     ],
     "language": { "automatic": "🌐 Automático", "name": "Lengua" },
-    "preface": ["", ""],
+    "preface": [
+      "“Dantalion” es el septuagésimo primer demonio del grimorio demonológico, _[La Llave Menor de Salomón](https://es.wikipedia.org/wiki/La_llave_menor_de_Salom%C3%B3n)_. Enseña todo tipo de conocimientos académicos, pero también puede leer y manipular el corazón de los demás.",
+      "Si puede predecir el carácter de la otra persona, puede aumentar la posibilidad de controlar su voluntad. Esta biblioteca y aplicación web ofrece una función que infiere los detalles de la personalidad a partir de la fecha de **cumpleaños especificada**. Usando este paquete, puedes implementar rápidamente la adivinación de cumpleaños en tus aplicaciones Node.js. Su cálculo utiliza el método de los _Cuatro Pilares del Destino (Ba-Zi)_."
+    ],
     "result": {
-      "genius": { "inner": "", "outer": "", "workStyle": "" },
-      "heading": "",
+      "genius": {
+        "inner": "Interior: {{type}}",
+        "outer": "Exterior: {{type}}",
+        "workStyle": "Trabajo: {{type}}"
+      },
+      "heading": "El personalidad y método de manipulación del Sx. {{nickname}}",
       "lifeBase": {
         "detail": "Las personas también tienen un ego latente con el que nacen, además de las tres personalidades.",
-        "name": ""
+        "name": "El visión de la vida del Sx. {{nickname}}"
       },
       "nickname": "Anónimo",
-      "potential": "",
-      "probed": "¡Mx. {{nickname}} tiene “{{type}}”!",
+      "potential": "El potencial del Sx. {{nickname}}",
+      "probed": "¡Sx. {{nickname}} tiene “{{type}}”!",
       "profile": "ID del expediente personal"
     },
     "seeRepo": "Para más detalles sobre la biblioteca, consulte el repositorio GitHub.",
-    "share": { "hashtag": "", "tweet": "¡Tuitea el resultado!" },
+    "share": { "hashtag": "DantalionPD", "tweet": "¡Tuitea el resultado!" },
     "tooltip": { "summary": "Toque aquí, expandiré o colapsaré." }
   }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Labels Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 688bb289b4ad57245b7a198baf1f6944,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 39033b103a5f1554ca541d7b7056fe72,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -9,11 +9,11 @@ public abstract class ResultPreviewerBase : ResourcesObserver
 #pragma warning disable IDE0044
     /// <summary>本文ラベル。</summary>
     [SerializeField]
-    private TextMeshPro details;
+    private TextMeshProUGUI main;
 
-    /// <summary>ページネーションのラベル。</summary>
+    /// <summary>ページ ラベル。</summary>
     [SerializeField]
-    private TextMeshPro paginationLabel;
+    private TextMeshProUGUI page;
 #pragma warning restore IDE0044
 
     /// <summary>現在のページ番号。</summary>
@@ -52,14 +52,14 @@ public abstract class ResultPreviewerBase : ResourcesObserver
     protected virtual void UpdateContents()
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        if (paginationLabel == null || details == null || res == null)
+        if (main == null || page == null || res == null)
         {
             return;
         }
-        paginationLabel.text =
+        page.text =
             string.Format(
                 res.TemplatePages, currentPage + 1, Contents.Length);
-        details.text =
+        main.text =
             currentPage >= Contents.Length ? string.Empty :
             Contents[currentPage];
     }

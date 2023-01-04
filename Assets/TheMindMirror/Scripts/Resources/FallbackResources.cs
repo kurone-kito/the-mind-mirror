@@ -576,13 +576,13 @@ Since clairvoyant is impossible in this state, please write your information in 
         "Your type is“<b>{0}</b>”!";
 
     /// <summary>説明サイズ。</summary>
-    public virtual int SizeDescription => 200;
+    public virtual int SizeDescription => 20;
 
     /// <summary>詳細サイズ。</summary>
-    public virtual int SizeDetails => 200;
+    public virtual int SizeDetails => 20;
 
     /// <summary>見出しサイズ。</summary>
-    public virtual int SizeHeading => 320;
+    public virtual int SizeHeading => 32;
 
     /// <summary>行サイズ。</summary>
     public virtual int SizeLine => 72;

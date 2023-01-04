@@ -533,13 +533,13 @@ public sealed class JaResources : FallbackResources
     public override string TemplateYourTypeIs => "あなたは<b>{0}</b>です！";
 
     /// <summary>説明サイズ。</summary>
-    public override int SizeDescription => 240;
+    public override int SizeDescription => 23;
 
     /// <summary>詳細サイズ。</summary>
-    public override int SizeDetails => 230;
+    public override int SizeDetails => 23;
 
     /// <summary>見出しサイズ。</summary>
-    public override int SizeHeading => 400;
+    public override int SizeHeading => 40;
 
     /// <summary>説明サイズ。</summary>
     public override int SizeLine => 85;

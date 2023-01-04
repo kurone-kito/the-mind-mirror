@@ -92,7 +92,7 @@ public static class PageGenerator
     {
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         return res == null ? string.Empty :
-            $"{RIGHT}<size=230>▶{res.ComingSoon}◀</size>";
+            $"{RIGHT}<size=23>▶{res.ComingSoon}◀</size>";
     }
 
     /// <summary>素質ページの文言を取得します。</summary>
@@ -185,7 +185,8 @@ public static class PageGenerator
                 res.GeniusDescription,
                 string.Format(
                     res.TemplateStrategy, res.GeniusTypesName[genius]),
-                res.GeniusTypesStrategies[genius]);
+                res.GeniusTypesStrategies[genius],
+                0.9f);
     }
 
     /// <summary>

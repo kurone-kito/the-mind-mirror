@@ -468,9 +468,6 @@ public sealed class EsResources : FallbackResources
          @"El Cubo de la Mente, utilizado para la clarividencia de su personalidad, está <b>vacío</b>.
 Dado que la clarividencia es imposible en este estado, por favor escriba su información en el Escritor Mental de la sala anterior e inténtelo de nuevo.";
 
-    /// <summary>見出しサイズ。</summary>
-    public override int SizeHeading => 320;
-
     /// <summary>ページ番号のテンプレート。</summary>
     public override string TemplatePages => "Páginas: {0}/{1}";
 

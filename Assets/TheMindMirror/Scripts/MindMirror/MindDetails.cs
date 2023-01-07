@@ -110,7 +110,7 @@ public sealed class MindDetails : ResultPreviewerBase
     {
         if (
             subject != null &&
-            subject.GetComponent<MindMirrorSubject>() != null
+            subject.name == "MindMirrorSubject"
         )
         {
             ResetPage();

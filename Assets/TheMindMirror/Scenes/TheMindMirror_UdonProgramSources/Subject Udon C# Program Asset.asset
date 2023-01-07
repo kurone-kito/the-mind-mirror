@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: MindMirrorSubject Udon C# Program Asset
+  m_Name: Subject Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 2820e0dda3b3a6b42a27e87020c7f219,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 02c6cb40b9535dd4e8c06fda505029a9,
     type: 2}
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: 19529d66c12f77040a51a9eb358c6d0d, type: 3}
+  sourceCsScript: {fileID: 11500000, guid: 9feb4ba07dd620640b33897e113661d8, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 4
+  behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: 1249212524238038203
+  scriptID: -2311443352310868120
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 

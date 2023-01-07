@@ -1,4 +1,4 @@
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 
 /// <summary>リソース変化の通知を受けるクラス。</summary>

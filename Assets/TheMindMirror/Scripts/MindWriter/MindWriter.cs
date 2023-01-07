@@ -26,7 +26,7 @@ internal enum BirthIndex
 
 /// <summary>マインドキューブに情報を書き出すクラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public sealed class MindWriter : MindStack
+public sealed class MindWriter : Observer
 {
     /// <summary>
     /// 生年月日入力コントロールの接続不備における、エラーメッセージ。
@@ -70,6 +70,9 @@ public sealed class MindWriter : MindStack
     /// <summary>生年月日。</summary>
     private DateTime birth;
 
+    /// <summary>マインドキューブ スタック。</summary>
+    private MindStack stack;
+
     /// <summary>プレイヤーの表示名を取得します。</summary>
     private string PlayerName
     {
@@ -86,7 +89,6 @@ public sealed class MindWriter : MindStack
     public void OnDecide()
     {
         WriteToMindCube(false);
-        PutoutMindCube();
     }
 
     /// <summary>
@@ -126,7 +128,6 @@ public sealed class MindWriter : MindStack
     public void OnErase()
     {
         WriteToMindCube(true);
-        PutoutMindCube();
     }
 
     /// <summary>
@@ -196,40 +197,46 @@ public sealed class MindWriter : MindStack
         }
     }
 
-    /// <summary>描画状態を更新します。</summary>
-    protected override void OnUpdateMindCube()
-    {
-        ResetBirth();
-        if (!(MindCube == null || nameInput == null))
-        {
-            nameInput.text = PlayerName;
-        }
-        base.OnUpdateMindCube();
-    }
-
     /// <summary>マインドキューブに入力内容を書き込みます。</summary>
     /// <param name="erase">消去するかどうか。</param>
     private void WriteToMindCube(bool erase)
     {
-        if (MindCube == null)
+#pragma warning disable IDE0031
+        MindCube cube = stack == null ? null : stack.MindCube;
+        MindCubeVariables vars = cube == null ? null : cube.Variables;
+#pragma warning restore IDE0031
+        if (vars == null)
         {
             return;
         }
-        MindCube.Variables.ChangeOwner();
-        MindCube.Variables.CubeName =
+        vars.ChangeOwner();
+        vars.CubeName =
             erase ? string.Empty :
             nameInput == null ? PlayerName :
             nameInput.text.Trim();
-        MindCube.Variables.Parameter =
+        vars.Parameter =
             erase ? uint.MaxValue : birth.GetPersonality();
-        MindCube.Variables.Sync();
+        vars.Sync();
+        stack.PutoutMindCube();
+    }
+
+    /// <summary>
+    /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="subject">サブジェクト本体。</param>
+    public override void OnNotify(Subject subject)
+    {
+        ResetBirth();
+#pragma warning disable IDE0031
+        stack = subject == null ? null : subject.GetComponent<MindStack>();
+#pragma warning restore IDE0031
+        nameInput.text = PlayerName;
     }
 
 #pragma warning disable IDE0051
     /// <summary>初期化時に呼び出される、コールバック。</summary>
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         ResetBirth();
     }
 #pragma warning restore IDE0051

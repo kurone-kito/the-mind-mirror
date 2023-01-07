@@ -4,7 +4,7 @@ using VRC.SDK3.Components;
 
 /// <summary>マインドキューブを一時預かりするスタック。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public class MindStack : UdonSharpBehaviour
+public class MindStack : Subject
 {
     /// <summary>排出物不備における、エラーメッセージ。</summary>
     private const string WARN_NO_CUBE =
@@ -95,6 +95,7 @@ public class MindStack : UdonSharpBehaviour
             MindCube.NotifyActive(false);
         }
 #pragma warning restore IDE0031
+        Notify();
     }
 
     /// <summary>マインドキューブを排出します。</summary>

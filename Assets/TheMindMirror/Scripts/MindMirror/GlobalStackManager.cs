@@ -9,10 +9,14 @@ using UnityEngine;
 public sealed class GlobalStackManager : SyncBase
 {
     /// <summary>
-    /// コア オブジェクトの接続不備における、エラーメッセージ。
+    /// マインドキューブ マネージャーの接続不備における、エラーメッセージ。
     /// </summary>
-    private const string ERR_NO_CORE =
-        "コア オブジェクトへのリンクが設定されていません。";
+    private const string WARN_NO_CUBES =
+        "マインドキューブ マネージャーへのリンクが設定されていません。";
+
+    /// <summary>スタックの接続不備における、エラーメッセージ。</summary>
+    private const string ERR_NO_STACK =
+        "一時スタックへのリンクが設定されていません。";
 
     /// <summary>
     /// サブジェクトの接続不備における、エラーメッセージ。
@@ -21,11 +25,15 @@ public sealed class GlobalStackManager : SyncBase
         "サブジェクトへのリンクが設定されていません。";
 
 #pragma warning disable IDE0044
+    /// <summary>マインドキューブ マネージャー。</summary>
+    [SerializeField]
+    private MindCubes cubes;
+
     /// <summary>
     /// マインドキューブをスタックできるコア オブジェクト。
     /// </summary>
     [SerializeField]
-    private MindMirror root;
+    private MindStack root;
 
     /// <summary>オブザーバーに対する、呼び出し窓口。</summary>
     [SerializeField]
@@ -61,6 +69,20 @@ public sealed class GlobalStackManager : SyncBase
 #pragma warning restore IDE0031
     }
 
+    /// <summary>マインドキューブ情報を同期します。</summary>
+    /// <param name="cube">マインドキューブ。</param>
+    public void SyncMindCube(MindCube cube)
+    {
+        if (cubes == null)
+        {
+            Debug.LogWarning(WARN_NO_CUBES);
+            return;
+        }
+        ChangeOwner();
+        Index = cubes.FindIndex(cube);
+        Sync();
+    }
+
     /// <summary>
     /// マインドキューブを取得します。
     /// </summary>
@@ -69,16 +91,18 @@ public sealed class GlobalStackManager : SyncBase
     {
         if (root == null)
         {
-            Debug.LogError(ERR_NO_CORE);
+            Debug.LogError(ERR_NO_STACK);
             return null;
         }
-        MindCube[] cubes = root.Cubes.Cubes;
+#pragma warning disable IDE0031
+        MindCube[] cubeArray = cubes == null ? null : cubes.Cubes;
+#pragma warning restore IDE0031
         return (
-            cubes == null ||
+            cubeArray == null ||
             index < 0 ||
-            index >= cubes.Length ||
-            cubes[index] == null
-        ) ? null : cubes[index];
+            index >= cubeArray.Length ||
+            cubeArray[index] == null
+        ) ? null : cubeArray[index];
     }
 
     /// <summary>オブザーバーを呼び出します。</summary>
@@ -91,7 +115,7 @@ public sealed class GlobalStackManager : SyncBase
         }
         if (root == null)
         {
-            Debug.LogWarning(ERR_NO_CORE);
+            Debug.LogWarning(ERR_NO_STACK);
         }
         else
         {

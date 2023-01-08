@@ -46,13 +46,6 @@ public sealed class MindCube : SyncBase
     /// <summary>非アクティブ化します。</summary>
     public void DeActive()
     {
-        VRC_Pickup pickup = GetComponent<VRC_Pickup>();
-#pragma warning disable IDE0031
-        if (pickup != null)
-        {
-            pickup.Drop();
-        }
-#pragma warning restore IDE0031
         gameObject.SetActive(false);
     }
 
@@ -60,6 +53,13 @@ public sealed class MindCube : SyncBase
     /// <param name="active">アクティブ化するかどうか。</param>
     public void NotifyActive(bool active)
     {
+        VRC_Pickup pickup = GetComponent<VRC_Pickup>();
+#pragma warning disable IDE0031
+        if (pickup != null)
+        {
+            pickup.Drop();
+        }
+#pragma warning restore IDE0031
         string command = active ? nameof(Active) : nameof(DeActive);
         SendCustomNetworkEvent(NetworkEventTarget.All, command);
         SendCustomEventDelayedFrames(command, 1);

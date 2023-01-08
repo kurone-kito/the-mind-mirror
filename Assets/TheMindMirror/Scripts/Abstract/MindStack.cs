@@ -93,6 +93,7 @@ public class MindStack : Subject
         if (MindCube != null)
         {
             MindCube.NotifyActive(false);
+            UpdateCubeTransform();
         }
 #pragma warning restore IDE0031
         Notify();
@@ -114,23 +115,7 @@ public class MindStack : Subject
         }
         cube.ChangeOwner();
         cube.NotifyActive(true);
-        Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
-        if (rigidbody != null)
-        {
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
-        }
-        VRCObjectSync objSync = cube.GetComponent<VRCObjectSync>();
-        if (objSync == null)
-        {
-            cube.transform.position = destination.position;
-            cube.transform.rotation = destination.rotation;
-        }
-        else
-        {
-            objSync.FlagDiscontinuity();
-            objSync.TeleportTo(destination);
-        }
+        UpdateCubeTransform();
         MindCube = null;
     }
 
@@ -139,6 +124,25 @@ public class MindStack : Subject
     {
         UpdateAcceptable();
         UpdateShowForm();
+    }
+
+    private void UpdateCubeTransform()
+    {
+        MindCube cube = MindCube;
+        Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
+        if (rigidbody != null)
+        {
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+        }
+        VRCObjectSync objSync = cube.GetComponent<VRCObjectSync>();
+        if (objSync != null)
+        {
+            objSync.FlagDiscontinuity();
+            objSync.TeleportTo(destination);
+        }
+        cube.transform.position = destination.position;
+        cube.transform.rotation = destination.rotation;
     }
 
     /// <summary>フォームの表示状態を更新します。</summary>

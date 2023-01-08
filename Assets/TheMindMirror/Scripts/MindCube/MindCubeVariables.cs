@@ -182,8 +182,13 @@ public sealed class MindCubeVariables : SyncBase
         }
     }
 
-    /// <summary>同期変数のアップデートを通知します。</summary>
-    protected override void Notify()
+    /// <summary>
+    /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="subject">
+    /// サブジェクト本体。同期状態の更新で呼ばれた場合は、<c>null</c>。
+    /// </param>
+    public override void OnNotify(Subject subject)
     {
         UpdateName();
         DestractParameter();
@@ -194,7 +199,7 @@ public sealed class MindCubeVariables : SyncBase
     /// <summary>初期化時に呼び出される、コールバック。</summary>
     private void Start()
     {
-        Notify();
+        OnNotify(null);
     }
 #pragma warning restore IDE0051
 }

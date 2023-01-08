@@ -4,7 +4,7 @@ using VRC.SDKBase;
 
 /// <summary>同期関係のユーティリティ クラス。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-public abstract class SyncBase : UdonSharpBehaviour
+public abstract class SyncBase : Observer
 {
     /// <summary>
     /// 同期の要件不備における、エラーメッセージ。
@@ -43,11 +43,8 @@ public abstract class SyncBase : UdonSharpBehaviour
             return;
         }
         RequestSerialization();
-        Notify();
+        OnNotify(null);
     }
-
-    /// <summary>同期変数のアップデートを通知します。</summary>
-    protected abstract void Notify();
 
 
     /// <summary>
@@ -55,6 +52,6 @@ public abstract class SyncBase : UdonSharpBehaviour
     /// </summary>
     public override void OnDeserialization()
     {
-        Notify();
+        OnNotify(null);
     }
 }

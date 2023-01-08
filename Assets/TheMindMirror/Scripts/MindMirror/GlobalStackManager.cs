@@ -18,12 +18,6 @@ public sealed class GlobalStackManager : SyncBase
     private const string ERR_NO_STACK =
         "一時スタックへのリンクが設定されていません。";
 
-    /// <summary>
-    /// サブジェクトの接続不備における、エラーメッセージ。
-    /// </summary>
-    private const string ERR_NO_SUBJECT =
-        "サブジェクトへのリンクが設定されていません。";
-
 #pragma warning disable IDE0044
     /// <summary>マインドキューブ マネージャー。</summary>
     [SerializeField]
@@ -33,11 +27,7 @@ public sealed class GlobalStackManager : SyncBase
     /// マインドキューブをスタックできるコア オブジェクト。
     /// </summary>
     [SerializeField]
-    private MindStack root;
-
-    /// <summary>オブザーバーに対する、呼び出し窓口。</summary>
-    [SerializeField]
-    private Subject subject;
+    private MindStack stack;
 #pragma warning restore IDE0044
 
     /// <summary>マインドキューブのインデックス。</summary>
@@ -53,7 +43,7 @@ public sealed class GlobalStackManager : SyncBase
         set
         {
             index = value;
-            SendCustomEventDelayedFrames(nameof(Notify), 1);
+            SendCustomEventDelayedFrames(nameof(OnNotify), 1);
         }
     }
 
@@ -89,7 +79,7 @@ public sealed class GlobalStackManager : SyncBase
     /// <returns>マインドキューブ。</returns>
     private MindCube GetMindCube()
     {
-        if (root == null)
+        if (stack == null)
         {
             Debug.LogError(ERR_NO_STACK);
             return null;
@@ -105,31 +95,46 @@ public sealed class GlobalStackManager : SyncBase
         ) ? null : cubeArray[index];
     }
 
-    /// <summary>オブザーバーを呼び出します。</summary>
-    protected override void Notify()
+    /// <summary>同期した際に呼び出されます。</summary>
+    private void OnSynced()
     {
-        if (subject == null)
-        {
-            Debug.LogError(ERR_NO_SUBJECT);
-            return;
-        }
-        if (root == null)
+        if (stack == null)
         {
             Debug.LogWarning(ERR_NO_STACK);
+            return;
         }
-        else
-        {
-            root.Forbid = index >= 0;
-        }
+        stack.Forbid = index >= 0;
         MindCube cube = GetMindCube();
-        if (cube != null && root.MindCube == null)
+        if (cube != null && stack.MindCube == null)
         {
-            root.MindCube = cube;
+            stack.MindCube = cube;
         }
-        else if (cube == null && root.MindCube != null)
+        else if (cube == null && stack.MindCube != null)
         {
-            root.MindCube = null;
+            stack.MindCube = null;
         }
-        subject.Notify();
+    }
+
+    /// <summary>
+    /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="caller">
+    /// サブジェクト本体。同期状態の更新で呼ばれた場合は、<c>null</c>。
+    /// </param>
+    public override void OnNotify(Subject caller)
+    {
+        if (caller == null)
+        {
+            OnSynced();
+            return;
+        }
+#pragma warning disable IDE0031
+        MindStack stack =
+            caller == null ? null : caller.GetComponent<MindStack>();
+#pragma warning restore IDE0031
+        if (stack != null)
+        {
+            SyncMindCube(stack.MindCube);
+        }
     }
 }

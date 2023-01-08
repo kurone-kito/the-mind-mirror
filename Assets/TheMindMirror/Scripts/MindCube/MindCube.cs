@@ -65,8 +65,13 @@ public sealed class MindCube : SyncBase
         SendCustomEventDelayedFrames(command, 1);
     }
 
-    /// <summary>同期変数のアップデートを通知します。</summary>
-    protected override void Notify()
+    /// <summary>
+    /// サブジェクトからの呼び出しを受けた際に呼び出す、コールバック。
+    /// </summary>
+    /// <param name="subject">
+    /// サブジェクト本体。同期状態の更新で呼ばれた場合は、<c>null</c>。
+    /// </param>
+    public override void OnNotify(Subject subject)
     {
     }
 }

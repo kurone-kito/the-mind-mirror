@@ -597,6 +597,12 @@ public class FallbackResources : UdonSharpBehaviour
          @"The Mind Cube, used to clairvoyance your personality, is <b>empty</b>.
 Since clairvoyant is impossible in this state, please write your information in the Mind Writer in the previous room and try again.";
 
+    /// <summary>
+    /// 無効なマインドキューブを挿入した際の短いエラーメッセージ。
+    /// </summary>
+    public virtual string WarnOnInsertTheEmptyMindCubeShort =>
+        "Invalid cube";
+
     /// <summary>ページ番号のテンプレート。</summary>
     public virtual string TemplatePages => "Pages: {0}/{1}";
 

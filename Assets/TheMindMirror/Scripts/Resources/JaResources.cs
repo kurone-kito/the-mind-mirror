@@ -552,6 +552,12 @@ public sealed class JaResources : FallbackResources
          @"診断するマインドキューブが<b>抜け殻</b>のようで、診断ができません。
 お隣の部屋のマインドライターで魂の情報を書き込んでから、再度お試しください。";
 
+    /// <summary>
+    /// 無効なマインドキューブを挿入した際の短いエラーメッセージ。
+    /// </summary>
+    public override string WarnOnInsertTheEmptyMindCubeShort =>
+        "抜け殻";
+
     /// <summary>ページ番号のテンプレート。</summary>
     public override string TemplatePages => "{0}/{1} ページ";
 

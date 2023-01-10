@@ -30,3 +30,7 @@ Diplomático, Introvertido
 企画、営業、管理、総合職
 Planning, Sales, Administration, and Generalist
 Planificación, Ventas, Administración y Generalista
+
+抜け殻
+Invalid cube
+Cubo inválido

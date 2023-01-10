@@ -37,6 +37,16 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.Create3GeniusPage(vars.Inner, vars.Outer, vars.WorkStyle);
     }
 
+    /// <summary>論理思考タイプページの文言を取得します。</summary>
+    /// <returns>論理思考タイプページの文言。</returns>
+    private string GetBrainsPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltBrains[dt[(int)TypeDetailIndex.Brain]];
+    }
+
     /// <summary>素質ページの文言を取得します。</summary>
     /// <returns>素質ページの文言。</returns>
     private string GetDetailedGeniusPage()
@@ -146,6 +156,7 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetDetailedGeniusWeaknessPage(),
                 GetDetailedGeniusStrategyPage(),
                 Get3TypedGeniusPage(),
+                GetBrainsPage(),
                 GetLifeBasePage(),
                 $"{GetPotentialPage()}\n{comingSoon}",
             };

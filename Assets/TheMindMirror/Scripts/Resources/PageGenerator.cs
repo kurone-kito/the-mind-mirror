@@ -86,6 +86,30 @@ public static class PageGenerator
         return $"{lh}{desc1}{br}{typesDesc}{br}{desc2}{br}";
     }
 
+    /// <summary>
+    /// 論理思考タイプにおける、ページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="type">論理思考タイプ。</param>
+    /// <returns>ページの文言。</returns>
+    public static string CreateBrainPage(
+        this FallbackResources res, int type)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.BrainTypeHeading[type]);
+        return res.CreateByTemplate(
+            res.BrainHeading,
+            res.BrainDescription,
+            $"{copy} {res.BrainTypeCopy[type]}",
+            res.BrainTypeDetails[type],
+            1.5f);
+    }
+
     /// <summary>今後の解説拡充予告のメッセージを取得します。</summary>
     /// <returns>今後の解説拡充予告のメッセージ。</returns>
     public static string CreateComingSoon()
@@ -296,7 +320,7 @@ public static class PageGenerator
         int catchHeight = (int)(sizeLine * 1.5f);
         string lh = $"<line-height={sizeLine}%>";
         string br = $"</line-height>\n<line-height={sizeLine / 3}%>\n</line-height>{lh}";
-        string head = $"<cspace=-0.1em><smallcaps>{heading}</smallcaps></cspace>";
+        string head = $"<cspace=-0.05em><smallcaps>{heading}</smallcaps></cspace>";
         string desc = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {description}</size>";
         string cp = $"{CENTER}<size={res.SizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>";
         return $"{lh}{desc}{br}{cp}{br}{res.CreateDetailList(details)}";

@@ -4,6 +4,41 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public sealed class JaResources : FallbackResources
 {
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public override string BrainDescription =>
+        $"人によって{BrainTypeHeading[(int)TypeBrain.Left]}か{BrainTypeHeading[(int)TypeBrain.Right]}かに分かれます。";
+
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public override string BrainHeading => "論理思考タイプ";
+
+    /// <summary>論理思考タイプのタイプ別コピー。</summary>
+    public override string[] BrainTypeCopy =>
+        new[]
+        {
+            "<b>論理的思考</b>が優れています。",
+            "<b>直感的思考</b>が優れています。",
+        };
+
+    /// <summary>論理思考タイプのタイプ別解説。</summary>
+    public override string[][] BrainTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "<b>数値・データに基づいて考えることが得意</b>である一方、<b>漫然な状況では混乱</b>しがちな傾向があります。",
+                "数値的なエビデンスに固執してしまい、<b>直感的に動くことは苦手</b>です。",
+            },
+            new[]
+            {
+                "ブレストなど、<b>想像力を使うことが得意</b>である一方、<b>エビデンスを軽視し、直感優先</b>で動いてしまう傾向があります。",
+                "<b>忙しい状況では、思考停止に</b>陥りがちです。",
+            },
+        };
+
+    /// <summary>論理思考タイプのタイプ別名称。</summary>
+    public override string[] BrainTypeHeading =>
+        new[] { "左脳思考", "右脳思考" };
+
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public override string ComingSoon =>
          "今後もっと解説を拡充していきます！";

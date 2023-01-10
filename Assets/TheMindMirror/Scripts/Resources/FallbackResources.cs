@@ -15,6 +15,11 @@ public class FallbackResources : UdonSharpBehaviour
     /// </summary>
     public string[] Built3TypedGenius { get; protected set; }
 
+    /// <summary>
+    /// 論理思考タイプの分類別ビルド済みページ一覧を取得します。
+    /// </summary>
+    public string[] BuiltBrains { get; protected set; }
+
     /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
     public string[] BuiltGenius { get; protected set; }
 
@@ -40,6 +45,41 @@ public class FallbackResources : UdonSharpBehaviour
 
     /// <summary>潜在能力別のビルド済み特徴一覧を取得します。</summary>
     public string[][][] BuiltPotentialDetails { get; protected set; }
+
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public virtual string BrainDescription =>
+        $"Depending on the person, they can divide into the “{BrainTypeHeading[(int)TypeBrain.Left]}” type or the “{BrainTypeHeading[(int)TypeBrain.Right]}” type.";
+
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public virtual string BrainHeading => "Thinking methods";
+
+    /// <summary>論理思考タイプのタイプ別コピー。</summary>
+    public virtual string[] BrainTypeCopy =>
+        new[]
+        {
+            "They are excellent at <b>logical</b> thinking.",
+            "They are excellent at <b>intuitive</b> thinking.",
+        };
+
+    /// <summary>論理思考タイプのタイプ別解説。</summary>
+    public virtual string[][] BrainTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "While they are good at thinking based on numbers and data, they tend to confuse in rambling situations.",
+                "They tend to stick to numerical evidence and are not good at working intuitively.",
+            },
+            new[]
+            {
+                "While they're <b>good at using imagination</b>, such as brainstorming, They tend to disregard the evidence and move with intuition first.",
+                "In <b>complicated situations</b>, they are <b>easy to stop thinking</b>.",
+            },
+        };
+
+    /// <summary>論理思考タイプのタイプ別名称。</summary>
+    public virtual string[] BrainTypeHeading =>
+        new[] { "Left-brained thinking", "Right-brained thinking" };
 
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
@@ -644,6 +684,11 @@ Since clairvoyant is impossible in this state, please write your information in 
     {
         BuiltPotentialDetails = CreatePotentialTypeDetails();
 
+        BuiltBrains = new string[(int)TypeBrain.MAX_VALUE];
+        for (int i = (int)TypeBrain.MAX_VALUE; --i >= 0;)
+        {
+            BuiltBrains[i] = this.CreateBrainPage(i);
+        }
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
         BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];
         BuiltGeniusStrategy = new string[(int)TypeGenius.MAX_VALUE];

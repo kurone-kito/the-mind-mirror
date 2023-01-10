@@ -32,7 +32,8 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 res.BuiltDetailedGeniusStrategy,
                 res.Built3TypedGenius,
                 res.BuiltLifebase,
-                ArrayUtils.Flatten(res.BuiltPotentials));
+                ArrayUtils.Flatten(res.BuiltPotentials),
+                res.BuiltBrains);
     }
 
     /// <summary>描画状態を更新します。</summary>

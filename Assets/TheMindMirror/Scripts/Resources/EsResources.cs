@@ -4,6 +4,41 @@ using UdonSharp;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public sealed class EsResources : FallbackResources
 {
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public override string BrainDescription =>
+        $"Según la persona, pueden dividirse en del tipo “{BrainTypeHeading[(int)TypeBrain.Left]}” o del tipo “{BrainTypeHeading[(int)TypeBrain.Right]}”.";
+
+    /// <summary>論理思考タイプの見出しメッセージ。</summary>
+    public override string BrainHeading => "Métodos de reflexión";
+
+    /// <summary>論理思考タイプのタイプ別コピー。</summary>
+    public override string[] BrainTypeCopy =>
+        new[]
+        {
+            "Son excelentes en pensamiento <b>lógico</b>.",
+            "Son excelentes en el pensamiento <b>intuitivo</b>.",
+        };
+
+    /// <summary>論理思考タイプのタイプ別解説。</summary>
+    public override string[][] BrainTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "Aunque se les da bien pensar basándose en números y datos, tienden a confundirse en situaciones incoherentes.",
+                "Tienden a ceñirse a las pruebas numéricas y no se les da bien trabajar de forma intuitiva.",
+            },
+            new[]
+            {
+                "Aunque son <b>buenos en el uso de la imaginación</b>, como en la lluvia de ideas, tienden a ignorar las pruebas y a moverse primero con la intuición.",
+                "En <b>situaciones complicadas</b>, son <b>fáciles de dejar de pensar</b>.",
+            },
+        };
+
+    /// <summary>論理思考タイプのタイプ別名称。</summary>
+    public override string[] BrainTypeHeading =>
+        new[] { "Pensamiento zurdo", "Pensamiento cerebral derecho" };
+
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public override string ComingSoon =>
          "¡En el futuro añadiremos más resultados clarividentes!";

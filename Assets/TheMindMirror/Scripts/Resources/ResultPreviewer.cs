@@ -33,7 +33,8 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 res.Built3TypedGenius,
                 res.BuiltLifebase,
                 ArrayUtils.Flatten(res.BuiltPotentials),
-                res.BuiltBrains);
+                res.BuiltBrains,
+                res.BuiltCommunications);
     }
 
     /// <summary>描画状態を更新します。</summary>

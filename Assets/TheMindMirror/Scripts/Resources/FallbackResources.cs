@@ -20,6 +20,11 @@ public class FallbackResources : UdonSharpBehaviour
     /// </summary>
     public string[] BuiltBrains { get; protected set; }
 
+    /// <summary>
+    /// 対話思考タイプの分類別ビルド済みページ一覧を取得します。
+    /// </summary>
+    public string[] BuiltCommunications { get; protected set; }
+
     /// <summary>性格の大分類別ビルド済みページ一覧を取得します。</summary>
     public string[] BuiltGenius { get; protected set; }
 
@@ -84,6 +89,41 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public virtual string ComingSoon =>
          "We'll be adding more clairvoyant results in the future!";
+
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public virtual string CommunicationDescription =>
+        $"Depending on the person, they can divide into the “{CommunicationTypeHeading[(int)TypeCommunication.Fix]}” type or the “{CommunicationTypeHeading[(int)TypeCommunication.Flex]}” type.";
+
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public virtual string CommunicationHeading => "Ways of thinking in dialogue";
+
+    /// <summary>対話思考タイプのタイプ別コピー。</summary>
+    public virtual string[] CommunicationTypeCopy =>
+        new[]
+        {
+            "They do dialogue that proceeds with a conclusion.",
+            "They are good at concluding <b>fluidly</b>.",
+        };
+
+    /// <summary>対話思考タイプのタイプ別解説。</summary>
+    public virtual string[][] CommunicationTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "They tend to rationalize and get their point across.",
+                "They are relieved when things are clearly defined, such as time and place, but tend to feel uneasy when things are unclear.",
+            },
+            new[]
+            {
+                "They also tend to use emotionalism to get their point across.",
+                "They can manage with ambiguity in terms of time, place, etc., but they <b>feel constrained when it comes to clarity</b>.",
+            },
+        };
+
+    /// <summary>対話思考タイプのタイプ別名称。</summary>
+    public virtual string[] CommunicationTypeHeading =>
+        new[] { "<b>Fix</b>: Clarification-oriented", "<b>Flex</b>: Liquidity-oriented" };
 
     /// <summary>素質の解説。</summary>
     public virtual string DetailedGeniusDescription =>
@@ -694,6 +734,11 @@ Since clairvoyant is impossible in this state, please write your information in 
         for (int i = (int)TypeBrain.MAX_VALUE; --i >= 0;)
         {
             BuiltBrains[i] = this.CreateBrainPage(i);
+        }
+        BuiltCommunications = new string[(int)TypeCommunication.MAX_VALUE];
+        for (int i = (int)TypeCommunication.MAX_VALUE; --i >= 0;)
+        {
+            BuiltCommunications[i] = this.CreateCommunicationPage(i);
         }
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
         BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];

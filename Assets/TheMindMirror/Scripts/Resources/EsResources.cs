@@ -41,7 +41,42 @@ public sealed class EsResources : FallbackResources
 
     /// <summary>今後の解説拡充予告のメッセージ。</summary>
     public override string ComingSoon =>
-         "¡En el futuro añadiremos más resultados clarividentes!";
+        "¡En el futuro añadiremos más resultados clarividentes!";
+
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public override string CommunicationDescription =>
+        $"Dependiendo de la persona, pueden dividirse en el tipo “{CommunicationTypeHeading[(int)TypeCommunication.Fix]}” o el tipo “{CommunicationTypeHeading[(int)TypeCommunication.Flex]}”.";
+
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public override string CommunicationHeading => "Formas de pensar en el diálogo";
+
+    /// <summary>対話思考タイプのタイプ別コピー。</summary>
+    public override string[] CommunicationTypeCopy =>
+        new[]
+        {
+            "Hacen un diálogo que prosigue con una conclusión.",
+            "Son buenos concluyendo <b>fluidamente</b>.",
+        };
+
+    /// <summary>対話思考タイプのタイプ別解説。</summary>
+    public override string[][] CommunicationTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "Tienden a racionalizar y a hacerse entender.",
+                "Se sienten aliviados cuando las cosas están claramente definidas, como el tiempo y el lugar, pero tienden a sentirse inquietos cuando las cosas no están claras.",
+            },
+            new[]
+            {
+                "También tienden a utilizar el emocionalismo para transmitir su punto de vista.",
+                "Pueden manejarse con ambigüedad en términos de tiempo, lugar, etc., pero <b>se sienten limitados cuando se trata de claridad</b>.",
+            },
+        };
+
+    /// <summary>対話思考タイプのタイプ別名称。</summary>
+    public override string[] CommunicationTypeHeading =>
+        new[] { "<b>Arreglo</b>: orientado a la clarificación", "<b>Flex</b>: orientado a la liquidez" };
 
     /// <summary>素質の解説。</summary>
     public override string DetailedGeniusDescription =>

@@ -119,6 +119,30 @@ public static class PageGenerator
             $"{RIGHT}<size=23>▶{res.ComingSoon}◀</size>";
     }
 
+    /// <summary>
+    /// 対話思考タイプにおける、ページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="type">対話思考タイプ。</param>
+    /// <returns>ページの文言。</returns>
+    public static string CreateCommunicationPage(
+        this FallbackResources res, int type)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.CommunicationTypeHeading[type]);
+        return res.CreateByTemplate(
+            res.CommunicationHeading,
+            res.CommunicationDescription,
+            $"{copy} {res.CommunicationTypeCopy[type]}",
+            res.CommunicationTypeDetails[type],
+            1.5f);
+    }
+
     /// <summary>素質ページの文言を取得します。</summary>
     /// <param name="res">リソース。</param>
     /// <param name="genius">素質タイプ。</param>

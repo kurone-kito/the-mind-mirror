@@ -2,6 +2,8 @@ using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 
+using TDI = TypeDetailIndex;
+
 /// <summary>マインドキューブの情報ビューア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public sealed class MindDetails : ResultPreviewerBase
@@ -44,7 +46,17 @@ public sealed class MindDetails : ResultPreviewerBase
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         byte[] dt = MasterData.DetailsMap()[vars.Inner];
-        return res.BuiltBrains[dt[(int)TypeDetailIndex.Brain]];
+        return res.BuiltBrains[dt[(int)TDI.Brain]];
+    }
+
+    /// <summary>対話思考タイプページの文言を取得します。</summary>
+    /// <returns>対話思考タイプページの文言。</returns>
+    private string GetCommunicationPage()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltCommunications[dt[(int)TDI.Communication]];
     }
 
     /// <summary>素質ページの文言を取得します。</summary>
@@ -81,7 +93,7 @@ public sealed class MindDetails : ResultPreviewerBase
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         byte[] details = MasterData.DetailsMap()[vars.Inner];
-        return res.BuiltGenius[details[(int)TypeDetailIndex.Genius]];
+        return res.BuiltGenius[details[(int)TDI.Genius]];
     }
 
     /// <summary>性格の大分類別の攻略法ページの文言を取得します。</summary>
@@ -91,7 +103,7 @@ public sealed class MindDetails : ResultPreviewerBase
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         FallbackResources res = ResourcesManager.GetInstance().Resources;
         byte[] details = MasterData.DetailsMap()[vars.Inner];
-        return res.BuiltGeniusStrategy[details[(int)TypeDetailIndex.Genius]];
+        return res.BuiltGeniusStrategy[details[(int)TDI.Genius]];
     }
 
     /// <summary>人生観ページの文言を取得します。</summary>
@@ -157,6 +169,7 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetDetailedGeniusStrategyPage(),
                 Get3TypedGeniusPage(),
                 GetBrainsPage(),
+                GetCommunicationPage(),
                 GetLifeBasePage(),
                 $"{GetPotentialPage()}\n{comingSoon}",
             };

@@ -43,6 +43,41 @@ public sealed class JaResources : FallbackResources
     public override string ComingSoon =>
          "今後もっと解説を拡充していきます！";
 
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public override string CommunicationDescription =>
+        $"人によって{CommunicationTypeHeading[(int)TypeCommunication.Fix]}か{CommunicationTypeHeading[(int)TypeCommunication.Flex]}かに分かれます。";
+
+    /// <summary>対話思考タイプの見出しメッセージ。</summary>
+    public override string CommunicationHeading => "対話における思考方法";
+
+    /// <summary>対話思考タイプのタイプ別コピー。</summary>
+    public override string[] CommunicationTypeCopy =>
+        new[]
+        {
+            "<b>結論ありき</b>で対話を進めるタイプです。",
+            "<b>流動的</b>に着地点を決めて行くタイプです。",
+        };
+
+    /// <summary>対話思考タイプのタイプ別解説。</summary>
+    public override string[][] CommunicationTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "理詰めで自分の主張を通していく傾向もあります。",
+                "時間や場所など、はっきり<b>明確になると安心</b>する反面、曖昧だと不安になる人が多いです。",
+            },
+            new[]
+            {
+                "感情論で自分の主張を通していく傾向もあります。",
+                "時間や場所など、曖昧でもどうにかなる反面、<b>明確にすると窮屈</b>に感じる人が多いです。",
+            },
+        };
+
+    /// <summary>対話思考タイプのタイプ別名称。</summary>
+    public override string[] CommunicationTypeHeading =>
+        new[] { "明確化指向", "柔軟指向" };
+
     /// <summary>素質の解説。</summary>
     public override string DetailedGeniusDescription =>
         "より詳細な、天性の性格。これは 12 種類に分類します。";

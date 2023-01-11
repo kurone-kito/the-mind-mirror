@@ -45,6 +45,11 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>人生観別のビルド済みページ一覧を取得します。</summary>
     public string[] BuiltLifebase { get; protected set; }
 
+    /// <summary>
+    /// リスク管理思考タイプの分類別ビルド済みページ一覧を取得します。
+    /// </summary>
+    public string[] BuiltManagement { get; protected set; }
+
     /// <summary>潜在能力別のビルド済みページ一覧を取得します。</summary>
     public string[][] BuiltPotentials { get; protected set; }
 
@@ -538,6 +543,43 @@ public class FallbackResources : UdonSharpBehaviour
             "would like to be a lone wolf.",
         };
 
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public virtual string ManagementDescription =>
+        $"Depending on the person, they can divide into the “{ManagementTypeHeading[(int)TypeManagement.Care]}” type or the “{ManagementTypeHeading[(int)TypeManagement.Hope]}” type.";
+
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public virtual string ManagementHeading => "Pros/Cons mindset to opportunity";
+
+    /// <summary>リスク管理思考タイプのタイプ別コピー。</summary>
+    public virtual string[] ManagementTypeCopy =>
+        new[]
+        {
+            "They have the excellent eyes for <b>seeing the costs and risks</b> in opportunities.",
+            "They have the good eyes for seeing the significant chances hidden behind opportunities.",
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別解説。</summary>
+    public virtual string[][] ManagementTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "They are pessimistic and tend to highly cautious people.",
+                "They seek out what they can do by eliminating what they can't do, so while they rarely make big mistakes, they tend to miss significant opportunities.",
+                "We tend to give a negative impression to them, but many can be positive because they can deal with risks once they know them.",
+            },
+            new[]
+            {
+                "They also tend to <b>be optimistic and reckless</b>.",
+                "While not afraid of failure, they make a big mistake never try it again.",
+                "We tend to have a positive impression on them, but they are <b>unfamiliar with risk and have vague fears</b> that lead them to <b>think negatively</b>.",
+            },
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別名称。</summary>
+    public virtual string[] ManagementTypeHeading =>
+        new[] { "<b>Care</b>: The risk-oriented", "<b>Hope</b>: The venture-oriented" };
+
     /// <summary>潜在能力の説明。</summary>
     public virtual string PotentialDescription =>
         "People have inherent potentials that they can exercise when they act.";
@@ -781,6 +823,11 @@ Since clairvoyant is impossible in this state, please write your information in 
         for (int i = (int)TypeCommunication.MAX_VALUE; --i >= 0;)
         {
             BuiltCommunications[i] = this.CreateCommunicationPage(i);
+        }
+        BuiltManagement = new string[(int)TypeManagement.MAX_VALUE];
+        for (int i = (int)TypeManagement.MAX_VALUE; --i >= 0;)
+        {
+            BuiltManagement[i] = this.CreateManagementPage(i);
         }
         BuiltResponses = new string[(int)TypeResponse.MAX_VALUE];
         for (int i = (int)TypeResponse.MAX_VALUE; --i >= 0;)

@@ -275,6 +275,30 @@ public static class PageGenerator
                 1.7f);
     }
 
+    /// <summary>
+    /// リスク管理思考タイプにおける、ページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="type">リスク管理思考タイプ。</param>
+    /// <returns>ページの文言。</returns>
+    public static string CreateManagementPage(
+        this FallbackResources res, int type)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.ManagementTypeHeading[type]);
+        return res.CreateByTemplate(
+            res.ManagementHeading,
+            res.ManagementDescription,
+            $"{copy} {res.ManagementTypeCopy[type]}",
+            res.ManagementTypeDetails[type],
+            1.4f);
+    }
+
     /// <summary>潜在能力ページの文言を取得します。</summary>
     /// <param name="res">リソース。</param>
     /// <param name="potentialA">潜在能力 A。</param>

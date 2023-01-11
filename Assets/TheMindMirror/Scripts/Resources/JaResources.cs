@@ -483,6 +483,43 @@ public sealed class JaResources : FallbackResources
             "一匹オオカミな自分でありたい",
         };
 
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public override string ManagementDescription =>
+        $"人によって{ManagementTypeHeading[(int)TypeManagement.Care]}か{ManagementTypeHeading[(int)TypeManagement.Hope]}かに分かれます。";
+
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public override string ManagementHeading => "リスク管理";
+
+    /// <summary>リスク管理思考タイプのタイプ別コピー。</summary>
+    public override string[] ManagementTypeCopy =>
+        new[]
+        {
+            "機会における<b>コストやリスクを見抜く</b>、優れた眼力の持ち主",
+            "機会の裏に<b>隠れた大きなチャンスを見抜く</b>、優れた眼力の持ち主",
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別解説。</summary>
+    public override string[][] ManagementTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "悲観的で、<b>石橋を叩いて壊す</b>傾向もあります。",
+                "できないことを消去法で潰して、できることを模索していく人が多いため、<b>大きな失敗は少ない</b>反面、大きなチャンスを逃しがち。",
+                $"{ManagementTypeHeading[(int)TypeManagement.Care]}の人は、この文面ではネガティブな印象を受けがちですが、<b>リスクが判れば対処ができる</b>ため、<b>理詰めでポジティブになれる</b>人も多いです。",
+            },
+            new[]
+            {
+                "<b>楽天的で見切り発車</b>になりがちな傾向もあります。",
+                "失敗を恐れない反面、大きな失敗をするとそれには二度とチャレンジしない人も多いです。",
+                $"{ManagementTypeHeading[(int)TypeManagement.Hope]}の人は、この文面ではポジティブな印象を受けがちですが、<b>リスクに疎く漠然とした不安</b>から、<b>ネガティブ思考に陥る</b>人も少なくありません。",
+            },
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別名称。</summary>
+    public override string[] ManagementTypeHeading =>
+        new[] { "リスク重視", "リターン重視" };
+
     /// <summary>潜在能力の説明。</summary>
     public override string PotentialDescription =>
         "行動する際に発揮できる、固有の潜在能力を持っています。";

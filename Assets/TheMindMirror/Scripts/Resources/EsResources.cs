@@ -434,6 +434,43 @@ public sealed class EsResources : FallbackResources
             "le gustaría ser un lobo solitario.",
         };
 
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public override string ManagementDescription =>
+        $"Dependiendo de la persona, pueden dividirse en el tipo “{ManagementTypeHeading[(int)TypeManagement.Care]}” o el tipo “{ManagementTypeHeading[(int)TypeManagement.Hope]}”.";
+
+    /// <summary>リスク管理思考タイプの見出しメッセージ。</summary>
+    public override string ManagementHeading => "Ventajas e inconvenientes";
+
+    /// <summary>リスク管理思考タイプのタイプ別コピー。</summary>
+    public override string[] ManagementTypeCopy =>
+        new[]
+        {
+            "Tienen buen ojo para <b>ver los costes y riesgos</b> de las oportunidades.",
+            "Tienen un ojo excelente para ver las oportunidades significativas que se esconden detrás de las oportunidades.",
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別解説。</summary>
+    public override string[][] ManagementTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "Son pesimistas y tienden a ser personas muy precavidas.",
+                "Buscan lo que pueden hacer eliminando lo que no pueden hacer, por lo que, aunque rara vez cometen grandes errores, tienden a perder oportunidades importantes.",
+                "Tendemos a darles una impresión negativa, pero muchos pueden ser positivos porque saben afrontar los riesgos una vez que los conocen.",
+            },
+            new[]
+            {
+                "También tienden a <b>ser optimistas e imprudentes</b>.",
+                "Aunque no tienen miedo al fracaso, cometen un gran error y nunca vuelven a intentarlo.",
+                "Tendemos a tener una impresión positiva de ellos, pero <b>no están familiarizados con el riesgo y tienen vagos temores</b> que les llevan a <b>pensar negativamente</b>.",
+            },
+        };
+
+    /// <summary>リスク管理思考タイプのタイプ別名称。</summary>
+    public override string[] ManagementTypeHeading =>
+        new[] { "<b>Cuidados</b>: El orientado al riesgo", "<b>Esperanza</b>: la empresa orientada" };
+
     /// <summary>潜在能力の説明。</summary>
     public override string PotentialDescription =>
         "Las personas tienen potenciales inherentes que pueden ejercer cuando actúan.";

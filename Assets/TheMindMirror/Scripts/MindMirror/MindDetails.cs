@@ -115,6 +115,16 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.BuiltLifebase[vars.LifeBase];
     }
 
+    /// <summary>リスク管理思考タイプページの文言を取得します。</summary>
+    /// <returns>リスク管理思考タイプページの文言。</returns>
+    private string GetManagement()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltManagement[dt[(int)TDI.Management]];
+    }
+
     /// <summary>潜在能力ページの文言を取得します。</summary>
     /// <returns>潜在能力ページの文言。</returns>
     private string GetPotentialPage()
@@ -181,6 +191,7 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetBrainsPage(),
                 GetCommunicationPage(),
                 GetResponsePage(),
+                GetManagement(),
                 GetLifeBasePage(),
                 $"{GetPotentialPage()}\n{comingSoon}",
             };

@@ -35,6 +35,7 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 ArrayUtils.Flatten(res.BuiltPotentials),
                 res.BuiltBrains,
                 res.BuiltCommunications,
+                res.BuiltManagement,
                 res.BuiltResponses);
     }
 

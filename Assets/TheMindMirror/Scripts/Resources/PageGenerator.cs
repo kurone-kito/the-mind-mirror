@@ -323,6 +323,30 @@ public static class PageGenerator
     }
 
     /// <summary>
+    /// 応対思考タイプにおける、ページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="type">応対思考タイプ。</param>
+    /// <returns>ページの文言。</returns>
+    public static string CreateResponsePage(
+        this FallbackResources res, int type)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.ResponseTypeHeading[type]);
+        return res.CreateByTemplate(
+            res.ResponseHeading,
+            res.ResponseDescription,
+            $"{copy} {res.ResponseTypeCopy[type]}",
+            res.ResponseTypeDetails[type],
+            1.3f);
+    }
+
+    /// <summary>
     /// テンプレートに文言を埋め込んで、ページの文言を取得します。
     /// </summary>
     /// <param name="res">リソース。</param>

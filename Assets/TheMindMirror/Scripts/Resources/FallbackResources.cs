@@ -51,6 +51,11 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>潜在能力別のビルド済み特徴一覧を取得します。</summary>
     public string[][][] BuiltPotentialDetails { get; protected set; }
 
+    /// <summary>
+    /// 応対思考タイプの分類別ビルド済みページ一覧を取得します。
+    /// </summary>
+    public string[] BuiltResponses { get; protected set; }
+
     /// <summary>論理思考タイプの見出しメッセージ。</summary>
     public virtual string BrainDescription =>
         $"Depending on the person, they can divide into the “{BrainTypeHeading[(int)TypeBrain.Left]}” type or the “{BrainTypeHeading[(int)TypeBrain.Right]}” type.";
@@ -606,6 +611,43 @@ public class FallbackResources : UdonSharpBehaviour
             },
         };
 
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public virtual string ResponseDescription =>
+        $"Depending on the person, they can divide into the “{ResponseTypeHeading[(int)TypeResponse.Action]}” type or the “{ResponseTypeHeading[(int)TypeResponse.Mind]}” type.";
+
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public virtual string ResponseHeading => "Suitability for the work";
+
+    /// <summary>応対思考タイプのタイプ別コピー。</summary>
+    public virtual string[] ResponseTypeCopy =>
+        new[]
+        {
+            "They focus on putting energy into action and feel that their place is at the forefront of on-site.",
+            "They value putting energy into thinking and feel that performing a role behind the scenes is valuable.",
+        };
+
+    /// <summary>応対思考タイプのタイプ別解説。</summary>
+    public virtual string[][] ResponseTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "They tend to may <b>act before thinking</b>.",
+                "A group of people with the same personality type as them in proportion will give the impression of being unstable yet active.",
+                "While they are good at public appearances, many of them get easily choked up by behind-the-scenes work such as office work, manufactures, or machine operation.",
+            },
+            new[]
+            {
+                "They are more of a thinker before acting type.",
+                "A group with a proportion of their type of people will look stagnant, but it will give the impression of being down-to-earth and solid.",
+                "While they are good at clerical work, manufacturing, and machine operation, they are not good at meeting in person, and many of them get tired of work in public easily.",
+            },
+        };
+
+    /// <summary>応対思考タイプのタイプ別名称。</summary>
+    public virtual string[] ResponseTypeHeading =>
+        new[] { "Get out in public", "Behind the scenes work" };
+
     /// <summary>3 種類の素質の名前。</summary>
     public virtual string[] ThreeTypedGeniusName =>
         new[] { "Inner", "Outer", "Workstyle" };
@@ -739,6 +781,11 @@ Since clairvoyant is impossible in this state, please write your information in 
         for (int i = (int)TypeCommunication.MAX_VALUE; --i >= 0;)
         {
             BuiltCommunications[i] = this.CreateCommunicationPage(i);
+        }
+        BuiltResponses = new string[(int)TypeResponse.MAX_VALUE];
+        for (int i = (int)TypeResponse.MAX_VALUE; --i >= 0;)
+        {
+            BuiltResponses[i] = this.CreateResponsePage(i);
         }
         Built3TypedGeniusFixedPart = this.Create3GeniusPageFixedPart();
         BuiltGenius = new string[(int)TypeGenius.MAX_VALUE];

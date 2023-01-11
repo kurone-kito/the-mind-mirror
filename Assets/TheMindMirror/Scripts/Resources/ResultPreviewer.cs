@@ -34,7 +34,8 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 res.BuiltLifebase,
                 ArrayUtils.Flatten(res.BuiltPotentials),
                 res.BuiltBrains,
-                res.BuiltCommunications);
+                res.BuiltCommunications,
+                res.BuiltResponses);
     }
 
     /// <summary>描画状態を更新します。</summary>

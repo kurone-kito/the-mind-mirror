@@ -507,6 +507,43 @@ public sealed class EsResources : FallbackResources
             },
         };
 
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public override string ResponseDescription =>
+        $"Dependiendo de la persona, pueden dividirse en el tipo “{ResponseTypeHeading[(int)TypeResponse.Action]}” o el tipo “{ResponseTypeHeading[(int)TypeResponse.Mind]}”.";
+
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public override string ResponseHeading => "Idoneidad para el trabajo";
+
+    /// <summary>応対思考タイプのタイプ別コピー。</summary>
+    public override string[] ResponseTypeCopy =>
+        new[]
+        {
+            "Se centran en poner la energía en acción y sienten que su lugar está en la vanguardia de lo in situ.",
+            "Valoran poner energía en pensar y consideran que desempeñar un papel entre bastidores es valioso.",
+        };
+
+    /// <summary>応対思考タイプのタイプ別解説。</summary>
+    public override string[][] ResponseTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "Tienden a <b>actuar antes de pensar</b>.",
+                "Un grupo de personas con el mismo tipo de personalidad que ellos en proporción dará la impresión de ser inestable pero activo.",
+                "Aunque se les dan bien las apariciones en público, a muchos de ellos se les atraganta fácilmente el trabajo entre bastidores, como el trabajo de oficina, las manufacturas o el funcionamiento de las máquinas.",
+            },
+            new[]
+            {
+                "Son más del tipo que piensa antes de actuar.",
+                "Un grupo con una proporción de su tipo de personas parecerá estancado, pero dará la impresión de tener los pies en la tierra y ser sólido.",
+                "Aunque se les da bien el trabajo de oficina, la fabricación y el manejo de máquinas, no se les da bien reunirse en persona, y muchos de ellos se cansan fácilmente de trabajar en público.",
+            },
+        };
+
+    /// <summary>応対思考タイプのタイプ別名称。</summary>
+    public override string[] ResponseTypeHeading =>
+        new[] { "Salir en público", "Trabajo entre bastidores" };
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "Interior", "Exterior", "Trabajo" };

@@ -556,6 +556,43 @@ public sealed class JaResources : FallbackResources
             },
         };
 
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public override string ResponseDescription =>
+        $"人によって{ResponseTypeHeading[(int)TypeResponse.Action]}か{ResponseTypeHeading[(int)TypeResponse.Mind]}かに分かれます。";
+
+    /// <summary>応対思考タイプの見出しメッセージ。</summary>
+    public override string ResponseHeading => "仕事の素質";
+
+    /// <summary>応対思考タイプのタイプ別コピー。</summary>
+    public override string[] ResponseTypeCopy =>
+        new[]
+        {
+            "行動にエネルギーを注ぎ込むことを重視し、現場の第一線に自分の居場所を感じるタイプです。",
+            "思考にエネルギーを注ぎ込むことを重視し、裏方で役割をこなすことに価値を感じるタイプです。",
+        };
+
+    /// <summary>応対思考タイプのタイプ別解説。</summary>
+    public override string[][] ResponseTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                $"{ResponseTypeHeading[(int)TypeResponse.Action]}の人は、どちらかというと<b>考えるよりも行動派</b>です。",
+                $"{ResponseTypeHeading[(int)TypeResponse.Action]}の人が比率を占める集団は、不安定ながらも活発な印象になります。",
+                "人前に出るのが得意である一方で、事務作業や機械操作などの裏方作業はすぐ息が詰まってしまう人が多いです。",
+            },
+            new[]
+            {
+                $"{ResponseTypeHeading[(int)TypeResponse.Mind]}の人は、どちらかというと<b>行動の前に熟考派</b>です。",
+                $"{ResponseTypeHeading[(int)TypeResponse.Mind]}の人が比率を占める集団は、一見停滞しているようで、地に足をつけた盤石な印象になります。",
+                "事務作業や機械操作は得意である一方、人前に出るのは苦手で、現場作業はすぐ疲れてしまう人が多いです。",
+            },
+        };
+
+    /// <summary>応対思考タイプのタイプ別名称。</summary>
+    public override string[] ResponseTypeHeading =>
+        new[] { "現場タイプ", "裏方タイプ" };
+
     /// <summary>3 種類の素質の名前。</summary>
     public override string[] ThreeTypedGeniusName =>
         new[] { "本性", "装い", "集中" };

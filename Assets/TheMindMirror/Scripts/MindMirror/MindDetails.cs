@@ -119,8 +119,8 @@ public sealed class MindDetails : ResultPreviewerBase
     public override void OnNotify(Subject subject)
     {
         if (
-            subject != null &&
-            subject.name == "MindMirrorSubject"
+            subject == null ||
+            subject.name == "MindStack"
         )
         {
             ResetPage();

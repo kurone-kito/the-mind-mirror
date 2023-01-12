@@ -520,6 +520,24 @@ public sealed class JaResources : FallbackResources
     public override string[] ManagementTypeHeading =>
         new[] { "リスク重視", "リターン重視" };
 
+    /// <summary>モチベの出る環境タイプの見出しメッセージ。</summary>
+    public override string MotivationHeading => "モチベが出やすい環境";
+
+    /// <summary>モチベの出る環境タイプのタイプ別コピー。</summary>
+    public override string[] MotivationTypes =>
+        new[]
+        {
+            "他人と比べられるような環境",
+            "自主的な計画で動ける環境",
+            "思ったらやる、ができる環境",
+            "さらなる安泰を追求できる環境",
+            "日々向上が実感できる環境",
+            "周囲と違うことができる環境"
+        };
+
+    /// <summary>その他情報の見出しメッセージ。</summary>
+    public override string OthersHeading => "その他情報";
+
     /// <summary>役割適性タイプの見出しメッセージ。</summary>
     public override string PositionDescription =>
         "性格タイプごとに、向いている役割が違います。一般的に短所は自力より、適材適所的に得意な<b>人に任せることで克服</b>した方が、大きな結果を出せます。";

@@ -471,6 +471,24 @@ public sealed class EsResources : FallbackResources
     public override string[] ManagementTypeHeading =>
         new[] { "<b>Cuidados</b>: El orientado al riesgo", "<b>Esperanza</b>: la empresa orientada" };
 
+    /// <summary>モチベの出る環境タイプの見出しメッセージ。</summary>
+    public override string MotivationHeading => "Un entorno en el que es fácil encontrar motivación";
+
+    /// <summary>モチベの出る環境タイプのタイプ別コピー。</summary>
+    public override string[] MotivationTypes =>
+        new[]
+        {
+            "Crecen motivados en un entorno que pueden comparar con el de otras personas.",
+            "Crecen motivación donde el medio ambiente que pueden hacer en su plan.",
+            "Crecen motivados donde el entorno que pueden hacer tan pronto como piensan en ello.",
+            "Crecen motivados en un entorno en el que pueden perseguir la seguridad y la paz.",
+            "Crecen motivación donde el medio ambiente que pueden sentir la mejora diaria.",
+            "Crecen motivados donde el entorno que pueden ser diferentes de los demás."
+        };
+
+    /// <summary>その他情報の見出しメッセージ。</summary>
+    public override string OthersHeading => "Otra información";
+
     /// <summary>役割適性タイプの見出しメッセージ。</summary>
     public override string PositionDescription =>
         "Cada tipo de personalidad se adapta a un papel diferente. Así que, en general, es mejor superar tus puntos débiles delegándolos en la persona adecuada en el lugar adecuado, en lugar de hacerlo tú solo, para poder conseguir grandes resultados.";

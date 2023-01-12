@@ -34,7 +34,7 @@ public class FallbackResources : UdonSharpBehaviour
     public string[] BuiltGeniusStrategy { get; protected set; }
 
     /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
-    public string[] BuiltDetailedGeniusType { get; protected set; }
+    public string[][] BuiltDetailedGeniusType { get; protected set; }
 
     /// <summary>素質タイプ別のビルド済みページ一覧を取得します。</summary>
     public string[] BuiltDetailedGeniusWeakness { get; protected set; }
@@ -579,6 +579,25 @@ public class FallbackResources : UdonSharpBehaviour
             },
         };
 
+    /// <summary>モチベの出る環境タイプの見出しメッセージ。</summary>
+    public virtual string MotivationHeading => "The environment where motivation is easy to find";
+
+    /// <summary>モチベの出る環境タイプのタイプ別コピー。</summary>
+    public virtual string[] MotivationTypes =>
+        new[]
+        {
+            "They grow motivation where the environment that they can compare with other people's.",
+            "They grow motivation where the environment that they can do on their plan.",
+            "They grow motivation where the environment that they can do as soon as they think about it.",
+            "They grow motivation where the environment that they can pursue security and peace.",
+            "They grow motivation where the environment that they can feel daily improvement.",
+            "They grow motivation where the environment that they can be different from others."
+        };
+
+
+    /// <summary>その他情報の見出しメッセージ。</summary>
+    public virtual string OthersHeading => "Others information";
+
     /// <summary>リスク管理思考タイプのタイプ別名称。</summary>
     public virtual string[] ManagementTypeHeading =>
         new[] { "<b>Care</b>: The risk-oriented", "<b>Hope</b>: The venture-oriented" };
@@ -586,7 +605,6 @@ public class FallbackResources : UdonSharpBehaviour
     /// <summary>役割適性タイプの見出しメッセージ。</summary>
     public virtual string PositionDescription =>
         "Each personality type is suited to a different role. So, in general, it is better to overcome your weaknesses by delegating them to the right person in the right place, rather than on your own, so that you can achieve great results.";
-
     /// <summary>役割適性タイプの見出しメッセージ。</summary>
     public virtual string PositionHeading => "Suitability for the role";
 
@@ -905,15 +923,21 @@ Since clairvoyant is impossible in this state, please write your information in 
         }
         Built3TypedGenius = new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusType =
-            new string[(int)TypeDetailedGenius.MAX_VALUE];
+            new string[(int)TypeDetailedGenius.MAX_VALUE][];
         BuiltDetailedGeniusWeakness =
             new string[(int)TypeDetailedGenius.MAX_VALUE];
         BuiltDetailedGeniusStrategy =
             new string[(int)TypeDetailedGenius.MAX_VALUE];
         for (int i = (int)TypeDetailedGenius.MAX_VALUE; --i >= 0;)
         {
+            BuiltDetailedGeniusType[i] =
+                new string[(int)TypeMotivation.MAX_VALUE];
+            for (int j = (int)TypeMotivation.MAX_VALUE; --j >= 0;)
+            {
+                BuiltDetailedGeniusType[i][j] =
+                    this.CreateDetailedGeniusPage(i, j);
+            }
             Built3TypedGenius[i] = this.Create3GeniusPage(i);
-            BuiltDetailedGeniusType[i] = this.CreateDetailedGeniusPage(i);
             BuiltDetailedGeniusWeakness[i] =
                 this.CreateDetailedGeniusWeaknessPage(i);
             BuiltDetailedGeniusStrategy[i] =

@@ -146,9 +146,10 @@ public static class PageGenerator
     /// <summary>素質ページの文言を取得します。</summary>
     /// <param name="res">リソース。</param>
     /// <param name="genius">素質タイプ。</param>
+    /// <param name="motivation">モチベの出る環境タイプ。</param>
     /// <returns>素質ページの文言。</returns>
     public static string CreateDetailedGeniusPage(
-        this FallbackResources res, int genius)
+        this FallbackResources res, int genius, int motivation)
     {
         if (res == null)
         {
@@ -157,11 +158,17 @@ public static class PageGenerator
         string copy =
             string.Format(
                 res.TemplateYourTypeIs, res.DetailedGeniusTypeName[genius]);
+        string[] detail = ArrayUtils.Flatten(
+            res.DetailedGeniusTypeDetails[genius],
+            new[]
+            {
+                $"{res.MotivationHeading}: {res.MotivationTypes[motivation]}"
+            });
         return res.CreateByTemplate(
             res.DetailedGeniusHeading,
             res.DetailedGeniusDescription,
             $"{res.DetailedGeniusTypeSummary[genius]}: {copy}",
-            res.DetailedGeniusTypeDetails[genius]);
+            detail);
     }
 
     /// <summary>素質毎に対する攻略法ページの文言を取得します。</summary>
@@ -418,8 +425,10 @@ public static class PageGenerator
         string br = $"</line-height>\n<line-height={sizeLine / 3}%>\n</line-height>{lh}";
         string head = $"<cspace=-0.05em><smallcaps>{heading}</smallcaps></cspace>";
         string desc = $"{JUSTIFY}<size={res.SizeDescription}>{head}> {description}</size>";
-        string cp = $"{CENTER}<size={res.SizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>";
-        return $"{lh}{desc}{br}{cp}{br}{res.CreateDetailList(details)}";
+        string cp =
+            string.IsNullOrWhiteSpace(copy) ? string.Empty :
+            $"{CENTER}<size={res.SizeHeading}><line-height={catchHeight}%>{copy}</line-height></size>{br}";
+        return $"{lh}{desc}{br}{cp}{res.CreateDetailList(details)}";
     }
 
     /// <summary>リストを連結し、文言を取得します。</summary>

@@ -65,7 +65,8 @@ public sealed class MindDetails : ResultPreviewerBase
     {
         MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
         FallbackResources res = ResourcesManager.GetInstance().Resources;
-        return res.BuiltDetailedGeniusType[vars.Inner];
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltDetailedGeniusType[vars.Inner][dt[(int)TDI.Management]];
     }
 
     /// <summary>素質毎に対する攻略法ページの文言を取得します。</summary>

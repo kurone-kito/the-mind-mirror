@@ -520,6 +520,59 @@ public sealed class JaResources : FallbackResources
     public override string[] ManagementTypeHeading =>
         new[] { "リスク重視", "リターン重視" };
 
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public override string PositionDescription =>
+        "性格タイプごとに、向いている役割が違います。一般的に短所は自力より、適材適所的に得意な<b>人に任せることで克服</b>した方が、大きな結果を出せます。";
+
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public override string PositionHeading => "向いている役割";
+
+    /// <summary>役割適性タイプのタイプ別コピー。</summary>
+    public override string[] PositionTypeCopy =>
+        new[]
+        {
+            "前線指揮官のように、<b>現場での調整力</b>に優れています。",
+            "発想力が強く、<b>裏方での頭脳戦</b>では最高のパフォーマンスを発揮します。",
+            "<b>バランス型素質</b>を持ち、現場から裏方まで、何でもそこそこできます。",
+            "<b>行動力に優れ</b>、客との交渉・商談に最も向いています。",
+        };
+
+    /// <summary>役割適性タイプのタイプ別解説。</summary>
+    public override string[][] PositionTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "割と人前に出たいタイプですが、営業というより対人調整に向いています。",
+                "クレーム対応などのサポート役や、ディレクターなどが適役です。",
+            },
+            new[]
+            {
+                $"ブレストをする際は{PositionTypeHeading[(int)TypePosition.Brain]}の人をキーメンバーに据えると最高のパフォーマンスを発揮します。",
+                "反面、営業を任せると地雷発言してしまうことも。",
+            },
+            new[]
+            {
+                "何でもこなせることが仇となり、全部一人で背負ってしまいがちです。リーダー的ポジションに就いて、企画・営業など得意とする人に任せることで、より良いパフォーマンスを出せます。",
+                "実際のところ、経営者にこのタイプは多いです。",
+            },
+            new[]
+            {
+                "とにかく人前に出て、活動する強い行動エネルギーを持っています。",
+                "一人でこなす裏方仕事は息が詰まってしまい、長時間続かない傾向があります。",
+            },
+        };
+
+    /// <summary>役割適性タイプのタイプ別名称。</summary>
+    public override string[] PositionTypeHeading =>
+        new[]
+        {
+            "渉外・調整タイプ",
+            "企画タイプ",
+            "リーダー・勇者タイプ",
+            "営業タイプ",
+        };
+
     /// <summary>潜在能力の説明。</summary>
     public override string PotentialDescription =>
         "行動する際に発揮できる、固有の潜在能力を持っています。";

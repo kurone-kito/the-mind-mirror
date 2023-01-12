@@ -36,7 +36,8 @@ public sealed class ResultPreviewer : ResultPreviewerBase
                 res.BuiltBrains,
                 res.BuiltCommunications,
                 res.BuiltManagement,
-                res.BuiltResponses);
+                res.BuiltResponses,
+                res.BuiltPositions);
     }
 
     /// <summary>描画状態を更新します。</summary>

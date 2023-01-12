@@ -125,6 +125,16 @@ public sealed class MindDetails : ResultPreviewerBase
         return res.BuiltManagement[dt[(int)TDI.Management]];
     }
 
+    /// <summary>役割適性ページの文言を取得します。</summary>
+    /// <returns>役割適性ページの文言。</returns>
+    private string GetPosition()
+    {
+        MindCubeVariables vars = globalStackManager.GetMindCubeVariables();
+        FallbackResources res = ResourcesManager.GetInstance().Resources;
+        byte[] dt = MasterData.DetailsMap()[vars.Inner];
+        return res.BuiltPositions[dt[(int)TDI.Position]];
+    }
+
     /// <summary>潜在能力ページの文言を取得します。</summary>
     /// <returns>潜在能力ページの文言。</returns>
     private string GetPotentialPage()
@@ -192,6 +202,7 @@ public sealed class MindDetails : ResultPreviewerBase
                 GetCommunicationPage(),
                 GetResponsePage(),
                 GetManagement(),
+                GetPosition(),
                 GetLifeBasePage(),
                 $"{GetPotentialPage()}\n{comingSoon}",
             };

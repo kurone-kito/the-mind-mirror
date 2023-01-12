@@ -471,6 +471,59 @@ public sealed class EsResources : FallbackResources
     public override string[] ManagementTypeHeading =>
         new[] { "<b>Cuidados</b>: El orientado al riesgo", "<b>Esperanza</b>: la empresa orientada" };
 
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public override string PositionDescription =>
+        "Cada tipo de personalidad se adapta a un papel diferente. Así que, en general, es mejor superar tus puntos débiles delegándolos en la persona adecuada en el lugar adecuado, en lugar de hacerlo tú solo, para poder conseguir grandes resultados.";
+
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public override string PositionHeading => "Idoneidad para el puesto";
+
+    /// <summary>役割適性タイプのタイプ別コピー。</summary>
+    public override string[] PositionTypeCopy =>
+        new[]
+        {
+            "Son como comandantes en primera línea con **excelentes dotes de coordinación sobre el terreno**.",
+            "Tiene una fuerte creatividad y muestra el mejor rendimiento **como cerebro entre bastidores**.",
+            "Tienen una capacidad de aprendizaje equilibrada y pueden hacer de todo un poco, desde in situ hasta entre bastidores.",
+            "Son **muy dinámicos** y los más adecuados para negociaciones y reuniones de negocios con clientes.",
+        };
+
+    /// <summary>役割適性タイプのタイプ別解説。</summary>
+    public override string[][] PositionTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "Les gusta estar delante de la gente, pero son más aptos para la coordinación interpersonal que para las ventas.",
+                "Son más adecuados para funciones de apoyo, como tramitar reclamaciones o ejercer de gestores.",
+            },
+            new[]
+            {
+                "En las lluvias de ideas, lo mejor es contar con ellos como miembros clave para obtener el mejor rendimiento.",
+                "Por otro lado, si dejas al vendedor en sus manos, puede soltar una bomba.",
+            },
+            new[]
+            {
+                "Pueden hacerlo todo suele ser su perdición, y tienden a asumirlo todo ellos solos.",
+                "En muchos casos, ya trabajan como directivos.",
+            },
+            new[]
+            {
+                "Tienen una energía intensa y vital para estar delante de la gente y ser activos.",
+                "Suelen verse ahogados por el trabajo entre bastidores y no duran mucho.",
+            },
+        };
+
+    /// <summary>役割適性タイプのタイプ別名称。</summary>
+    public override string[] PositionTypeHeading =>
+        new[]
+        {
+            "**Ajustar**: Adecuado como coordinador en una organización",
+            "**Cerebro**: Apto como planificador de estrategias",
+            "**Directo**: Adecuado como líder",
+            "**Rápido**: Apto como vendedor",
+        };
+
     /// <summary>潜在能力の説明。</summary>
     public override string PotentialDescription =>
         "Las personas tienen potenciales inherentes que pueden ejercer cuando actúan.";

@@ -299,6 +299,30 @@ public static class PageGenerator
             1.4f);
     }
 
+    /// <summary>
+    /// 役割適性タイプにおける、ページの文言を取得します。
+    /// </summary>
+    /// <param name="res">リソース。</param>
+    /// <param name="type">役割適性タイプ。</param>
+    /// <returns>ページの文言。</returns>
+    public static string CreatePositionPage(
+        this FallbackResources res, int type)
+    {
+        if (res == null)
+        {
+            return string.Empty;
+        }
+        string copy =
+            string.Format(
+                res.TemplateYourTypeIs, res.PositionTypeHeading[type]);
+        return res.CreateByTemplate(
+            res.PositionHeading,
+            res.PositionDescription,
+            $"{copy} {res.PositionTypeCopy[type]}",
+            res.PositionTypeDetails[type],
+            1.3f);
+    }
+
     /// <summary>潜在能力ページの文言を取得します。</summary>
     /// <param name="res">リソース。</param>
     /// <param name="potentialA">潜在能力 A。</param>

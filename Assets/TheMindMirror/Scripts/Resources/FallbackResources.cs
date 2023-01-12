@@ -50,6 +50,9 @@ public class FallbackResources : UdonSharpBehaviour
     /// </summary>
     public string[] BuiltManagement { get; protected set; }
 
+    /// <summary>役割適性タイプ別のビルド済みページ一覧を取得します。</summary>
+    public string[] BuiltPositions { get; protected set; }
+
     /// <summary>潜在能力別のビルド済みページ一覧を取得します。</summary>
     public string[][] BuiltPotentials { get; protected set; }
 
@@ -580,6 +583,59 @@ public class FallbackResources : UdonSharpBehaviour
     public virtual string[] ManagementTypeHeading =>
         new[] { "<b>Care</b>: The risk-oriented", "<b>Hope</b>: The venture-oriented" };
 
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public virtual string PositionDescription =>
+        "Each personality type is suited to a different role. So, in general, it is better to overcome your weaknesses by delegating them to the right person in the right place, rather than on your own, so that you can achieve great results.";
+
+    /// <summary>役割適性タイプの見出しメッセージ。</summary>
+    public virtual string PositionHeading => "Suitability for the role";
+
+    /// <summary>役割適性タイプのタイプ別コピー。</summary>
+    public virtual string[] PositionTypeCopy =>
+        new[]
+        {
+            "They are like commanders on the front line with <b>excellent coordination skills in the field</b>.",
+            "It has strong creativity and shows the best performance <b>as a brain behind the scenes</b>.",
+            "They have balanced learning skills and can do some extent of everything, from on-site to behind the scenes.",
+            "They are <b>highly dynamic</b> and are most suited for negotiations and business meetings with customers.",
+        };
+
+    /// <summary>役割適性タイプのタイプ別解説。</summary>
+    public virtual string[][] PositionTypeDetails =>
+        new[]
+        {
+            new[]
+            {
+                "They like to be in front of people, but they are more suited to interpersonal coordination than sales.",
+                "They are more suited to support roles such as handling complaints or serving as managers.",
+            },
+            new[]
+            {
+                "When brainstorming, it is best to have them as key members for the best performance.",
+                "On the other hand, if you leave the salesperson to them, they may drop a bomb.",
+            },
+            new[]
+            {
+                "They can do everything tends to be their downfall, and they tend to take on everything by themselves.",
+                "In many cases, they are already working as managers.",
+            },
+            new[]
+            {
+                "They have intense, vital energy to get out in front of people and be active.",
+                "They tend to be stifled by behind-the-scenes work and do not last long.",
+            },
+        };
+
+    /// <summary>役割適性タイプのタイプ別名称。</summary>
+    public virtual string[] PositionTypeHeading =>
+        new[]
+        {
+            "<b>Adjust</b>: Suited as a coordinate in an organization",
+            "<b>Brain</b>: Suited as a strategy planner",
+            "<b>Direct</b>: Suited as a leader",
+            "<b>Quick</b>: Suited as a salesperson",
+        };
+
     /// <summary>潜在能力の説明。</summary>
     public virtual string PotentialDescription =>
         "People have inherent potentials that they can exercise when they act.";
@@ -828,6 +884,11 @@ Since clairvoyant is impossible in this state, please write your information in 
         for (int i = (int)TypeManagement.MAX_VALUE; --i >= 0;)
         {
             BuiltManagement[i] = this.CreateManagementPage(i);
+        }
+        BuiltPositions = new string[(int)TypePosition.MAX_VALUE];
+        for (int i = (int)TypePosition.MAX_VALUE; --i >= 0;)
+        {
+            BuiltPositions[i] = this.CreatePositionPage(i);
         }
         BuiltResponses = new string[(int)TypeResponse.MAX_VALUE];
         for (int i = (int)TypeResponse.MAX_VALUE; --i >= 0;)

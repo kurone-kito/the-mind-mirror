@@ -6,8 +6,7 @@
 - もっと翻訳進めなきゃ (助けて DeepL さん)
 - BGM ないと寂しいよね
 - カッコいいサムネ！
-- さらなる診断機能
-  - 相性診断・役割マップ生成
+- 相性診断など、さらなる診断機能
 - QvPen など、実用アセットの導入
 - お部屋のお化粧
 - 性格診断機能の VPM パッケージ化
@@ -29,8 +28,7 @@
 - Translation (Help me DeepL ;-)
 - BGM is lonely without it
 - Replace with an excellent thumbnail!
-- More clairvoyance features
-  - Compatibility detection with anyone and role map generation
+- More clairvoyance features: e.g., compatibility detection
 - Embedding some practical assets e.g., QvPen
 - Decorating this room
 - Make the VPM package of personality clairvoyance feature
@@ -52,8 +50,7 @@
 - Traducción (Ayúdame DeepL ;-)
 - BGM es triste sin él
 - ¡Sustitúyalo por una excelente miniatura!
-- Más características de clairvoyance
-  - Detección de compatibilidad con cualquiera y generación de mapa de roles
+- Más funciones de clarividencia: por ejemplo, detección de compatibilidad
 - Incorporación de algunos activos prácticos, por ejemplo, QvPen
 - Decoración de esta habitación
 - Hacer el paquete VPM de la característica de clairvoyance de la personalidad

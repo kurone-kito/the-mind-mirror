@@ -1,4 +1,4 @@
-
+﻿
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +8,12 @@ using VRC.SDKBase;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public sealed class MindSphere : Observer
 {
+    /// <summary>
+    /// 相性ラインまたは他のスフィアへの接続不備における、エラーメッセージ。
+    /// </summary>
+    private const string ERR_NO_LINE_OR_SPHERE =
+        "相性ラインまたは他のスフィアへのリンクが設定されていません。";
+
     /// <summary>回転角のオフセット。</summary>
     private const float OFFSET = 15f;
 
@@ -16,10 +22,70 @@ public sealed class MindSphere : Observer
         { 0, 1, 5, 10, 11, 6, 2, 9, 7, 8, 4, 3 };
 
 #pragma warning disable IDE0044
+#pragma warning disable IDE0051
+    /// <summary>相性ライン一覧。</summary>
+    [SerializeField]
+    private AffinityLine[] lines;
+#pragma warning restore IDE0051
+
     /// <summary>名前ラベル。</summary>
     [SerializeField]
     private Text nameLabel;
+
+#pragma warning disable IDE0051
+    /// <summary>他のスフィア一覧。</summary>
+    [SerializeField]
+    private MindSphere[] others;
+#pragma warning restore IDE0051
 #pragma warning restore IDE0044
+
+    /// <summary>内面的な素質を取得します。</summary>
+    public byte Inner { get; private set; }
+
+    /// <summary>1 フレーム後に、相性ラインを更新します。</summary>
+    /// <remarks>
+    /// このメソッドは、他のスフィアの状態が変化した際にも呼び出します。
+    /// </remarks>
+    public void ReserveUpdateLine()
+    {
+        SendCustomEventDelayedFrames(nameof(UpdateLine), 1);
+    }
+
+    /// <summary>相性ラインを更新します。</summary>
+    public void UpdateLine()
+    {
+        if (
+            lines == null ||
+            others == null ||
+            lines.Length != others.Length
+        )
+        {
+            Debug.LogWarning(ERR_NO_LINE_OR_SPHERE);
+            return;
+        }
+        for (int i = lines.Length; --i >= 0;)
+        {
+            bool active =
+                gameObject.activeSelf && others[i].gameObject.activeSelf;
+            if (lines[i].gameObject.activeSelf != active)
+            {
+                Debug.LogFormat(
+                    "{0}->{1}: {2} => {3}",
+                    gameObject.name,
+                    others[i].gameObject.name,
+                    lines[i].gameObject.activeSelf,
+                    active
+                );
+            }
+            lines[i].gameObject.SetActive(active);
+            if (!active)
+            {
+                continue;
+            }
+            lines[i].Target = others[i].transform.position;
+            lines[i].Level = MasterData.Biz()[Inner][others[i].Inner];
+        }
+    }
 
     /// <summary>マインドキューブ情報を取得します。</summary>
     /// <param name="stack">
@@ -47,19 +113,19 @@ public sealed class MindSphere : Observer
         nameLabel.text = name ?? string.Empty;
         bool active = !string.IsNullOrEmpty(name);
         gameObject.SetActive(active);
+        Inner = active ? vars.Inner : byte.MaxValue;
         if (active)
         {
-            UpdatePosition(vars.Inner);
+            UpdatePosition();
         }
     }
 
     /// <summary>
     /// マインド スフィアの位置を更新します。
     /// </summary>
-    /// <param name="inner">内面的な素質。</param>
-    private void UpdatePosition(byte inner)
+    private void UpdatePosition()
     {
-        float baseRotate = rotationByInner[inner];
+        float baseRotate = rotationByInner[Inner];
         float gap = OFFSET * Random.Range(-0.5f, 0.5f);
         float rotate = OFFSET + (baseRotate * 30f) + gap;
         Quaternion q = Quaternion.AngleAxis(rotate, Vector3.up);
@@ -78,6 +144,11 @@ public sealed class MindSphere : Observer
             return;
         }
         UpdateName(subject.GetComponent<MindStack>());
+        ReserveUpdateLine();
+        foreach (MindSphere sphere in others ?? new MindSphere[0])
+        {
+            sphere.ReserveUpdateLine();
+        }
     }
 
 #pragma warning disable IDE0051

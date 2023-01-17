@@ -2,7 +2,6 @@
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDKBase;
 
 /// <summary>マインド スフィア。</summary>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
@@ -22,21 +21,17 @@ public sealed class MindSphere : Observer
         { 0, 1, 5, 10, 11, 6, 2, 9, 7, 8, 4, 3 };
 
 #pragma warning disable IDE0044
-#pragma warning disable IDE0051
     /// <summary>相性ライン一覧。</summary>
     [SerializeField]
     private AffinityLine[] lines;
-#pragma warning restore IDE0051
 
     /// <summary>名前ラベル。</summary>
     [SerializeField]
     private Text nameLabel;
 
-#pragma warning disable IDE0051
     /// <summary>他のスフィア一覧。</summary>
     [SerializeField]
     private MindSphere[] others;
-#pragma warning restore IDE0051
 #pragma warning restore IDE0044
 
     /// <summary>内面的な素質を取得します。</summary>
@@ -67,22 +62,14 @@ public sealed class MindSphere : Observer
         {
             bool active =
                 gameObject.activeSelf && others[i].gameObject.activeSelf;
-            if (lines[i].gameObject.activeSelf != active)
-            {
-                Debug.LogFormat(
-                    "{0}->{1}: {2} => {3}",
-                    gameObject.name,
-                    others[i].gameObject.name,
-                    lines[i].gameObject.activeSelf,
-                    active
-                );
-            }
             lines[i].gameObject.SetActive(active);
             if (!active)
             {
                 continue;
             }
-            lines[i].Target = others[i].transform.position;
+            Vector3 p = others[i].transform.position;
+            // p.y = 1f;
+            lines[i].Target = p;
             lines[i].Level = MasterData.Biz()[Inner][others[i].Inner];
         }
     }
@@ -150,22 +137,4 @@ public sealed class MindSphere : Observer
             sphere.ReserveUpdateLine();
         }
     }
-
-#pragma warning disable IDE0051
-    /// <summary>毎フレーム呼び出す、コールバック。</summary>
-    private void Update()
-    {
-        VRCPlayerApi player = Networking.LocalPlayer;
-        if (player == null)
-        {
-            return;
-        }
-        VRCPlayerApi.TrackingData data =
-            player.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
-#pragma warning disable IDE0090
-        Vector3 v = new Vector3(0f, data.rotation.eulerAngles.y, 0f);
-#pragma warning restore IDE0090
-        nameLabel.transform.localRotation = Quaternion.Euler(v);
-    }
-#pragma warning restore IDE0051
 }

@@ -1,7 +1,6 @@
 ◆ 今後のアップデートの予定 ◆
 
-- より詳細な性格診断
-  - 現在 173 万通りですが、最終的に 864 万通りに増やす構想もあります
+- より詳細な性格診断: 現在 173 万通りですが、最終的に 864 万通りに増やす構想もあります
   - が、今後細分化よりも、個々のパターンにおける解説を充実します！
 - もっと翻訳進めなきゃ (助けて DeepL さん)
 - BGM ないと寂しいよね
@@ -22,8 +21,7 @@
 
 ◆ Upcoming Updates ◆
 
-- More detailed personality clairvoyance
-  - Currently, there are 1.73 million ways, but there is a plan to increase the number to 8.64 million eventually.
+- More detailed personality clairvoyance: Currently, there are 1.73 million ways, but there is a plan to increase the number to 8.64 million eventually.
   - However, In the future, we'll prioritize explanations of individual patterns rather than subdivisions.
 - Translation (Help me DeepL ;-)
 - BGM is lonely without it
@@ -44,8 +42,7 @@
 
 ◆ Próximas actualizaciones ◆
 
-- Más detalles sobre la clairvoyance de la personalidad
-  - Actualmente hay 1,73 millones de formas, pero está previsto aumentar el número a 8,64 millones con el tiempo.
+- Más detalles sobre la clairvoyance de la personalidad: Actualmente hay 1,73 millones de formas, pero está previsto aumentar el número a 8,64 millones con el tiempo.
   - Sin embargo, en el futuro daremos prioridad a las explicaciones de patrones individuales en lugar de subdivisiones.
 - Traducción (Ayúdame DeepL ;-)
 - BGM es triste sin él

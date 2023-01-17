@@ -11,9 +11,9 @@ public sealed class AffinityLine : UdonSharpBehaviour
     /// <summary>相性レベル毎の色。</summary>
     private readonly Color[] colorByLevel =
         {
-            new Color(0.7f, 0.7f, 0.7f, 0.5f),
-            new Color(0f, 0.3f, 1f, 0.7f),
-            new Color(1f, 0f, 1f, 0.8f),
+            new Color(0.7f, 0.7f, 0.7f, 0.6f),
+            new Color(0f, 0.5f, 1f, 0.7f),
+            new Color(0.7f, 0f, 1f, 0.8f),
             new Color(1f, 0.9f, 0f, 0.9f),
             new Color(1f, 0.3f, 0f, 0.9f),
         };
@@ -34,6 +34,10 @@ public sealed class AffinityLine : UdonSharpBehaviour
     /// <summary>対象位置に加算する、オフセット座標。</summary>
     [SerializeField]
     private Vector3 offset;
+
+    /// <summary>座標を固定するかどうか。</summary>
+    [SerializeField]
+    private bool fixPosition;
 #pragma warning restore IDE0044
 
     /// <summary>対象の位置。</summary>
@@ -67,15 +71,27 @@ public sealed class AffinityLine : UdonSharpBehaviour
         }
     }
 
+    /// <summary>
+    /// Y 座標を固定した、座標を取得します。
+    /// </summary>
+    /// <param name="v">座標。</param>
+    /// <param name="y">Y 座標。</param>
+    /// <returns>Y 座標を固定した、座標</returns>
+    private Vector3 OverrideY(Vector3 v, float y = 0.88f)
+    {
+        return new Vector3(v.x, y, v.z);
+    }
+
     /// <summary>線情報のうち、位置情報を更新します。</summary>
     private void UpdatePosition()
     {
-        if (line == null)
+        if (fixPosition || line == null)
         {
             return;
         }
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, Target + offset);
+        Vector3 rnd = Vector3.one * Random.Range(-0.05f, 0.05f);
+        line.SetPosition(0, OverrideY(transform.position + rnd));
+        line.SetPosition(1, OverrideY(Target + offset));
     }
 
     /// <summary>線情報のうち、太さや色情報を更新します。</summary>

@@ -38,6 +38,21 @@ public static class ArrayUtils
     }
 
     /// <summary>
+    /// 配列の要素を、ログに出力します。
+    /// </summary>
+    /// <typeparam name="T">配列の要素の型。</typeparam>
+    /// <param name="array">対象の配列。</param>
+    public static void Log<T>(this T[] array)
+    {
+        string[] stringed = new string[array.Length];
+        for (int i = array.Length; --i >= 0;)
+        {
+            stringed[i] = array[i].ToString();
+        }
+        Debug.Log(string.Join(", ", stringed));
+    }
+
+    /// <summary>
     /// フォーマット文字列と引数の配列をマッピングします。
     /// </summary>
     /// <param name="format">フォーマット文字列。</param>

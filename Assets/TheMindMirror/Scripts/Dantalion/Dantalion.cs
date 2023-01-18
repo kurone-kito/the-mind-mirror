@@ -1,5 +1,5 @@
 using System;
-
+using UnityEngine;
 using MD = MasterData;
 using PPP = PersonalityParamsPacker;
 
@@ -154,7 +154,10 @@ public static class Dantalion
             (lessThan ? earlyMonth : month == 1 ? 1 : 0);
         int cycle =
             (int)(hiYear * 4.25f) + (int)((shiftedMonth + 1) * 0.6f) +
-            (int)((loYear - earlyMonth) * 5.25f) + date + 7;
+            // 負数の場合 int キャストすると『切り上げ』のような挙動をする
+            // ため、キャスト前に明示的な Floor 変換を行う
+            (int)Mathf.Floor((loYear - earlyMonth) * 5.25f) + date + 7;
+        Debug.Log($"cycle: {cycle}");
         int potentialA = ShiftModulo(workStyle - 2, 10);
         int potentialB = ShiftModulo((year * 2) + outer + 2, 10);
         int[] factors = new int[(int)PSIndex.MAX_VALUE];

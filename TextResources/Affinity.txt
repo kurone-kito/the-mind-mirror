@@ -19,6 +19,23 @@ El papel apropiado para ti se proyectará en esta planta.
 
 ---
 
+相手の性格により、相性が変わる場合があります。相性が高いほど、目立つ色で表示されます。
+また、相性は非対称で、双方向的に相性が良いとは限りません。
+
+---
+
+Compatibility may vary depending on the personality of the partner.
+The higher the compatibility, the more prominent the color.
+Also, compatibility is asymmetric, and not necessarily good in both directions.
+
+---
+
+La compatibilidad puede variar dependiendo de la personalidad de la pareja.
+Cuanto mayor sea la compatibilidad, más prominente será el color.
+Además, la compatibilidad es asimétrica y no es necesariamente buena en ambas direcciones.
+
+---
+
 攻め、守り
 Offensive, Defensive
 Ofensiva, Defensiva

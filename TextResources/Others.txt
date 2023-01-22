@@ -18,3 +18,7 @@ English
 Español
 中文
 %
+
+その他情報
+Others information
+Otra información

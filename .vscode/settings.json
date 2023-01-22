@@ -15,7 +15,10 @@
     "behaviour",
     "demonological",
     "effortist",
+    "emocionalismo",
+    "euler",
     "grimoire",
+    "grimorio",
     "hiperlingüística",
     "intrusivas",
     "kito",
@@ -23,9 +26,12 @@
     "mathf",
     "perfeccionismo",
     "perfeccionistas",
+    "pruébalo",
     "saintist",
     "socialidad",
-    "udon"
+    "udon",
+    "UGUI",
+    "volatilely"
   ],
   "editor.formatOnSave": true
 }

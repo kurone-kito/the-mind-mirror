@@ -1,13 +1,11 @@
 ◆ 今後のアップデートの予定 ◆
 
-- より詳細な性格診断
-    - 現在 17,280 通りですが、今後数百万通りのパターンになります！
-    - 潜在能力・思考タイプ
-- もっと翻訳進めなきゃ (Help me DeepL ;-)
+- より詳細な性格診断: 現在 173 万通りですが、最終的に 864 万通りに増やす構想もあります
+  - が、今後細分化よりも、個々のパターンにおける解説を充実します！
+- もっと翻訳進めなきゃ (助けて DeepL さん)
 - BGM ないと寂しいよね
 - カッコいいサムネ！
-- さらなる診断機能
-  - 相性診断・役割マップ生成
+- 恋愛相性診断など、さらなる診断機能
 - QvPen など、実用アセットの導入
 - お部屋のお化粧
 - 性格診断機能の VPM パッケージ化
@@ -23,14 +21,12 @@
 
 ◆ Upcoming Updates ◆
 
-- More detailed personality clairvoyance
-  - There are only 17,280, but there will be millions of patterns in the future!
-  - Potential, and thinking type
+- More detailed personality clairvoyance: Currently, there are 1.73 million ways, but there is a plan to increase the number to 8.64 million eventually.
+  - However, In the future, we'll prioritize explanations of individual patterns rather than subdivisions.
 - Translation (Help me DeepL ;-)
 - BGM is lonely without it
 - Replace with an excellent thumbnail!
-- More clairvoyance features
-  - Compatibility detection with anyone and role map generation
+- More clairvoyance features: e.g., compatibility detection
 - Embedding some practical assets e.g., QvPen
 - Decorating this room
 - Make the VPM package of personality clairvoyance feature
@@ -46,14 +42,12 @@
 
 ◆ Próximas actualizaciones ◆
 
-- Más detalles sobre la clairvoyance de la personalidad
-  - Sólo hay 17,280, ¡pero habrá millones de patrones en el futuro!
-  - Potencial y tipo de pensamiento
+- Más detalles sobre la clairvoyance de la personalidad: Actualmente hay 1,73 millones de formas, pero está previsto aumentar el número a 8,64 millones con el tiempo.
+  - Sin embargo, en el futuro daremos prioridad a las explicaciones de patrones individuales en lugar de subdivisiones.
 - Traducción (Ayúdame DeepL ;-)
 - BGM es triste sin él
 - ¡Sustitúyalo por una excelente miniatura!
-- Más características de clairvoyance
-  - Detección de compatibilidad con cualquiera y generación de mapa de roles
+- Más funciones de clarividencia: por ejemplo, detección de compatibilidad
 - Incorporación de algunos activos prácticos, por ejemplo, QvPen
 - Decoración de esta habitación
 - Hacer el paquete VPM de la característica de clairvoyance de la personalidad

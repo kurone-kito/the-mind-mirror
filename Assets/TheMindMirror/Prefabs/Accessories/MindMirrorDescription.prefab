@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3761299622901605386
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1152811755880687181, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_text
+      value: "<line-height=120%><size=38>\u201CEl espejo de la personalidad\u201D</size></line-height>\r\n\r\n<line-height=120%>Por
+        favor, inserte su Cubo Mental. Este dispositivo refleja su personalidad.</line-height>\r\n\r\n<line-height=120%><align=\"justified\">*
+        <indent=5%>La personalidad <b>mostrada es global</b>. Tenga cuidado si no
+        quiere que se revele su naturaleza.</indent></line-height>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221985941521545656, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1221985941521545656, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633963007668457106, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835817567201671558, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_text
+      value: "\u300E\u6027\u683C\u3092\u6620\u3059\u93E1\u300F\r\n\r\n<line-height=130%>\u30DE\u30A4\u30F3\u30C9\u30AD\u30E5\u30FC\u30D6\u3092\u633F\u5165\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u3053\u306E\u88C5\u7F6E\u3067\u3001\u8CB4\u65B9\u306E\u6027\u683C\u3092\u6620\u3057\u51FA\u3057\u307E\u3059\u3002</line-height>\r\n\r\n<line-height=130%><align=\"justified\">\u203B
+        <indent=8%>\u6027\u683C\u8868\u793A\u306F<b>\u30B0\u30ED\u30FC\u30D0\u30EB\u8868\u793A</b>\u3067\u3059\u3002\u6027\u683C\u304C\u30D0\u30EC\u305F\u304F\u306A\u3044\u65B9\u306F\u3054\u6CE8\u610F\u304F\u3060\u3055\u3044\u3002</indent></line-height>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246153109759669659, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_text
+      value: "<line-height=120%><size=38>\u201CThe Mirror of Personality\u201D</size></line-height>\r\n\r\n<line-height=120%>Please
+        insert your Mind Cube. This device reflects your personality.</line-height>\r\n\r\n<line-height=120%><align=\"justified\">*
+        <indent=5%>The personality <b>displayed is global</b>. Please be careful
+        if you do not want your nature to be revealed.</indent></line-height>\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199948158146907078, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: m_Name
+      value: MindMirrorDescription
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807121159872930086, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8807121159872930086, guid: 1db4b7c29cd922e40b128cf257fce8af,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1db4b7c29cd922e40b128cf257fce8af, type: 3}
